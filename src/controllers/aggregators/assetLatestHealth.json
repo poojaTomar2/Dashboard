@@ -1,0 +1,44 @@
+{
+    "size": 0,
+    "query": {
+        "bool": {
+            "filter": [{
+                "type": {
+                    "value": "AssetEventDataSummary"
+                }
+            }],
+            "must": [{
+                "term": {
+                    "IsFromHealth": true
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "Assets": {
+            "terms": {
+                "field": "AssetId",
+                "size": 100000
+            },
+            "aggs": {
+                "latestRecord": {
+                    "top_hits": {
+                        "size": 1,
+                        "sort": [{
+                            "EventDate": {
+                                "order": "desc"
+                            }
+                        }],
+                        "_source": {
+                            "includes": [
+                                "EventDate",
+                                "TimeZoneId",
+                                "DeviceLightStatus"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

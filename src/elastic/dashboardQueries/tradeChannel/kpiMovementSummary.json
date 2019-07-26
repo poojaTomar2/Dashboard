@@ -1,0 +1,48 @@
+{
+	"from": 0,
+	"size": 0,
+	"query": {
+		"bool": {
+			"filter": [{
+					"type": {
+						"value": "AssetEventDataSummary"
+					}
+				},
+				{
+					"bool": {
+						"should": [{
+								"range": {
+									"DisplacementInKmCountGT0P5": {
+										"gt": 0
+									}
+								}
+							},
+							{
+								"range": {
+									"MovementDurationCountGT180": {
+										"gt": 0
+									}
+								}
+							}
+						]
+					}
+				}
+			]
+		}
+	},
+	"aggs": {
+		"LocationType": {
+			"terms": {
+				"field": "LocationTypeId",
+				"size": 100000
+			},
+			"aggs": {
+				"AssetCount": {
+					"cardinality": {
+						"field": "AssetId"
+					}
+				}
+			}
+		}
+	}
+}

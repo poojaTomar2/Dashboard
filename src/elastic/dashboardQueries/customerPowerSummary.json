@@ -1,0 +1,42 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "SmartDevicePowerRecord"
+        }
+      }, {
+        "term": {
+          "IsDeleted": false
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "LocationBucket": {
+      "terms": {
+        "field": "LocationId",
+        "size": 100000
+      },
+      "aggs": {
+        "PowerOffDuration": {
+          "sum": {
+            "field": "PowerOffDuration"
+          }
+        },
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    }
+  }
+}

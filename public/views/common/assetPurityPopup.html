@@ -1,0 +1,119 @@
+﻿<div class="modal fade modal-wide modal-xl" id="assetPurityModel" tabindex="-1" role="dialog" aria-labelledby="assetPurityModelLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+				<div class="col-sm-4 pull-right text-right">
+					<!-- <button id="pre-event" type="button" class="btn btn-success">Prev</button>
+					<button id="next-event" type="button" class="btn btn-success">Next</button> -->
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+				<div class="col-sm-8">
+					<h4 class="modal-title" id="assetPurityModelLabel">Assets Purity</h4>
+				</div>
+
+			</div>
+			<div class="modal-body" id="model-spinner">
+
+				<div class="x-panel custom-scroll">
+					<div class="x-panel-body x-panel-body-noheader" id="planogramProductDiv">
+						<div class="rectangle-black">
+							<div class="rectangle-black-grey"></div>
+						</div>
+					</div>
+
+					<div class="x-panel-body x-panel-body-noheader" id="realogramProductDiv">
+						<div class="rectangle-black">
+							<div class="rectangle-black-grey"></div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="x-panel-bwrap  custom-scroll" id="ImageDetails">
+					<div class="">
+						<div>
+							<table class="centerAlign">
+								<tbody>
+									<tr>
+										<td id="infoChangeButtonDiv1" class="infoChangeButtonDiv" onclick="onRecognitionReportRowClick(false)" data-button="Previous"
+										    rowspan="2"><i class="fa fa-chevron-circle-left fa-3x" aria-hidden="true" style="color: #625e54;"></i></td>
+										<td class="infoPercentageDiv">
+											<div class="centerAlign">
+												<div><img src="./img/icons/planogram.png"></div>
+												<div class="blueText">Planogram</div>
+												<div id="PlanogramCompliance">0%</div>
+											</div>
+										</td>
+										<td class="infoPercentageDiv">
+											<div class="centerAlign">
+												<div><img src="./img/icons/purity.png"></div>
+												<div class="blueText">Purity</div>
+												<div id="PurityPercentage">0%</div>
+											</div>
+										</td>
+										<td class="infoPercentageDiv">
+											<div class="centerAlign">
+												<div><img src="./img/icons/stock_blue.png"></div>
+												<div class="blueText">Stock</div>
+												<div id="StockPercentage">0%</div>
+											</div>
+										</td>
+										<td id="infoChangeButtonDiv" class="infoChangeButtonDiv" onclick="onRecognitionReportRowClick(true)" rowspan="2"><i class="fa fa-chevron-circle-right fa-3x" aria-hidden="true" style="color: #625e54;"></i></td>
+									</tr>
+								</tbody>
+							</table>
+							<div id="planogram-legend" style="margin-top: 1em;">
+								<!-- <div class="planogram-legend-div">
+									<div style="background-color:#C71D1E" ;="" class="planogram-legend-rect"></div>
+									<div class="planogram-legend-text">500 PET COCA COLA</div>
+								</div> -->
+							</div>
+							<div id="purityImageImage1" class="purityImageDiv centerAlign"></div>
+							<div id="purityImageImage2" class="purityImageDiv centerAlign"></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="modal-footer">
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	// $('#assetPurityModel').on('show.bs.modal', function (event) {
+	// 	// var button = $(event.relatedTarget) // Button that triggered the modal
+	// 	// var recipient = button.data('whatever') // Extract info from data-* attributes
+	// 	// // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+	// 	// // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+	// 	// var modal = $(this)
+	// 	// modal.find('.modal-title').text('New message to ' + recipient)
+	// });
+
+	$('#next-event').on('click', function (evt) {
+		onRecognitionReportRowClick(true);
+	});
+
+	$('#pre-event').on('click', function (evt) {
+		onRecognitionReportRowClick(false);
+	});
+
+	function onRecognitionReportRowClick(next) {
+		var dt = $('#recognitionReportGrid').DataTable();
+		var rowIndex = dt.row('.selected').index();
+		if (next) {
+			if (dt.data()[rowIndex + 1]) {
+				coolerDashboard.common.onRecogGridClick(dt.data()[rowIndex + 1]);
+				dt.rows(rowIndex).deselect();
+				dt.rows(rowIndex + 1).select();
+			}
+		} else if (dt.data()[rowIndex - 1]) {
+			coolerDashboard.common.onRecogGridClick(dt.data()[rowIndex - 1]);
+			dt.rows(rowIndex).deselect();
+			dt.rows(rowIndex - 1).select();
+		}
+	}
+</script>

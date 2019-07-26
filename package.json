@@ -1,0 +1,43 @@
+{
+  "name": "dashbaord",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "boom": "^3.2.2",
+    "catbox-redis": "^2.0.2",
+    "elasticsearch": "14.0.0",
+    "geodist": "^0.2.1",
+    "geolib": "^2.0.22",
+    "hapi": "^13.5.3",
+    "hapi-auth-cookie": "^6.1.1",
+    "hapi-swagger": "^6.2.2",
+    "inert": "^4.1.0",
+    "ip": "^1.1.5",
+    "json2csv": "^3.7.3",
+    "log4js": "^0.6.38",
+    "moment": "^2.17.1",
+    "mssql": "^3.3.0",
+    "node-excel-export": "^1.2.0",
+    "node-linq": "^0.0.5",
+    "nodemailer": "^4.1.0",
+    "nodemon": "^1.11.0",
+    "redis": "^2.6.5",
+    "sequelize": "^3.30.2",
+    "sequelize-auto": "^0.4.21",
+    "simple-array-diff": "^1.1.0",
+    "string": "^3.3.3",
+    "string-format": "^0.5.0",
+    "tedious": "^1.14.0",
+    "underscore": "^1.8.3",
+    "uuid": "^2.0.3",
+    "vision": "^4.1.1",
+    "xml2js": "^0.4.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

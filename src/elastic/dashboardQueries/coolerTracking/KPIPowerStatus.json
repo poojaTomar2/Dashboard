@@ -1,0 +1,49 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+          "type": {
+            "value": "SmartDevicePowerEvent"
+          }
+        },
+        {
+          "term": {
+            "IsDeleted": false
+          }
+        }
+      ],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "Power": {
+      "terms": {
+        "field": "AssetId",
+        "size": 100000
+      },
+      "aggs": {
+        "Power_hits": {
+          "top_hits": {
+            "sort": [{
+              "EventTime": {
+                "order": "desc"
+              }
+            }],
+            "_source": {
+              "includes": [
+                "PowerStatus", "AssetId"
+              ]
+            },
+            "size": 1
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+    "size": 100000,
+    "aggs": {
+        "AverageDoorOpenDuration": {
+            "filter": {
+                "bool": {
+                    "must": [{
+                            "type": {
+                                "value": "SmartDeviceDoorStatus"
+                            }
+                        },
+                        {
+                            "range": {
+                                "EventTime": {
+                                    "gte": "now/d",
+                                    "lte": "now"
+                                }
+                            }
+                        }, {
+                            "term": {
+                                "IsDeleted": false
+                            }
+                        }
+                    ]
+                }
+            },
+            "aggs": {
+                "door_duration": {
+                    "avg": {
+                        "field": "DoorOpenDuration"
+                    }
+                }
+            }
+        },
+        "HourlyDoorOpenDuration": {
+            "filter": {
+                "bool": {
+                    "must": [{
+                        "type": {
+                            "value": "SmartDeviceDoorStatus"
+                        }
+                    }, {
+                        "term": {
+                            "IsDeleted": false
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "door_duration": {
+                    "avg": {
+                        "field": "DoorOpenDuration"
+                    }
+                }
+            }
+        }
+    }
+}

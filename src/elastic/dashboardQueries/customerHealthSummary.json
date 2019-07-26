@@ -1,0 +1,70 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "must": [{
+        "type": {
+          "value": "SmartDeviceHealthRecord"
+        }
+      }, {
+        "term": {
+          "IsDeleted": false
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }, {
+        "terms": {
+          "EventTypeId": [10]
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "LocationBucket": {
+      "terms": {
+        "field": "LocationId",
+        "size": 100000
+      },
+      "aggs": {
+        "light_stats": {
+          "avg": {
+            "field": "LightIntensity"
+          }
+        },
+        "temp_stats": {
+          "avg": {
+            "field": "Temperature"
+          }
+        },
+        "Health": {
+          "date_histogram": {
+            "field": "EventTime",
+            "interval": "1d",
+            "min_doc_count": 1
+          },
+          "aggs": {
+            "Start": {
+              "top_hits": {
+                "size": 10000,
+                "sort": [{
+                  "EventTime": "asc"
+                }],
+                "_source": {
+                  "includes": [
+                    "EventTime",
+                    "LightIntensity",
+                    "Temperature"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

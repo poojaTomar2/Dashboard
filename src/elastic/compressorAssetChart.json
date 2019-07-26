@@ -1,0 +1,74 @@
+{
+  "size": 0,
+  "aggs": {
+    "CompressorData": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "AssetEventDataSummary"
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "time_buckets": {
+          "date_histogram": {
+            "field": "EventDate",
+            "interval": "day"
+          },
+          "aggs": {
+            "CompressorDuration": {
+              "filter": {
+                "bool": {
+                  "filter": [
+
+                  ]
+                }
+              },
+              "aggs": {
+                "CompressorDuration": {
+                  "sum": {
+                    "field": "SumOfCompressorDuration"
+                  }
+                }
+              }
+            },
+            "FanDuration": {
+              "filter": {
+                "bool": {
+                  "filter": [
+
+                  ]
+                }
+              },
+              "aggs": {
+                "FanDuration": {
+                  "sum": {
+                    "field": "SumOfFanDuration"
+                  }
+                }
+              }
+            },
+            "HeaterDuration": {
+              "filter": {
+                "bool": {
+                  "filter": [
+
+                  ]
+                }
+              },
+              "aggs": {
+                "HeaterDuration": {
+                  "sum": {
+                    "field": "SumOfHeaterDuration"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

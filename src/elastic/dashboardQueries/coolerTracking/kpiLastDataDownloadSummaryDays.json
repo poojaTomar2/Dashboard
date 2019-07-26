@@ -1,0 +1,113 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }, {
+        "term": {
+          "LocationId": 0
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "Last30Days": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventTime": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetIds": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          }
+        }
+      }
+    },
+    "Last60Days": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventTime": {
+                "gte": "now-60d/d",
+                "lte": "now-30d/d"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetIds": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          }
+        }
+      }
+    },
+    "Last90Days": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventTime": {
+                "gte": "now-90d/d",
+                "lte": "now-60d/d"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetIds": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          }
+        }
+      }
+    },
+    "MoreThen90Days": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventTime": {
+                "gte": "now-90d/d"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "LocationIds": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          }
+        },
+        "LocationCount": {
+          "cardinality": {
+            "field": "AssetId",
+            "precision_threshold": 4000
+          }
+        }
+      }
+    }
+  }
+}

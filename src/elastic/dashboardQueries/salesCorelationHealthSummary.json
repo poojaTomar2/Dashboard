@@ -1,0 +1,83 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "SmartDeviceHealthRecord"
+        }
+      }, {
+        "term": {
+          "IsDeleted": false
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }, {
+        "terms": {
+          "EventTypeId": [10]
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "Health": {
+      "date_histogram": {
+        "field": "EventTime",
+        "interval": "month",
+        "min_doc_count": 1
+      },
+      "aggs": {
+        "Temperature": {
+          "filter": {
+            "bool": {
+              "must_not": [{
+                "term": {
+                  "Temperature": -100
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "Temperature": {
+              "avg": {
+                "field": "Temperature"
+              }
+            }
+          }
+        },
+        "HoursLightOn": {
+          "filter": {
+            "bool": {
+              "must_not": [{
+                "term": {
+                  "LightIntensity": -1
+                }
+              }, {
+                "term": {
+                  "DeviceLightStatus": "No Light"
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "HoursLightOn": {
+              "sum": {
+                "field": "HealthInterval"
+              }
+            },
+            "AssetCount": {
+              "cardinality": {
+                "field": "AssetId",
+                "precision_threshold": 4000
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

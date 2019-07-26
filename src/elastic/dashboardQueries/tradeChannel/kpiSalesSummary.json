@@ -1,0 +1,32 @@
+{
+	"size": 0,
+	"query": {
+		"bool": {
+			"filter": [{
+				"type": {
+					"value": "AssetEventDataSummary"
+				}
+			}]
+		}
+	},
+	"aggregations": {
+		"LocationType": {
+			"terms": {
+				"field": "LocationTypeId",
+				"size": 100000
+			},
+			"aggs": {
+				"SalesVolume": {
+					"sum": {
+						"field": "SumOfSalesQuantity"
+					}
+				},
+				"LocationCount": {
+					"cardinality": {
+						"field": "LocationId"
+					}
+				}
+			}
+		}
+	}
+}

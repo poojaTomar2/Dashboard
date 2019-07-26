@@ -1,0 +1,373 @@
+{
+	"from": 0,
+	"size": 0,
+	"query": {
+		"bool": {
+			"must": [{
+					"type": {
+						"value": "AssetEventDataSummary"
+					}
+				},
+				{
+					"term": {
+						"IsFromAlarm": true
+					}
+				}
+			]
+		}
+	},
+	"aggs": {
+		"TotalAlert": {
+			"nested": {
+				"path": "AlarmSummaryInJson"
+			},
+			"aggs": {
+				"TotalAlert": {
+					"filter": {
+						"bool": {
+							"must": [],
+							"should": []
+						}
+					},
+					"aggs": {
+						"Total": {
+							"sum": {
+								"field": "AlarmSummaryInJson.TotalCount"
+							}
+						}
+					}
+				}
+			}
+		},
+		"AlertsOpenByWeek": {
+			"filter": {
+				"bool": {
+					"must": [],
+					"should": []
+				}
+			},
+			"aggs": {
+				"Bands": {
+					"nested": {
+						"path": "AlarmSummaryInJson"
+					},
+					"aggs": {
+						"Bands": {
+							"range": {
+								"field": "AlarmSummaryInJson.EventDate",
+								"ranges": []
+							},
+							"aggs": {
+								"Open": {
+									"sum": {
+										"field": "AlarmSummaryInJson.OpenCount"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"AlertsClosedByWeek": {
+			"nested": {
+				"path": "AlarmSummaryInJson"
+			},
+			"aggs": {
+				"AlertsClosedByWeek": {
+					"filter": {
+						"bool": {
+							"must": [
+
+							],
+							"should": []
+						}
+					},
+					"aggs": {
+						"byWeek": {
+							"date_histogram": {
+								"field": "AlarmSummaryInJson.EventDate",
+								"interval": "day"
+							},
+							"aggs": {
+								"Closed": {
+									"sum": {
+										"field": "AlarmSummaryInJson.ClosedCount"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"AlertsCreatedByWeek": {
+			"nested": {
+				"path": "AlarmSummaryInJson"
+			},
+			"aggs": {
+				"AlertsCreatedByWeek": {
+					"filter": {
+						"bool": {
+							"must": [],
+							"should": []
+						}
+					},
+					"aggs": {
+						"byWeek": {
+							"date_histogram": {
+								"field": "AlarmSummaryInJson.EventDate",
+								"interval": "day"
+							},
+							"aggs": {
+								"Total": {
+									"sum": {
+										"field": "AlarmSummaryInJson.TotalCount"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"ByCapacityType": {
+			"nested": {
+				"path": "AlarmSummaryInJson"
+			},
+			"aggs": {
+				"ByCapacityType": {
+					"terms": {
+						"field": "AlarmSummaryInJson.AssetTypeCapacityId",
+						"size": 100000,
+						"order": {
+							"_key": "asc"
+						}
+					},
+					"aggs": {
+						"CapacityName": {
+							"top_hits": {
+								"size": 1,
+								"_source": {
+									"includes": [
+										"AlarmSummaryInJson.CapacityType"
+									]
+								}
+							}
+						},
+						"AlertOpen": {
+							"filter": {
+								"bool": {
+									"must": [],
+									"should": []
+								}
+							},
+							"aggs": {
+								"Open": {
+									"sum": {
+										"field": "AlarmSummaryInJson.OpenCount"
+									}
+								}
+							}
+						},
+						"AlertClosed": {
+							"filter": {
+								"bool": {
+									"must": []
+								}
+							},
+							"aggs": {
+								"Closed": {
+									"sum": {
+										"field": "AlarmSummaryInJson.ClosedCount"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"ByCoolerModel": {
+			"nested": {
+				"path": "AlarmSummaryInJson"
+			},
+			"aggs": {
+				"ByCoolerModel": {
+					"terms": {
+						"field": "AlarmSummaryInJson.AssetTypeId",
+						"size": 100000
+					},
+					"aggs": {
+						"AssetTypeName": {
+							"top_hits": {
+								"size": 1,
+								"_source": {
+									"includes": [
+										"AlarmSummaryInJson.AssetType"
+									]
+								}
+							}
+						},
+						"AlertOpen": {
+							"filter": {
+								"bool": {
+									"must": [],
+									"should": []
+								}
+							},
+							"aggs": {
+								"Open": {
+									"sum": {
+										"field": "AlarmSummaryInJson.OpenCount"
+									}
+								}
+							}
+						},
+						"AlertClosed": {
+							"filter": {
+								"bool": {
+									"must": []
+								}
+							},
+							"aggs": {
+								"Closed": {
+									"sum": {
+										"field": "AlarmSummaryInJson.ClosedCount"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"ByType": {
+			"nested": {
+				"path": "AlarmSummaryInJson"
+			},
+			"aggs": {
+				"ByType": {
+					"terms": {
+						"field": "AlarmSummaryInJson.AlarmTypeId",
+						"size": 100000,
+						"order": {
+							"_count": "desc"
+						}
+					},
+					"aggs": {
+						"AlarmTypeName": {
+							"top_hits": {
+								"size": 1,
+								"_source": {
+									"includes": [
+										"AlarmSummaryInJson.SmartDeviceAlarmTypeText"
+									]
+								}
+							}
+						},
+						"AlertOpen": {
+							"filter": {
+								"bool": {
+									"must": [],
+									"should": []
+								}
+							},
+							"aggs": {
+								"Open": {
+									"sum": {
+										"field": "AlarmSummaryInJson.OpenCount"
+									}
+								}
+							}
+						},
+						"AlertClosed": {
+							"filter": {
+								"bool": {
+									"must": []
+								}
+							},
+							"aggs": {
+								"Closed": {
+									"sum": {
+										"field": "AlarmSummaryInJson.ClosedCount"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"AlertCloseCount": {
+			"nested": {
+				"path": "AlarmSummaryInJson"
+			},
+			"aggs": {
+				"AlertCloseCount": {
+					"filter": {
+						"bool": {
+							"must": []
+						}
+					},
+					"aggs": {
+						"Closed": {
+							"sum": {
+								"field": "AlarmSummaryInJson.ClosedCount"
+							}
+						}
+					}
+				}
+			}
+		},
+		"AlertCountBoth": {
+			"nested": {
+				"path": "AlarmSummaryInJson"
+			},
+			"aggs": {
+				"AlertCountBoth": {
+					"filter": {
+						"bool": {
+							"must": [],
+							"should": []
+						}
+					},
+					"aggs": {
+						"LocationsCount": {
+							"cardinality": {
+								"field": "AlarmSummaryInJson.LocationId"
+							}
+						},
+						"AssetCount": {
+							"cardinality": {
+								"field": "AlarmSummaryInJson.AssetId"
+							}
+						}
+					}
+				}
+			}
+		},
+		"AlertOpenCount": {
+			"nested": {
+				"path": "AlarmSummaryInJson"
+			},
+			"aggs": {
+				"AlertOpenCount": {
+					"filter": {
+						"bool": {
+							"must": [],
+							"should": []
+						}
+					},
+					"aggs": {
+						"Open": {
+							"sum": {
+								"field": "AlarmSummaryInJson.OpenCount"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

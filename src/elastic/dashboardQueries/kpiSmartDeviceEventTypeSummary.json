@@ -1,0 +1,104 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "SmartDeviceEventTypeRecord"
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }, {
+        "term": {
+          "LocationId": 0
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "AssetBucket": {
+      "terms": {
+        "field": "AssetId",
+        "size": 100000
+      },
+      "aggs": {
+        "CompressorDuration": {
+          "filter": {
+            "bool": {
+              "filter": [{
+                "term": {
+                  "DashboardEventTypeCode": 2
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "CompressorDuration": {
+              "sum": {
+                "field": "Duration"
+              }
+            }
+          }
+        },
+        "FanDuration": {
+          "filter": {
+            "bool": {
+              "filter": [{
+                "term": {
+                  "DashboardEventTypeCode": 1
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "FanDuration": {
+              "sum": {
+                "field": "Duration"
+              }
+            }
+          }
+        },
+        "HeaterDuration": {
+          "filter": {
+            "bool": {
+              "filter": [{
+                "term": {
+                  "DashboardEventTypeCode": 3
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "HeaterDuration": {
+              "sum": {
+                "field": "Duration"
+              }
+            }
+          }
+        },
+        "LightDuration": {
+          "filter": {
+            "bool": {
+              "filter": [{
+                "term": {
+                  "DashboardEventTypeCode": 4
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "LightDuration": {
+              "sum": {
+                "field": "Duration"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

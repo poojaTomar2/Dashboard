@@ -1,0 +1,177 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": []
+    }
+  },
+  "aggs": {
+    "SmartAssetCount": {
+      "filter": {
+        "bool": {
+          "must": []
+        }
+      },
+      "aggs": {
+        "SmartAssetCount": {
+          "terms": {
+            "field": "AssetId",
+            "size": 200000
+          }
+        }
+      }
+    },
+    "Locations": {
+      "filter": {
+        "bool": {
+          "must": []
+        }
+      },
+      "aggs": {
+        "Locations": {
+          "terms": {
+            "field": "LocationId",
+            "size": 200000
+          }
+        }
+      }
+    },
+    "AssetCount": {
+      "filter": {
+        "bool": {
+          "must": []
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "terms": {
+            "field": "AssetId",
+            "size": 200000
+          }
+        }
+      }
+    },
+    "LocationCount": {
+      "filter": {
+        "bool": {
+          "must": []
+        }
+      },
+      "aggs": {
+        "LocationCount": {
+          "terms": {
+            "field": "LocationId",
+            "size": 200000
+          }
+        }
+      }
+    },
+    "SmartLocation": {
+      "filter": {
+        "bool": {
+          "must": [],
+          "must_not": [{
+            "term": {
+              "SmartDeviceTypeId": 17
+            }
+          }, {
+            "term": {
+              "SmartDeviceTypeId": 22
+            }
+          }, {
+            "term": {
+              "SmartDeviceTypeId": 23
+            }
+          }, {
+            "term": {
+              "SmartDeviceTypeId": 25
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "Location": {
+          "terms": {
+            "field": "LocationId",
+            "size": 200000
+          },
+          "aggs": {
+            "DoorCount": {
+              "filter": {
+                "bool": {
+                  "must": [{
+                    "term": {
+                      "IsFromDoor": true
+                    }
+                  }]
+                }
+              },
+              "aggs": {
+                "DoorCount": {
+                  "sum": {
+                    "field": "SumOfDoorCount"
+                  }
+                }
+              }
+            },
+            "DoorOpenTarget": {
+              "filter": {
+                "bool": {
+                  "must_not": [{
+                    "term": {
+                      "DoorOpenTarget": 0
+                    }
+                  }]
+                }
+              },
+              "aggs": {
+                "DoorOpenTarget": {
+                  "terms": {
+                    "field": "DoorOpenTarget"
+                  }
+                }
+              }
+            },
+            "AssetTypeCapacity": {
+              "filter": {
+                "bool": {
+                  "must_not": [{
+                    "term": {
+                      "AssetTypeCapacityId": 0
+                    }
+                  }]
+                }
+              },
+              "aggs": {
+                "AssetTypeCapacityId": {
+                  "terms": {
+                    "field": "AssetTypeCapacityId"
+                  }
+                }
+              }
+            },
+            "SalesOrganization": {
+              "filter": {
+                "bool": {
+                  "must_not": [{
+                    "term": {
+                      "SalesOrganizationId": 0
+                    }
+                  }]
+                }
+              },
+              "aggs": {
+                "SalesOrganization": {
+                  "terms": {
+                    "field": "SalesOrganizationId"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

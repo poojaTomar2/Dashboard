@@ -1,0 +1,35 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "must": [{
+        "type": {
+          "value": "AssetEventDataSummary"
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "Classification": {
+      "nested": {
+        "path": "AlertSummaryInJson"
+      },
+      "aggs": {
+        "Classification": {
+          "terms": {
+            "field": "AlertSummaryInJson.ClassificationId",
+            "size": 100000
+          },
+          "aggs": {
+            "AssetCount": {
+              "cardinality": {
+                "field": "AlertSummaryInJson.AssetId"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

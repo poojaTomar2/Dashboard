@@ -1,0 +1,72 @@
+{
+	"from": 0,
+	"size": 0,
+	"query": {
+		"bool": {
+			"must": [{
+				"type": {
+					"value": "AssetEventDataSummary"
+				}
+			}]
+		}
+	},
+	"aggs": {
+		"ByCustomerType": {
+			"nested": {
+				"path": "AlarmSummaryInJson"
+			},
+			"aggs": {
+				"ByCustomerType": {
+					"terms": {
+						"field": "AlarmSummaryInJson.LocationId",
+						"size": 10,
+						"order": {
+							"_count": "asc"
+						}
+					},
+					"aggs": {
+						"LocationName": {
+							"top_hits": {
+								"size": 1,
+								"_source": {
+									"includes": [
+										"AlarmSummaryInJson.LocationName"
+									]
+								}
+							}
+						},
+						"AlertOpen": {
+							"filter": {
+								"bool": {
+									"should": []
+								}
+							},
+							"aggs": {
+								"Open": {
+									"sum": {
+										"field": "AlarmSummaryInJson.OpenCount"
+									}
+								}
+							}
+						},
+						"AlertClosed": {
+							"filter": {
+								"bool": {
+									"must": [],
+									"should": []
+								}
+							},
+							"aggs": {
+								"Closed": {
+									"sum": {
+										"field": "AlarmSummaryInJson.ClosedCount"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

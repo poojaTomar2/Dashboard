@@ -1,0 +1,399 @@
+﻿{
+	"from": 0,
+	"size": 100000,
+	"aggs": {
+		"SmartLocation": {
+			"filter": {
+				"bool": {
+					"must": [{
+							"type": {
+								"value": "Location"
+							}
+						},
+						{
+							"term": {
+								"IsSmart": "true"
+							}
+						},
+						{
+							"term": {
+								"IsDeleted": "false"
+							}
+						}
+					]
+				}
+			}
+		},
+		"TotalOutlets": {
+			"filter": {
+				"bool": {
+					"must": [{
+						"type": {
+							"value": "Location"
+						}
+					}],
+					"must_not": [{
+						"term": {
+							"IsDeleted": true
+						}
+					}]
+				}
+			}
+		},
+		"TempBandChart": {
+			"filter": {
+				"bool": {
+					"must": {
+						"type": {
+							"value": "Asset"
+						}
+					},
+					"must_not": {}
+				}
+			},
+			"aggs": {
+				"Below 0": {
+					"filter": {
+						"bool": {
+							"must": {
+								"range": {
+									"temperature": {
+										"gte": "-100",
+										"lt": "0"
+									}
+								}
+							}
+						}
+					},
+					"aggs": {
+						"value": {
+							"value_count": {
+								"field": "LatestHealthRecordId"
+							}
+						},
+						"OutletCount": {
+							"cardinality": {
+								"field": "LocationId"
+							}
+						}
+					}
+				},
+				"1-5": {
+					"filter": {
+						"bool": {
+							"must": {
+								"range": {
+									"Temperature": {
+										"gte": "1",
+										"lt": "5"
+									}
+								}
+							}
+						}
+					},
+					"aggs": {
+						"value": {
+							"value_count": {
+								"field": "LatestHealthRecordId"
+							}
+						},
+						"OutletCount": {
+							"cardinality": {
+								"field": "LocationId"
+							}
+						}
+					}
+				},
+				"5-10": {
+					"filter": {
+						"bool": {
+							"must": {
+								"range": {
+									"Temperature": {
+										"gte": "5",
+										"lt": "10"
+									}
+								}
+							}
+						}
+					},
+					"aggs": {
+						"value": {
+							"value_count": {
+								"field": "LatestHealthRecordId"
+							}
+						},
+						"OutletCount": {
+							"cardinality": {
+								"field": "LocationId"
+							}
+						}
+					}
+				},
+				"10-15": {
+					"filter": {
+						"bool": {
+							"must": {
+								"range": {
+									"Temperature": {
+										"gte": "10",
+										"lt": "15"
+									}
+								}
+							}
+						}
+					},
+					"aggs": {
+						"value": {
+							"value_count": {
+								"field": "LatestHealthRecordId"
+							}
+						},
+						"OutletCount": {
+							"cardinality": {
+								"field": "LocationId"
+							}
+						}
+					}
+				},
+				"15+": {
+					"filter": {
+						"bool": {
+							"must": {
+								"range": {
+									"temperature": {
+										"gte": "15",
+										"lt": "100"
+									}
+								}
+							}
+						}
+					},
+					"aggs": {
+						"value": {
+							"value_count": {
+								"field": "LatestHealthRecordId"
+							}
+						},
+						"OutletCount": {
+							"cardinality": {
+								"field": "LocationId"
+							}
+						}
+					}
+				},
+				"OutletCount": {
+					"cardinality": {
+						"field": "LocationId"
+					}
+				}
+			}
+		},
+		"LightBandChart": {
+			"filter": {
+				"bool": {
+					"must": {
+						"type": {
+							"value": "Asset"
+						}
+					},
+					"must_not": {}
+				}
+			},
+			"aggs": {
+				"Low (Below 10)": {
+					"filter": {
+						"bool": {
+							"must": {
+								"range": {
+									"LightIntensity": {
+										"gte": "0",
+										"lt": "10"
+									}
+								}
+							}
+						}
+					},
+					"aggs": {
+						"value": {
+							"value_count": {
+								"field": "LatestHealthRecordId"
+							}
+						},
+						"OutletCount": {
+							"cardinality": {
+								"field": "LocationId"
+							}
+						}
+					}
+				},
+				"Average (10-50)": {
+					"filter": {
+						"bool": {
+							"must": {
+								"range": {
+									"LightIntensity": {
+										"gte": "10",
+										"lt": "50"
+									}
+								}
+							}
+						}
+					},
+					"aggs": {
+						"value": {
+							"value_count": {
+								"field": "LatestHealthRecordId"
+							}
+						},
+						"OutletCount": {
+							"cardinality": {
+								"field": "LocationId"
+							}
+						}
+					}
+				},
+				"Bright (50+)": {
+					"filter": {
+						"bool": {
+							"must": {
+								"range": {
+									"LightIntensity": {
+										"gte": "50",
+										"lt": "100"
+									}
+								}
+							}
+						}
+					},
+					"aggs": {
+						"value": {
+							"value_count": {
+								"field": "LatestHealthRecordId"
+							}
+						},
+						"OutletCount": {
+							"cardinality": {
+								"field": "LocationId"
+							}
+						}
+					}
+				},
+				"OutletCount": {
+					"cardinality": {
+						"field": "LocationId"
+					}
+				}
+			}
+		},
+		"TempLightIssueCount": {
+			"filter": {
+				"bool": {
+					"must": {
+						"type": {
+							"value": "Asset"
+						}
+					},
+					"must_not": [{
+						"term": {
+							"LatestHealthRecordId": "0"
+						}
+					}]
+				}
+			},
+			"aggs": {
+				"Temperature and Light OK": {
+					"filter": {
+						"bool": {
+							"must": [{
+									"range": {
+										"Temperature": {
+											"gte": "1",
+											"lte": "12"
+										}
+									}
+								},
+								{
+									"range": {
+										"LightIntensity": {
+											"gt": "10"
+										}
+									}
+								}
+							]
+						}
+					}
+				},
+				"Light Malfunction": {
+					"filter": {
+						"bool": {
+							"must": [{
+									"range": {
+										"Temperature": {
+											"gte": "1",
+											"lte": "12"
+										}
+									}
+								},
+								{
+									"range": {
+										"LightIntensity": {
+											"lt": "10"
+										}
+									}
+								}
+							]
+						}
+					}
+				},
+				"Temperature Issue": {
+					"filter": {
+						"bool": {
+							"must": [{
+								"range": {
+									"LightIntensity": {
+										"gt": "10"
+									}
+								}
+							}],
+							"must_not": [{
+								"range": {
+									"Temperature": {
+										"gt": "1",
+										"lt": "12"
+									}
+								}
+							}]
+						}
+					}
+				},
+				"Temperature And Light Issue": {
+					"filter": {
+						"bool": {
+							"must": [{
+								"range": {
+									"LightIntensity": {
+										"lt": "10"
+									}
+								}
+							}],
+							"must_not": [{
+								"range": {
+									"Temperature": {
+										"gt": "1",
+										"lt": "12"
+									}
+								}
+							}]
+						}
+					}
+				},
+				"OutletCount": {
+					"cardinality": {
+						"field": "locationId"
+					}
+				}
+			}
+		}
+	}
+}

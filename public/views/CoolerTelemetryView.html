@@ -1,0 +1,533 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title> Dashboard </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<style>
+		.btn-bronze {
+			color: #fff;
+			background-color: Brown;
+			border-color: Brown;
+		}
+
+		.btn-diamond {
+			color: #fff;
+			background-color: blue;
+			border-color: blue;
+		}
+
+		.btn-gold {
+			color: #fff;
+			background-color: Gold;
+			border-color: Gold;
+		}
+
+		.btn-silver {
+			color: #fff;
+			background-color: silver;
+			border-color: silver;
+		}
+
+		.btn-circle {
+			width: 10px;
+			height: 10px;
+			text-align: center;
+			padding: 6px 0;
+			font-size: 12px;
+			line-height: 18px;
+			border-radius: 50%;
+			-moz-border-radius: 50%;
+			-webkit-border-radius: 50%;
+		}
+
+		.easy-pie-title {
+			display: inline-block;
+			margin: 10px 6px 0;
+			font-size: 12px;
+			font-weight: 400;
+			text-transform: uppercase;
+			width: 8.5em;
+			height: 19px;
+			text-overflow: ellipsis;
+			white-space: initial;
+			overflow: visible;
+			word-wrap: break-word;
+		}
+
+		.coolerTelemetryHelp {
+			font-size: 18px;
+			float: right;
+			text-align: center;
+			position: relative;
+			min-width: 35px;
+			line-height: 32px;
+			border-left: 1px solid rgba(0, 0, 0, .09);
+		}
+
+		#sparks {
+			display: block;
+			list-style: none;
+			margin: 0px 0 0;
+			padding: 0;
+			text-align: right;
+		}
+
+		.txt-color-greenLight {
+			color: #f5f5f5 !important;
+		}
+
+		.col-sm-2-5 {
+			width: 20%;
+		}
+
+		.col-md-2-5 {
+			width: 20%;
+		}
+
+		.col-lg-2-5 {
+			width: 20%;
+		}
+
+		.jarviswidget>header h2 {
+			width: auto;
+		}
+	</style>
+</head>
+
+<body class="">
+	<div id="ribbon">
+		<!-- breadcrumb -->
+		<ol class="breadcrumb">
+			<li>Dashboard</li>
+			<li>Cooler Telemetry</li>
+		</ol>
+	</div>
+	<!-- MAIN CONTENT -->
+	<div id="content">
+		<!-- row -->
+		<div id="chat-container" class="">
+			<span class="chat-list-open-close">
+				<i class="fa fa-filter icon-filter"></i>
+				<b class="filterApplied hidden">
+					<i class="fa fa-check" aria-hidden="true"></i>
+				</b>
+				<span class="text-filter">Filters</span>
+			</span>
+			<div id="filterTitle"></div>
+			<div class="chat-list-body custom-scroll">
+				<div id="filterFormKPI">
+				</div>
+			</div>
+		</div>
+		<div id="chat-container-summary">
+			<div id="chat-container" class="chat-container-summary">
+				<span id="exid" class="chat-list-open-close" style="top:139px">
+					<i class="fa fa-table icon-filter"></i>
+					<span class="text-filter">Summary</span>
+					<b>
+						<i class="fa fa-filter"></i>
+					</b>
+				</span>
+				<div id="filterSummarySpin"></div>
+				<div class="chat-list-body custom-scroll">
+					<div id="filterSummary">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="">
+			<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+				<div class="well-sm">
+					<span class="well-sm">
+						<b>Period: </b>
+						<b class="timeFilterName"></b>
+					</span>
+				</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+				<ul id="sparks" class="">
+					<li class="sparks-info">
+						<h5> Total Customers
+							<span class="txt-color-purple" id="totalCustomer">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Customers Selected
+							<span class="txt-color-blue" id="customerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0"
+						 data-pie-size="40" id="customerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info">
+						<h5>Count of Coolers
+							<span class="txt-color-blue" id="coolerSelectedKPI">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Connected Coolers
+							<span class="txt-color-blue" id="smartCoolerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0"
+						 data-pie-size="40" id="smartCoolerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<section id="widget-grid" class="">
+			<div class="row">
+				<article class="col-sm-12 col-md-12 col-lg-12">
+					<div class="grid-stack">
+						<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="2"
+						 data-gs-auto-position="true" data-gs-id="gs-coolerhealth">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false"
+								 data-widget-fullscreenbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+								 data-widget-collapsed="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Cooler Health</h2>
+										<div class="coolerTelemetryHelp">
+											<a onclick="infoGuide('coolerHealth');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+										<!--<div class="widget-toolbar hidden-mobile">
+									<span class="onoffswitch-title timeFilterName"></span>
+								</div>-->
+									</header>
+									<div class="">
+										<div class="col-lg-offset-1 col-sm-offset-1 col-xs-12 col-sm-2 col-md-2 col-lg-2 text-center connect well-sm">
+											<div id="coolerAbove7" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50" rel="popover-hover"
+											 data-placement="top" data-original-title="Count of Unique Coolers which has temperature above 7 degrees during the selected time period">
+												<span class="percent">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Cooler Above 7°C (Temp)</span>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 text-center connect well-sm">
+											<div id="coolerBelow30Light" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50" rel="popover-hover"
+											 data-placement="top" data-original-title="Number of coolers which have had a light status of ‘no light’ reading at least once during the time period under consideration">
+												<span class="percent">0</span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Coolers with No Light</span>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 text-center connect well-sm" id="powerHoursOffChart">
+											<div id="hoursPowerOff" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50" rel="popover-hover"
+											 data-placement="top" data-original-title="Sum of all individual power off durations during the selected time period divided by selected time period (in days) divided by number of unique coolers">
+												<span class="percent">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Hours Powered off </span>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 text-center connect well-sm">
+											<div id="lowUtilized" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50" rel="popover-hover"
+											 data-placement="top" data-original-title="Count of coolers with door open count &lt;10 per day">
+												<span class="percent">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Low Utilization Coolers</span>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 text-center connect well-sm">
+											<div id="missingCooler" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50" rel="popover-hover"
+											 data-placement="top" data-original-title="Number of coolers that are reported under missing status as observed during the sales rep visit or lack of any data received from asset for more than 30 days">
+												<span class="percent">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Missing/No Data</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="6" data-gs-height="4"
+						 data-gs-auto-position="true" data-gs-id="gs-dooropen">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false"
+								 data-widget-togglebutton="false" data-widget-sortable="false" data-widget-deletebutton="false" rel="popover-hover"
+								 data-placement="top" data-original-title="Shows split of number of assets by different bands of 'door count' as well as the asset percentage">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Door Open - Total For Selected Period</h2>
+										<div class="coolerTelemetryHelp">
+											<a onclick="infoGuide('totalDoorOpen');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<div id="coolerUtilizationIOT"></div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item" data-gs-x="6" data-gs-y="2" data-gs-width="6" data-gs-height="4"
+						 data-gs-auto-position="true" data-gs-id="gs-temperature">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false"
+								 data-widget-togglebutton="false" data-widget-sortable="false" data-widget-deletebutton="false" rel="popover-hover"
+								 data-placement="top" data-original-title="Shows split of number of assets by different bands of 'Avg Temperature' as well as the asset percentage">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Temperature</h2>
+										<div class="coolerTelemetryHelp">
+											<a onclick="infoGuide('temperature');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<div id="temperatureIOT"></div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item" data-gs-x="0" data-gs-y="6" data-gs-width="6" data-gs-height="4"
+						 data-gs-auto-position="true" data-gs-id="gs-poweroff">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false"
+								 data-widget-togglebutton="false" data-widget-sortable="false" data-widget-deletebutton="false" rel="popover-hover"
+								 data-placement="top" data-original-title="Shows split of number of assets by different bands of 'Sum of Power Duration' as well as the asset percentage">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Power Off</h2>
+										<div class="coolerTelemetryHelp">
+											<a onclick="infoGuide('powerOff');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<div id="powerIOT"></div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item" data-gs-x="6" data-gs-y="6" data-gs-width="6" data-gs-height="4"
+						 data-gs-auto-position="true" data-gs-id="gs-lightintensity">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false"
+								 data-widget-togglebutton="false" data-widget-sortable="false" data-widget-deletebutton="false" rel="popover-hover"
+								 data-placement="top" data-original-title="Shows split of number of assets by Light Status as well as the asset percentage">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Light Status (SmartTag, SmartVision)</h2>
+										<div class="coolerTelemetryHelp">
+											<a onclick="infoGuide('lightStatusSmartTag');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<div id="lightIOT"></div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item" data-gs-x="0" data-gs-y="10" data-gs-width="6" data-gs-height="4"
+						 data-gs-auto-position="true" data-gs-id="gs-tempandlightstatus">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false"
+								 data-widget-togglebutton="false" data-widget-sortable="false" data-widget-deletebutton="false" rel="popover-hover"
+								 data-placement="top" data-original-title="Show Light and Temperature Status">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Temperature And Light Status</h2>
+										<div class="coolerTelemetryHelp">
+											<a onclick="infoGuide('temperatureLightStatus');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<div id="tempAndLightIssueIOT"></div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item" data-gs-y="10" data-gs-x="6" data-gs-width="6" data-gs-height="4"
+						 data-gs-auto-position="true" data-gs-id="gs-comp">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false"
+								 data-widget-togglebutton="false" data-widget-sortable="false" data-widget-deletebutton="false" rel="popover-hover"
+								 data-placement="top" data-original-title="Shows split of number of assets by different bands of 'Sum Of Compressor Duration' as well as the asset percentage">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Compressor </h2>
+										<div class="coolerTelemetryHelp">
+											<a onclick="infoGuide('compressor');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<div id="compressorIOT"></div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item" data-gs-x="0" data-gs-y="14" data-gs-width="6" data-gs-height="4"
+						 data-gs-auto-position="true" data-gs-id="gs-fan">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false"
+								 data-widget-togglebutton="false" data-widget-sortable="false" data-widget-deletebutton="false" rel="popover-hover"
+								 data-placement="top" data-original-title="Shows split of number of assets by different bands of 'Sum Of Fan Duration' as well as the asset percentage">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2> Evaporator Fan </h2>
+										<div class="coolerTelemetryHelp">
+											<a onclick="infoGuide('evaporatorFan');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<div id="fanIOT"></div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item" data-gs-x="6" data-gs-y="14" data-gs-width="6" data-gs-height="4"
+						 data-gs-auto-position="true" data-gs-id="gs-etemp">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false"
+								 data-widget-togglebutton="false" data-widget-sortable="false" data-widget-deletebutton="false" rel="popover-hover"
+								 data-placement="top" data-original-title="Shows split of number of assets by different bands of 'Avg Evaporator Temperature' as well as the asset percentage">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Evaporator Temperature</h2>
+										<div class="coolerTelemetryHelp">
+											<a onclick="infoGuide('evaporatorTemperature');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<div id="evaporatortemperatureIOT"></div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item" data-gs-x="0" data-gs-y="18" data-gs-width="6" data-gs-height="4"
+						 data-gs-auto-position="true" data-gs-id="gs-condetemp">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false"
+								 data-widget-togglebutton="false" data-widget-sortable="false" data-widget-deletebutton="false" rel="popover-hover"
+								 data-placement="top" data-original-title="Shows split of number of assets by different bands of 'Avg Condensor Temperature' as well as the asset percentage">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Condensor Temperature</h2>
+										<div class="coolerTelemetryHelp">
+											<a onclick="infoGuide('condensorTemperature');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<div id="condensorTemperatureIOT"></div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item" data-gs-x="6" data-gs-y="18" data-gs-width="6" data-gs-height="4"
+						 data-gs-auto-position="true" data-gs-id="gs-ambitemp">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false"
+								 data-widget-togglebutton="false" data-widget-sortable="false" data-widget-deletebutton="false" rel="popover-hover"
+								 data-placement="top" data-original-title="Shows split of number of assets by different bands of 'Avg Ambient Temperature' as well as the asset percentage">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Ambient Temperature</h2>
+										<div class="coolerTelemetryHelp">
+											<a onclick="infoGuide('ambientTemperature');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<div id="ambientTemperatureIOT"></div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item" data-gs-x="0" data-gs-y="22" data-gs-width="6" data-gs-height="4"
+						 data-gs-auto-position="true" data-gs-id="gs-heater">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false"
+								 data-widget-togglebutton="false" data-widget-sortable="false" data-widget-deletebutton="false" rel="popover-hover"
+								 data-placement="top" data-original-title="Shows split of number of assets by different bands of 'Sum Of Heater Duration' as well as the asset percentage">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Heater </h2>
+										<div class="coolerTelemetryHelp">
+											<a onclick="infoGuide('heater');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<div id="HeaterIOT"></div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item" data-gs-x="6" data-gs-y="22" data-gs-width="6" data-gs-height="4"
+						 data-gs-auto-position="true" data-gs-id="gs-lightstatus">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false"
+								 data-widget-togglebutton="false" data-widget-sortable="false" data-widget-deletebutton="false" rel="popover-hover"
+								 data-placement="top" data-original-title="Shows split of number of assets by different bands of 'Sum Of Light Duration' as well as the asset percentage">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Light Status</h2>
+										<div class="coolerTelemetryHelp">
+											<a onclick="infoGuide('lightStatus');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<div id="EventTypelightIOT"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+	</div>
+	<!--================================================== -->
+	<!-- PAGE RELATED PLUGIN(S) -->
+	<script async src="js/controllers/CoolerTelemetryView.js"></script>
+</body>
+
+</html>

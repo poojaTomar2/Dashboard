@@ -1,0 +1,13 @@
+{
+  "size": 20000,
+  "query": {
+    "bool": {
+      "filter": [{
+          "type": {
+            "value": "Asset"
+          }
+        }
+      ]
+    }
+  }
+}

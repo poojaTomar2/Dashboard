@@ -1,0 +1,112 @@
+{
+	"from": 0,
+	"size": 0,
+	"query": {
+		"bool": {
+			"filter": [
+
+			]
+		}
+	},
+	"aggs": {
+		"AssetCountTotal": {
+			"filter": {
+				"bool": {
+					"must": [
+
+					]
+				}
+			},
+			"aggs": {
+				"ByChannel": {
+					"terms": {
+						"field": "LocationType",
+						"size": 100000
+					},
+					"aggs": {
+						"Locations": {
+							"cardinality": {
+								"field": "AssetId",
+								"precision_threshold": 40000
+							}
+						}
+					}
+				},
+				"ByChanneloutlet": {
+					"terms": {
+						"field": "LocationType",
+						"size": 100000
+					},
+					"aggs": {
+						"Locations": {
+							"cardinality": {
+								"field": "LocationId",
+								"precision_threshold": 40000
+							}
+						}
+					}
+				}
+			}
+		},
+		"SmartAssetCount": {
+			"filter": {
+				"bool": {
+					"must": []
+				}
+			},
+			"aggs": {
+				"SmartAssetCount": {
+					"terms": {
+						"field": "AssetId",
+						"size": 200000
+					}
+				}
+			}
+		},
+		"Locations": {
+			"filter": {
+				"bool": {
+					"must": []
+				}
+			},
+			"aggs": {
+				"Locations": {
+					"terms": {
+						"field": "LocationId",
+						"size": 200000
+					}
+				}
+			}
+		},
+		"AssetCount": {
+			"filter": {
+				"bool": {
+					"must": []
+				}
+			},
+			"aggs": {
+				"AssetCount": {
+					"terms": {
+						"field": "AssetId",
+						"size": 200000
+					}
+				}
+			}
+		},
+		"LocationCount": {
+			"filter": {
+				"bool": {
+					"must": []
+				}
+			},
+			"aggs": {
+				"LocationCount": {
+					"terms": {
+						"field": "LocationId",
+						"size": 200000
+					}
+				}
+			}
+		}
+	}
+}

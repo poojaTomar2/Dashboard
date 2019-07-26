@@ -1,0 +1,26 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "AssetEventDataSummary"
+        }
+      },
+      {
+        "term": {
+          "IsFromHealth": true
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "AssetBucket": {
+      "terms": {
+        "field": "AssetId",
+        "size": 500000
+      }
+    }
+  }
+}

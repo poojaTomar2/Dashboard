@@ -1,0 +1,19 @@
+﻿{
+	"size": 10000,
+	"query": {
+		"bool": {
+			"filter": [
+				{
+					"type": {
+						"value": "LocationRep"
+					}
+				},
+				{
+					"term": {
+						"IsDeleted": false
+					}
+				}
+			]
+		}
+	}
+}

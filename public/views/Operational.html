@@ -1,0 +1,784 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title> Dashboaard/Sales Correlation </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<style>
+		.btn-bronze {
+			color: #fff;
+			background-color: red;
+			border-color: red;
+		}
+
+		.btn-diamond {
+			color: #fff;
+			background-color: blue;
+			border-color: blue;
+		}
+
+		.txt-color-greenLight {
+			color: #f5f5f5 !important;
+		}
+
+		.btn-gold {
+			color: #fff;
+			background-color: Gold;
+			border-color: Gold;
+		}
+
+		.btn-silver {
+			color: #fff;
+			background-color: deeppink;
+			border-color: deeppink;
+		}
+
+		.btn-black {
+			color: #fff;
+			background-color: #000;
+			border-color: #fff;
+		}
+
+		.btn-circle {
+			width: 10px;
+			height: 10px;
+			text-align: center;
+			padding: 6px 0;
+			font-size: 12px;
+			line-height: 18px;
+			border-radius: 50%;
+			-moz-border-radius: 50%;
+			-webkit-border-radius: 50%;
+		}
+
+		/*.easy-pie-title {
+			display: inline-block;
+			margin: 10px 6px 0;
+			font-size: 12px;
+			font-weight: 400;
+			text-transform: uppercase;
+			width: 18em;
+			height: 19px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}*/
+
+		.easy-pie-title {
+			display: inline-block;
+			margin: 10px 6px 0;
+			font-size: 12px;
+			font-weight: 400;
+			text-transform: uppercase;
+			width: 10.5em;
+			height: 19px;
+			text-overflow: ellipsis;
+			white-space: initial;
+			overflow: visible;
+			word-wrap: break-word;
+		}
+
+		.salesCorrelationHelp {
+			font-size: 18px;
+			float: right;
+			text-align: center;
+			position: relative;
+			min-width: 35px;
+			line-height: 32px;
+			border-left: 1px solid rgba(0, 0, 0, .09);
+		}
+
+		#sparks {
+			display: block;
+			list-style: none;
+			margin: 0px 0 0;
+			padding: 0;
+			text-align: right;
+		}
+
+		.col-sm-2-5 {
+			width: 16.5%;
+		}
+
+		.col-md-2-5 {
+			width: 16.5%;
+		}
+
+		.col-lg-2-5 {
+			width: 16.5%;
+		}
+
+		.height-10 {
+			height: 10em;
+		}
+
+		.padding-top-3-5 {
+			padding-top: 2.8em;
+			padding-bottom: 1em;
+		}
+
+		h4.txt-color-blue {
+			margin-bottom: 10px;
+			font-weight: 500;
+		}
+
+		.trans-90 {
+			-ms-transform: rotate(-90deg);
+			/* IE 9 */
+			-webkit-transform: rotate(-90deg);
+			/* Chrome, Safari, Opera */
+			transform: rotate(-90deg);
+		}
+
+		table.res {
+			margin: 4.5% 11%;
+			width: 80%;
+		}
+
+		@media only screen and (min-width: 1224px) {
+			.table-res {
+				margin: auto;
+				width: 100%;
+			}
+			.table-res row {
+				margin-left: -13px;
+				margin-right: -13px;
+			}
+		}
+
+		@media only screen and (min-width: 768px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+			/* STYLES GO HERE */
+			.table {
+				width: 66%;
+				max-width: 100%;
+				margin-bottom: 18px;
+				margin: auto;
+			}
+		}
+	</style>
+</head>
+
+<body class="">
+	<div class="modal fade" id="tipsalesdooropenings" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Sales/Door Opening</h4>
+				</div>
+				<div>
+					<h5>Calculate Door Count and Sales Quantity</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="tipSalesDoorVs" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Door Open vs Sales</h4>
+				</div>
+				<div>
+					<h5>Calculate Low High for Sales and Door on the basis of Target</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="ribbon">
+		<!-- breadcrumb -->
+		<ol class="breadcrumb">
+			<li>Dashboard</li>
+			<li>Sales Correlation</li>
+		</ol>
+	</div>
+	<!-- MAIN CONTENT -->
+	<div id="content" class="widget-hide-overflow">
+		<!-- row -->
+		<!-- Filter Right Panel -->
+		<div id="chat-container" class="">
+			<span class="chat-list-open-close">
+				<i class="fa fa-filter icon-filter"></i>
+				<b class="filterApplied hidden">
+					<i class="fa fa-check" aria-hidden="true"></i>
+				</b>
+				<span class="text-filter">Filters</span>
+			</span>
+			<div id="filterTitle"></div>
+			<div class="chat-list-body custom-scroll">
+				<div id="filterFormKPI">
+				</div>
+			</div>
+		</div>
+		<div id="chat-container-summary">
+			<div id="chat-container" class="chat-container-summary">
+				<span id="exid" class="chat-list-open-close" style="top:139px">
+					<i class="fa fa-table icon-filter"></i>
+					<span class="text-filter">Summary</span>
+					<b>
+						<i class="fa fa-filter"></i>
+					</b>
+				</span>
+				<div class="chat-list-body custom-scroll">
+					<div id="filterSummary">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="">
+			<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+				<div class="well-sm">
+					<span class="well-sm">
+						<b>Period: </b>
+						<b class="timeFilterName"></b>
+					</span>
+				</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+				<ul id="sparks" class="">
+					<li class="sparks-info">
+						<h5> Total Customers
+							<span class="txt-color-purple" id="totalCustomer">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Customers Selected
+							<span class="txt-color-blue" id="customerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0"
+						 data-pie-size="40" id="customerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info">
+						<h5>Count of Coolers
+							<span class="txt-color-blue" id="coolerSelectedKPI">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Connected Coolers
+							<span class="txt-color-blue" id="smartCoolerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0"
+						 data-pie-size="40" id="smartCoolerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<section id="widget-grid" class="">
+			<div class="row">
+
+				<article class="col-sm-12 col-md-12 col-lg-12">
+					<div class="grid-stack">
+						<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="4" data-gs-height="2"
+						 data-gs-auto-position="true" data-gs-id="gs-dovs">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false"
+								 data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+								 data-widget-collapsed="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Sales/Door Opening</h2>
+										<div class="salesCorrelationHelp">
+											<a onclick="infoGuide('salesDoorOpening');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+										<!-- <div class="widget-toolbar hidden-mobile">
+											<a href="javascript:void(0);" data-toggle="modal" data-target="#tipsalesdooropenings" class="btn btn-primary">
+												<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Tip</a>
+								
+										</div> -->
+									</header>
+									<div class="no-padding">
+										<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
+											<div class="no-padding">
+												<div>
+													<div style="background-color:white">
+														<div id="doorOpeningSales" style="height:8.5em"></div>
+													</div>
+													<div class="row text-center">
+														<span class="easy-pie-title"> Sales/ Door Opening </span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 padding-top-3-5">
+											<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-center">
+												<div id="salesVolume" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="100">
+													<span class="percent">0 </span>
+												</div>
+												<div class="row">
+													<span class="easy-pie-title"> Sales
+														<br /> Avg Daily</span>
+												</div>
+											</div>
+											<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-center">
+												<div id="doorOpenDuration" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="100">
+													<span class="percent">0 </span>
+												</div>
+												<div class="row">
+													<span class="easy-pie-title"> Door Open
+														<br />Avg Daily</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="4" data-gs-height="5"
+						 data-gs-auto-position="true" data-gs-id="gs-dovss">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false"
+								 data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+								 data-widget-collapsed="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Door Open vs Sales</h2>
+										<div class="salesCorrelationHelp">
+											<a onclick="infoGuide('doorOpen');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+										<!-- <div class="widget-toolbar hidden-mobile">
+											<a href="javascript:void(0);" data-toggle="modal" data-target="#tipSalesDoorVs" class="btn btn-primary">
+												<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Tip</a>
+							
+										</div> -->
+									</header>
+									<div class="no-padding">
+										<!--<h4 class="txt-color-zblue"> <a href="javascript:void(0);" class="pull-right txt-color-white"><i class="fa fa-refresh"></i></a></h4>-->
+										<div class="well-sm">
+											<div class="col-sm-12 col-md-12 col-lg-12">
+												<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center connect well" style="margin-bottom:0px">
+												<div id="salesLowDoorLow" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="50">
+													<span class="percent percent-sign">0 </span>
+												</div>
+											</div>
+											<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center connect well" style="margin-bottom:0px">
+												<div id="salesLowDoorHigh" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+													<span class="percent percent-sign">0 </span>
+												</div>
+											</div>
+											<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center connect well" style="margin-bottom:0px">
+												<div id="salesHighDoorLow" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+													<span class="percent percent-sign">0 </span>
+												</div>
+											</div>
+											<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center connect well" style="margin-bottom:0px">
+												<div id="salesHighDoorHigh" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+													<span class="percent percent-sign">0 </span>
+												</div>
+											</div>
+
+												<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center connect" style="margin-bottom:0px">
+												<span> Low</span>
+											</div>
+											<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center connect " style="margin-bottom:0px">
+												<span> High</span>
+											</div>-->
+												<table class="table table-res">
+													<tbody>
+														<tr>
+															<th rowspan="3" colspan="1" style="border-top: none;vertical-align:middle;width: 1px !important;height: 9px !important;padding: 0px;margin: 0px;position: absolute;top: 42%;">
+																<div class="trans-90">
+																	<span> Sales</span>
+																</div>
+															</th>
+														</tr>
+														<tr>
+															<td scope="row" style="border-top: none;vertical-align:middle;width: 1px;">
+																<div class="trans-90">High</div>
+															</td>
+															<td class="ctf-cls" onclick="coolerDashboard.common.onChartClick('DoorOpenvsSales', 2)" style="border: 1px solid #ddd;height: 182px;width:200px;vertical-align: middle;">
+																<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center connect">
+																	<div id="salesHighDoorLow" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+																		<span class="percent">0 </span>
+																	</div>
+																	<div class="row">
+																		<small>Other coolers in outlet – needs investigation candidate for removal</small>
+																	</div>
+																</div>
+															</td>
+															<td class="ctf-cls" onclick="coolerDashboard.common.onChartClick('DoorOpenvsSales', 4)" style="border: 1px solid #ddd;height: 182px;width:200px;vertical-align: middle;">
+																<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center connect">
+																	<div id="salesHighDoorHigh" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+																		<span class="percent">0 </span>
+																	</div>
+																	<div class="row">
+																		<small>Over Utilized potential Out of Stock potential for Additional Coolers</small>
+																	</div>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td scope="row" style="border-top: none;vertical-align:middle; width: 1px; ">
+																<div class="trans-90">Low</div>
+															</td>
+															<td class="ctf-cls" onclick="coolerDashboard.common.onChartClick('DoorOpenvsSales', 1)" style="border: 1px solid #ddd;height: 182px;width:200px;vertical-align: middle;">
+																<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center connect">
+																	<div id="salesLowDoorLow" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="50">
+																		<span class="percent">0 </span>
+																	</div>
+																	<div class="row">
+																		<small>Placement,
+																			<br />Missing Candidate for
+																			<br> Removal</small>
+																	</div>
+
+																</div>
+															</td>
+															<td class="ctf-cls" onclick="coolerDashboard.common.onChartClick('DoorOpenvsSales', 3)" style="border: 1px solid #ddd;height: 182px;width:200px;vertical-align: middle;">
+																<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center connect">
+																	<div id="salesLowDoorHigh" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+																		<span class="percent">0 </span>
+																	</div>
+																	<div class="row">
+																		<small>Purity Issue, Temperature (Hot)Needs Investigation candidate for Removal</small>
+																	</div>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<th scope="row" style="border-top: none;"></th>
+															<td scope="row" class="text-center">Low</td>
+															<td scope="row" class="text-center">High</td>
+														</tr>
+														<tr>
+															<td scope="row" style="border-top: none;"></td>
+															<th colspan="2" style="border:none">
+																<div class=" text-center">
+																	<span class=""> Doors</span>
+																</div>
+															</th>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="8" data-gs-height="7"
+						 data-gs-auto-position="true" data-gs-id="gs-dovsspc">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false"
+								 data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+								 data-widget-collapsed="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Door Open vs Sales Per Capacity </h2>
+										<div class="salesCorrelationHelp">
+											<a onclick="infoGuide('doorOpenSales');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<div id="coolerCapacity" style="height:49.5em !important"></div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item" data-gs-x="0" data-gs-y="12" data-gs-width="12" data-gs-height="5"
+						 data-gs-auto-position="true" data-gs-id="gs-locationmap">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false"
+								 data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+								 data-widget-collapsed="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Customer Location</h2>
+										<div class="salesCorrelationHelp">
+											<a onclick="infoGuide('customerLocation');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<!--<header>
+									<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+									<h2>Customer Location</h2>
+								</header>-->
+									<!-- <div class="no-padding well-sm">
+										<div>
+											<div id="myTabContent panel-body" style="background-color:white"> -->
+									<div id="map-canvas" style="height:93% !important;"></div>
+									<!-- </div>
+										</div>
+									</div> -->
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+					<article class="col-sm-12 col-md-12 col-lg-12 no-padding">
+						<article class="col-sm-12 col-xs-12 col-lg-4">
+							<!--<div class="well padding-10">
+								<h4 class="txt-color-blue">Sales/Door Opening <a href="javascript:void(0);" class="pull-right txt-color-white"><i class="fa fa-refresh"></i></a></h4>-->
+
+							<article class="">
+
+							</article>
+						</article>
+						<article class="col-sm-12 col-xs-12 col-lg-8">
+							<!--<div class="well padding-10">
+								<h4 class="txt-color-blue">Sales Correlation <a href="javascript:void(0);" class="pull-right txt-color-white"><i class="fa fa-refresh"></i></a></h4>-->
+
+						</article>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12">
+						<!--<div class="well padding-10">
+							<h4 class="txt-color-blue">Customer Location <a href="javascript:void(0);" class="pull-right txt-color-white"><i class="fa fa-refresh"></i></a></h4>-->
+
+					</article>
+				</article>
+				<article class="col-sm-12 col-md-12 col-lg-12 hidden">
+					<article class="col-sm-4 col-md-4 col-lg-4">
+						<article class="col-sm-12 col-md-12 col-lg-12 no-padding">
+							<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false"
+							 data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+							 data-widget-collapsed="false" data-widget-togglebutton="false">
+								<div class="no-padding">
+									<div class="col-sm-12 col-md-12 col-lg-12">
+										<table class="table">
+											<tbody>
+												<tr>
+													<td colspan="4">
+														<div class=" text-center">
+															<span class="easy-pie-title"> Cooler Health</span>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td rowspan="3" colspan="1" style="border-top: none; vertical-align:middle;width: 1px;">
+														<div>
+															<span> Sales</span>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row" style="border-top: none;vertical-align:middle;width: 1px;">High</th>
+													<td style="border: 1px solid #ddd;">
+														<div id="salesLowDoorLowHealth" style="height:15em !important;"></div>
+													</td>
+													<td style="border-right: 1px solid #ddd;">
+														<div id="salesLowDoorHighHealth" style="height:15em !important"></div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row" style="border-top: none;vertical-align:middle; width: 1px; ">Low</th>
+													<td style="border: 1px solid #ddd;">
+														<div id="salesHighDoorLowHealth" style="height:10em !important"></div>
+													</td>
+													<td style="border-right: 1px solid #ddd;">
+														<div id="salesHighDoorHighHealth" style="height:10em !important"></div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row" style="border-top: none;"></th>
+													<th scope="row" style="border-top: none;"></th>
+													<th scope="row" class="text-center">Low</th>
+													<th scope="row" class="text-center">High</th>
+												</tr>
+												<tr>
+													<td colspan="4" style="border:none">
+														<div class=" text-center">
+															<span class="easy-pie-title"> Doors</span>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</article>
+					</article>
+					<article class="col-sm-4 col-md-4 col-lg-4">
+						<article class="col-sm-12 col-md-12 col-lg-12 no-padding">
+							<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false"
+							 data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+							 data-widget-collapsed="false" data-widget-togglebutton="false">
+								<div class="no-padding">
+									<div class="col-sm-12 col-md-12 col-lg-12">
+										<table class="table">
+											<tbody>
+												<tr>
+													<td colspan="4">
+														<div class=" text-center">
+															<span class="easy-pie-title"> Cooler Power</span>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td rowspan="3" colspan="1" style="border-top: none; vertical-align:middle;width: 1px;">
+														<div>
+															<span> Sales</span>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row" style="border-top: none;vertical-align:middle;width: 1px;">High</th>
+													<td style="border: 1px solid #ddd;">
+														<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center connect">
+															<div id="salesLowDoorLow" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="50">
+																<span class="percent percent-sign">0 </span>
+															</div>
+														</div>
+													</td>
+													<td style="border-right: 1px solid #ddd;">
+														<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center connect">
+															<div id="salesLowDoorHigh" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+																<span class="percent percent-sign">0 </span>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row" style="border-top: none;vertical-align:middle; width: 1px; ">Low</th>
+													<td style="border: 1px solid #ddd;">
+														<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center connect">
+															<div id="salesHighDoorLow" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+																<span class="percent percent-sign">0 </span>
+															</div>
+														</div>
+													</td>
+													<td style="border-right: 1px solid #ddd;">
+														<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center connect">
+															<div id="salesHighDoorHigh" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+																<span class="percent percent-sign">0 </span>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row" style="border-top: none;"></th>
+													<th scope="row" style="border-top: none;"></th>
+													<th scope="row" class="text-center">Low</th>
+													<th scope="row" class="text-center">High</th>
+												</tr>
+												<tr>
+													<td colspan="4" style="border:none">
+														<div class=" text-center">
+															<span class="easy-pie-title"> Doors</span>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</article>
+					</article>
+					<article class="col-sm-4 col-md-4 col-lg-4">
+						<article class="col-sm-12 col-md-12 col-lg-12 no-padding">
+							<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false"
+							 data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+							 data-widget-collapsed="false" data-widget-togglebutton="false">
+								<div class="no-padding">
+									<div class="col-sm-12 col-md-12 col-lg-12">
+										<table class="table">
+											<tbody>
+												<tr>
+													<td colspan="4">
+														<div class=" text-center">
+															<span class="easy-pie-title"> Visit Frequency</span>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td rowspan="3" colspan="1" style="border-top: none; vertical-align:middle;width: 1px;">
+														<div>
+															<span> Sales</span>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row" style="border-top: none;vertical-align:middle;width: 1px;">High</th>
+													<td style="border: 1px solid #ddd;">
+														<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center connect">
+															<div id="salesLowDoorLow" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="50">
+																<span class="percent percent-sign">0 </span>
+															</div>
+														</div>
+													</td>
+													<td style="border-right: 1px solid #ddd;">
+														<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center connect">
+															<div id="salesLowDoorHigh" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+																<span class="percent percent-sign">0 </span>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row" style="border-top: none;vertical-align:middle; width: 1px; ">Low</th>
+													<td style="border: 1px solid #ddd;">
+														<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center connect">
+															<div id="salesHighDoorLow" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+																<span class="percent percent-sign">0 </span>
+															</div>
+														</div>
+													</td>
+													<td style="border-right: 1px solid #ddd;">
+														<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center connect">
+															<div id="salesHighDoorHigh" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+																<span class="percent percent-sign">0 </span>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th scope="row" style="border-top: none;"></th>
+													<th scope="row" style="border-top: none;"></th>
+													<th scope="row" class="text-center">Low</th>
+													<th scope="row" class="text-center">High</th>
+												</tr>
+												<tr>
+													<td colspan="4" style="border:none">
+														<div class=" text-center">
+															<span class="easy-pie-title"> Doors</span>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</article>
+					</article>
+				</article>
+				<article class="col-sm-5 col-md-5 col-lg-5"></article>
+			</div>
+		</section>
+	</div>
+	<!--================================================== -->
+	<!-- PAGE RELATED PLUGIN(S) -->
+	<script async src="js/controllers/Operational.js"></script>
+</body>
+
+</html>

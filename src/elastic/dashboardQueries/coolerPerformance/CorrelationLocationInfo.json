@@ -1,0 +1,22 @@
+{
+    "from": 0,
+    "size": 0,
+    "query": {
+        "bool": {
+            "filter": []
+        }
+    },
+    "aggs": {
+        "LocationDetail": {
+          "top_hits": {
+            "size": 1,
+            "_source": {
+              "includes": [
+                "LocationCode",
+                "Name"
+              ]
+            }
+          }
+        }
+    }
+}

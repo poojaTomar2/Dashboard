@@ -1,0 +1,144 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "SmartDeviceHealthRecord"
+        }
+      }, {
+        "term": {
+          "IsDeleted": false
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      },
+	  {
+              "term": {
+                "Temperature": "-100"
+              }
+            }, {
+        "terms": {
+          "EventTypeId": [10]
+        }
+      }]
+    }
+  },
+    "aggs": {
+ "Current": {
+         "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventTime": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+      "top_tags": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "top_hit": {
+              "top_hits": {
+                "sort": [{
+                  "EventTime": {
+                    "order": "desc"
+                  }
+                }],
+                "_source": {
+                  "includes": ["Temperature"]
+                },
+                "size": 1
+              }
+            }
+          }
+        }
+      }
+    },
+	 "Previous": {
+        "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventTime": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+      "top_tags": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "top_hit": {
+              "top_hits": {
+                "sort": [{
+                  "EventTime": {
+                    "order": "desc"
+                  }
+                }],
+                "_source": {
+                  "includes": ["Temperature"]
+                },
+                "size": 1
+              }
+            }
+          }
+        }
+      }
+    },
+	 "MonthBack": {
+     "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventTime": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+      "top_tags": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "top_hit": {
+              "top_hits": {
+                "sort": [{
+                  "EventTime": {
+                    "order": "desc"
+                  }
+                }],
+                "_source": {
+                  "includes": ["Temperature"]
+                },
+                "size": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

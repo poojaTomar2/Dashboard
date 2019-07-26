@@ -1,0 +1,42 @@
+{
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "SalesOrderDetail"
+        }
+      }]
+    }
+  },
+  "aggregations": {
+    "SalesVolume": {
+      "sum": {
+        "field": "SumQuantity"
+      }
+    },
+    "LocationCount": {
+      "cardinality": {
+        "field": "LocationId"
+      }
+    },
+    "Location": {
+      "terms": {
+        "field": "LocationId",
+        "size": 100000
+      },
+      "aggs": {
+        "SalesVolume": {
+          "sum": {
+            "field": "SumQuantity"
+          }
+        },
+        "AvgSalesVolume": {
+          "avg": {
+            "field": "SumQuantity"
+          }
+        }
+      }
+    }
+  }
+}

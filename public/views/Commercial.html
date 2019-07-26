@@ -1,0 +1,468 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title> Dashboaard/Commerical </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<style>
+		.btn-bronze {
+			color: #fff;
+			background-color: red;
+			border-color: red;
+		}
+
+		.btn-diamond {
+			color: #fff;
+			background-color: blue;
+			border-color: blue;
+		}
+
+		.txt-color-greenLight {
+			color: #f5f5f5 !important;
+		}
+
+		.btn-gold {
+			color: #fff;
+			background-color: Gold;
+			border-color: Gold;
+		}
+
+		.btn-silver {
+			color: #fff;
+			background-color: deeppink;
+			border-color: deeppink;
+		}
+
+		.btn-black {
+			color: #fff;
+			background-color: #000;
+			border-color: #fff;
+		}
+
+		.btn-circle {
+			width: 10px;
+			height: 10px;
+			text-align: center;
+			padding: 6px 0;
+			font-size: 12px;
+			line-height: 18px;
+			border-radius: 50%;
+			-moz-border-radius: 50%;
+			-webkit-border-radius: 50%;
+		}
+		/*.easy-pie-title {
+			display: inline-block;
+			margin: 10px 6px 0;
+			font-size: 12px;
+			font-weight: 400;
+			text-transform: uppercase;
+			width: 18em;
+			height: 19px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}*/
+
+		.easy-pie-title {
+			display: inline-block;
+			margin: 10px 6px 0;
+			font-size: 12px;
+			font-weight: 400;
+			text-transform: uppercase;
+			width: 10.5em;
+			height: 19px;
+			text-overflow: ellipsis;
+			white-space: initial;
+			overflow: visible;
+			word-wrap: break-word;
+		}
+
+		#sparks {
+			display: block;
+			list-style: none;
+			margin: 0px 0 0;
+			padding: 0;
+			text-align: right;
+		}
+
+		.col-sm-2-5 {
+			width: 16.5%;
+		}
+
+		.col-md-2-5 {
+			width: 16.5%;
+		}
+
+		.col-lg-2-5 {
+			width: 16.5%;
+		}
+
+		.height-10 {
+			height: 10em;
+		}
+	</style>
+</head>
+
+<body class="">
+	<div id="ribbon">
+		<!-- breadcrumb -->
+		<ol class="breadcrumb">
+			<li>Dashboard</li>
+			<li>Commercial</li>
+		</ol>
+	</div>
+	<!-- MAIN CONTENT -->
+	<div id="content" class="widget-hide-overflow">
+		<!-- row -->
+		<!-- Filter Right Panel -->
+		<div id="chat-container" class="">
+			<span class="chat-list-open-close">
+				<i class="fa fa-filter icon-filter"></i>
+				<b class="filterApplied hidden">
+					<i class="fa fa-check" aria-hidden="true"></i>
+				</b>
+				<span class="text-filter">Filters</span>
+			</span>
+			<div id="filterTitle"></div>
+			<div class="chat-list-body custom-scroll">
+				<div id="filterFormKPI">
+				</div>
+			</div>
+		</div>
+		<div id="chat-container-summary">
+			<div id="chat-container" class="chat-container-summary">
+				<span class="chat-list-open-close" style="top:139px">
+					<i class="fa fa-table icon-filter"></i>
+					<span class="text-filter">Summary</span>
+					<b>
+						<i class="fa fa-filter"></i>
+					</b>
+				</span>
+				<div class="chat-list-body custom-scroll">
+					<div id="filterSummary">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="">
+			<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+				<div class="well-sm">
+					<span class="well-sm">
+						<b>Period: </b>
+						<b class="timeFilterName"></b>
+					</span>
+				</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+				<ul id="sparks" class="">
+					<li class="sparks-info">
+						<h5> Total Customers
+							<span class="txt-color-purple" id="totalCustomer">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Customers Selected
+							<span class="txt-color-blue" id="customerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0" data-pie-size="40"
+						    id="customerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info">
+						<h5> Total Coolers
+							<span class="txt-color-purple" id="totalCooler">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Coolers Selected
+							<span class="txt-color-blue" id="coolerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0" data-pie-size="40"
+						    id="coolerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info">
+						<h5> Total Smart Coolers
+							<span class="txt-color-purple" id="totalSmartCooler">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Selected Smart Coolers
+							<span class="txt-color-blue" id="smartCoolerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0" data-pie-size="40"
+						    id="smartCoolerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<section id="widget-grid" class="">
+			<div class="row">
+				<article class="col-sm-12 col-md-12 col-lg-12">
+					<article class="col-sm-12">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+						    data-widget-deletebutton="false" data-widget-sortable="false" data-widget-collapsed="false" data-widget-togglebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>CDE Utilization</h2>
+								<!--<div class="widget-toolbar hidden-mobile">
+									<span class="onoffswitch-title timeFilterName"></span>
+								</div>-->
+							</header>
+							<div class="">
+								<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 text-center connect well-sm">
+									<div id="hourlyDoorOpen" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="50">
+										<span class="percent">0 </span>
+									</div>
+									<div class="row">
+										<span class="easy-pie-title"> Hourly Door Opens </span>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 text-center connect well-sm">
+									<div id="doorOpenDuration" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="50">
+										<span class="percent">0 </span>
+									</div>
+									<div class="row">
+										<span class="easy-pie-title"> Door Open Duration(sec) </span>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 text-center connect well-sm" id="powerHoursOnChart">
+									<div id="hoursPowerOn" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+										<span class="percent">0 </span>
+									</div>
+									<div class="row">
+										<span class="easy-pie-title"> Hours Power On </span>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 text-center connect well-sm" id="tempBelow10Chart">
+									<div id="hoursCoolerAbove7" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+										<span class="percent ">0 </span>
+									</div>
+									<div class="row">
+										<span class="easy-pie-title"> Hours Below 7°C (Temp)</span>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 text-center connect well-sm" id="lightHoursOnChart">
+									<div id="hoursLightOn" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+										<span class="percent ">0 </span>
+									</div>
+									<div class="row">
+										<span class="easy-pie-title"> Hours Lights On</span>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 text-center connect well-sm">
+									<div id="alarmRate" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+										<span class="percent percent-sign">0 </span>
+									</div>
+									<div class="row">
+										<span class="easy-pie-title"> Cooler to Alert Rate </span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12 no-padding">
+						<article class="col-sm-4 col-md-4 col-lg-4">
+							<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+							    data-widget-deletebutton="false" data-widget-sortable="false">
+								<header>
+									<span class="widget-icon">
+										<i class="glyphicon fa fa-tachometer txt-color-darken"></i>
+									</span>
+									<h2>Door Openings/Sales</h2>
+								</header>
+								<div class="no-padding">
+									<div>
+										<div style="background-color:white">
+											<div id="doorOpeningSales" style="height:25em"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+						<article class="col-sm-4 col-md-4 col-lg-4">
+							<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+							    data-widget-sortable="false" data-widget-deletebutton="false">
+								<header>
+									<span class="widget-icon">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+									</span>
+									<h2>Sales Utilization</h2>
+								</header>
+								<div id="salesUtilization" style="height:25em !important"></div>
+							</div>
+						</article>
+						<article class="col-sm-4 col-md-4 col-lg-4">
+							<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+							    data-widget-sortable="false" data-widget-deletebutton="false">
+								<header>
+									<span class="widget-icon">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+									</span>
+									<h2>Average Monthly Sales per Cooler</h2>
+								</header>
+								<div id="avgSalesPerLiter" style="height:25em !important"></div>
+							</div>
+						</article>
+					</article>
+
+					<article class="col-sm-12 col-md-12 col-lg-12 no-padding">
+						<article class="col-sm-3 col-md-3 col-lg-3 no-padding">
+							<article class="col-sm-12 col-md-12 col-lg-12">
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+								    data-widget-deletebutton="false" data-widget-sortable="false" data-widget-collapsed="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Outlet Performance</h2>
+									</header>
+									<div class="well-sm">
+										<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center connect well-sm">
+											<div id="salesVolume" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="50">
+												<span class="percent">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title" style="width:100%"> Sales (Cases/Pieces)</span>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center connect well-sm hidden">
+											<div id="transections" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="50">
+												<span class="percent">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title" style="width:100%"> Transactions </span>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center connect well-sm">
+											<div id="trendChart" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="50">
+												<span class="percent percent-sign">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title" style="width:100%"> Trend </span>
+											</div>
+										</div>
+										<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 hidden">
+											<div id="hourlyFootTraffic" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="50">
+												<span class="percent">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Hourly Foot Traffic </span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+							<article class="col-sm-4 col-md-4 col-lg-4 hidden">
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+								    data-widget-deletebutton="false" data-widget-sortable="false" data-widget-collapsed="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Visit Compliance</h2>
+									</header>
+									<div class="well-sm">
+										<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center connect well-sm">
+											<div id="visitDuration" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="50">
+												<span class="percent">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Avg Visit Duration (In Mins) </span>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center connect well-sm">
+											<div id="visitPerMonth" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="50">
+												<span class="percent">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Visits Per Month </span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+							<article class="col-sm-4 col-md-4 col-lg-4 hidden">
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+								    data-widget-deletebutton="false" data-widget-sortable="false" data-widget-collapsed="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>CDE Tracking</h2>
+									</header>
+									<div class="well-sm">
+										<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center connect well-sm">
+											<div id="coolerMoves" class="easy-pie-chart txt-color-red smart" data-percent="0" data-pie-size="50">
+												<span class="percent ">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Cooler Moves</span>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center connect well-sm">
+											<div id="missingCooler" class="easy-pie-chart txt-color-red smart" data-percent="0" data-pie-size="50">
+												<span class="percent ">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Missing/No Data</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+							<!--<article class="col-sm-12 col-md-12 col-lg-12 no-padding">
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false">
+									<header>
+										<span class="widget-icon"> <i class="glyphicon fa fa-tachometer txt-color-darken"></i> </span>
+										<h2>Foot Traffic/Door Openings</h2>
+									</header>
+									<div class="no-padding">
+										<div>
+											<div style="background-color:white">
+												<div id="footTrafficOpening" style="height:18em"></div>
+											</div>
+										</div>
+									</div>
+								</div>-->
+						</article>
+						<article class="col-sm-9 col-md-9 col-lg-9">
+							<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+							    data-widget-deletebutton="false" data-widget-sortable="false">
+								<header>
+									<span class="widget-icon">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+									</span>
+									<h2>Customer Location</h2>
+								</header>
+								<div class="no-padding">
+									<div>
+										<div id="myTabContent panel-body" style="background-color:white">
+											<div id="map-canvas" style="height: 41em; margin-top:0px !important"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+						<!--</article>-->
+					</article>
+				</article>
+				<article class="col-sm-5 col-md-5 col-lg-5"></article>
+			</div>
+		</section>
+	</div>
+	<!--================================================== -->
+	<!-- PAGE RELATED PLUGIN(S) -->
+	<script async src="js/controllers/Commercial.js"></script>
+</body>
+
+</html>

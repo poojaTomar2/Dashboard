@@ -1,0 +1,39 @@
+{
+    "size": 0,
+    "aggs": {
+        "Keys": {
+            "terms": {
+                "field": "LocationId",
+                "size": 100000
+            },
+            "aggs": {
+                "DayCount": {
+                    "date_histogram": {
+                        "field": "EventDate",
+                        "interval": "day",
+                        "min_doc_count": 1
+                    }
+                },
+                "DoorCount": {
+                    "sum": {
+                        "field": "SumOfDoorCount"
+                    }
+                }
+            }
+        }
+    },
+    "query": {
+        "bool": {
+            "filter": [{
+                "type": {
+                    "value": "AssetEventDataSummary"
+                }
+            }],
+            "must": [{
+                "term": {
+                    "IsFromDoor": true
+                }
+            }]
+        }
+    }
+}

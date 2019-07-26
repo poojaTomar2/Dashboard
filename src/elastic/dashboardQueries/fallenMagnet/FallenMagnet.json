@@ -1,0 +1,57 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [{
+          "type": {
+            "value": "AssetEventDataSummary"
+          }
+        },
+        {
+          "term": {
+            "IsFromHealth": true
+          }
+        }
+      ],
+      "must_not": [{
+        "term": {
+          "FallenMaganet": 32765
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "FallenMagnet": {
+      "filter": {
+        "bool": {
+          "must": [],
+          "must_not": []
+        }
+      },
+      "aggs": {
+        "top_tags": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "top_hit": {
+              "top_hits": {
+                "sort": [{
+                  "EventDate": {
+                    "order": "desc"
+                  }
+                }],
+                "_source": {
+                  "includes": ["AssetId", "FallenMaganet"]
+                },
+                "size": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

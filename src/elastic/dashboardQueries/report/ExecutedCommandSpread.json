@@ -1,0 +1,103 @@
+{
+    "from": 0,
+    "size": 0,
+    "query": {
+        "bool": {
+            "filter": [],
+            "must_not": [{
+                "term": {
+                    "ExecutedOn": "0001-01-01T00:00:00"
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "Last15Days": {
+            "filter": {
+                "bool": {
+                    "filter": [{
+                        "range": {
+                            "ExecutedOn": {
+                                "gte": "now-15d/d",
+                                "lte": "now"
+                            }
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "AssetIds": {
+                    "terms": {
+                        "field": "AssetId",
+                        "size": 200000
+                    }
+                }
+            }
+        },
+        "Last30Days": {
+            "filter": {
+                "bool": {
+                    "filter": [{
+                        "range": {
+                            "ExecutedOn": {
+                                "gte": "now-30d/d",
+                                "lte": "now-15d/d"
+                            }
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "AssetIds": {
+                    "terms": {
+                        "field": "AssetId",
+                        "size": 200000
+                    }
+                }
+            }
+        },
+        "Last60Days": {
+            "filter": {
+                "bool": {
+                    "filter": [{
+                        "range": {
+                            "ExecutedOn": {
+                                "gte": "now-60d/d",
+                                "lte": "now-30d/d"
+                            }
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "AssetIds": {
+                    "terms": {
+                        "field": "AssetId",
+                        "size": 200000
+                    }
+                }
+            }
+        },
+        "MoreThen60Days": {
+            "filter": {
+                "bool": {
+                    "filter": []
+                }
+            },
+            "aggs": {
+                "AssetIds": {
+                    "terms": {
+                        "field": "AssetId",
+                        "size": 200000
+                    }
+                },
+                "AssetCount": {
+                    "cardinality": {
+                        "field": "AssetId",
+                        "precision_threshold": 4000
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title> IOT Chart </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<style>
+		table.dataTable thead .sorting {
+    background: url();
+}
+	</style>
+</head>
+<body class="">
+	<div id="ribbon">
+
+		<!-- breadcrumb -->
+		<ol class="breadcrumb">
+			<li>Dashboard</span></li>
+		</ol>
+	</div>
+	<!-- MAIN CONTENT -->
+	<div id="content">
+		<div class="row">
+			<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+				<h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i> Dashboard</h1>
+			</div>
+			<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+				<ul id="sparks" class="">
+					<li class="sparks-info">
+						<h5> Total Outlet <span class="txt-color-purple" id="totalOutletIOT">180</span></h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Outlet Selected <span class="txt-color-blue" id="outletSelectedIOT">12</span></h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="1.5" data-pie-size="40" id="outletSelectedIOTPercentage">
+							<span class="percent percent-sign">1.5</span>
+						</div>
+					</li>
+					<li class="sparks-info">
+						<h5> Total Assets <span class="txt-color-purple" id="totalAssetIOT">198</span></h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Assets Selected <span class="txt-color-blue" id="assetSelectedIOT">12</span></h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="1.5" data-pie-size="40" id="totalAssetIOTPercentage">
+							<span class="percent percent-sign">1.5</span>
+						</div>
+					</li>
+					
+					<li class="sparks-info">
+						<h5> Open Alerts <span class="txt-color-purple" id="openAlertIOT">180</span></h5>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<section id="widget-grid" class="">
+			<div class="row">
+				<div class="row col-sm-8 col-md-8 col-lg-8">
+					<article class="col-sm-12 col-md-12 col-lg-12">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+							<header>
+								<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+								<h2>Alert Engine: Alerts Aging</h2>
+							</header>
+							<div class="no-padding">
+								<div>
+									<div style="background-color:white">
+										<div id="alertAgingIOT"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+							<header>
+								<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+								<h2>Alert Engine: Alerts</h2>
+							</header>
+							<div class="no-padding">
+								<div>
+									<div style="background-color:white">
+										<div id="alertsIOT"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+					</div>					
+				<div class="col-sm-4 col-md-4 col-lg-4">
+					<div class="jarviswidget" id="wid-id-20-x" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false" >
+						<header>
+							<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+							<h2>Key Metrics</h2>
+						</header>
+						<div class="no-padding">
+							<table class="table table-striped table-hover table-condensed">
+								<tbody>
+									<tr>
+										<td class="text-label">Temperature Above 12</td>
+										<td id="info0"></td>
+									</tr>
+									<tr>
+										<td class="text-label">Light Below 10</td>
+										<td id="info1"></td>
+									</tr>
+									<tr>
+										<td class="text-label">Temp Above 12, Light Below 10</td>
+										<td id="info2"></td>
+									</tr>
+									<tr>
+										<td class="text-label">Missing</td>
+										<td id="info3"></td>
+									</tr>
+									<tr>
+										<td class="text-label">Power Off</td>
+										<td id="info4"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+
+					<div class="jarviswidget" id="wid-id-20" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false" >
+						<header>
+							<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+							<h2>Select Tracked Coolers</h2>
+						</header>
+						<div class="no-padding">
+							<div class="panel-wrapper collapse in">
+								<div class="filter-outlet activate">
+									<form id="chartFilterForm">
+										<section>
+											<div class="filter-form-group">
+												<label>Market</label>
+												<select multiple="" name="MarketId" style="width:100%" class="select2 select2-hidden-accessible" id="marketSelectIot" tabindex="-1" aria-hidden="true"></select>
+											</div>
+											<div class="filter-form-group">
+												<label>Channel</label>
+												<select multiple="" name="LocationTypeId" style="width:100%" class="select2 select2-hidden-accessible" id="channelSelectIot" tabindex="-1" aria-hidden="true"></select>
+											</div>
+											<div class="filter-form-group">
+												<label>Classification</label>
+												<select multiple="" name="ClassificationId" style="width:100%" class="select2 select2-hidden-accessible" id="classificationSelectIot" tabindex="-1" aria-hidden="true"></select>
+											</div>
+											<label class="filter-form-group">Alert</label>
+											<div class="filter-form-group">
+												<label>
+													<input name="PriorityId" value=4227 id="smart-fixed-header22" type="checkbox" class="checkbox style-0">
+													<span>High</span>
+												</label>
+												<label>
+													<input name="PriorityId" value=4226 id="smart-fixed-header23" type="checkbox" class="checkbox style-0">
+													<span>Medium</span>
+												</label>
+												<label>
+													<input name="PriorityId" value=4225 id="smart-fixed-header24" type="checkbox" class="checkbox style-0">
+													<span>Low</span>
+												</label>
+											</div>
+											<div class="filter-form-group">
+												<label>Alert Type</label>
+												<select multiple="" name="AlertTypeId" style="width:100%" class="select2 select2-hidden-accessible" id="alertTypeIot" tabindex="-1" aria-hidden="true"></select>
+											</div>
+											<div class="filter-form-group">
+												<label>City</label>
+												<input type="text" name="City" class="form-control">
+												<!--<select multiple="" name="City" style="width:100%" class="select2 select2-hidden-accessible" id="citySelect" tabindex="-1" aria-hidden="true"></select>-->
+											</div>
+											<div class="filter-form-group">
+												<label>Country</label>
+												<select multiple="" name="CountryId" style="width:100%" class="select2 select2-hidden-accessible" id="countrySelectIot" tabindex="-1" aria-hidden="true"></select>
+											</div>
+											<div class="filter-form-group">
+												<label>Outlet</label>
+												<select multiple="" name="LocationId" style="width:100%" class="select2 select2-hidden-accessible" id="outletSelectIot" tabindex="-1" aria-hidden="true"></select>
+											</div>
+											<!--<div class="filter-form-group">
+												<label>Sales Rep</label>
+												<select multiple="" name="PrimaryRepId" style="width:100%" class="select2 select2-hidden-accessible" id="salesRepIot" tabindex="-1" aria-hidden="true"></select>
+											</div>
+											<div class="filter-form-group">
+												<label>Supervisor</label>
+												<select multiple="" name="SupervisorId" style="width:100%" class="select2 select2-hidden-accessible" id="supervisorIot" tabindex="-1" aria-hidden="true"></select>
+											</div>-->
+											<section id="smart-styles">
+												<a href="javascript:void(0);" id="chartFilterSubmit" data-skinlogo="img/logo-white.png" class="btn btn-block btn-xs txt-color-white" style="background:#3A4558;">Submit</a>
+												<a href="javascript:void(0);" id="chartFilterReset" data-skinlogo="img/logo-white.png" class="btn btn-block btn-xs txt-color-white" style="background:#3A4558;">Reset</a>
+											</section>
+										</section>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			<div class="row">
+				<article class="col-sm-6 col-md-6 col-lg-6">
+					<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+						<header>
+							<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+							<h2>Cooler Health Issue</h2>
+							<div class="widget-toolbar">
+								<div class="widget-toolbar hidden-mobile" role="menu">
+									<div class="btn-group">
+										<button class="btn dropdown-toggle btn-xs btn-success" data-toggle="dropdown" aria-expanded="false"> Classification<span class="caret"></span></button>
+										<ul class="dropdown-menu pull-right js-status-update">
+											<li class="active">
+												<a href="javascript:void(0);" id="classification"><i class="fa fa-circle txt-color-green"></i> Classification</a>
+											</li>
+											<li class="">
+												<a href="javascript:void(0);" id="channel"><i class="fa fa-circle txt-color-red"></i> Channel</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" id="market"><i class="fa fa-circle txt-color-orange"></i> Market</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</header>
+						<div class="no-padding ">
+							<div class="panel-wrapper collapse in">
+								<span id="gridHeader"></span>
+								<table class="table table-striped table-hover table-condensed" style="margin-top:0px !important;" id="coolerStatusGridIOT" width="100%">
+									<thead>
+										<tr>
+											<th data-field="City" id="typeClumnForReport">Classification</th>
+											<th data-field="Locations">Outlets</th>
+											<th data-field="Locations">Assets</th>
+											<th data-field="Unhealthy">Temp and Light Issue</th>
+											<th data-field="HighTemp">High Temp.</th>
+											<th data-field="LowLight">Low Light</th>
+											<th data-field="PowerOn">Power Off</th>
+											<th data-field="IsMissing">Missing</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<article class="col-sm-6 col-md-6 col-lg-6">
+					<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+						<header>
+							<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+							<h2>Temperature And Light Status</h2>
+						</header>
+						<div class="no-padding">
+							<div>
+								<div style="background-color:white">
+									<div id="tempAndLightIssueIOT"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+
+			<div class="row">
+				<article class="col-sm-6 col-md-6 col-lg-6">
+					<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+						<header>
+							<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+							<h2>IOT Data: Cooler Utilization</h2>
+							<!--<div class="widget-toolbar">
+								<div class="btn-group">
+									<button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
+										Date <i class="fa fa-caret-down"></i>
+									</button>
+									<ul class="dropdown-menu js-status-update pull-right">
+										<li>
+											<a href="javascript:void(0);" id="mt">Monthly</a>
+										</li>
+										<li>
+											<a href="javascript:void(0);" id="wl">Weekly</a>
+										</li>
+										<li>
+											<a href="javascript:void(0);" id="td">Today</a>
+										</li>
+									</ul>
+								</div>
+							</div>-->
+						</header>
+						<div class="no-padding">
+							<div>
+								<div style="background-color:white">
+									<div id="coolerUtilizationIOT"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="col-sm-6 col-md-6 col-lg-6">
+					<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+						<header>
+							<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+							<h2>IOT Data: Light</h2>
+						</header>
+						<div class="no-padding">
+							<div>
+								<div style="background-color:white">
+									<div id="lightIOT"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+
+			<div class="row">
+				<article class="col-sm-12 col-md-6 col-lg-6">
+					<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+						<header>
+							<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+							<h2>IOT Data: Temperature</h2>
+						</header>
+						<div class="no-padding">
+							<div>
+								<div style="background-color:white">
+									<div id="temperatureIOT"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="col-sm-12 col-md-6 col-lg-6">
+					<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+						<header>
+							<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+							<h2>Alerts By Type</h2>
+						</header>
+						<div class="no-padding">
+							<div>
+								<div style="background-color:white">
+									<div id="alertsByType"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+
+			<div class="row">
+				<article class="col-sm-12 col-md-6 col-lg-6">
+					<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+						<header>
+							<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+							<h2>IOT Data: Communication</h2>
+						</header>
+						<div class="no-padding">
+							<div>
+								<div style="background-color:white">
+									<div id="communicationIOT"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="col-sm-12 col-md-6 col-lg-6">
+					<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+						<header>
+							<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+							<h2>IOT Data: Power</h2>
+						</header>
+						<div class="no-padding">
+							<div>
+								<div style="background-color:white">
+									<div id="powerIOT"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+	</div>
+	<!--================================================== -->
+	<!-- PAGE RELATED PLUGIN(S) -->
+	<!-- Flot Chart Plugin: Flot Engine, Flot Resizer, Flot Tooltip -->
+	<!-- Vector Maps Plugin: Vectormap engine, Vectormap language -->
+	<script async src="js/controllers/IOTChart.js"></script>
+</body>
+
+
+</html>

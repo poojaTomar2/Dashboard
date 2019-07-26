@@ -1,0 +1,270 @@
+{
+	"from": 0,
+	"size": 0,
+	"query": {
+		"bool": {
+			"must": [{
+					"type": {
+						"value": "AssetEventDataSummary"
+					}
+				},
+				{
+					"term": {
+						"IsFactoryAsset": false
+					}
+				}
+			]
+		}
+	},
+	"aggs": {
+		"Location": {
+			"filter": {
+				"bool": {
+					"must": [],
+					"should": []
+				}
+			},
+			"aggs": {
+				"Location": {
+					"nested": {
+						"path": "AlertSummaryInJson"
+					},
+					"aggs": {
+						"Location": {
+							"sum": {
+								"field": "AlertSummaryInJson.TotalCount"
+							}
+						}
+					}
+				}
+			}
+		},
+		"AlertOpenCount": {
+			"nested": {
+				"path": "AlertSummaryInJson"
+			},
+			"aggs": {
+				"ByType": {
+					"terms": {
+						"field": "AlertSummaryInJson.AlertTypeId",
+						"size": 100000
+					},
+					"aggs": {
+						"ByType": {
+							"filter": {
+								"bool": {
+									"must": []
+								}
+							},
+							"aggs": {
+								"ByType": {
+									"sum": {
+										"field": "AlertSummaryInJson.OpenCount"
+									}
+								}
+							}
+						}
+					}
+				},
+				"Bands": {
+					"range": {
+						"field": "AlertSummaryInJson.EventDate",
+						"keyed": true,
+						"ranges": [{
+							"key": "Today",
+							"from": "now/d"
+						}, {
+							"key": "1-3",
+							"from": "now-3d/d",
+							"to": "now/d"
+						}, {
+							"key": "4-6",
+							"from": "now-6d/d",
+							"to": "now-3d/d"
+						}, {
+							"key": "7+",
+							"to": "now-6d/d"
+						}]
+					},
+					"aggs": {
+						"Priority": {
+							"terms": {
+								"field": "AlertSummaryInJson.PriorityId",
+								"size": 100000
+							},
+							"aggs": {
+								"ByType": {
+									"sum": {
+										"field": "AlertSummaryInJson.OpenCount"
+									}
+								}
+							}
+						},
+						"Assets": {
+							"cardinality": {
+								"field": "AlertSummaryInJson.AssetId"
+							}
+						}
+					}
+				}
+			}
+		},
+		"AlertCountBoth": {
+			"filter": {
+				"bool": {
+					"must": [],
+					"should": [],
+					"must_not": []
+				}
+			},
+			"aggs": {
+				"Unique": {
+					"nested": {
+						"path": "AlertSummaryInJson"
+					},
+					"aggs": {
+						"LocationsCount": {
+							"cardinality": {
+								"field": "AlertSummaryInJson.LocationId"
+							}
+						},
+						"AssetCount": {
+							"cardinality": {
+								"field": "AlertSummaryInJson.AssetId"
+							}
+						}
+					}
+				}
+			}
+
+		},
+		"ByType": {
+			"nested": {
+				"path": "AlertSummaryInJson"
+			},
+			"aggs": {
+				"ByType": {
+					"terms": {
+						"field": "AlertSummaryInJson.AlertTypeId",
+						"size": 100000
+					},
+					"aggs": {
+						"AlertOpen": {
+							"filter": {
+								"bool": {
+									"must": []
+								}
+							},
+							"aggs": {
+								"Open": {
+									"sum": {
+										"field": "AlertSummaryInJson.OpenCount"
+									}
+								}
+							}
+						},
+						"AlertClosed": {
+							"filter": {
+								"bool": {
+									"must": []
+								}
+							},
+							"aggs": {
+								"Closed": {
+									"sum": {
+										"field": "AlertSummaryInJson.ClosedCount"
+									}
+								}
+							}
+						},
+						"AlertNew": {
+							"filter": {
+								"bool": {
+									"should": []
+								}
+							},
+							"aggs": {
+								"New": {
+									"sum": {
+										"field": "AlertSummaryInJson.TotalCount"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"alertsCreatedByWeek": {
+			"filter": {
+				"bool": {
+					"must": []
+				}
+			},
+			"aggs": {
+				"byWeek": {
+					"date_histogram": {
+						"field": "EventDate",
+						"interval": "day"
+					},
+					"aggs": {
+						"nested_sellerInfo": {
+							"nested": {
+								"path": "AlertSummaryInJson"
+							},
+							"aggs": {
+								"All": {
+									"sum": {
+										"field": "AlertSummaryInJson.TotalCount"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"oldOpenAlerts": {
+			"filter": {
+				"bool": {
+					"must": []
+				}
+			},
+			"aggs": {
+				"oldOpenAlerts": {
+					"nested": {
+						"path": "AlertSummaryInJson"
+					},
+					"aggs": {
+						"All": {
+							"sum": {
+								"field": "AlertSummaryInJson.OpenCount"
+							}
+						}
+					}
+				}
+			}
+		},
+		"alertCloseCount": {
+			"filter": {
+				"bool": {
+					"must": []
+				}
+			},
+			"aggs": {
+				"alertCloseCount": {
+					"nested": {
+						"path": "AlertSummaryInJson"
+					},
+					"aggs": {
+						"Closed": {
+							"sum": {
+								"field": "AlertSummaryInJson.ClosedCount"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

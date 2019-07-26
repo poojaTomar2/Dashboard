@@ -1,0 +1,147 @@
+ {
+   "size": 0,
+   "aggs": {
+     "HealthData": {
+       "filter": {
+         "bool": {
+           "must": [{
+             "type": {
+               "value": "AssetEventDataSummary"
+             }
+           }]
+         }
+       },
+       "aggs": {
+         "time_buckets": {
+           "date_histogram": {
+             "field": "EventDate",
+             "interval": "day"
+           },
+           "aggs": {
+             "Temperature": {
+               "filter": {
+                 "bool": {
+                   "must_not": [{
+                     "term": {
+                       "AverageTemperature": 0
+                     }
+                   }]
+                 }
+               },
+               "aggs": {
+                 "avg_temperature": {
+                   "avg": {
+                     "field": "AverageTemperature"
+                   }
+                 }
+               }
+             },
+             "EvaporatorTemperature": {
+               "filter": {
+                 "bool": {
+                   "must_not": [{
+                     "term": {
+                       "AverageEvaporatorTemperature": -100
+                     }
+                   }]
+                 }
+               },
+               "aggs": {
+                 "avg_temperature": {
+                   "avg": {
+                     "field": "AverageEvaporatorTemperature"
+                   }
+                 }
+               }
+             },
+             "Light": {
+               "filter": {
+                 "bool": {
+                   "must_not": [{
+                     "term": {
+                       "SumOfHealthIntervallightIntensityNEQM1": 0
+                     }
+                   }]
+                 }
+               },
+               "aggs": {
+                 "avg_light": {
+                   "avg": {
+                     "field": "SumOfHealthIntervallightIntensityNEQM1"
+                   }
+                 }
+               }
+             }
+           }
+         }
+       }
+     },
+     "DoorData": {
+       "filter": {
+         "bool": {
+           "must": [{
+             "type": {
+               "value": "AssetEventDataSummary"
+             }
+           }],
+           "must_not": [{
+             "term": {
+               "SumOfDoorCount": 0
+             }
+           }]
+         }
+       },
+       "aggs": {
+         "time_buckets": {
+           "date_histogram": {
+             "field": "EventDate",
+             "interval": "day"
+           },
+           "aggs": {
+             "door_duration": {
+               "sum": {
+                 "field": "SumOfDoorOpenDuration"
+               }
+             },
+             "DoorCount": {
+               "sum": {
+                 "field": "SumOfDoorCount"
+               }
+             }
+           }
+         }
+       }
+     },
+     "PowerData": {
+       "filter": {
+         "bool": {
+           "must": [{
+             "type": {
+               "value": "AssetEventDataSummary"
+             }
+           }],
+           "must_not": [{
+             "term": {
+               "SumOfPowerOffDuration": 0
+             }
+           }]
+         }
+       },
+       "aggs": {
+         "time_buckets": {
+           "date_histogram": {
+             "field": "EventDate",
+             "interval": "day"
+           },
+           "aggs": {
+             "PowerOffDuration": {
+               "sum": {
+                 "field": "SumOfPowerOffDuration"
+               }
+             }
+           }
+         }
+       }
+     }
+   }
+ }

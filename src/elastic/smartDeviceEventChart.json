@@ -1,0 +1,98 @@
+﻿{
+	"from": 0,
+	"size": 100000,
+	"aggs": {
+		"CoolerUtilization": {
+			"filter": {
+				"bool": {
+					"must": {
+						"type": {
+							"value": "SmartDeviceDoorStatus"
+						}
+					},
+					"must_not": {
+						"term": {
+							"AssetId": 0
+						}
+					}
+				}
+			},
+			"aggs": {
+				"Low": {
+					"filter": {
+						"bool": {
+							"must": {
+								"range": {
+									"EventTime": {
+										"gte": "2016-05-17T00:00:00",
+										"lte": "2016-05-24T00:00:00"
+									}
+								}
+							}
+						}
+					},
+					"aggs": {
+						"assets": {
+							"terms": {
+								"field": "AssetId",
+								"size": 100000,
+								"min_doc_count": 0
+							}
+						}
+					}
+				},
+				"Medium": {
+					"filter": {
+						"bool": {
+							"must": {
+								"range": {
+									"EventTime": {
+										"gte": "2016-05-17T00:00:00",
+										"lte": "2016-05-24T00:00:00"
+									}
+								}
+							}
+						}
+					},
+					"aggs": {
+						"assets": {
+							"terms": {
+								"field": "AssetId",
+								"size": 100000,
+								"min_doc_count": 21
+							}
+						}
+					}
+				},
+				"High": {
+					"filter": {
+						"bool": {
+							"must": {
+								"range": {
+									"EventTime": {
+										"gte": "2016-05-17T00:00:00",
+										"lte": "2016-05-24T00:00:00"
+									}
+								}
+							}
+						}
+					},
+					"aggs": {
+						"assets": {
+							"terms": {
+								"field": "AssetId",
+								"size": 100000,
+								"min_doc_count": 41
+							}
+						}
+					}
+				},
+				"OutletCount": {
+					"cardinality": {
+						"field": "LocationId"
+					}
+				}
+			}
+		}
+	}
+}

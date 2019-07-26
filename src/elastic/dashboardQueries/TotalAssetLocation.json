@@ -1,0 +1,41 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": []
+    }
+  },
+  "aggs": {
+    "AssetCount": {
+      "filter": {
+        "bool": {
+          "must": []
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId",
+            "precision_threshold": 40000
+          }
+        }
+      }
+    },
+    "LocationCount": {
+      "filter": {
+        "bool": {
+          "must": []
+        }
+      },
+      "aggs": {
+        "LocationCount": {
+          "cardinality": {
+            "field": "LocationId",
+            "precision_threshold": 40000
+          }
+        }
+      }
+    }
+  }
+}

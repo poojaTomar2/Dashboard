@@ -1,0 +1,87 @@
+{
+   "size": 100000,
+   "aggs": {
+      "TotalOutlets": {
+         "filter": {
+            "bool": {
+               "must": [
+                  {
+                     "type": {
+                        "value": "Location"
+                     }
+                  }
+               ],
+               "must_not": [
+                  {
+                     "term": {
+                        "IsDeleted": true
+                     }
+                  }
+               ]
+            }
+         }
+      },
+      "TotalAssets": {
+         "filter": {
+            "bool": {
+               "must": [
+                  {
+                     "type": {
+                        "value": "Asset"
+                     }
+                  }
+               ],
+               "must_not": [
+                  {
+                     "term": {
+                        "IsDeleted": true
+                     }
+                  }
+               ]
+            }
+         }
+      },
+      "tempAbove7": {
+         "filter": {
+            "bool": {
+               "must": [
+                  {
+                     "type": {
+                        "value": "Asset"
+                     }
+                  },
+                  {
+                     "range": {
+                        "Temperature": {
+                           "gte": "7"
+                        }
+                     }
+                  }
+               ],
+               "must_not": [
+                  {
+                     "term": {
+                        "IsDeleted": true
+                     }
+                  },
+                  {
+                     "terms": {
+                        "EventTypeId": [
+                           10
+                        ]
+                     }
+                  },
+                  {
+                     "terms": {
+                        "Temperature": [
+                           -999,
+                           999
+                        ]
+                     }
+                  }
+               ]
+            }
+         }
+      }
+   }
+}

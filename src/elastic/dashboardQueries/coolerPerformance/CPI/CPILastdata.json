@@ -1,0 +1,105 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [{
+          "type": {
+            "value": "AssetEventDataSummary"
+          }
+        },
+        {
+          "term": {
+            "IsFromHealth": true
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "CPI": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    },
+    "Current": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    },
+    "Previous": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    },
+    "MonthBack": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    }
+  }
+}

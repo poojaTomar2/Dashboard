@@ -1,0 +1,210 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "must": []
+    }
+  },
+  "aggs": {
+    "HealthData": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "SmartDeviceHealthRecord"
+            }
+          }, {
+            "range": {
+              "EventTime": {
+                "gt": "now-30d/d",
+                "lt": "now"
+              }
+            }
+          }, {
+            "term": {
+              "IsDeleted": false
+            }
+          }],
+          "must_not": [{
+            "terms": {
+              "EventTypeId": [10]
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "avg_temp": {
+          "avg": {
+            "field": "Temperature"
+          }
+        },
+        "coolerAbove7": {
+          "filter": {
+            "range": {
+              "Temperature": {
+                "gt": 7
+              }
+            }
+          },
+          "aggs": {
+            "coolerAbove7": {
+              "cardinality": {
+                "field": "AssetId"
+              }
+            }
+          }
+        },
+        "lightBelow30": {
+          "filter": {
+            "range": {
+              "LightIntensity": {
+                "lt": 30
+              }
+            }
+          },
+          "aggs": {
+            "lightBelow30": {
+              "cardinality": {
+                "field": "AssetId"
+              }
+            }
+          }
+        }
+      }
+    },
+    "DoorData": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "SmartDeviceDoorStatus"
+            }
+          }, {
+            "range": {
+              "EventTime": {
+                "gt": "now-30d/d",
+                "lt": "now"
+              }
+            }
+          }, {
+            "term": {
+              "IsDeleted": false
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "assets": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000,
+            "min_doc_count": 41
+          }
+        },
+        "doorCount": {
+          "date_histogram": {
+            "field": "DoorOpen",
+            "interval": "hour"
+          }
+        },
+        "DoorOpenDuration": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "alarmRate": {
+              "avg": {
+                "field": "DoorOpenDuration"
+              }
+            }
+          }
+        },
+        "LocationCount": {
+          "terms": {
+            "field": "LocationId",
+            "size": 100000
+          }
+        }
+      }
+    },
+    "PingData": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "SmartDevicePing"
+            }
+          }, {
+            "range": {
+              "EventTime": {
+                "from": "now-30d/d"
+              }
+            }
+          }, {
+            "term": {
+              "IsDeleted": false
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "Date": {
+          "date_histogram": {
+            "field": "EventTime",
+            "interval": "week"
+          },
+          "aggs": {
+            "AssetCount": {
+              "cardinality": {
+                "field": "AssetId"
+              }
+            }
+          }
+        }
+      }
+    },
+    "PowerData": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "SmartDevicePowerEvent"
+            }
+          }, {
+            "range": {
+              "EventTime": {
+                "from": "now-90d/d"
+              }
+            }
+          }, {
+            "term": {
+              "IsDeleted": false
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "Date": {
+          "date_histogram": {
+            "field": "EventTime",
+            "interval": "week"
+          },
+          "aggs": {
+            "AssetCount": {
+              "cardinality": {
+                "field": "AssetId"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

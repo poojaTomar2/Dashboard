@@ -1,0 +1,113 @@
+{
+    "from": 0,
+    "size": 0,
+    "aggs": {
+        "AssetPurity": {
+            "filter": {
+                "bool": {
+                    "must": [{
+                        "type": {
+                            "value": "AssetPurity"
+                        }
+                    }, {
+                        "term": {
+                            "IsDeleted": false
+                        }
+                    }],
+                    "must_not": [{
+                        "term": {
+                            "VerifiedOn": "0001-01-01T00:00:00"
+                        }
+                    }, {
+                        "term": {
+                            "StatusId": -1
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "assets": {
+                    "terms": {
+                        "field": "AssetId",
+                        "size": 100000
+                    },
+                    "aggs": {
+                        "PurityData": {
+                            "date_histogram": {
+                                "field": "PurityDateTime",
+                                "interval": "1d",
+                                "min_doc_count": 1
+                            },
+                            "aggs": {
+                                "latestRecord": {
+                                    "top_hits": {
+                                        "size": 1,
+                                        "sort": [{
+                                            "AssetPurityId": "desc"
+                                        }],
+                                        "_source": {
+                                            "includes": [
+                                                "PurityStatus",
+                                                "PurityDateTime"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "AssetPurityLastRecord": {
+            "filter": {
+                "bool": {
+                    "must": [{
+                        "type": {
+                            "value": "AssetPurity"
+                        }
+                    }, {
+                        "term": {
+                            "IsDeleted": false
+                        }
+                    }],
+                    "must_not": [{
+                        "term": {
+                            "VerifiedOn": "0001-01-01T00:00:00"
+                        }
+                    }, {
+                        "term": {
+                            "StatusId": -1
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "assets": {
+                    "terms": {
+                        "field": "AssetId",
+                        "size": 100000
+                    },
+                    "aggs": {
+                        "latestRecord": {
+                            "top_hits": {
+                                "size": 1,
+                                "sort": [{
+                                    "AssetPurityId": "desc"
+                                }],
+                                "_source": {
+                                    "includes": [
+                                        "PurityStatus",
+                                        "PurityDateTime",
+                                        "AssetPurityId"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

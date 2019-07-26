@@ -1,0 +1,28 @@
+{
+  "size": 10000,
+  "_source": {
+    "includes": [
+      "Name",
+      "LocationGeo",
+      "NearestLocationGeo",
+      "Classification",
+      "Id",
+      "LocationType",
+      "LocationCode"
+    ]
+  },
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "Location"
+        }
+      }, {
+        "term": {
+          "IsDeleted": false
+        }
+      }],
+      "must_not": []
+    }
+  }
+}

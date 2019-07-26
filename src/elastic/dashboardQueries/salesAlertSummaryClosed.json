@@ -1,0 +1,81 @@
+{
+	"from": 0,
+	"size": 0,
+	"query": {
+		"bool": {
+			"must": [{
+					"type": {
+						"value": "AssetEventDataSummary"
+					}
+				},
+				{
+					"term": {
+						"IsFactoryAsset": false
+					}
+				}
+			]
+		}
+	},
+	"aggs": {
+		"alertsClosedByWeek": {
+			"filter": {
+				"bool": {
+					"must": [],
+					"should": []
+				}
+			},
+			"aggs": {
+				"byWeek": {
+					"date_histogram": {
+						"field": "EventDate",
+						"interval": "day"
+					},
+					"aggs": {
+						"byWeek": {
+							"nested": {
+								"path": "AlertSummaryInJson"
+							},
+							"aggs": {
+								"Closed": {
+									"sum": {
+										"field": "AlertSummaryInJson.ClosedCount"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"alertsOpenByWeek": {
+			"filter": {
+				"bool": {
+					"must": [],
+					"should": []
+				}
+			},
+			"aggs": {
+				"Bands": {
+					"range": {
+						"field": "EventDate",
+						"ranges": []
+					},
+					"aggs": {
+						"alertsOpenByWeek": {
+							"nested": {
+								"path": "AlertSummaryInJson"
+							},
+							"aggs": {
+								"Open": {
+									"sum": {
+										"field": "AlertSummaryInJson.OpenCount"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

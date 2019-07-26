@@ -1,0 +1,21 @@
+{
+  "size": 10000,
+  "_source": {
+    "includes": [
+      "ClassificationName"
+    ]
+  },
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "locationtype"
+        }
+      }, {
+        "term": {
+          "IsDeleted": false
+        }
+      }]
+    }
+  }
+}

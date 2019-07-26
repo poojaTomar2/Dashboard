@@ -1,0 +1,27 @@
+{
+    "from": 0,
+    "size": 0,
+    "query": {
+        "bool": {
+            "must": [{
+                    "type": {
+                        "value": "AssetEventDataSummary"
+                    }
+                },
+                {
+                  "term": {
+                    "IsFromPower": true
+                  }
+                }
+            ]
+        }
+    },
+    "aggs": {
+        "assets": {
+            "terms": {
+                "field": "AssetId",
+                "size": 100000
+            }
+        }
+    }
+}

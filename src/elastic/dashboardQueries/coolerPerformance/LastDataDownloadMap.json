@@ -1,0 +1,87 @@
+{
+    "from": 0,
+    "size": 0,
+    "query": {
+        "bool": {
+            "filter": []
+        }
+    },
+    "aggs": {
+        "Last30Days": {
+            "filter": {
+                "bool": {
+                    "filter": [{
+                        "term": {
+                            "LastDataDownloadedFlag": 1
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "AssetIds": {
+                    "terms": {
+                        "field": "AssetId",
+                        "size": 200000
+                    }
+                }
+            }
+        },
+        "Last60Days": {
+            "filter": {
+                "bool": {
+                    "filter": [{
+                        "term": {
+                            "LastDataDownloadedFlag": 2
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "AssetIds": {
+                    "terms": {
+                        "field": "AssetId",
+                        "size": 200000
+                    }
+                }
+            }
+        },
+        "Last90Days": {
+            "filter": {
+                "bool": {
+                    "filter": [{
+                        "term": {
+                            "LastDataDownloadedFlag": 3
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "AssetIds": {
+                    "terms": {
+                        "field": "AssetId",
+                        "size": 200000
+                    }
+                }
+            }
+        },
+        "MoreThen90Days": {
+            "filter": {
+                "bool": {
+                    "filter": [{
+                        "term": {
+                            "LastDataDownloadedFlag": 4
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "AssetIds": {
+                    "terms": {
+                        "field": "AssetId",
+                        "size": 200000
+                    }
+                }
+            }
+        }
+    }
+}

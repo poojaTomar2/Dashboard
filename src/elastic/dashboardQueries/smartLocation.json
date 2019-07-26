@@ -1,0 +1,54 @@
+{
+	"from": 0,
+	"size": 100000,
+	"query": {
+		"bool": {
+			"must": [ ]
+		}
+	},
+	"aggs": {
+		"TotalOutlets": {
+			"filter": {
+				"bool": {
+					"must": [
+						{
+							"type": {
+								"value": "Location"
+							}
+						}
+					],
+					"must_not": [
+						{
+							"term": {
+								"IsDeleted": "true"
+							}
+						}
+					]
+				}
+			}
+		},
+		"SmartLocation": {
+			"filter": {
+				"bool": {
+					"must": [
+						{
+							"type": {
+								"value": "Location"
+							}
+						},
+						{
+							"term": {
+								"IsSmart": "true"
+							}
+						},
+						{
+							"term": {
+								"IsDeleted": "false"
+							}
+						}
+					]
+				}
+			}
+		}
+	}
+}

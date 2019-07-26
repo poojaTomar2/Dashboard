@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title> IOT Chart </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<style>
+		table.dataTable thead .sorting {
+			background: url();
+		}
+
+		.filter-height {
+			max-height: 16em;
+			/*min-height: 16em;*/
+			overflow: auto;
+			overflow-x: hidden;
+			background: #fafafa;
+			padding: 3px;
+		}
+
+		.input-group {
+			position: relative;
+			display: block;
+			border-collapse: separate;
+		}
+
+		.padding-1 {
+			padding-bottom: 1em !important;
+		}
+
+		.margin-0-5 {
+			margin-top: 0.5em;
+		}
+
+		.date-max-height {
+			max-height: 8em !important;
+		}
+
+		.jarviswidget>div .no-border {
+			float: left;
+			width: 100%;
+			position: relative;
+			font-size: 13px;
+			-moz-border-radius: 0;
+			-khtml-border-radius: 0;
+			-webkit-border-radius: 0;
+			border-radius: 0;
+			margin: 0;
+			border-width: 1px 1px 2px;
+			border-style: solid;
+			border-top: none;
+			border-right-color: #fff !important;
+			border-bottom-color: #fff !important;
+			border-left-color: #fff !important;
+			padding: 13px 13px 0;
+			overflow: visible;
+		}
+
+		.heading-bold {
+			font-size: medium !important;
+			font-weight: 600 !important;
+		}
+
+		.icon-addon.addon-sm .fa,
+		.icon-addon.addon-sm .glyphicon {
+			font-size: 12px;
+			top: -1px;
+			right: 0px !important;
+			margin-right: 0px;
+			left: auto;
+			margin-left: auto;
+		}
+
+		.icon-addon .fa,
+		.icon-addon .glyphicon,
+		.icon-addon.addon-md .fa,
+		.icon-addon.addon-md .glyphicon {
+			position: absolute;
+			z-index: 2;
+			left: auto;
+			width: 20px;
+			margin-left: -2.5px;
+			text-align: center;
+			padding: 10px 0;
+			top: 1px;
+		}
+
+
+	</style>
+</head>
+
+<body class="">
+	<div class="jarviswidget jarviswidget-color-blueDark" id="" data-widget-togglebutton="false" data-widget-editbutton="false"
+	    data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-collapsed="false"
+	    data-widget-sortable="false">
+		<header>
+			<span class="widget-icon"> <i class="glyphicon glyphicon-filter"></i> </span>
+			<h2>Applied Filter Summary</h2>
+			<div class="widget-toolbar" role="menu">
+				<div class="btn-group">
+					<button class="btn dropdown-toggle btn-xs btn-success" data-toggle="dropdown">
+													Export <i class="fa fa-caret-down"></i>
+					</button>
+					<ul class="dropdown-menu pull-right js-status-update">
+						<li>
+							<a id="xlsExport" type="button" class=""><span class="fa fa-file-excel-o"></span> Excel </a>
+						</li>
+						<!-- <li class="divider"></li>
+						<li>
+							<a id="csvExport" type="button" class=""><i class="fa fa-file-text" aria-hidden="true"></i> CSV </a>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+			<ul class="nav nav-tabs pull-right in" id="myTab">
+				<li class="active">
+					<a data-toggle="tab" href="#s1"><i class="fa fa-map-marker"></i> <span class="hidden-mobile hidden-tablet">Outlets</span></a>
+				</li>
+				<li>
+					<a data-toggle="tab" href="#s2"><i class="fa fa-dollar"></i> <span class="hidden-mobile hidden-tablet">Assets </span></a>
+				</li>
+			</ul>
+		</header>
+		<!-- widget div-->
+		<div class="no-padding">
+			<div class="widget-body">
+				<!-- content -->
+				<!--<button id="xlsExport" type="button" class="btn btn-primary pull-right">
+						<span class="fa fa-file-excel-o"></span> Export
+						</button>-->
+				<div id="myTabContent" class="tab-content">
+					<div class="tab-pane fade  active in" id="s1">
+						<p style="display: none">location</p>
+						<table class="table table-striped table-hover table-condensed custom-table no-margin" id="locationGridFilter" width="100%">
+							<thead>
+								<!--<tr>-->
+								<!--<td></td>
+													<td></td>
+													<td id="locationGrid_Code" class="filterable" data-column="LocationCode" data-grid="locationGrid">Outlet Code</td>
+													<td id="locationGrid_Name" class="filterable" data-column="Name" data-grid="locationGrid">Outlet</td>
+													<td data-hide="phone,tablet"></td>-->
+								<!--<td id="locationGrid_City" class="filterable" data-column="City" data-grid="locationGrid">City</td>-->
+								<!--<td id="locationGrid_State" class="filterable" data-column="State" data-grid="locationGrid">State</td>-->
+								<!--<td data-hide="phone,tablet"></td>
+													<td data-hide="phone,tablet"></td>
+													<td data-hide="phone,tablet"></td>
+													<td data-hide="phone,tablet"></td>
+													<td data-hide="phone,tablet"></td>
+													<td data-hide="phone,tablet"></td>
+													<td data-hide="phone,tablet"></td>
+													<td data-hide="phone,tablet"></td>
+													<td data-hide="phone,tablet"></td>-->
+								<!--</tr>-->
+								<tr>
+									<th>&nbsp;</th>
+									<th data-field="alert">Alert</th>
+									<th data-field="Code" data-class="expand">
+										Code
+									</th>
+									<th data-field="Name">
+										Outlet
+									</th>
+									<th data-field="SalesTerritory">Territory</th>
+									<th data-field="City">
+										City
+									</th>
+									<!--<th data-field="MarketName" data-hide="phone,tablet">Market</th>-->
+									<!--<th data-field="LocationType" data-hide="phone,tablet">Channel</th>-->
+									<!--<th data-field="Classfication" data-hide="phone,tablet">Customer Tier</th>-->
+									<!--<th data-field="AssetCount" data-hide="phone,tablet">Smart/Total</th>-->
+									<!--<th data-field="Door_30dayCount" data-hide="phone,tablet">Door Count</th>-->
+									<!--<th data-field="TotalImpureCoolers" data-hide="phone,tablet">Impure Coolers</th>-->
+									<!--<th data-field="TotalEmptyFacings" data-hide="phone,tablet">Empty Facings</th>-->
+									<!--<th data-field="TotalSkuOOS" data-hide="phone,tablet">OOS SKU</th>-->
+								</tr>
+							</thead>
+						</table>
+					</div>
+					<div class="tab-pane fade" id="s2">
+						<p style="display: none">asset</p>
+						<table class="table table-striped table-hover table-condensed no-margin" id="assetGridFilter" width="100%">
+							<thead>
+								<!--<tr>
+													<td></td>
+													<td></td>
+													<td id="assetGrid_SerialNumber" class="filterable" data-column="SerialNumber" data-grid="assetGrid">Serial Number</td>
+													<td id="assetGrid_LocationCode" class="filterable" data-column="LocationCode" data-grid="assetGrid">Code</td>
+													<td id="assetGrid_Location" class="filterable" data-column="Location" data-grid="">Outlet</td>
+													<td></td>
+													<td></td>
+													<td data-hide="phone,tablet"></td>
+													<td data-hide="phone,tablet"></td>
+													<td data-hide="phone,tablet"></td>
+													<td data-hide="phone,tablet"></td>
+													<td data-hide="phone,tablet"></td>
+													<td data-hide="phone,tablet"></td>
+													<td data-hide="phone,tablet"></td>
+												</tr>-->
+								<tr>
+									<th data-field="Alert"></th>
+									<th data-field="Alert"># Open Alerts</th>
+									<th data-field="SerialNumber">
+										Serial Number
+									</th>
+									<th data-field="LocationCode" data-class="expand">
+										Outlet Code
+									</th>
+									<th data-field="Location">
+										Outlet
+									</th>
+									<th data-field="LatestScanTime" data-hide="phone,tablet">Last Visit</th>
+									<th data-field="Displacement">GPS </th>
+									<!--<th data-field="Door_30dayCount" data-hide="phone,tablet">Door Count</th>-->
+									<!--<th data-field="LightIntensity" data-hide="phone,tablet">Light</th>-->
+									<!--<th data-field="Temperature" data-hide="phone,tablet">Temperature</th>-->
+									<!--<th data-field="PurityStatus">Purity Status</th>-->
+									<!--<th data-field="TotalImpureCoolers" data-hide="phone,tablet">Impure Coolers</th>-->
+									<!--<th data-field="TotalEmptyFacings">Empty Facings</th>-->
+									<!--<th data-field="AssetLastPing" data-hide="phone,tablet">Asset Last Ping</th>-->
+									<!--<th data-field="TotalSkuOOS" data-hide="phone,tablet">OOS SKU</th>-->
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script async src="js/controllers/filterSummary.js"></script>
+</body>
+
+</html>

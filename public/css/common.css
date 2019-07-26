@@ -1,0 +1,268 @@
+﻿.paddingClass {
+			padding: 15px 0px 15px 0;
+			margin: 5px;
+			font-weight: 600;
+		}
+
+		.tabs {
+			padding: 20px 0px 20px 0px;
+			margin: 5px;
+			font-weight: 600;
+			color: white;
+			text-align: center;
+		}
+
+		.topText {
+			padding: 15px 0px 15px 0;
+			font-weight: 600;
+		}
+
+		.topBanner {
+			background-color: #474544 !important;
+			width: 100%;
+			line-height: 40px;
+			min-height: 60px;
+		}
+
+			.topBanner div {
+				color: white;
+				font-size: large;
+				font-weight: 500;
+			}
+
+		.tbs .nav-tabs > li {
+			padding: 0 20px;
+			text-transform: uppercase;
+			font-size: 1.4em;
+		}
+
+			.tbs .nav-tabs > li.active > a {
+				border-bottom: 4px solid #38A0F0;
+				border-top: 0px !important;
+				box-shadow: none !important;
+				border-right: none;
+				border-left: none;
+			}
+
+		.cont-loc-add-field {
+			padding: 10px;
+			display: block;
+		}
+
+			.cont-loc-add-field img {
+				text-align: left;
+				padding-right: 10px;
+				padding-left: 10px;
+				padding-top: 5px;
+				height: 50px;
+			}
+
+			.cont-loc-add-field h3 {
+				margin: 0 0 -5px 0 !important;
+				font-size: 1.6em;
+				font-weight: 600;
+				padding-bottom: 10px !important;
+			}
+
+			.cont-loc-add-field small {
+				font-weight: bold;
+				font-size: 1.3em;
+			}
+
+		.cont-sml-time {
+			left: 0;
+			font-size: 17px;
+			color: #8b8a8a;
+			font-style: italic;
+			padding-top: 5px;
+		}
+
+		.cont-list-field {
+			padding: 10px;
+			display: block;
+		}
+
+			.cont-list-field h4 {
+				padding-top: 10px !important;
+				font-size: 16px;
+				font-weight: bold;
+			}
+
+		.secondBanner {
+			width: 100%;
+			line-height: 40px;
+			min-height: 60px;
+		}
+
+		.my_drop_downmenu {
+			margin-left: 25px;
+		}
+
+		.drop-down-txt {
+			text-align: center;
+			font-size: 1.2em;
+			font-weight: 600;
+		}
+
+		.mainBanner {
+			width: 100%;
+		}
+
+		.client-info {
+			padding-bottom: 90px;
+			padding-top: 20px;
+		}
+
+		.name {
+			font-size: 2em;
+			font-weight: 600;
+		}
+
+		.small {
+			font-size: 1.3em !important;
+			font-weight: bold !important;
+		}
+
+		.right-div {
+			padding-left: 50px;
+			padding-right: 50px;
+		}
+
+		.myToggle {
+			background-color: transparent;
+		}
+
+		.mybtn {
+			font-weight: bold;
+			padding: 10px 40px;
+			padding-top: 0px;
+			font-size: 1.3em;
+			background-color: transparent;
+		}
+
+			.mybtn .caret {
+				margin-left: 40px !important;
+			}
+
+		.resetBtn {
+			font-size: 1.4em;
+			font-weight: 500;
+			margin-right: 1em;
+			color: deepskyblue;
+			vertical-align: bottom;
+			margin-top: 10px;
+			border: transparent;
+			background-color: transparent;
+		}
+
+		.toggle_Btn {
+			padding-right: 2em;
+		}
+
+		.require-color-green {
+			background-color: #5aa8aa;
+		}
+
+		.require-color-blue {
+			background-color: #2096f3;
+		}
+
+		.require-color-purple {
+			background-color: #727ab2;
+		}
+
+		.require-color-black {
+			background-color: #2f373e;
+		}
+
+		.require-color-yellow {
+			background-color: #fef983;
+		}
+
+		.percentage-color {
+			background-color: #EB8908;
+		}
+
+		.myWell strong {
+			font-size: 1.25em !important;
+			word-wrap: break-word;
+		}
+
+		.image-text {
+			display: block;
+		}
+
+			.image-text img {
+				text-align: left;
+				padding-right: 10px;
+			}
+
+			.image-text h1 {
+				font-size: 3em;
+				font-weight: bold;
+				padding-right: 10px;
+			}
+
+		.myWell {
+			padding: 3px 5px 5px 1px;
+		}
+
+		.full-main-alarm {
+			padding: 2em 1em;
+		}
+
+		.right {
+			text-align: right;
+		}
+
+		.company-site {
+			padding-left: 45px;
+		}
+
+		.devicesTxt {
+			color: white;
+			padding-top: 10px;
+			padding-left: 10px;
+		}
+
+		.logo-size {
+			height: 3em;
+			background-color: white;
+			width: 8em;
+		}
+
+		.inputBox {
+			margin: 10px;
+			border-top: 0;
+			border-right: 0;
+			border-left: 0;
+			border-bottom-color: white;
+			background-color: #39ACE9;
+		}
+
+		.footer-txt {
+			padding-right: 10px;
+		}
+
+		.icon-images {
+			height: 35px;
+			width: 35px;
+		}
+
+		.col-sm-1 .icons-data {
+			margin-left: 0.5em;
+			margin-right: 0.5em;
+		}
+
+		.ringImage {
+			padding-left: 3px;
+		}
+
+		.list_div {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+
+		.list_dot_images {
+			padding-top: 0px;
+		}

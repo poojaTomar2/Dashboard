@@ -1,0 +1,39 @@
+{
+	"size": 10000,
+	"aggs": {
+		"Keys": {
+			"terms": {
+				"field": "LocationId",
+				"size": 100000
+			},
+			"aggs": {
+				"LatestVisit": {
+					"top_hits": {
+						 "size": 1,
+						"sort": [
+							{
+								"StartTime": "desc"
+							}
+						]
+					}
+				}
+			}
+		}
+	},
+    "query": {
+        "bool": {
+            "filter": [
+                {
+                    "type": {
+                        "value": "Visit"
+                    }
+                },
+               {
+                    "term": {
+                        "IsDeleted": false
+                    }
+                }
+            ]
+        }
+    }
+}

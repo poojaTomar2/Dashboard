@@ -1,0 +1,18 @@
+{
+	"size": 10000,
+	"query": {
+		"bool": {
+			"filter": [{
+					"type": {
+						"value": "AssetPurityProduct"
+					}
+				}
+			],
+			"must_not": [{
+				"terms": {
+					"ProductId": [0, 18]
+				}
+			}]
+		}
+	}
+}

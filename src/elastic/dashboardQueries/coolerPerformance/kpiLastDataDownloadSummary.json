@@ -1,0 +1,21 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [{
+        "term": {
+          "IsFromHealth": true
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "LocationCount": {
+      "terms": {
+        "field": "AssetId",
+        "size": 300000
+      }
+    }
+  }
+}

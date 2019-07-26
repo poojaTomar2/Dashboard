@@ -1,0 +1,35 @@
+{
+    "size": 0,
+    "aggs": {
+        "AlertData": {
+            "filter": {
+                "bool": {
+                    "must": [{
+                        "type": {
+                            "value": "Alert"
+                        }
+                    }, {
+                        "term": {
+                            "IsDeleted": false
+                        }
+                    }, {
+                        "term": {
+                            "ClosedOn": "0001-01-01T00:00:00"
+                        }
+                    }],
+                    "must_not": [{
+                        "terms": {
+                            "AlertTypeId": [
+                                1,
+                                12,
+                                14,
+                                27,
+                                37
+                            ]
+                        }
+                    }]
+                }
+            }
+        }
+    }
+}

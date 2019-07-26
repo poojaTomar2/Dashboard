@@ -1,0 +1,99 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "SmartDeviceDoorStatus"
+        }
+      }, {
+        "range": {
+          "DoorCount": {
+            "gte": 0
+          }
+        }
+      }, {
+        "term": {
+          "IsDeleted": false
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }]
+    }
+  },
+  "aggs": {
+ "Yesterday": {
+      "filter": {
+        "bool": {
+          "must": [
+          ]
+        }
+      },
+      "aggs": {
+        "assets": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "DoorCount": {
+              "sum": {
+                "field": "DoorCount"
+              }
+            }
+          }
+        }
+      }
+    },
+	 "Week": {
+      "filter": {
+        "bool": {
+          "must": [
+          ]
+        }
+      },
+      "aggs": {
+        "assets": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "DoorCount": {
+              "sum": {
+                "field": "DoorCount"
+              }
+            }
+          }
+        }
+      }
+    },
+	 "Month": {
+      "filter": {
+        "bool": {
+          "must": [
+          ]
+        }
+      },
+      "aggs": {
+        "assets": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "DoorCount": {
+              "sum": {
+                "field": "DoorCount"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

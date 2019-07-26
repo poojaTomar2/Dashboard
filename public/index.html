@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+
+<head id="Head1">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=11">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,IE=11,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta X-UA-Compatible: IE=edge,chrome=1>
+    <meta charset="utf-8">
+
+
+    <title>
+        Sign In
+    </title>
+    <!--<link rel="Stylesheet" href="/Areas/SSOManagement2/Theme/acs.css" type="text/css" />-->
+    <script src="js/libs/jquery-2.1.1.min.js"></script>
+    <script src='js/lz-string.min.js'></script>
+    <script type="text/javascript">
+        function on_body_load() {
+            //an empty function
+
+            //CCH
+            // window.location.href="https://sso.cchellenic.com/adfs/ls/?wa=wsignin1.0&wtrealm=https%3a%2f%2febestsso.accesscontrol.windows.net%2f&wreply=https%3a%2f%2febestsso.accesscontrol.windows.net%2fv2%2fwsfederation&wctx=cHI9d3NmZWRlcmF0aW9uJnJtPWh0dHAlM2ElMmYlMmZjb29sZXJpb3RkYXNoYm9hcmQtZGV2LmF6dXJld2Vic2l0ZXMubmV0JTJmJnJ5PWh0dHAlM2ElMmYlMmZjb29sZXJpb3RkYXNoYm9hcmQtZGV2LmF6dXJld2Vic2l0ZXMubmV0JTJmbG9naW4x0";
+
+
+            //window.location.href="https://sso.ebest-iot.com/adfs/ls/?wa=wsignin1.0&wtrealm=https%3a%2f%2febestsso.accesscontrol.windows.net%2f&wreply=https%3a%2f%2febestsso.accesscontrol.windows.net%2fv2%2fwsfederation&wctx=cHI9d3NmZWRlcmF0aW9uJnJtPWh0dHAlM2ElMmYlMmZkZXNrdG9wLTNiMTBsNG8lM2EzMDAwJTJmaW5kZXgxLmh0bWwmcnk9aHR0cCUzYSUyZiUyZmRlc2t0b3AtM2IxMGw0byUzYTMwMDAlMmZsb2dpbjE1";  
+
+            //location 
+        }
+
+        $(document).ready(function () {
+
+            if (window.location.hostname == "cch-dashboard.ebest-iot.com") {
+                window.location.href =
+                    "https://sso.cchellenic.com/adfs/ls/?wa=wsignin1.0&wtrealm=https://cch-dashboard.ebest-iot.com/login1";
+            } else if (window.location.hostname == "cch-dashboard-qa.ebest-iot.com") {
+                window.location.href =
+                    "https://sso.cchellenic.com/adfs/ls/?wa=wsignin1.0&wtrealm=https://cch-dashboard-qa.ebest-iot.com/login1";
+            } else {
+                if (!LZString.decompressFromUTF16(localStorage.data)) {
+                    window.location.href = "login.html";
+                } else {
+                    if (!LZString.decompressFromUTF16(localStorage.lastUrl)) {
+                        window.location.href = "default.html#CoolerPerformance";
+                    } else {
+                        window.location.href = "default.html" + LZString.decompressFromUTF16(localStorage.lastUrl);
+                    }
+
+                }
+            }
+        });
+    </script>
+</head>
+
+<body onload="on_body_load()">
+
+
+
+</body>
+
+</html>

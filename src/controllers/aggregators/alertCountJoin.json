@@ -1,0 +1,86 @@
+{
+	"size": 0,
+	"aggs": {
+		"Keys": {
+			"terms": {
+				"field": "LocationId",
+				"size": 100000
+			},
+			"aggs": {
+				"Priority": {
+					"terms": {
+						"field": "PriorityId",
+						"size": 100000
+					}
+				},
+				"HighestAlertType": {
+					"top_hits": {
+						"sort": [
+							{
+								"PriorityId": "desc"
+							},
+							{
+								"AlertAt": "asc"
+							}
+						],
+						"size": 1,
+						"_source": {
+							"include": [
+								"AlertTypeId",
+								"AlertAt",
+								"PriorityId"
+							]
+						}
+					}
+				},
+				"OpenAlertByType": {
+					"top_hits": {
+						"sort": [
+							{
+								"PriorityId": "desc"
+							},
+							{
+								"AlertAt": "asc"
+							}
+						],
+						"size": 1000,
+						"_source": {
+							"include": [
+								"AlertTypeId",
+								"AlertAt"
+							]
+						}
+					}
+				}
+			}
+		}
+	},
+	"query": {
+		"bool": {
+			"filter": [
+				{
+					"type": {
+						"value": "Alert"
+					}
+				},
+				{
+					"term": {
+						"IsDeleted": false
+					}
+				},
+				{
+					"term": {
+						"ClosedOn": "0001-01-01T00:00:00"
+					}
+				}
+			],
+			"must_not": [
+				{
+					"terms": {
+						"AlertTypeId": [ 1, 12, 14, 27, 37]
+					}
+				}
+			]
+		}
+	}
+}

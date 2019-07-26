@@ -1,0 +1,258 @@
+{
+	"from": 0,
+	"size": 100000,
+	"query": {
+		"bool": {
+			"filter": [{
+				"term": {
+					"IsDeleted": false
+				}
+			}]
+		}
+	},
+	"aggs": {
+		"AssetCount": {
+			"filter": {
+				"bool": {
+					"must": [{
+						"type": {
+							"value": "Asset"
+						}
+					}]
+				}
+			}
+		},
+		"AssetCountTotal": {
+			"filter": {
+				"bool": {
+					"must": [{
+						"type": {
+							"value": "Asset"
+						}
+					}, {
+						"term": {
+							"IsDeleted": false
+						}
+					}],
+					"must_not": [{
+						"term": {
+							"AssetId": 0
+						}
+					}, {
+						"term": {
+							"LocationId": 0
+						}
+					}]
+				}
+			}
+		},
+		"LocationCount": {
+			"filter": {
+				"bool": {
+					"must": [{
+						"type": {
+							"value": "Location"
+						}
+					}]
+				}
+			}
+		},
+		"LocationCountTotal": {
+			"filter": {
+				"bool": {
+					"must": [{
+						"type": {
+							"value": "Location"
+						}
+					}, {
+						"term": {
+							"IsDeleted": false
+						}
+					}],
+					"must_not": [{
+						"term": {
+							"LocationId": 0
+						}
+					}]
+				}
+			}
+		},
+		"CustomerCount": {
+			"filter": {
+				"bool": {
+					"must": [{
+						"type": {
+							"value": "Location"
+						}
+					}]
+				}
+			},
+			"aggs": {
+				"CustomerCountDistinct": {
+					"cardinality": {
+						"field": "LocationId"
+					}
+				}
+			}
+		},
+		"SmartAssetCount": {
+			"filter": {
+				"bool": {
+					"must": [{
+						"type": {
+							"value": "Asset"
+						}
+					}],
+					"must_not": [{
+						"term": {
+							"SmartDeviceSerialNumber": ""
+						}
+					}]
+				}
+			}
+		},
+		"TotalSmartAssetCount": {
+			"filter": {
+				"bool": {
+					"must": [{
+						"type": {
+							"value": "Asset"
+						}
+					}],
+					"must_not": [{
+						"term": {
+							"SmartDeviceSerialNumber": ""
+						}
+					}]
+				}
+			}
+		},
+		"Locations": {
+			"filter": {
+				"bool": {
+					"must": [{
+						"type": {
+							"value": "Location"
+						}
+					}, {
+						"term": {
+							"IsDeleted": false
+						}
+					}, {
+						"range": {
+							"SalesTarget": {
+								"gt": 0
+							}
+						}
+					}]
+				}
+			},
+			"aggs": {
+				"Location": {
+					"terms": {
+						"field": "LocationId",
+						"size": 100000
+					},
+					"aggs": {
+						"SalesTarget": {
+							"sum": {
+								"field": "SalesTarget"
+							}
+						}
+					}
+				}
+			}
+		},
+		"Assets": {
+			"filter": {
+				"bool": {
+					"must": [{
+						"type": {
+							"value": "Asset"
+						}
+					}, {
+						"term": {
+							"IsDeleted": false
+						}
+					}],
+					"must_not": [{
+						"term": {
+							"AssetId": 0
+						}
+					}, {
+						"term": {
+							"LocationId": 0
+						}
+					}, {
+						"term": {
+							"SmartDeviceSerialNumber": ""
+						}
+					}]
+				}
+			},
+			"aggs": {
+				"Asset": {
+					"terms": {
+						"field": "AssetId",
+						"size": 100000
+					},
+					"aggs": {
+						"DoorOpenTarget": {
+							"sum": {
+								"field": "DoorOpenTarget"
+							}
+						}
+					}
+				},
+				"isMissing": {
+					"filter": {
+						"term": {
+							"IsMissing": true
+						}
+					}
+				},
+				"isPowerOff": {
+					"filter": {
+						"bool": {
+							"must": [{
+								"term": {
+									"IsPowerOn": 0
+								}
+							}, {
+								"exists": {
+									"field": "GatewaySerialNumber"
+								}
+							}, {
+								"range": {
+									"GatewaySerialNumber": {
+										"gt": "0"
+									}
+								}
+							}]
+						}
+					}
+				}
+			}
+		},
+		"SmartAssetCountWareHouse": {
+			"filter": {
+				"bool": {
+					"must": [{
+						"type": {
+							"value": "Asset"
+						}
+					}, {
+						"term": {
+							"OutletTypeId": 6283
+						}
+					}],
+					"must_not": [{
+						"term": {
+							"SmartDeviceSerialNumber": ""
+						}
+					}]
+				}
+			}
+		}
+	}
+}

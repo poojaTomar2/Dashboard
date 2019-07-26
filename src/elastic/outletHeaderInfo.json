@@ -1,0 +1,25 @@
+{
+    "from": 0,
+    "size": 1,
+    "query": {
+        "bool": {
+            "must": [{
+                "type": {
+                    "value": "Location"
+                }
+            }, {
+                "term": {
+                    "IsDeleted": false
+                }
+            }]
+        }
+    },
+    "_source": {
+        "includes": [
+            "Name",
+            "Street",
+            "Street2",
+            "Street3"
+        ]
+    }
+}

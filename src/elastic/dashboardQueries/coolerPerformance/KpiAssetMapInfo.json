@@ -1,0 +1,26 @@
+{
+    "from": 0,
+    "size": 0,
+    "query": {
+        "bool": {
+            "filter": []
+        }
+    },
+    "aggs": {
+        "SmartAssetCount": {
+            "filter": {
+                "bool": {
+                    "must": []
+                }
+            },
+            "aggs": {
+                "SmartAssetCount": {
+                    "terms": {
+                        "field": "AssetId",
+                        "size": 200000
+                    }
+                }
+            }
+        }
+    }
+}

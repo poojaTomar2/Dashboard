@@ -1,0 +1,93 @@
+{
+    "from": 0,
+    "size": 0,
+    "aggs": {
+      "AssetPurity": {
+        "filter": {
+          "bool": {
+            "must": [],
+            "must_not": [{
+              "term": {
+                "VerifiedOn": "0001-01-01T00:00:00"
+              }
+            }, {
+              "term": {
+                "StatusId": -1
+              }
+            }]
+          }
+        },
+        "aggs": {
+          "assets": {
+            "terms": {
+              "field": "AssetId",
+              "size": 100000
+            },
+            "aggs": {
+              "time_buckets": {
+                "date_histogram": {
+                  "field": "PurityDateTime"
+                },
+                "aggs": {
+                  "latestRecord": {
+                    "top_hits": {
+                      "size": 1,
+                      "sort": [{
+                        "AssetPurityId": "desc"
+                      }],
+                      "_source": {
+                        "includes": [
+                          "PurityStatus",
+                          "PurityDateTime"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "AssetPurityLastRecord": {
+        "filter": {
+          "bool": {
+            "must": [],
+            "must_not": [{
+              "term": {
+                "VerifiedOn": "0001-01-01T00:00:00"
+              }
+            }, {
+              "term": {
+                "StatusId": -1
+              }
+            }]
+          }
+        },
+        "aggs": {
+          "assets": {
+            "terms": {
+              "field": "AssetId",
+              "size": 100000
+            },
+            "aggs": {
+              "latestRecord": {
+                "top_hits": {
+                  "size": 1,
+                  "sort": [{
+                    "AssetPurityId": "desc"
+                  }],
+                  "_source": {
+                    "includes": [
+                      "PurityStatus",
+                      "PurityDateTime"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,957 @@
+<style>
+    .login-main {
+        background: white url(./img/irsignup.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 603px;
+        width: 1017px;
+        margin: 5% Auto;
+        /* background: #FFFFFF; */
+        box-shadow: -17px 22px 36px 0 rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+
+    }
+
+    .login-main-confirm {
+        background: white url(./img/confirmation-signup.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 603px;
+        width: 1017px;
+        margin: 5% Auto;
+        /* background: #FFFFFF; */
+        box-shadow: -17px 22px 36px 0 rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+
+    }
+
+    .login-main-success {
+        background: white url(./img/success-signup.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 603px;
+        width: 1017px;
+        margin: 5% Auto;
+        box-shadow: -17px 22px 36px 0 rgba(0, 0, 0, 0.05);
+        border-radius: 4px;
+
+    }
+
+    .formSizing {
+        padding: 65px;
+    }
+
+    .formSizingConfirm {
+        padding: 65px;
+    }
+
+    .formSizingExisting {
+        padding: 65px;
+    }
+
+    .heading {
+        text-align: center;
+        color: red;
+        font-weight: bold;
+    }
+
+    .headingconfirm {
+        text-align: center;
+        font-weight: bold;
+        color: white
+    }
+
+    .subheading {
+        text-align: left;
+        margin-left: 65px;
+        color: red
+    }
+
+    .subheading1 {
+        text-align: left;
+        margin-left: 65px;
+        color: red;
+        position: relative;
+        top: 2em;
+    }
+
+    .subheadingconfrim {
+        text-align: left;
+        margin-left: 65px;
+        color: red;
+        position: relative;
+        top: 17px;
+    }
+
+
+    .emailtext {
+        text-align: left;
+        margin-left: 65px;
+    }
+
+    .inputval {
+        text-align: left;
+        margin-left: 65px;
+        position: absolute;
+        top: 14.5em;
+    }
+
+    .subheadingconfirm1 {
+        text-align: left;
+        margin-left: 65px;
+        color: lightslategray
+    }
+
+    .subheadingconfirm2 {
+        text-align: left;
+        margin-left: 65px;
+        color: lightslategray
+    }
+
+    .subheadingconfirm3 {
+        text-align: left;
+        font-weight: 550;
+        margin-left: 14px;
+    }
+
+    .subheadingconfirmsuccess {
+        text-align: left;
+        margin-left: 65px;
+        color: lightslategray
+    }
+
+    .subheadingconfirm {
+        text-align: left;
+        margin-left: 65px;
+        color: red
+    }
+
+    .editoption {
+        margin-left: 40px;
+        color: red;
+        cursor: pointer;
+    }
+
+    .updateoption {
+        left: 36em;
+        color: red;
+        cursor: pointer;
+        position: absolute;
+    }
+
+    .canceloption {
+        color: red;
+        cursor: pointer;
+        left: 32em;
+        position: relative;
+    }
+
+
+    .customColor {
+        background-color: #E52E2D;
+        border-color: #E52E2D;
+        color: white;
+        font-weight: bold;
+        font-display: bold;
+    }
+
+    label.error {
+        color: red;
+        margin-top: 30px;
+
+    }
+
+    #borderline {
+        width: 27.5%;
+        margin-left: 65px;
+        border: 0 none;
+        border-top: 1px dashed #C0C0C0;
+        background: none;
+        height: 0;
+    }
+
+    #QRIOSImage {
+        margin-left: 11em;
+        top: 38.1px;
+        position: relative;
+    }
+
+    #IOSImage {
+        position: relative;
+        left: 11.5em;
+        top: 50px;
+    }
+
+    #QRAndroidImage {
+        position: relative;
+        margin-left: 48.1em;
+        margin-top: -84.24px;
+    }
+
+    #AndroidImage {
+        top: 443.9px;
+        position: absolute;
+        left: 56.7em;
+    }
+
+    #QRIOSImageSuccess {
+        margin-left: 11em;
+        top: 68.8px;
+        position: relative;
+    }
+
+    #IOSImageSuccess {
+        position: relative;
+        left: 11.5em;
+        top: 76.9px;
+    }
+
+    #QRAndroidImageSuccess {
+        position: relative;
+        margin-left: 48.1em;
+        margin-top: -55px;
+    }
+
+    #AndroidImageSuccess {
+        top: 440.3px;
+        position: absolute;
+        left: 56.7em;
+    }
+
+    #QRIOSImageExisting {
+        margin-left: 11em;
+        top: 67.8px;
+        position: relative;
+    }
+
+    #IOSImageExisting {
+        position: relative;
+        left: 11.5em;
+        top: 81.9px;
+    }
+
+    #QRAndroidImageExisting {
+        position: relative;
+        margin-left: 48.1em;
+        margin-top: -55px;
+    }
+
+    #AndroidImageExisting {
+        top: 445.3px;
+        position: absolute;
+        left: 56.7em;
+    }
+</style>
+
+<body>
+
+    <div class="login-main" id="signupform">
+        <h1 class="heading">Customer Signup</h1>
+        <h2 class="subheading">Please provide the required information</h2>
+        <hr id="borderline">
+        <div class="radio" style="margin-left: 65px;">
+            <label><input type="radio" name="optradio" value="new" checked>New Customer Account</label>
+        </div>
+        <div class="radio" style="margin-left: 65px;">
+            <label><input type="radio" name="optradio" value="existing">Existing Customer Account</label>
+        </div>
+        <hr id="borderline">
+        <div class="formSizing">
+
+            <form id="irsignup-form">
+                <div class="row">
+                    <div class="form-group col-xs-4 ">
+                        <label>Email:</label>
+                        <input type="text" class="form-control" name="email" id="email" maxlength="255">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-4">
+                        <label>Re enter Email:</label>
+                        <input type="text" class="form-control" name="reemail" id="reemail" maxlength="255">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-xs-4">
+                        <button class="btn customColor btn-block" type="submit">SUBMIT</button>
+                    </div>
+                </div>
+
+                <div id="successMessage" style="color:green;"></div>
+                <div id="emailMessage" style="color:red;"></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="login-main-confirm" id="irstatusdetail">
+        <h1 class="headingconfirm" style="background-color: gray;">Customer IR Result</h1>
+        <h2 class="subheadingconfirm1">The Outlet is assigned to user <span style="font-weight: bold"
+                id="signupEmailText"></span> and QR codes </br>for
+            app download</h2>
+        <h2 class="subheadingconfirm">Customer Information</h2>
+        <hr id="borderline">
+        <span class="emailtext" id="signupEmailText1"></span>
+        <input class="inputval" type="text" id="editinputval" size="36" value="">
+        <span class="editoption" id="editClick">Edit</span>
+        <span class="updateoption" id="updateClick" onClick="updateClickFun()">Update</span>
+        <span class="canceloption" id="cancelClick" onClick="cancelClickFun()">Cancel</span>
+        <span id="updateEmailMessage" style="color:red;position:relative;top:18px;left:20px;"></span>
+        <hr id="borderline">
+        <h2 class="subheading1">Install Application</h2>
+        <div id='QRIOSImage'>
+            <img src="./img/qr-code-IOS.png" alt="" width="98" height="93">
+        </div>
+        <div id='IOSImage'>
+            <a href="https://itunes.apple.com/us/app/scatta-e-ri-scatta/id1462447469" target="_blank" style="cursor: pointer;"><img src="./img/appstore.png" alt="" width="80" height="30"></a>
+        </div>
+        <div id='QRAndroidImage'>
+            <img src="./img/qr-code-Android.png" alt="" width="98" height="93">
+        </div>
+        <div id='AndroidImage'>
+            <a href="https://play.google.com/store/apps/details?id=com.ebest.ir" target="_blank" style="cursor: pointer;"><img src="./img/googleplay.png" alt="" width="80" height="30"></a>
+        </div>
+
+
+        <div class="formSizingConfirm">
+        </div>
+    </div>
+
+    <div class="login-main-confirm" id="irstatussuccess">
+        <h1 class="headingconfirm" style="background-color: gray;">Customer IR Result</h1>
+        <h2 class="subheadingconfirmsuccess">The customer should check email & QR codes for app stores</h2>
+        <h2 class="subheadingconfirm">Customer Information</h2>
+        <hr id="borderline">
+        <span class="emailtext" id="signupEmailText3"></span>
+        <input class="inputval" type="text" id="editinputval1" size="36" value="" style="top: 12.4em;">
+        <span class="editoption" id="editClick1">Edit</span>
+        <span class="updateoption" id="updateClick" onClick="updateClickFun1()">Update</span>
+        <span class="canceloption" id="cancelClick" onClick="cancelClickFun()">Cancel</span>
+        <span id="updateEmailMessage1" style="color:red;position:relative;top:18px;left:20px;"></span>
+        <hr id="borderline">
+        <h2 class="subheading1">Install Application</h2>
+        <div id='QRIOSImageSuccess'>
+            <img src="./img/qr-code-IOS.png" alt="" width="98" height="93">
+        </div>
+        <div id='IOSImageSuccess'>
+            <a href="https://itunes.apple.com/us/app/scatta-e-ri-scatta/id1462447469" target="_blank" style="cursor: pointer;"><img src="./img/appstore.png" alt="" width="80" height="30"></a>
+        </div>
+        <div id='QRAndroidImageSuccess'>
+            <img src="./img/qr-code-Android.png" alt="" width="98" height="93">
+        </div>
+        <div id='AndroidImageSuccess'>
+            <a href="https://play.google.com/store/apps/details?id=com.ebest.ir" target="_blank" style="cursor: pointer;"><img src="./img/googleplay.png" alt="" width="80" height="30"></a>
+        </div>
+        <h3 class="subheadingconfrim">Email Validation</h3>
+        <h2 class="subheadingconfirm2">Activation link has been sent to email id <span style="font-weight: bold"
+                id="signupEmailText4"></span>
+            <h2 class="subheadingconfirm3">Account activation is required to access the rewards platform
+                <div class="formSizingConfirm">
+                </div>
+    </div>
+
+    <div class="login-main-confirm" id="irstatusexisting">
+        <h1 class="headingconfirm" style="background-color: gray;">Customer IR Result</h1>
+        <h2 class="subheadingconfirmsuccess">Successful assignment and then QR codes to app stores</h2>
+        <h2 class="subheadingconfirm">Customer Information</h2>
+        <hr id="borderline">
+        <span class="emailtext" id="signupEmailText2"></span>
+        <input class="inputval" type="text" id="editinputval2" size="36" value="" style="top: 12.4em;">
+        <span class="editoption" id="editClick2">Edit</span>
+        <span class="updateoption" id="updateClick" onClick="updateClickFun2()">Update</span>
+        <span class="canceloption" id="cancelClick" onClick="cancelClickFun()">Cancel</span>
+        <span id="updateEmailMessage2" style="color:red;position:relative;top:18px;left:20px;"></span>
+        <hr id="borderline">
+        <h2 class="subheading1">Install Application</h2>
+        <div id='QRIOSImageExisting'>
+            <img src="./img/qr-code-IOS.png" alt="" width="98" height="93">
+        </div>
+        <div id='IOSImageExisting'>
+            <a href="https://itunes.apple.com/us/app/scatta-e-ri-scatta/id1462447469" target="_blank" style="cursor: pointer;"><img src="./img/appstore.png" alt="" width="80" height="30"></a>
+        </div>
+        <div id='QRAndroidImageExisting'>
+            <img src="./img/qr-code-Android.png" alt="" width="98" height="93">
+        </div>
+        <div id='AndroidImageExisting'>
+            <a href="https://play.google.com/store/apps/details?id=com.ebest.ir" target="_blank" style="cursor: pointer;"><img src="./img/googleplay.png" alt="" width="80" height="30"></a>
+        </div>
+
+
+        <div class="formSizingExisting">
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            // Validation
+            $("#irsignup-form").validate({
+                // Rules for form validation
+                rules: {
+                    email: {
+                        required: true
+                    },
+                    reemail: {
+                        required: true
+                    }
+                },
+
+
+                // Messages for form validation
+                messages: {
+                    email: {
+                        required: 'Please enter your email address'
+                    },
+                    reemail: {
+                        required: 'Please re enter your email address'
+                    }
+                },
+                // Ajax form submition
+                submitHandler: function (form) {
+                    var isSubmit = false;
+                    var emailReg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                    var signupValue = $("input[name='optradio']:checked").val();
+                    document.getElementById('successMessage').innerHTML = '';
+                    document.getElementById('emailMessage').innerHTML = '';
+                    if ($("#email").val().toLowerCase() != $("#reemail").val().toLowerCase()) {
+                        isSubmit = false;
+                        document.getElementById('emailMessage').innerHTML =
+                            'Email must be same.';
+                        return;
+                    } else {
+                        isSubmit = true;
+                    }
+                    if (emailReg.test($("#email").val()) == true && emailReg.test($("#reemail")
+                            .val()) == true) {
+                        isSubmit = true;
+                    } else {
+                        isSubmit = false;
+                        document.getElementById('emailMessage').innerHTML =
+                            'Invalid Email Address';
+                    }
+                    if (isSubmit) {
+                        coolerDashboard.gridUtils.ajaxIndicatorStart('Please Wait..');
+                        var IRhashUrl = window.location.hash;
+                        var signuplocationCode = IRhashUrl.split('/')[1];
+                        var loginUserDetails = JSON.parse(LZString.decompressFromUTF16(
+                            localStorage
+                            .data));
+                        var userName = loginUserDetails.data.tags.UserName;
+                        var userId = loginUserDetails.data.user.UserId;
+                        var clientId = loginUserDetails.data.tags.ClientId;
+                        var countryId = loginUserDetails.data.tags.CountryId;
+                        var domainName = 'https://portal-qa.ebest-iot.com/';
+
+                        if (window.location.hostname == "demo-devlop.azurewebsites.net") {
+                            domainName = 'https://portal-dev.ebest-iot.com/';
+                        } else if (window.location.hostname == "dashboard-qa.ebest-iot.com") {
+                            domainName = 'http://activation-qa.scattaeriscatta.com/';
+                        } else if (window.location.hostname == "dashboard.ebest-iot.com") {
+                            domainName = 'http://activation.scattaeriscatta.com/';
+                        } else if (window.location.hostname == "cch-dashboard.ebest-iot.com") {
+                            domainName = 'http://activation.scattaeriscatta.com/';
+                        } else if (window.location.hostname == "cch-dashboard-qa.ebest-iot.com") {
+                            domainName = 'http://activation-qa.scattaeriscatta.com/';
+                        } else {
+                            domainName = 'https://portal-qa.ebest-iot.com/';
+                        }
+                        var params = {
+                            signupEmail: $("#email").val(),
+                            domainName: domainName,
+                            outletCode: signuplocationCode,
+                            signupType: signupValue,
+                            ClientId: JSON.parse(LZString.decompressFromUTF16(localStorage
+                                .data)).data.tags.ClientId,
+                            CountryId: JSON.parse(LZString.decompressFromUTF16(localStorage
+                                .data)).data.tags.CountryId,
+                            ResponsibleCountryIds: JSON.parse(LZString.decompressFromUTF16(
+                                localStorage.data)).data.tags.ResponsibleCountryIds
+                        }
+
+                        $.post('/irsignup', params).done(function (data) {
+                            if (data && data == 'UserExists') {
+                                document.getElementById('emailMessage').innerHTML =
+                                    'Outlet already assigned.';
+                            } else if (data == 'existinguser') {
+                                document.getElementById('emailMessage').innerHTML =
+                                    'Email not found.';
+                            } else if (data == 'existinguserupdated') {
+                                $("#irstatussuccess").hide();
+                                $("#signupform").hide();
+                                $("#irstatusdetail").hide();
+                                $("#irstatusexisting").show();
+                                $("#signupEmailText2").text(params.signupEmail);
+                                signupUserEmail = params.signupEmail;
+                            } else if (data == 'error') {
+                                document.getElementById('emailMessage').innerHTML =
+                                    'Oops! some server error occured. Please try again.';
+                            } else {
+                                $("#irstatussuccess").show();
+                                $("#signupEmailText3").text(params.signupEmail);
+                                $("#signupEmailText4").text(params.signupEmail);
+                                $("#signupform").hide();
+                                $("#irstatusdetail").hide();
+                                $("#irstatusexisting").hide();
+                                signupUserEmail = params.signupEmail;
+                                // document.getElementById('successMessage').innerHTML =
+                                //     'Customer signup successfully.';
+                                // setTimeout(function () {
+                                //     document.getElementById('successMessage')
+                                //         .innerHTML =
+                                //         '';
+                                // }, 2000);
+                            }
+                            getIRSignupDetails();
+                            coolerDashboard.gridUtils.ajaxIndicatorStop();
+                        }).fail(function (data) {
+                            document.getElementById('errMessage').innerHTML =
+                                'Oops! some server error occured. Please try again.';
+                            $('#content').spin(false);
+                            coolerDashboard.gridUtils.ajaxIndicatorStop();
+                        });
+                        return false;
+                    }
+                },
+                // Do not change code below
+                errorPlacement: function (error, element) {
+                    error.insertAfter(element.parent());
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            var currentUrl1 = window.location.href;
+            if (currentUrl1.indexOf('LocationMap#salesHierarchy') > 0) {
+                $('#bodyId').addClass('no-menu');
+                $("#userInfo").remove();
+            } else if (currentUrl1.indexOf('irsignup') > 0 || currentUrl.indexOf('outletDetailsIR') > 0) {
+                $('#bodyId').addClass('no-menu');
+            } else {
+                $('#bodyId').removeClass('no-menu');
+            }
+            $("#signupform").hide();
+            $("#irstatusdetail").hide();
+            $("#irstatussuccess").hide();
+            $("#irstatusexisting").hide();
+            $(".inputval").hide();
+            $(".updateoption").hide();
+            $(".canceloption").hide();
+
+            coolerDashboard.gridUtils.ajaxIndicatorStart('Please Wait..');
+            var IRhashUrl = window.location.hash;
+            var signuplocationCode = IRhashUrl.split('/')[1];
+            var loginUserDetails = JSON.parse(LZString.decompressFromUTF16(
+                localStorage
+                .data));
+            var userName = loginUserDetails.data.tags.UserName;
+            var userId = loginUserDetails.data.user.UserId;
+            var params = {
+                outletCode: signuplocationCode,
+                ClientId: JSON.parse(LZString.decompressFromUTF16(localStorage.data)).data.tags.ClientId,
+                CountryId: JSON.parse(LZString.decompressFromUTF16(localStorage.data)).data.tags.CountryId,
+                ResponsibleCountryIds: JSON.parse(LZString.decompressFromUTF16(localStorage.data)).data.tags
+                    .ResponsibleCountryIds
+            };
+
+            $.post('/getirsignupdetail', params).done(function (data) {
+                if (data.data == 'Out') {
+                    $.smallBox({
+                        title: 'Session Expire',
+                        content: 'Login In Again',
+                        color: "#FF0000",
+                        timeout: 3000
+                    });
+                    setTimeout(function () {
+                        onLogout('login.html');
+                    }, 2000);
+                } else {
+                    if (data && data.data && data.data.length > 0) {
+                        $("#signupform").hide();
+                        $("#irstatussuccess").hide();
+                        $("#irstatusexisting").hide();
+                        $("#irstatusdetail").show();
+                        signupUserEmail = data.data[0].PrimaryEmail;
+                        consumerId = data.data[0].RetailerId;
+                        accountStatus = data.data[0].AccountStatus;
+                        if (accountStatus == 4200) {
+                            $(".editoption").hide();
+                            window.location.hash = 'outletDetailsIR/' + params.outletCode;
+                            coolerDashboard.gridUtils.ajaxIndicatorStop();
+                            return;
+                        } else {
+                            $(".editoption").show();
+                        }
+                        $("#signupEmailText").text(signupUserEmail);
+                        $("#signupEmailText1").text(signupUserEmail);
+                    } else if (data == 'error') {
+                        console.log('error');
+                    } else if (data == 'OutletNotFound') {
+                        window.location.hash = 'NoAccess';
+                    } else {
+                        $("#signupform").show();
+                        $("#irstatusdetail").hide();
+                        $("#irstatussuccess").hide();
+                        $("#irstatusexisting").hide();
+                    }
+                    coolerDashboard.gridUtils.ajaxIndicatorStop();
+                }
+            }).fail(function (data) {
+                document.getElementById('errMessage').innerHTML =
+                    'Oops! some server error occured. Please try again.';
+                coolerDashboard.gridUtils.ajaxIndicatorStop();
+            });
+            return false;
+        });
+        var signupUserEmail = '';
+        var consumerId = '';
+        $("#editClick").click(function () {
+            $("#editinputval").val(signupUserEmail);
+            $(".inputval").show();
+            $(".updateoption").show();
+            $(".canceloption").show();
+            $(".emailtext").hide();
+            $(".editoption").hide();
+
+        });
+        $("#editClick1").click(function () {
+            $("#editinputval1").val(signupUserEmail);
+            $(".inputval").show();
+            $(".updateoption").show();
+            $(".canceloption").show();
+            $(".emailtext").hide();
+            $(".editoption").hide();
+
+        });
+
+        $("#editClick2").click(function () {
+            $("#editinputval2").val(signupUserEmail);
+            $(".inputval").show();
+            $(".updateoption").show();
+            $(".canceloption").show();
+            $(".emailtext").hide();
+            $(".editoption").hide();
+
+        });
+
+        function cancelClickFun() {
+            document.getElementById('updateEmailMessage').innerHTML = '';
+            document.getElementById('updateEmailMessage1').innerHTML = '';
+            document.getElementById('updateEmailMessage2').innerHTML = '';
+            $(".inputval").hide();
+            $(".updateoption").hide();
+            $(".canceloption").hide();
+            $(".emailtext").show();
+            $(".editoption").show();
+        }
+
+        function updateClickFun() {
+            var isSubmitUpdate = false;
+            var emailReg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            document.getElementById('updateEmailMessage').innerHTML = '';
+
+            if (emailReg.test($("#editinputval").val()) == true) {
+                isSubmitUpdate = true;
+            } else {
+                isSubmitUpdate = false;
+                document.getElementById('updateEmailMessage').innerHTML =
+                    'Invalid Email Address';
+            }
+            if (isSubmitUpdate) {
+                coolerDashboard.gridUtils.ajaxIndicatorStart('Please Wait..');
+                var IRhashUrl = window.location.hash;
+                var signuplocationCode = IRhashUrl.split('/')[1];
+                var domainName = 'https://portal-qa.ebest-iot.com/';
+
+                if (window.location.hostname == "demo-devlop.azurewebsites.net") {
+                    domainName = 'https://portal-dev.ebest-iot.com/';
+                } else if (window.location.hostname == "dashboard-qa.ebest-iot.com") {
+                    domainName = 'http://activation-qa.scattaeriscatta.com/';
+                } else if (window.location.hostname == "dashboard.ebest-iot.com") {
+                    domainName = 'http://activation.scattaeriscatta.com/';
+                } else if (window.location.hostname == "cch-dashboard.ebest-iot.com") {
+                    domainName = 'http://activation.scattaeriscatta.com/';
+                } else if (window.location.hostname == "cch-dashboard-qa.ebest-iot.com") {
+                    domainName = 'http://activation-qa.scattaeriscatta.com/';
+                } else {
+                    domainName = 'https://portal-qa.ebest-iot.com/';
+                }
+                var updateParams = {
+                    signupEmail: $("#editinputval").val(),
+                    domainName: domainName,
+                    outletCode: signuplocationCode,
+                    consumerId: consumerId,
+                    ClientId: JSON.parse(LZString.decompressFromUTF16(localStorage.data)).data.tags.ClientId,
+                    CountryId: JSON.parse(LZString.decompressFromUTF16(localStorage.data)).data.tags.CountryId,
+                    ResponsibleCountryIds: JSON.parse(LZString.decompressFromUTF16(localStorage.data)).data.tags
+                        .ResponsibleCountryIds
+                }
+                $.post('/updateirsignupdetail', updateParams).done(function (data) {
+                    if (data && data == 'UserExists') {
+                        document.getElementById('emailMessage').innerHTML =
+                            'Outlet already assigned.';
+                    } else if (data == 'existinguser') {
+                        document.getElementById('emailMessage').innerHTML =
+                            'Email not found.';
+                    } else if (data == 'existinguserupdated') {
+                        $("#irstatussuccess").hide();
+                        $("#signupform").hide();
+                        $("#irstatusdetail").hide();
+                        $("#irstatusexisting").show();
+                        $("#signupEmailText2").text(updateParams.signupEmail);
+                    } else if (data == 'error') {
+                        document.getElementById('emailMessage').innerHTML =
+                            'Oops! some server error occured. Please try again.';
+                    } else {
+                        $(".emailtext").show();
+                        $("#irstatussuccess").show();
+                        $("#signupEmailText4").text(updateParams.signupEmail);
+                        $("#signupEmailText3").text(updateParams.signupEmail);
+                        $("#signupform").hide();
+                        $("#irstatusdetail").hide();
+                        $("#irstatusexisting").hide();
+                        $(".inputval").hide();
+                        $(".updateoption").hide();
+                        $(".canceloption").hide();
+                        $(".editoption").show();
+                    }
+                    location.reload(true);
+                    coolerDashboard.gridUtils.ajaxIndicatorStop();
+                }).fail(function (data) {
+                    document.getElementById('errMessage').innerHTML =
+                        'Oops! some server error occured. Please try again.';
+                    coolerDashboard.gridUtils.ajaxIndicatorStop();
+                });
+                return false;
+            }
+        };
+
+        function updateClickFun1() {
+            var isSubmitUpdate = false;
+            var emailReg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            document.getElementById('updateEmailMessage1').innerHTML = '';
+
+            if (emailReg.test($("#editinputval1").val()) == true) {
+                isSubmitUpdate = true;
+            } else {
+                isSubmitUpdate = false;
+                document.getElementById('updateEmailMessage1').innerHTML =
+                    'Invalid Email Address';
+            }
+            if (isSubmitUpdate) {
+                coolerDashboard.gridUtils.ajaxIndicatorStart('Please Wait..');
+                var IRhashUrl = window.location.hash;
+                var signuplocationCode = IRhashUrl.split('/')[1];
+                var domainName = 'https://portal-qa.ebest-iot.com/';
+
+                if (window.location.hostname == "demo-devlop.azurewebsites.net") {
+                    domainName = 'https://portal-dev.ebest-iot.com/';
+                } else if (window.location.hostname == "dashboard-qa.ebest-iot.com") {
+                    domainName = 'http://activation-qa.scattaeriscatta.com/';
+                } else if (window.location.hostname == "dashboard.ebest-iot.com") {
+                    domainName = 'http://activation.scattaeriscatta.com/';
+                } else if (window.location.hostname == "cch-dashboard.ebest-iot.com") {
+                    domainName = 'http://activation.scattaeriscatta.com/';
+                } else if (window.location.hostname == "cch-dashboard-qa.ebest-iot.com") {
+                    domainName = 'http://activation-qa.scattaeriscatta.com/';
+                } else {
+                    domainName = 'https://portal-qa.ebest-iot.com/';
+                }
+                var updateParams = {
+                    signupEmail: $("#editinputval1").val(),
+                    domainName: domainName,
+                    outletCode: signuplocationCode,
+                    consumerId: consumerId,
+                    ClientId: JSON.parse(LZString.decompressFromUTF16(localStorage.data)).data.tags.ClientId,
+                    CountryId: JSON.parse(LZString.decompressFromUTF16(localStorage.data)).data.tags.CountryId,
+                    ResponsibleCountryIds: JSON.parse(LZString.decompressFromUTF16(localStorage.data)).data.tags
+                        .ResponsibleCountryIds
+                }
+                $.post('/updateirsignupdetail', updateParams).done(function (data) {
+                    if (data && data == 'UserExists') {
+                        document.getElementById('emailMessage').innerHTML =
+                            'Outlet already assigned.';
+                    } else if (data == 'existinguser') {
+                        document.getElementById('emailMessage').innerHTML =
+                            'Email not found.';
+                    } else if (data == 'existinguserupdated') {
+                        $("#irstatussuccess").hide();
+                        $("#signupform").hide();
+                        $("#irstatusdetail").hide();
+                        $("#irstatusexisting").show();
+                        $("#signupEmailText2").text(updateParams.signupEmail);
+                    } else if (data == 'error') {
+                        document.getElementById('emailMessage').innerHTML =
+                            'Oops! some server error occured. Please try again.';
+                    } else {
+                        $(".emailtext").show();
+                        $("#irstatussuccess").show();
+                        $("#signupEmailText4").text(updateParams.signupEmail);
+                        $("#signupEmailText3").text(updateParams.signupEmail);
+                        $("#signupform").hide();
+                        $("#irstatusdetail").hide();
+                        $("#irstatusexisting").hide();
+                        $(".inputval").hide();
+                        $(".updateoption").hide();
+                        $(".canceloption").hide();
+                        $(".editoption").show();
+                    }
+                    location.reload(true);
+                    coolerDashboard.gridUtils.ajaxIndicatorStop();
+                }).fail(function (data) {
+                    document.getElementById('errMessage').innerHTML =
+                        'Oops! some server error occured. Please try again.';
+                    coolerDashboard.gridUtils.ajaxIndicatorStop();
+                });
+                return false;
+            }
+        };
+
+        function updateClickFun2() {
+            var isSubmitUpdate = false;
+            var emailReg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            document.getElementById('updateEmailMessage2').innerHTML = '';
+
+            if (emailReg.test($("#editinputval2").val()) == true) {
+                isSubmitUpdate = true;
+            } else {
+                isSubmitUpdate = false;
+                document.getElementById('updateEmailMessage2').innerHTML =
+                    'Invalid Email Address';
+            }
+            if (isSubmitUpdate) {
+                coolerDashboard.gridUtils.ajaxIndicatorStart('Please Wait..');
+                var IRhashUrl = window.location.hash;
+                var signuplocationCode = IRhashUrl.split('/')[1];
+                var domainName = 'https://portal-qa.ebest-iot.com/';
+
+                if (window.location.hostname == "demo-devlop.azurewebsites.net") {
+                    domainName = 'https://portal-dev.ebest-iot.com/';
+                } else if (window.location.hostname == "dashboard-qa.ebest-iot.com") {
+                    domainName = 'http://activation-qa.scattaeriscatta.com/';
+                } else if (window.location.hostname == "dashboard.ebest-iot.com") {
+                    domainName = 'http://activation.scattaeriscatta.com/';
+                } else if (window.location.hostname == "cch-dashboard.ebest-iot.com") {
+                    domainName = 'http://activation.scattaeriscatta.com/';
+                } else if (window.location.hostname == "cch-dashboard-qa.ebest-iot.com") {
+                    domainName = 'http://activation-qa.scattaeriscatta.com/';
+                } else {
+                    domainName = 'https://portal-qa.ebest-iot.com/';
+                }
+                var updateParams = {
+                    signupEmail: $("#editinputval2").val(),
+                    domainName: domainName,
+                    outletCode: signuplocationCode,
+                    consumerId: consumerId,
+                    ClientId: JSON.parse(LZString.decompressFromUTF16(localStorage.data)).data.tags.ClientId,
+                    CountryId: JSON.parse(LZString.decompressFromUTF16(localStorage.data)).data.tags.CountryId,
+                    ResponsibleCountryIds: JSON.parse(LZString.decompressFromUTF16(localStorage.data)).data.tags
+                        .ResponsibleCountryIds
+                }
+                $.post('/updateirsignupdetail', updateParams).done(function (data) {
+                    if (data && data == 'UserExists') {
+                        document.getElementById('emailMessage').innerHTML =
+                            'Outlet already assigned.';
+                    } else if (data == 'existinguser') {
+                        document.getElementById('emailMessage').innerHTML =
+                            'Email not found.';
+                    } else if (data == 'existinguserupdated') {
+                        $("#irstatussuccess").hide();
+                        $("#signupform").hide();
+                        $("#irstatusdetail").hide();
+                        $("#irstatusexisting").show();
+                        $("#signupEmailText2").text(updateParams.signupEmail);
+                        $(".emailtext").show();
+                        $("#irstatussuccess").show();
+                        $("#signupform").hide();
+                        $("#irstatusdetail").hide();
+                        $("#irstatusexisting").hide();
+                        $(".inputval").hide();
+                        $(".updateoption").hide();
+                        $(".canceloption").hide();
+                        $(".editoption").show();
+                    } else if (data == 'error') {
+                        document.getElementById('emailMessage').innerHTML =
+                            'Oops! some server error occured. Please try again.';
+                    } else {
+                        $(".emailtext").show();
+                        $("#irstatussuccess").show();
+                        $("#signupEmailText4").text(updateParams.signupEmail);
+                        $("#signupEmailText3").text(updateParams.signupEmail);
+                        $("#signupform").hide();
+                        $("#irstatusdetail").hide();
+                        $("#irstatusexisting").hide();
+                        $(".inputval").hide();
+                        $(".updateoption").hide();
+                        $(".canceloption").hide();
+                        $(".editoption").show();
+                    }
+                    location.reload(true);
+                    coolerDashboard.gridUtils.ajaxIndicatorStop();
+                }).fail(function (data) {
+                    document.getElementById('errMessage').innerHTML =
+                        'Oops! some server error occured. Please try again.';
+                    coolerDashboard.gridUtils.ajaxIndicatorStop();
+                });
+                return false;
+            }
+        };
+
+        function getIRSignupDetails() {
+            coolerDashboard.gridUtils.ajaxIndicatorStart('Please Wait..');
+            var IRhashUrl = window.location.hash;
+            var signuplocationCode = IRhashUrl.split('/')[1];
+            var loginUserDetails = JSON.parse(LZString.decompressFromUTF16(
+                localStorage
+                .data));
+            var userName = loginUserDetails.data.tags.UserName;
+            var userId = loginUserDetails.data.user.UserId;
+            var params = {
+                outletCode: signuplocationCode,
+                ClientId: JSON.parse(LZString.decompressFromUTF16(localStorage.data)).data.tags.ClientId,
+                CountryId: JSON.parse(LZString.decompressFromUTF16(localStorage.data)).data.tags.CountryId,
+                ResponsibleCountryIds: JSON.parse(LZString.decompressFromUTF16(localStorage.data)).data.tags
+                    .ResponsibleCountryIds
+            }
+            $.post('/getirsignupdetail', params).done(function (data) {
+                if (data && data.data && data.data.length > 0) {
+                    // $("#signupform").hide();
+                    // $("#irstatussuccess").hide();
+                    // $("#irstatusexisting").hide();
+                    // $("#irstatusdetail").show();
+                    signupUserEmail = data.data[0].PrimaryEmail;
+                    consumerId = data.data[0].RetailerId;
+                    accountStatus = data.data[0].AccountStatus;
+                    if (accountStatus == 4200) {
+                        $(".editoption").hide();
+                        window.location.hash = 'outletDetailsIR/' + params.outletCode;
+                        coolerDashboard.gridUtils.ajaxIndicatorStop();
+                        return;
+                    } else {
+                        $(".editoption").show();
+                    }
+                    $("#signupEmailText").text(signupUserEmail);
+                    $("#signupEmailText1").text(signupUserEmail);
+                } else if (data == 'error') {
+                    console.log('error');
+                } else if (data == 'OutletNotFound') {
+                    // window.location.hash = 'NoAccess';
+                } else {
+                    // $("#signupform").show();
+                    // $("#irstatusdetail").hide();
+                    // $("#irstatussuccess").hide();
+                    // $("#irstatusexisting").hide();
+                }
+                coolerDashboard.gridUtils.ajaxIndicatorStop();
+            }).fail(function (data) {
+                document.getElementById('errMessage').innerHTML =
+                    'Oops! some server error occured. Please try again.';
+                coolerDashboard.gridUtils.ajaxIndicatorStop();
+            });
+            return false;
+        };
+    </script>
+
+
+</body>

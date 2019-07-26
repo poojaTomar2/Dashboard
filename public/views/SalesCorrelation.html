@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title> Dashboard </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<style>
+		.dt-toolbar>:first-child .DTTT,
+		.dt-toolbar>:first-child .dataTables_filter>:only-child,
+		.dt-toolbar>:first-child .dataTables_length,
+		.dt-toolbar>:first-child .pagination {
+			float: right !important;
+		}
+
+		.btn-bronze {
+			color: #fff;
+			background-color: Brown;
+			border-color: Brown;
+		}
+
+		.btn-diamond {
+			color: #fff;
+			background-color: blue;
+			border-color: blue;
+		}
+
+		.btn-gold {
+			color: #fff;
+			background-color: Gold;
+			border-color: Gold;
+		}
+
+		.btn-silver {
+			color: #fff;
+			background-color: silver;
+			border-color: silver;
+		}
+
+		.btn-circle {
+			width: 10px;
+			height: 10px;
+			text-align: center;
+			padding: 6px 0;
+			font-size: 12px;
+			line-height: 18px;
+			border-radius: 50%;
+			-moz-border-radius: 50%;
+			-webkit-border-radius: 50%;
+		}
+	</style>
+</head>
+
+<body class="">
+	<div id="ribbon">
+
+		<!-- breadcrumb -->
+		<ol class="breadcrumb">
+			<li>Dashboard</li>
+			<li>Sales Correlation</li>
+		</ol>
+	</div>
+	<!-- MAIN CONTENT -->
+	<div id="content">
+		<!-- row -->
+		<div id="chat-container" class="">
+			<span class="chat-list-open-close">
+				<i class="fa fa-filter icon-filter"></i>
+				<b class="filterApplied hidden">
+					<i class="fa fa-check" aria-hidden="true"></i>
+				</b>
+				<span class="text-filter">Filters</span>
+			</span>
+			<div id="filterTitle"></div>
+			<div class="chat-list-body custom-scroll">
+				<div id="filterFormKPI"></div>
+			</div>
+		</div>
+		<div id="chat-container-summary">
+			<div id="chat-container" class="chat-container-summary">
+				<span class="chat-list-open-close" style="top:139px">
+					<i class="fa fa-table icon-filter"></i>
+					<span class="text-filter">Summary</span>
+					<b>
+						<i class="fa fa-filter"></i>
+					</b>
+				</span>
+				<div class="chat-list-body custom-scroll">
+					<div id="filterSummary">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+				<div class="well-sm">
+					<span class="well-sm">
+						<b>Period: </b>
+						<b class="timeFilterName"></b>
+					</span>
+				</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+				<ul id="sparks" class="">
+					<li class="sparks-info">
+						<h5> Total Customers
+							<span class="txt-color-purple" id="totalCustomer">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Customers Selected
+							<span class="txt-color-blue" id="customerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0" data-pie-size="40"
+						    id="customerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info">
+						<h5> Total Coolers
+							<span class="txt-color-purple" id="totalCooler">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Coolers Selected
+							<span class="txt-color-blue" id="coolerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0" data-pie-size="40"
+						    id="coolerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info">
+						<h5> Total Smart Coolers
+							<span class="txt-color-purple" id="totalSmartCooler">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Smart Coolers Selected
+							<span class="txt-color-blue" id="smartCoolerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0" data-pie-size="40"
+						    id="smartCoolerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info hidden">
+						<h5>Warehouse Connected Coolers
+							<span class="txt-color-blue" id="smartCoolerWareHouseSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0" data-pie-size="40"
+						    id="smartCoolerWareHouseSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<section id="widget-grid" class="">
+
+			<div class="row">
+				<article class="">
+					<article class="col-sm-12 col-md-12 col-lg-12">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+						    data-widget-deletebutton="false" data-widget-sortable="false" data-widget-togglebutton="false">
+							<h2>
+								<b>Cooler Performance Vs Sales</b>
+							</h2>
+						</div>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12 fullscreensettings">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+						    data-widget-sortable="false" data-widget-deletebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>Temperature and Sales</h2>
+							</header>
+							<span id="tempAndSalesChart"></span>
+							<div id="tempAndSales"></div>
+
+						</div>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12 fullscreensettings">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+						    data-widget-sortable="false" data-widget-deletebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>Power On And Sales</h2>
+							</header>
+							<span id="powerAndSalesChart"></span>
+							<div id="powerOnSales"></div>
+
+						</div>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12 fullscreensettings">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+						    data-widget-sortable="false" data-widget-deletebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>Light On And Sales</h2>
+							</header>
+							<span id="lightAndSalesChart"></span>
+							<div id="lightOnSales"></div>
+
+						</div>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12 fullscreensettings">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+						    data-widget-sortable="false" data-widget-deletebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>Active Alerts And Sales</h2>
+							</header>
+							<span id="openAlarmAndSalesChart"></span>
+							<div id="openAlarmSales"></div>
+
+						</div>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-deletebutton="false"
+						    data-widget-sortable="false" data-widget-togglebutton="false">
+							<h2>
+								<b>Sales Rep Performance Vs Sales</b>
+							</h2>
+						</div>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12 fullscreensettings">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+						    data-widget-sortable="false" data-widget-deletebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>Visit Frequency And Sales</h2>
+							</header>
+							<span id="visitFrequencyAndSalesChart"></span>
+							<div id="visitFrequencySales"></div>
+
+						</div>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12 fullscreensettings">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+						    data-widget-sortable="false" data-widget-deletebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>Visit Duration And Sales</h2>
+							</header>
+							<span id="visitDurationAndSalesChart"></span>
+							<div id="visitDurationSales"></div>
+						</div>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12 fullscreensettings">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+						    data-widget-sortable="false" data-widget-deletebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>Door Utilization</h2>
+							</header>
+							<span id="doorUtilizationAndSalesChart"></span>
+							<div id="doorUtilizationAndSales"></div>
+						</div>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12 fullscreensettings">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+						    data-widget-sortable="false" data-widget-deletebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>Sales Utilization</h2>
+							</header>
+							<span id="salesUtilizationAndSalesChart"></span>
+							<div id="salesUtilizationAndSales"></div>
+						</div>
+					</article>
+				</article>
+			</div>
+		</section>
+	</div>
+	<!--================================================== -->
+	<!-- PAGE RELATED PLUGIN(S) -->
+	<script async src="js/controllers/SalesCorrelation.js"></script>
+</body>
+
+</html>

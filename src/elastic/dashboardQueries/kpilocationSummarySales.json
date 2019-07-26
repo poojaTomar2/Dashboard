@@ -1,0 +1,36 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "Location"
+        }
+      }, {
+        "term": {
+          "IsDeleted": false
+        }
+      }, {
+        "term": {
+          "IsSmart": true
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "Location": {
+      "terms": {
+        "field": "LocationId",
+        "size": 100000
+      },
+      "aggs": {
+        "SalesTarget": {
+          "sum": {
+            "field": "SalesTarget"
+          }
+        }
+      }
+    }
+  }
+}

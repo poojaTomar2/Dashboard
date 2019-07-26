@@ -1,0 +1,72 @@
+{
+	"Planogram": {
+		"indexName": "cooler-iot-planogram",
+		"type": "Planogram",
+		"idProperty": "PlanogramId",
+		"tableId": 22,
+		"query": "SELECT dbo.Planogram.*, dbo.AssetType.AssetType, dbo.Client.ClientName, CreateUsers.Username AS CreatedBy, ModifiedUsers.Username AS ModifiedBy FROM dbo.Planogram LEFT OUTER JOIN dbo.AssetType ON dbo.Planogram.AssetTypeId = dbo.AssetType.AssetTypeId LEFT OUTER JOIN dbo.Security_User AS CreateUsers ON CreateUsers.UserId = dbo.Planogram.CreatedByUserId LEFT OUTER JOIN dbo.Security_User AS ModifiedUsers ON ModifiedUsers.UserId = dbo.Planogram.ModifiedByUserId LEFT OUTER JOIN dbo.Client ON dbo.Planogram.ClientId = dbo.Client.ClientId"
+	},
+	"Product": {
+		"indexName": "cooler-iot-product",
+		"type": "Product",
+		"idProperty": "ProductId",
+		"where": true,
+		"tableId": 21,
+		"query": "SELECT dbo.Product.*, dbo.Country.Country, dbo.State.State, dbo.Manufacturer.ManufacturerName AS Manufacturer,dbo.Distributor.DistributorName, dbo.Brand.BrandName, dbo.Brand.BrandId, dbo.Distributor.DistributorId, dbo.PackagingType.PackagingTypeId, dbo.PackagingType.PackagingTypeName AS PackagingType,dbo.MeasurementUnit.MeasurementUnitTypeId, dbo.MeasurementUnit.MeasurementUnit, dbo.Manufacturer.IsForeign, dbo.Brand.ManufacturerId,TagsList.Tags, CreatedUsers.Username AS CreatedByUser, ModifiedUsers.Username AS ModifiedByUser, dbo.Client.ClientName FROM (SELECT AssociationId, Tags FROM  dbo.vwTagCSVList WHERE (AssociationTypeId = 8)) AS TagsList RIGHT OUTER JOIN dbo.Product LEFT OUTER JOIN dbo.Security_User AS ModifiedUsers ON dbo.Product.ModifiedByUserId = ModifiedUsers.UserId LEFT OUTER JOIN dbo.Security_User AS CreatedUsers ON dbo.Product.CreatedByUserId = CreatedUsers.UserId LEFT OUTER JOIN dbo.Brand ON dbo.Product.BrandId = dbo.Brand.BrandId LEFT OUTER JOIN dbo.Distributor ON dbo.Product.DistributorId = dbo.Distributor.DistributorId LEFT OUTER JOIN dbo.PackagingType ON dbo.Product.PackagingTypeId = dbo.PackagingType.PackagingTypeId LEFT OUTER JOIN dbo.MeasurementUnit ON dbo.Product.MeasurementUnitTypeId = dbo.MeasurementUnit.MeasurementUnitTypeId LEFT OUTER JOIN dbo.State ON dbo.Product.StateId = dbo.State.StateId LEFT OUTER JOIN dbo.Country ON dbo.Product.CountryId = dbo.Country.CountryId LEFT OUTER JOIN dbo.Manufacturer ON dbo.Brand.ManufacturerId = dbo.Manufacturer.ManufacturerId ON TagsList.AssociationId = dbo.Product.ProductId LEFT OUTER JOIN dbo.Client ON dbo.Product.ClientId = dbo.Client.ClientId "
+	},
+	"LocationRep": {
+		"indexName": "cooler-iot-locationrep",
+		"type": "LocationRep",
+		"idProperty": "LocationRepId",
+		"tableId": 23,
+		"query": "SELECT LocationRep.*, (Security_User.FirstName +' ' +Security_User.LastName) Name, Username, ClientId FROM LocationRep LEFT OUTER JOIN Security_User ON RepId = Security_User.UserId"
+	},
+	"Surveydetail": {
+		"indexName": "surveys",
+		"type": "surveydetail",
+		"idProperty": "SurveyDetailId",
+		"parent": "true",
+		"parentType": "survey",
+		"parentIdProperty": "SurveyId",
+		"tableId": 25,
+		"query": "SELECT SurveyDetail.SurveyId, SurveyDetailId, SurveyDetail.SurveyQuestionId, Tag, Response, Point, ResponseYesNo,Question, Survey.SurveyTypeId, QuestionNumber, QuestionCategoryId, SurveyQuestion.SurveyTagId,Survey.LocationId,Survey.Latitude,Survey.Longitude,SurveyDateTime, CASE WHEN SurveyDetail.IsDeleted = 0 AND Survey.IsDeleted = 0 AND SurveyTag.IsDeleted = 0 AND Location.IsDeleted =0 THEN 'True' ELSE 'False' END ValidSurvey, TotalPoints, IsLatestSurveyed, Location.ClientId, Location.Name, Text, SurveyDetail.Photo, ImageCount, CASE WHEN Tag = 'Cooler Purity %' THEN 'True' ELSE 'False' END AS IsPurityQuestion, CASE WHEN Tag = 'Cooler Purity %' AND ISNUMERIC(replace(Response,'%','')) = 1 THEN ROUND(replace(Response,'%',''), 0) ELSE 0 END PurityPercentage, dbo.Location.SalesHierarchyId, dbo.SalesHierarchy.Name AS SalesHierarchy FROM SurveyDetail LEFT OUTER JOIN SurveyQuestion ON SurveyQuestion.SurveyQuestionId = SurveyDetail.SurveyQuestionId LEFT OUTER JOIN SurveyTag ON SurveyTag.SurveyTagId = SurveyQuestion.SurveyTagId LEFT OUTER JOIN Survey ON Survey.SurveyId = SurveyDetail.SurveyId LEFT OUTER JOIN Location ON Survey.LocationId = Location.LocationId LEFT OUTER JOIN dbo.SalesHierarchy ON dbo.Location.SalesHierarchyId = dbo.SalesHierarchy.SalesHierarchyId"
+	},
+	"Opportunity": {
+		"indexName": "surveys",
+		"type": "opportunity",
+		"parent": "true",
+		"idProperty": "OpportunityId",
+		"parentType": "survey",
+		"parentIdProperty": "SurveyId",
+		"tableId": 26,
+		"query": "SELECT IsLatestSurveyed, Opportunity.*,CASE WHEN Location.IsDeleted = 0 THEN 0 ELSE 1 END LocationDeleted, dbo.Location.SalesHierarchyId, dbo.SalesHierarchy.Name AS SalesHierarchy FROM Opportunity LEFT OUTER JOIN Location ON Location.LocationId = Opportunity.LocationId LEFT OUTER JOIN Survey ON Survey.SurveyId = Opportunity.SurveyId LEFT OUTER JOIN dbo.SalesHierarchy ON dbo.Location.SalesHierarchyId = dbo.SalesHierarchy.SalesHierarchyId"
+	},
+	"Survey": {
+		"indexName": "surveys",
+		"type": "survey",
+		"idProperty": "SurveyId",
+		"tableId": 24,
+		"query": "SELECT Survey.*, Location.ClientId, CASE WHEN Location.IsDeleted = 0 THEN 0 ELSE 1 END LocationDeleted, dbo.Location.SalesHierarchyId, dbo.SalesHierarchy.Name AS SalesHierarchy FROM Survey LEFT OUTER JOIN Location ON Survey.LocationId = Location.LocationId LEFT OUTER JOIN dbo.SalesHierarchy ON dbo.Location.SalesHierarchyId = dbo.SalesHierarchy.SalesHierarchyId"
+	},
+	"Classification": {
+		"indexName": "cooler-iot-classification",
+		"type": "classification",
+		"idProperty": "LocationClassificationId",
+		"tableId": 31,
+		"query": "SELECT * FROM LocationClassification"
+	},
+	"LocationType": {
+		"indexName": "cooler-iot-locationtype",
+		"type": "locationtype",
+		"idProperty": "LocationTypeId",
+		"tableId": 32,
+		"query": "SELECT * FROM LocationType"
+	},
+	"AssetTypeCapacity": {
+		"indexName": "cooler-iot-assettypecapacity",
+		"type": "assettypecapacity",
+		"idProperty": "AssetTypeCapacityId",
+		"tableId": 33,
+		"query": "SELECT * FROM AssetTypeCapacity"
+	}
+}

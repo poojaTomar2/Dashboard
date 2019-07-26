@@ -1,0 +1,58 @@
+{
+    "size": 0,
+    "aggs": {
+        "Keys": {
+            "terms": {
+                "field": "LocationId",
+                "size": 100000
+            },
+            "aggs": {
+                "PowerDuration": {
+                    "range": {
+                        "field": "EventDate",
+                        "keyed": true,
+                        "ranges": [{
+                                "key": "7days",
+                                "from": "now/d-7d"
+                            }, {
+                                "key": "today",
+                                "from": "now/d"
+                            },
+                            {
+                                "key": "30days",
+                                "from": "now/d-29d"
+                            }
+                        ]
+                    },
+                    "aggs": {
+                        "PowerOffDuration": {
+                            "sum": {
+                                "field": "SumOfPowerOffDuration"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "query": {
+        "bool": {
+            "filter": [{
+                "type": {
+                    "value": "AssetEventDataSummary"
+                }
+            }, {
+                "range": {
+                    "EventDate": {
+                        "gte": "now/d-30d"
+                    }
+                }
+            }],
+            "must": [{
+                "term": {
+                    "IsFromPower": true
+                }
+            }]
+        }
+    }
+}

@@ -1,0 +1,112 @@
+{
+	"from": 0,
+	"size": 0,
+	"query": {
+		"bool": {
+			"must": [{
+				"type": {
+					"value": "AssetEventDataSummary"
+				}
+			}]
+		}
+	},
+	"aggs": {
+		"Location": {
+			"filter": {
+				"bool": {
+					"must": [],
+					"should": []
+				}
+			},
+			"aggs": {
+				"LocationId": {
+					"nested": {
+						"path": "AlertSummaryInJson"
+					},
+					"aggs": {
+						"LocationId": {
+							"terms": {
+								"field": "AlertSummaryInJson.LocationId",
+								"size": 100000
+							},
+							"aggs": {
+								"Location": {
+									"filter": {
+										"bool": {
+											"should": [],
+											"must": []
+										}
+									},
+									"aggs": {
+										"Location": {
+											"top_hits": {
+												"size": 1,
+												"_source": {
+													"includes": [
+														"AlertSummaryInJson.LocationName",
+														"AlertSummaryInJson.LocationId",
+														"AlertSummaryInJson.SalesGroupName",
+														"AlertSummaryInJson.SalesOfficeName",
+														"AlertSummaryInJson.SalesOrganizationName",
+														"AlertSummaryInJson.SalesGroupId",
+														"AlertSummaryInJson.SalesOfficeId",
+														"AlertSummaryInJson.SalesOrganizationId",
+														"AlertSummaryInJson.SalesHierarchy",
+														"AlertSummaryInJson.SalesHierarchyId"
+													]
+												}
+											}
+										}
+									}
+								},
+								"closeAlert": {
+									"filter": {
+										"bool": {
+											"should": []
+										}
+									},
+									"aggs": {
+										"Closed": {
+											"sum": {
+												"field": "AlertSummaryInJson.ClosedCount"
+											}
+										}
+									}
+								},
+								"openAlert": {
+									"filter": {
+										"bool": {
+											"must": [],
+											"should": []
+										}
+									},
+									"aggs": {
+										"Open": {
+											"sum": {
+												"field": "AlertSummaryInJson.OpenCount"
+											}
+										}
+									}
+								},
+								"NewAlert": {
+									"filter": {
+										"bool": {
+											"should": []
+										}
+									},
+									"aggs": {
+										"New": {
+											"sum": {
+												"field": "AlertSummaryInJson.TotalCount"
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

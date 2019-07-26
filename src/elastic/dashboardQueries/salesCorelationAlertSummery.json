@@ -1,0 +1,54 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "Alert"
+        }
+      }, {
+        "term": {
+          "IsDeleted": false
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }, {
+        "terms": {
+          "AlertTypeId": [
+            1,
+            12,
+            14,
+            27,
+            37
+          ]
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "AlertOpenCount": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "term": {
+              "ClosedOn": "0001-01-01T00:00:00"
+            }
+          }],
+          "should": []
+        }
+      },
+      "aggs": {
+        "Bands": {
+          "range": {
+            "field": "AlertAt",
+            "ranges": []
+          }
+        }
+      }
+    }
+  }
+}

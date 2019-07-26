@@ -1,0 +1,34 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [{
+          "type": {
+            "value": "AssetEventDataSummary"
+          }
+        },
+        {
+          "term": {
+            "IsFromDoor": true
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "Location": {
+      "terms": {
+        "field": "LocationId",
+        "size": 100000
+      },
+      "aggs": {
+        "DoorCount": {
+          "sum": {
+            "field": "SumOfDoorCount"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+    "from": 0,
+    "size": 0,
+    "query": {
+        "bool": {
+            "filter": [],
+            "must": [{
+                "type": {
+                    "value": "Asset"
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "Light": {
+            "filter": {
+                "bool": {
+                    "must": []
+                }
+            },
+            "aggs": {
+                "Location": {
+                    "terms": {
+                        "field": "AssetId",
+                        "size": 100000
+                    },
+                    "aggs": {
+                        "Lat": {
+                            "geo_bounds": {
+                                "field": "LocationGeo"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "Temperature": {
+            "filter": {
+                "bool": {
+                    "must": []
+                }
+            },
+            "aggs": {
+                "Location": {
+                    "terms": {
+                        "field": "AssetId",
+                        "size": 100000
+                    },
+                    "aggs": {
+                        "Lat": {
+                            "geo_bounds": {
+                                "field": "LocationGeo"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "Power": {
+            "filter": {
+                "bool": {
+                    "must": []
+                }
+            },
+            "aggs": {
+                "Location": {
+                    "terms": {
+                        "field": "AssetId",
+                        "size": 100000
+                    },
+                    "aggs": {
+                        "Lat": {
+                            "geo_bounds": {
+                                "field": "LocationGeo"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

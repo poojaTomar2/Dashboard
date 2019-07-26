@@ -1,0 +1,142 @@
+﻿{
+  "from": 0,
+  "size": 100000,
+  "query": {},
+  "aggs": {
+    "AlertOpenCount": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Alert"
+            }
+          }, {
+            "term": {
+              "ClosedOn": "0001-01-01T00:00:00"
+            }
+          }, {
+            "term": {
+              "IsDeleted": false
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "AssetId": 0
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "Bands": {
+          "range": {
+            "field": "AlertAt",
+            "keyed": true,
+            "ranges": [{
+              "key": "Today",
+              "from": "now/d"
+            }, {
+              "key": "1-3",
+              "from": "2016-06-12T00:00:00",
+              "to": "2016-06-15T00:00:00"
+            }, {
+              "key": "4-6",
+              "from": "2016-06-09T00:00:00",
+              "to": "2016-06-12T00:00:00"
+            }, {
+              "key": "6+",
+              "to": "2016-06-09T00:00:00"
+            }]
+          },
+          "aggs": {
+            "Priority": {
+              "terms": {
+                "field": "PriorityId",
+                "size": 100000
+              }
+            },
+            "Locations": {
+              "cardinality": {
+                "field": "LocationId"
+              }
+            }
+          }
+        },
+        "Locations": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    },
+    "alertsCreatedByWeek": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Alert"
+            }
+          }, {
+            "term": {
+              "IsDeleted": false
+            }
+          }, {
+            "range": {
+              "AlertAt": {
+                "from": "now-90d/d",
+                "to": "now/d"
+              }
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "AssetId": 0
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "byWeek": {
+          "date_histogram": {
+            "field": "AlertAt",
+            "interval": "week"
+          }
+        }
+      }
+    },
+    "alertsClosedByWeek": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Alert"
+            }
+          }, {
+            "term": {
+              "IsDeleted": false
+            }
+          }, {
+            "range": {
+              "ClosedOn": {
+                "from": "now-90d/d",
+                "to": "now/d"
+              }
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "AssetId": 0
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "byWeek": {
+          "date_histogram": {
+            "field": "ClosedOn",
+            "interval": "week"
+          }
+        }
+      }
+    }
+  }
+}

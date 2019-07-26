@@ -1,0 +1,30 @@
+{
+    "from": 0,
+    "size": 0,
+    "query": {
+        "bool": {
+            "filter": []
+        }
+    },
+    "aggs": {
+        "Assets": {
+            "filter": {
+                "bool": {
+                    "must": [{
+                        "type": {
+                            "value": "AssetEventDataSummary"
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "AssetsCountDistinct": {
+                    "cardinality": {
+                        "field": "AssetId",
+                        "precision_threshold": 40000
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "size": 10000,
+    "query": {
+        "bool": {
+            "filter": [{
+                    "type": {
+                        "value": "SalesHierarchyAssetTypeCapacityThreshold"
+                    }
+                },
+                {
+                    "term": {
+                        "IsDeleted": false
+                    }
+                }
+            ]
+        }
+    },
+    "_source": {
+        "includes": [
+            "AssetTypeCapacityId",
+            "Last30DayDoorThresold",
+            "SalesHierarchyId"
+        ]
+    }
+}

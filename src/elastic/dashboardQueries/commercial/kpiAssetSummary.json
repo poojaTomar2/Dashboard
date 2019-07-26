@@ -1,0 +1,304 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "term": {
+          "IsDeleted": false
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "AssetCount": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Asset"
+            }
+          }]
+        }
+      }
+    },
+    "LocationCount": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Location"
+            }
+          }]
+        }
+      }
+    },
+    "CustomerCount": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Location"
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "CustomerCountDistinct": {
+          "cardinality": {
+            "field": "LocationId"
+          }
+        }
+      }
+    },
+    "SmartAssetCount": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Asset"
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "SmartDeviceSerialNumber": ""
+            }
+          }]
+        }
+      }
+    },
+    "SmartAssetCountWareHouse": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Asset"
+            }
+          }, {
+            "term": {
+              "OutletTypeId": 6283
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "SmartDeviceSerialNumber": ""
+            }
+          }]
+        }
+      }
+    },
+    "TotalSmartAssetCount": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Asset"
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "SmartDeviceSerialNumber": ""
+            }
+          }]
+        }
+      }
+    },
+    "Locations": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Location"
+            }
+          }]
+        }
+      }
+    },
+    "Assets": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Asset"
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "LocationId": "0"
+            }
+          }, {
+            "term": {
+              "IsDeleted": true
+            }
+          }]
+        }
+      }
+    },
+    "SmartAssets": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Asset"
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "LocationId": "0"
+            }
+          }, {
+            "term": {
+              "IsDeleted": true
+            }
+          }, {
+            "term": {
+              "SmartDeviceSerialNumber": ""
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "DoorOpenTarget": {
+          "sum": {
+            "field": "DoorOpenTarget"
+          }
+        }
+      }
+    },
+    "SmartLocation": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Asset"
+            }
+          }, {
+            "term": {
+              "IsDeleted": false
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "SmartDeviceSerialNumber": ""
+            }
+          }, {
+            "term": {
+              "LocationId": "0"
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "Location": {
+          "terms": {
+            "field": "LocationId",
+            "size": 100000
+          },
+          "aggs": {
+            "SalesTarget": {
+              "sum": {
+                "field": "SalesTarget"
+              }
+            },
+            "Lat": {
+              "geo_bounds": {
+                "field": "LocationGeo"
+              }
+            },
+            "DoorOpenTarget": {
+              "sum": {
+                "field": "DoorOpenTarget"
+              }
+            },
+            "Capacity": {
+              "avg": {
+                "field": "CapacityNew"
+              }
+            },
+            "CapacityAvg": {
+              "avg": {
+                "field": "AverageCapacityNew"
+              }
+            }
+          }
+        }
+      }
+    },
+    "SmartAssetLocation": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Asset"
+            }
+          }, {
+            "term": {
+              "IsDeleted": false
+            }
+          }],
+          "must_not": []
+        }
+      },
+      "aggs": {
+        "Location": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "Lat": {
+              "geo_bounds": {
+                "field": "LocationGeo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "NonSmartLocation": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Asset"
+            }
+          }, {
+            "term": {
+              "IsDeleted": false
+            }
+          }, {
+            "range": {
+              "SalesTarget": {
+                "gt": 0
+              }
+            }
+          }, {
+            "term": {
+              "SmartDeviceSerialNumber": ""
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "Location": {
+          "terms": {
+            "field": "LocationId",
+            "size": 100000
+          },
+          "aggs": {
+            "SalesTarget": {
+              "sum": {
+                "field": "SalesTarget"
+              }
+            },
+            "Lat": {
+              "geo_bounds": {
+                "field": "LocationGeo"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

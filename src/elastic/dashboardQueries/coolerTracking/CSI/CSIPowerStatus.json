@@ -1,0 +1,145 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "type": {
+            "value": "SmartDevicePowerEvent"
+          }
+        },
+        {
+          "term": {
+            "IsDeleted": false
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+   "Current": {
+       "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventTime": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+       "Power": {
+      "terms": {
+        "field": "AssetId",
+        "size": 100000
+      },
+      "aggs": {
+        "Power_hits": {
+          "top_hits": {
+            "sort": [
+              {
+                "EventTime": {
+                  "order": "desc"
+                }
+              }
+            ],
+            "_source": {
+              "includes": [
+                "PowerStatus","AssetId"
+              ]
+            },
+            "size": 1
+          }
+        }
+      }
+    }
+      }
+    },
+    "Previous": {
+         "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventTime": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+   "Power": {
+      "terms": {
+        "field": "AssetId",
+        "size": 100000
+      },
+      "aggs": {
+        "Power_hits": {
+          "top_hits": {
+            "sort": [
+              {
+                "EventTime": {
+                  "order": "desc"
+                }
+              }
+            ],
+            "_source": {
+              "includes": [
+                "PowerStatus","AssetId"
+              ]
+            },
+            "size": 1
+          }
+        }
+      }
+    }
+      }
+    },
+    "MonthBack": {
+        "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventTime": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+   "Power": {
+      "terms": {
+        "field": "AssetId",
+        "size": 100000
+      },
+      "aggs": {
+        "Power_hits": {
+          "top_hits": {
+            "sort": [
+              {
+                "EventTime": {
+                  "order": "desc"
+                }
+              }
+            ],
+            "_source": {
+              "includes": [
+                "PowerStatus","AssetId"
+              ]
+            },
+            "size": 1
+          }
+        }
+      }
+    }
+      }
+    }
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "SmartDeviceHealthRecord"
+        }
+      }, {
+        "term": {
+          "IsDeleted": false
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }, {
+        "terms": {
+          "EventTypeId": [10]
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "TempLightIssueCount": {
+      "filter": {
+        "bool": {
+          "must": [],
+          "must_not": [{
+            "term": {
+              "Temperature": "-100"
+            }
+          }, {
+            "term": {
+              "LatestHealthRecordId": "0"
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "Temperature and Light OK": {
+          "filter": {
+            "bool": {
+              "must": [{
+                "term": {
+                  "IsLightIssue": 0
+                }
+              }, {
+                "term": {
+                  "IsTemperatureIssue": 0
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "AssetCount": {
+              "cardinality": {
+                "field": "AssetId"
+              }
+            }
+          }
+        },
+        "Light Malfunction": {
+          "filter": {
+            "bool": {
+              "must": [{
+                "term": {
+                  "IsLightIssue": 1
+                }
+              }],
+              "must_not": [{
+                "term": {
+                  "IsTemperatureIssue": 1
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "AssetCount": {
+              "cardinality": {
+                "field": "AssetId"
+              }
+            }
+          }
+        },
+        "Temperature Issue": {
+          "filter": {
+            "bool": {
+              "must": [{
+                "term": {
+                  "IsTemperatureIssue": 1
+                }
+              }],
+              "must_not": [{
+                "term": {
+                  "IsLightIssue": 1
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "AssetCount": {
+              "cardinality": {
+                "field": "AssetId"
+              }
+            }
+          }
+        },
+        "Temperature And Light Issue": {
+          "filter": {
+            "bool": {
+              "must": [{
+                "term": {
+                  "IsLightIssue": 1
+                }
+              }, {
+                "term": {
+                  "IsTemperatureIssue": 1
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "AssetCount": {
+              "cardinality": {
+                "field": "AssetId"
+              }
+            }
+          }
+        }
+      }
+    },
+    "AssetBucket": {
+      "terms": {
+        "field": "AssetId",
+        "size": 100000
+      },
+      "aggs": {
+        "light_stats": {
+          "filter": {
+            "bool": {
+              "must_not": [{
+                "term": {
+                  "LightIntensity": -1
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "LightStatus": {
+              "terms": {
+                "field": "DeviceLightStatus",
+                "size": 100000
+              }
+            }
+          }
+        },
+        "temp_stats": {
+          "filter": {
+            "bool": {
+              "must_not": [{
+                "term": {
+                  "Temperature": -100
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "temp_stats": {
+              "avg": {
+                "field": "Temperature"
+              }
+            }
+          }
+        }
+      }
+    },
+    "CoolerAvgTemp": {
+      "avg": {
+        "field": "Temperature"
+      }
+    },
+    "TempAbove7": {
+      "filter": {
+        "range": {
+          "Temperature": {
+            "gt": 7
+          }
+        }
+      },
+      "aggs": {
+        "TempAbove7": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    },
+    "CoolersWithLowLight": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "term": {
+              "IsLightIssue": 1
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "LightIntensity": "-1"
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "CoolersWithLowLight": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    }
+  }
+}

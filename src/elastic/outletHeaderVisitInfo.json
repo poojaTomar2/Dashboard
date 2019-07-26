@@ -1,0 +1,35 @@
+{
+    "size": 0,
+    "aggs": {
+        "VisitData": {
+            "filter": {
+                "bool": {
+                    "must": [{
+                        "type": {
+                            "value": "Visit"
+                        }
+                    }, {
+                        "term": {
+                            "IsDeleted": false
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "latestRecord": {
+                    "top_hits": {
+                        "size": 1,
+                        "sort": [{
+                            "StartTime": "desc"
+                        }],
+                        "_source": {
+                            "includes": [
+                                "StartTime"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

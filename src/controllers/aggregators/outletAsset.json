@@ -1,0 +1,19 @@
+{
+    "size": 10000,
+    "query": {
+        "bool": {
+            "filter": [
+                {
+                    "type": {
+                        "value": "Asset"
+                    }
+                },
+                {
+                    "term": {
+                        "IsDeleted": false
+                    }
+                }
+            ]
+        }
+    }
+}

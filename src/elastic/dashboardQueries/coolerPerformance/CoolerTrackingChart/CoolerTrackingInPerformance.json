@@ -1,0 +1,91 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "Asset"
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "AlwaysNotTransmitting": {
+      "filter": {
+        "bool": {
+          "must": [],
+          "must_not": [{
+            "term": {
+              "GatewayLastPing": "0001-01-01T00:00:00"
+            }
+          }],
+          "should": [{
+            "match": {
+              "IsGateway": true
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "Assets": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          }
+        }
+      }
+    },
+    "AlwaysWrongLocation": {
+      "filter": {
+        "bool": {
+          "must": [],
+          "must_not": [{
+            "term": {
+              "GatewayLastPing": "0001-01-01T00:00:00"
+            }
+          }],
+          "should": [{
+            "match": {
+              "IsGateway": true
+            }
+          }]
+
+        }
+      },
+      "aggs": {
+        "Assets": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          }
+        }
+      }
+    },
+    "AlwaysLocationAsExpected": {
+      "filter": {
+        "bool": {
+          "must": [],
+          "must_not": [{
+            "term": {
+              "GatewayLastPing": "0001-01-01T00:00:00"
+            }
+          }],
+          "should": [{
+            "match": {
+              "IsGateway": true
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "Assets": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          }
+        }
+      }
+    }
+  }
+}

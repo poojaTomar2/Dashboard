@@ -1,0 +1,55 @@
+{
+	"from": 0,
+	"size": 10,
+	"query": {
+		"bool": {
+			"filter": [{
+				"type": {
+					"value": "AssetEventDataSummary"
+				}
+			}, {
+				"term": {
+					"IsFromPower": true
+				}
+			}]
+		}
+	},
+	"sort": [{
+		"EventDate": {
+			"order": "desc"
+		}
+	}],
+	"aggs": {
+		"PowerOff": {
+			"date_histogram": {
+				"field": "EventDate",
+				"interval": "1d",
+				"min_doc_count": 1,
+				"order": {
+					"_key": "desc"
+				}
+			},
+			"aggs": {
+				"PowerOffCount": {
+					"filter": {
+						"bool": {
+							"filter": []
+						}
+					},
+					"aggs": {
+						"AssetCount": {
+							"cardinality": {
+								"field": "AssetId"
+							}
+						}
+					}
+				},
+				"AssetCount": {
+					"cardinality": {
+						"field": "AssetId"
+					}
+				}
+			}
+		}
+	}
+}

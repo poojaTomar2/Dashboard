@@ -1,0 +1,38 @@
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [{
+          "type": {
+            "value": "AssetEventDataSummary"
+          }
+        },
+        {
+          "term": {
+            "IsFromVisitHistory": true
+          }
+        }
+      ]
+    }
+  },
+  "aggregations": {
+    "Classification": {
+      "terms": {
+        "field": "ClassificationId",
+        "size": 100000
+      },
+      "aggs": {
+        "SumDuration": {
+          "sum": {
+            "field": "SumOfVisitDuration"
+          }
+        },
+        "LocationCount": {
+          "cardinality": {
+            "field": "LocationId"
+          }
+        }
+      }
+    }
+  }
+}

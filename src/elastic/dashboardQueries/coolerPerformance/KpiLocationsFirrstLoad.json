@@ -1,0 +1,41 @@
+{
+    "from": 0,
+    "size": 0,
+    "query": {
+        "bool": {
+            "filter": [{
+                "term": {
+                    "IsDeleted": false
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "Locations": {
+            "filter": {
+                "bool": {
+                    "must": [{
+                        "type": {
+                            "value": "Asset"
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "Location": {
+                    "terms": {
+                        "field": "LocationId",
+                        "size": 10000
+                    },
+                    "aggs": {
+                        "Lat": {
+                            "geo_bounds": {
+                                "field": "LocationGeo"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

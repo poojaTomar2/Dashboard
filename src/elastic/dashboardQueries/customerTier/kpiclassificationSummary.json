@@ -1,0 +1,42 @@
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "type": {
+            "value": "AssetEventDataSummary"
+          }
+        }
+      ],
+      "must_not": [
+        {
+          "term": {
+            "ClassificationId": 0
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "ClassificationBucket": {
+      "terms": {
+        "field": "ClassificationId",
+        "size": 100000
+      },
+      "aggs": {
+        "ClassificationId": {
+          "top_hits": {
+            "size": 1,
+            "_source": {
+              "includes": [
+                "Classification",
+                "ClassificationId"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

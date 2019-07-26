@@ -1,0 +1,119 @@
+{
+    "from": 0,
+    "size": 0,
+    "query": {
+        "bool": {
+            "filter": []
+        }
+    },
+    "aggs": {
+        "Battery0to25": {
+            "filter": {
+                "bool": {
+                    "must": [{
+                        "range": {
+                            "BatteryLevel": {
+                                "gte": "0",
+                                "lt": "25"
+                            }
+                        }
+                    }],
+                    "must_not": [{
+                        "term": {
+                            "LatestHealthRecordId": 0
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "Battery0to25": {
+                    "cardinality": {
+                        "field": "AssetId",
+                        "precision_threshold": 40000
+                    }
+                }
+            }
+        },
+        "Battery25to50": {
+            "filter": {
+                "bool": {
+                    "must": [{
+                        "range": {
+                            "BatteryLevel": {
+                                "gte": "25",
+                                "lt": "50"
+                            }
+                        }
+                    }],
+                    "must_not": [{
+                        "term": {
+                            "LatestHealthRecordId": 0
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "Battery25to50": {
+                    "cardinality": {
+                        "field": "AssetId",
+                        "precision_threshold": 40000
+                    }
+                }
+            }
+        },
+        "Battery50to75": {
+            "filter": {
+                "bool": {
+                    "must": [{
+                        "range": {
+                            "BatteryLevel": {
+                                "gte": "50",
+                                "lt": "75"
+                            }
+                        }
+                    }],
+                    "must_not": [{
+                        "term": {
+                            "LatestHealthRecordId": 0
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "Battery50to75": {
+                    "cardinality": {
+                        "field": "AssetId",
+                        "precision_threshold": 40000
+                    }
+                }
+            }
+        },
+        "Battery75to100": {
+            "filter": {
+                "bool": {
+                    "must": [{
+                        "range": {
+                            "BatteryLevel": {
+                                "gte": "75",
+                                "lte": "100"
+                            }
+                        }
+                    }],
+                    "must_not": [{
+                        "term": {
+                            "LatestHealthRecordId": 0
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "Battery75to100": {
+                    "cardinality": {
+                        "field": "AssetId",
+                        "precision_threshold": 40000
+                    }
+                }
+            }
+        }
+    }
+}

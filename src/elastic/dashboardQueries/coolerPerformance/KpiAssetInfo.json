@@ -1,0 +1,85 @@
+{
+    "from": 0,
+    "size": 0,
+    "query": {
+        "bool": {
+            "filter": [{
+                "term": {
+                    "IsDeleted": false
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "SmartLocation": {
+            "filter": {
+                "bool": {
+                    "must": [{
+                        "type": {
+                            "value": "Asset"
+                        }
+                    }, {
+                        "term": {
+                            "IsDeleted": false
+                        }
+                    }],
+                    "must_not": [{
+                        "term": {
+                            "SmartDeviceSerialNumber": ""
+                        }
+                    }, {
+                        "term": {
+                            "LocationId": "0"
+                        }
+                    }, {
+                        "term": {
+                            "SmartDeviceTypeId": 17
+                        }
+                    }, {
+                        "term": {
+                            "SmartDeviceTypeId": 22
+                        }
+                    }, {
+                        "term": {
+                            "SmartDeviceTypeId": 23
+                        }
+                    }, {
+                        "term": {
+                            "SmartDeviceTypeId": 25
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "Location": {
+                    "terms": {
+                        "field": "LocationId",
+                        "size": 100000
+                    },
+                    "aggs": {
+                        "SalesTarget": {
+                            "sum": {
+                                "field": "SalesTarget"
+                            }
+                        },
+                        "DoorOpenTarget": {
+                            "sum": {
+                                "field": "DoorOpenTarget"
+                            }
+                        },
+                        "Capacity": {
+                            "avg": {
+                                "field": "CapacityNew"
+                            }
+                        },
+                        "CapacityAvg": {
+                            "avg": {
+                                "field": "AverageCapacityNew"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

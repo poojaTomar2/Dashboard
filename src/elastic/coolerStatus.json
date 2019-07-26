@@ -1,0 +1,132 @@
+﻿{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "type": {
+            "value": "Asset"
+          }
+        },
+        {
+          "term": {
+            "IsDeleted": false
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "ByCity": {
+      "terms": {
+        "field": "Classification",
+				"size": 100000
+      },
+      "aggs": {
+        "Locations": {
+          "cardinality": {
+            "field": "LocationId"
+          }
+        },
+        "HighTemp": {
+          "filter": {
+            "bool": {
+              "must": [
+                {
+                  "range": {
+                    "Temperature": {
+                      "gt": 12
+                    }
+                  }
+                },
+                {
+                  "range": {
+                    "LightIntensity": {
+                      "gte": 10
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "LowLight": {
+          "filter": {
+            "bool": {
+              "must": [
+                {
+                  "range": {
+                    "Temperature": {
+                      "lte": 12
+                    }
+                  }
+                },
+                {
+                  "range": {
+                    "LightIntensity": {
+                      "lt": 10
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "Unhealthy": {
+          "filter": {
+            "bool": {
+              "must": [
+                {
+                  "range": {
+                    "Temperature": {
+                      "gt": 12
+                    }
+                  }
+                },
+                {
+                  "range": {
+                    "Light": {
+                      "lt": 10
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "PowerOff": {
+          "filter": {
+            "bool": {
+              "must": [
+                {
+                  "term": {
+                    "IsPowerOff": 1
+                  }
+                },
+                {
+                  "exists": {
+                    "field": "GatewaySerialNumber"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "IsMissing": {
+          "filter": {
+            "bool": {
+              "must": [
+                {
+                  "term": {
+                    "AssetCurrentStatus": "missing"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

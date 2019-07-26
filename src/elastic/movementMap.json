@@ -1,0 +1,58 @@
+﻿{
+  "from": 0,
+  "size": 10000,
+  "query": {
+    "bool": {
+      "must": [{
+          "type": {
+            "value": "SmartDeviceMovement"
+          }
+        },
+        {
+          "term": {
+            "AssetId": 4207
+          }
+        },
+        {
+          "term": {
+            "MovementTypeId": 78
+          }
+        },
+        {
+          "range": {
+            "EventTime": {
+              "gte": "2014-12-28T08:03:45",
+              "lte": "2016-05-21T00:00:00"
+            }
+          }
+        },
+        {
+          "term": {
+            "IsDeleted": false
+          }
+        }
+      ],
+      "must_not": [{
+          "term": {
+            "IsDeleted": true
+          }
+        },
+        {
+          "term": {
+            "Latitude": 0
+          }
+        },
+        {
+          "term": {
+            "Longitude": 0
+          }
+        }
+      ]
+    }
+  },
+  "sort": [{
+    "EventTime": {
+      "order": "asc"
+    }
+  }]
+}

@@ -1,0 +1,30 @@
+{
+    "from": 0,
+    "size": 0,
+    "query": {
+        "bool": {
+            "filter": [{
+                "term": {
+                    "IsFromHealth": true
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "Locations": {
+            "terms": {
+                "field": "LocationId",
+                "size": 200000
+            },
+            "aggs": {
+                "HealthDays": {
+                    "date_histogram": {
+                        "field": "EventDate",
+                        "interval": "day",
+                        "min_doc_count": 1
+                    }
+                }
+            }
+        }
+    }
+}

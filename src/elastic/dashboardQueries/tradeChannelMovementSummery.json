@@ -1,0 +1,75 @@
+{
+    "from": 0,
+    "size": 100000,
+    "query": {
+        "bool": {
+            "filter": [{
+                "type": {
+                    "value": "SmartDeviceMovement"
+                }
+            }, {
+                "bool": {
+                    "should": []
+                }
+            }, {
+                "term": {
+                    "IsDeleted": false
+                }
+            }],
+            "must_not": [{
+                "term": {
+                    "AssetId": 0
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "AssetCount": {
+            "cardinality": {
+                "field": "AssetId"
+            }
+        },
+        "AssetBucket": {
+            "filter": {
+                "bool": {
+                    "should": [{
+                        "range": {
+                            "DisplacementInKm": {
+                                "gt": "0.5"
+                            }
+                        }
+                    }, {
+                        "range": {
+                            "MovementDuration": {
+                                "gt": 180
+                            }
+                        }
+                    }]
+                }
+            },
+            "aggs": {
+                "AssetBucket": {
+                    "terms": {
+                        "field": "AssetId",
+                        "size": 100000
+                    },
+                    "aggs": {
+                        "Start": {
+                            "top_hits": {
+                                "size": 1,
+                                "sort": [{
+                                    "EventTime": "desc"
+                                }],
+                                "_source": {
+                                    "includes": [
+                                        "LocationId"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

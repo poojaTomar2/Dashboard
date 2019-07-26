@@ -1,0 +1,47 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "must": [{
+        "type": {
+          "value": "Alert"
+        }
+      }, {
+        "term": {
+          "IsDeleted": false
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }, {
+        "terms": {
+          "AlertTypeId": [
+            1,
+            12,
+            14,
+            27,
+            37
+          ]
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "LocationWithAlertCount": {
+      "terms": {
+        "field": "LocationId",
+        "size": 100000
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    }
+  }
+}

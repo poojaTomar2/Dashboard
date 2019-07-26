@@ -1,0 +1,38 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "AssetVisitHistory"
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "AssetCount": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "term": {
+              "IsMissing": "true"
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCountDistinct": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    }
+  }
+}

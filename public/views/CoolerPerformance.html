@@ -1,0 +1,608 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title> Dashboaard/Cooler Performance </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<style>
+		.btn-bronze {
+			color: #fff;
+			background-color: red;
+			border-color: red;
+		}
+
+
+		span.select-item {
+			padding-left: 4px;
+		}
+
+		.btn-diamond {
+			color: #fff;
+			background-color: blue;
+			border-color: blue;
+		}
+
+		.txt-color-greenLight {
+			color: #f5f5f5 !important;
+		}
+
+		.btn-gold {
+			color: #fff;
+			background-color: Gold;
+			border-color: Gold;
+		}
+
+		.btn-silver {
+			color: #fff;
+			background-color: deeppink;
+			border-color: deeppink;
+		}
+
+		.btn-black {
+			color: #fff;
+			background-color: #000;
+			border-color: #fff;
+		}
+
+		.btn-circle {
+			width: 10px;
+			height: 10px;
+			text-align: center;
+			padding: 6px 0;
+			font-size: 12px;
+			line-height: 18px;
+			border-radius: 50%;
+			-moz-border-radius: 50%;
+			-webkit-border-radius: 50%;
+		}
+
+		/*.easy-pie-title {
+			display: inline-block;
+			margin: 10px 6px 0;
+			font-size: 12px;
+			font-weight: 400;
+			text-transform: uppercase;
+			width: 18em;
+			height: 19px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}*/
+
+		.easy-pie-title {
+			display: inline-block;
+			margin: 10px 6px 0;
+			font-size: 12px;
+			font-weight: 400;
+			text-transform: uppercase;
+			width: inherit !important;
+			height: 19px;
+			text-overflow: ellipsis;
+			white-space: normal !important;
+			overflow: visible;
+			word-wrap: break-word;
+		}
+
+		#sparks {
+			display: block;
+			list-style: none;
+			margin: 0px 0 0;
+			padding: 0;
+			text-align: right;
+		}
+
+		.col-sm-2-5 {
+			width: 16.5%;
+		}
+
+		.col-lg-2-0 {
+			width: 20%;
+		}
+
+		.col-sm-1-5 {
+			width: 9.5%;
+		}
+
+		.col-md-2-5 {
+			width: 16.5%;
+		}
+
+		.col-lg-2-5 {
+			width: 16.5%;
+		}
+
+		.height-10 {
+			height: 10em;
+		}
+
+		.padding-top-3-5 {
+			padding-top: 2em;
+			height: 10em;
+		}
+
+		#map-canvas {
+			width: 100%;
+			height: 26.4em;
+		}
+
+		.coolerPerformanceHelp {
+			font-size: 18px;
+			float: right;
+			text-align: center;
+			position: relative;
+			min-width: 35px;
+			line-height: 32px;
+			border-left: 1px solid rgba(0, 0, 0, .09);
+		}
+	</style>
+</head>
+
+<body class="">
+	<!--<div class="modal fade" id="tipclicklastdatadownload" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+					<h4 class="modal-title">Last Data Download</h4>
+				</div>
+				<div>
+					<div class="table-responsive" style="max-height:50em">
+						<table id="manageTable" class="table table-bordred table-striped">
+							<thead>
+								<th>Count of Health Record for Last 30 days, Last 30 to 60 days, Last 60 to 90 days and More than 90 days.</th>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>-->
+
+
+	<div id="ribbon">
+		<!-- breadcrumb -->
+		<ol class="breadcrumb">
+			<li>Dashboard</li>
+			<li>Cooler Performance</li>
+		</ol>
+	</div>
+	<!-- MAIN CONTENT -->
+	<div id="content" class="widget-hide-overflow">
+		<!-- row -->
+		<!-- Filter Right Panel -->
+		<div id="chat-container" class="">
+			<span class="chat-list-open-close">
+				<i class="fa fa-filter icon-filter"></i>
+				<b class="filterApplied hidden">
+					<i class="fa fa-check" aria-hidden="true"></i>
+				</b>
+				<span class="text-filter">Filters</span>
+			</span>
+			<div id="filterTitle"></div>
+			<div class="chat-list-body custom-scroll">
+				<div id="filterFormKPI">
+				</div>
+			</div>
+		</div>
+		<div id="chat-container-summary">
+			<div id="chat-container" class="chat-container-summary">
+				<span id="exid" class="chat-list-open-close" style="top:139px">
+					<i class="fa fa-table icon-filter"></i>
+					<span class="text-filter">Summary</span>
+					<b>
+						<i class="fa fa-filter"></i>
+					</b>
+				</span>
+				<div id="filterSummarySpin"></div>
+				<div class="chat-list-body custom-scroll">
+					<div id="filterSummary">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="">
+			<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+				<div class="well-sm">
+					<span class="well-sm">
+						<b>Period: </b>
+						<b class="timeFilterName"></b>
+					</span>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+				<ul id="sparks" class="">
+					<li class="sparks-info">
+						<h5> Total Customers
+							<span class="txt-color-purple" id="totalCustomer">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Customers Selected
+							<span class="txt-color-blue" id="customerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0"
+						 data-pie-size="40" id="customerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info">
+						<h5>Count of Coolers
+							<span class="txt-color-blue" id="coolerSelectedKPI">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Connected Coolers
+							<span class="txt-color-blue" id="smartCoolerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0"
+						 data-pie-size="40" id="smartCoolerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<section id="widget-grid" class="">
+			<div class="row">
+				<article class="col-sm-12 col-md-12 col-lg-12">
+					<!-- Grid Start -->
+					<div class="grid-stack" data-gs-current-height="13" style="height: 1020px;">
+						<div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-gs-x="0" data-gs-y="0"
+						 data-gs-width="8" data-gs-height="2" data-gs-auto-position="true" data-gs-id="gs-CPI">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false"
+								 data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+								 data-widget-collapsed="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Cooler Performance Index</h2>
+										<div class="coolerPerformanceHelp">
+											<a onclick="infoGuide('coolerPerformanceIndexChart');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+
+									</header>
+									<div class="no-padding">
+										<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 text-center connect col-lg-2-0">
+											<div class="no-padding">
+												<div>
+													<div id="coolerPerformanceIndexSpin"></div>
+													<div style="background-color:white;height:8em">
+														<div id="coolerPerformanceIndex" style="height:8em"></div>
+													</div>
+													<div>
+														<span class="easy-pie-title"> Cooler Performance Index </span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 text-center connect padding-top-3-5">
+											<div id="hourlyDoorOpen" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="50">
+												<span class="percent">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Door Opens Avg Daily</span>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 text-center connect padding-top-3-5 col-sm-1-5">
+											<div id="locationConfirmed" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+												<span class="percent percent-sign">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Data Downloaded </span>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 text-center connect padding-top-3-5" id="powerHoursOnChart">
+											<div id="hoursPowerOn" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+												<span class="percent">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Hours Power On Avg Daily</span>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 text-center connect padding-top-3-5" id="tempBelow10Chart">
+											<div id="hoursCoolerAbove7" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+												<span class="percent ">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Right Temp Avg Daily</span>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 text-center connect padding-top-3-5" id="lightHoursOnChart">
+											<div id="hoursLightOn" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+												<span class="percent ">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Hours Lights On</span>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center connect" id="lightHoursOnChart">
+											<div class="no-padding">
+												<div>
+													<div style="background-color:white">
+														<div id="temperatureAssetSpin"></div>
+														<div id="temperatureAsset" style="height:10em"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-bind="attr: {'data-gs-x': $data.x, 'data-gs-y': $data.y, 'data-gs-width': $data.width, 'data-gs-height': $data.height, 'data-gs-auto-position': $data.auto_position, 'data-gs-id': $data.id}"
+						 data-gs-x="8" data-gs-y="0" data-gs-width="4" data-gs-height="2" data-gs-auto-position="true" data-gs-id="gs-lastDataDownloaded"
+						 style="">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false"
+								 data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+								 data-widget-collapsed="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Last Data Downloaded</h2>
+										<div class="coolerPerformanceHelp">
+											<a onclick="infoGuide('lastDataDownloaded');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+										<!-- <div class="widget-toolbar hidden-mobile pull-left">
+											<a href="javascript:void(0);" class="btn btn-primary" id="tipclicklastdatadownload">
+												<i class="fa fa-exclamation-circle" aria-hidden="true"></i> </a>
+										</div> -->
+										<div class="widget-toolbar hidden-mobile">
+											<a href="javascript:void(0);" class="btn btn-primary" id="mapClickLastDataDownloaded">
+												<i class="fa fa-map-marker" aria-hidden="true"></i> Map</a>
+											<!--<span class="onoffswitch-title timeFilterName"></span>-->
+										</div>
+									</header>
+									<div id="lastDataDownloaded"></div>
+								</div>
+							</div>
+						</div>
+						<!--	<div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-bind="attr: {'data-gs-x': $data.x, 'data-gs-y': $data.y, 'data-gs-width': $data.width, 'data-gs-height': $data.height, 'data-gs-auto-position': $data.auto_position, 'data-gs-id': $data.id}"
+						    data-gs-x="0" data-gs-y="3" data-gs-width="4" data-gs-height="4" data-gs-auto-position="true" data-gs-id="gs-dswt"
+						    style="" hidden>
+							<div class="grid-stack-item-content ">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+								    data-widget-deletebutton="false" data-widget-sortable="false" data-widget-collapsed="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Door Swings vs Target</h2>
+										<div class="widget-toolbar hidden-mobile" role="menu">
+											<a href="javascript:void(0);" class="btn btn-primary" id="mapClickDoorSwing">
+												<i class="fa fa-map-marker" aria-hidden="true"></i> Map</a>
+										</div>
+									</header>
+									<div id="doorSwingTarget"></div>
+								</div>
+							</div>
+						</div>-->
+						<div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-bind="attr: {'data-gs-x': $data.x, 'data-gs-y': $data.y, 'data-gs-width': $data.width, 'data-gs-height': $data.height, 'data-gs-auto-position': $data.auto_position, 'data-gs-id': $data.id}"
+						 data-gs-x="0" data-gs-y="3" data-gs-width="4" data-gs-height="4" data-gs-auto-position="true" data-gs-id="gs-dswt"
+						 style="">
+							<div class="grid-stack-item-content ">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false"
+								 data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+								 data-widget-collapsed="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Door Swings vs Target</h2>
+										<div class="coolerPerformanceHelp">
+											<a onclick="infoGuide('doorSwings');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+										<!-- <div class="widget-toolbar hidden-mobile pull-left">
+											<a href="javascript:void(0);" class="btn btn-primary" id="tipclicklastdatadownload">
+												<i class="fa fa-exclamation-circle" aria-hidden="true"></i> </a>
+										</div> -->
+										<div class="widget-toolbar hidden-mobile" role="menu">
+											<a href="javascript:void(0);" class="btn btn-primary" id="mapClickDoorSwing">
+												<i class="fa fa-map-marker" aria-hidden="true"></i> Map</a>
+										</div>
+									</header>
+									<div id="doorSwingTargetnew"></div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-bind="attr: {'data-gs-x': $data.x, 'data-gs-y': $data.y, 'data-gs-width': $data.width, 'data-gs-height': $data.height, 'data-gs-auto-position': $data.auto_position, 'data-gs-id': $data.id}"
+						 data-gs-x="4" data-gs-y="3" data-gs-width="4" data-gs-height="4" data-gs-auto-position="true" data-gs-id="gs-dataDownloaded"
+						 style="">
+							<div class="grid-stack-item-content ">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false"
+								 data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+								 data-widget-collapsed="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Data Downloaded</h2>
+										<div class="coolerPerformanceHelp">
+											<a onclick="infoGuide('dataDownloaded');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+										<!-- <div class="widget-toolbar hidden-mobile pull-left">
+											<a href="javascript:void(0);" class="btn btn-primary" id="tipclicklastdatadownload">
+												<i class="fa fa-exclamation-circle" aria-hidden="true"></i> </a>
+										</div> -->
+										<div class="widget-toolbar hidden-mobile" role="menu">
+											<a href="javascript:void(0);" class="btn btn-primary" id="mapClickLocationTracking">
+												<i class="fa fa-map-marker" aria-hidden="true"></i> Map</a>
+										</div>
+									</header>
+									<div id="locationTracking"></div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-bind="attr: {'data-gs-x': $data.x, 'data-gs-y': $data.y, 'data-gs-width': $data.width, 'data-gs-height': $data.height, 'data-gs-auto-position': $data.auto_position, 'data-gs-id': $data.id}"
+						 data-gs-x="8" data-gs-y="3" data-gs-width="4" data-gs-height="4" data-gs-auto-position="true" data-gs-id="gs-operationalIssue"
+						 style="">
+							<div class="grid-stack-item-content ">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false"
+								 data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+								 data-widget-collapsed="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Operational Issues</h2>
+										<div class="coolerPerformanceHelp">
+											<a onclick="infoGuide('operationalIssues');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+										<!-- <div class="widget-toolbar hidden-mobile pull-left">
+											<a href="javascript:void(0);" class="btn btn-primary" id="tipclicklastdatadownload">
+												<i class="fa fa-exclamation-circle" aria-hidden="true"></i> </a>
+										</div> -->
+										<div class="widget-toolbar hidden-mobile" role="menu">
+											<a href="javascript:void(0);" class="btn btn-primary" id="mapClickOperational">
+												<i class="fa fa-map-marker" aria-hidden="true"></i> Map</a>
+										</div>
+									</header>
+									<div id="operationalIssues"></div>
+								</div>
+							</div>
+						</div>
+						<div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-bind="attr: {'data-gs-x': $data.x, 'data-gs-y': $data.y, 'data-gs-width': $data.width, 'data-gs-height': $data.height, 'data-gs-auto-position': $data.auto_position, 'data-gs-id': $data.id}"
+						 data-gs-x="0" data-gs-y="8" data-gs-width="4" data-gs-height="4" data-gs-auto-position="true" data-gs-id="gs-coolerTracking">
+							<div class="grid-stack-item-content ">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false"
+								 data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+								 data-widget-collapsed="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Cooler Tracking Always On</h2>
+										<div class="coolerPerformanceHelp">
+											<a onclick="infoGuide('coolerTrackingAlwaysOn');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+										<!-- <div class="widget-toolbar hidden-mobile pull-left">
+											<a href="javascript:void(0);" class="btn btn-primary" id="tipclicklastdatadownload">
+												<i class="fa fa-exclamation-circle" aria-hidden="true"></i> </a>
+										</div> -->
+										<div class="widget-toolbar hidden-mobile" role="menu">
+											<a href="javascript:void(0);" class="btn btn-primary" id="mapClickCoolerTrackingAlways">
+												<i class="fa fa-map-marker" aria-hidden="true"></i> Map</a>
+										</div>
+										<!-- <div class="widget-toolbar hidden-mobile" role="menu">
+											<a href="javascript:void(0);" class="btn btn-primary hidden" id="clearCoolerTrackingfilterdata"><i class="fa fa-close" aria-hidden="true"></i> Clear Filter</a>
+										</div> -->
+									</header>
+									<div id="CoolerTrackingChartAlwaysOn"></div>
+								</div>
+							</div>
+
+						</div>
+						<div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-bind="attr: {'data-gs-x': $data.x, 'data-gs-y': $data.y, 'data-gs-width': $data.width, 'data-gs-height': $data.height, 'data-gs-auto-position': $data.auto_position, 'data-gs-id': $data.id}"
+						 data-gs-x="4" data-gs-y="8" data-gs-width="8" data-gs-height="4" data-gs-auto-position="true" data-gs-id="gs-map">
+
+							<div class="grid-stack-item-content ">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget " data-widget-colorbutton="false" data-widget-fullscreenbutton="false"
+								 data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+								 data-widget-collapsed="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2 id="mapName">Location</h2>
+										<div class="coolerPerformanceHelp">
+											<a onclick="infoGuide('location');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+										<!-- <div class="widget-toolbar hidden-mobile hidden" role="menu" id="resetMap">
+											<a href="javascript:void(0);" class="btn btn-primary">
+												<i class="fa fa-map-marker" aria-hidden="true"></i> Reset Map</a>
+										</div> -->
+									</header>
+									<div id="map-canvas" style="height:91% !important;"></div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+			</div>
+			<!-- Grid End-->
+			<article class="col-sm-12 col-md-12 col-lg-12 no-padding">
+				<article class="col-xs-12 col-sm-12 col-lg-4">
+				</article>
+				<!--//////////////////////////////////-->
+				<article class="col-xs-12 col-sm-12 col-lg-3 hidden">
+					<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false"
+					 data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+					 data-widget-collapsed="false" data-widget-togglebutton="false">
+						<header>
+							<span class="widget-icon">
+								<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+							</span>
+							<h2>Cooler Tracking Proximity</h2>
+							<div class="widget-toolbar hidden-mobile" role="menu">
+								<a href="javascript:void(0);" class="btn btn-primary" id="mapClickCoolerTrackingProximity">
+									<i class="fa fa-map-marker" aria-hidden="true"></i> Map</a>
+							</div>
+							<!-- <div class="widget-toolbar hidden-mobile" role="menu">
+										<a href="javascript:void(0);" class="btn btn-primary hidden" id="clearCoolerTrackingfilterdata"><i class="fa fa-close" aria-hidden="true"></i> Clear Filter</a>
+									</div> -->
+						</header>
+						<div id="CoolerTrackingChartProximity"></div>
+					</div>
+				</article>
+			</article>
+			<article class="col-sm-12 col-md-12 col-lg-12 no-padding">
+				<article class="col-xs-12 col-sm-12 col-lg-4 hidden">
+					<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false"
+					 data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+					 data-widget-collapsed="false" data-widget-togglebutton="false">
+						<header>
+							<span class="widget-icon">
+								<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+							</span>
+							<h2>Data Downloaded</h2>
+							<div class="widget-toolbar hidden-mobile" role="menu">
+								<a href="javascript:void(0);" class="btn btn-primary" id="mapClickLocationTracking">
+									<i class="fa fa-map-marker" aria-hidden="true"></i> Map</a>
+							</div>
+						</header>
+						<div id="locationTracking"></div>
+					</div>
+				</article>
+				<!--</article>-->
+			</article>
+			</article>
+			<article class="col-sm-5 col-md-5 col-lg-5"></article>
+	</div>
+	</section>
+	</div>
+	<!--================================================== -->
+	<!-- PAGE RELATED PLUGIN(S) -->
+	<script async src="js/controllers/CoolerPerformance.js"></script>
+</body>
+
+</html>

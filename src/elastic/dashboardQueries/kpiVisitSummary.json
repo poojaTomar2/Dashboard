@@ -1,0 +1,114 @@
+{
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "type": {
+            "value": "Visit"
+          }
+        },
+        {
+          "term": {
+            "IsDeleted": false
+          }
+        }
+      ]
+    }
+  },
+  "aggregations": {
+    "LocationCount": {
+			"cardinality": {
+				"field": "LocationId"
+			}
+		},
+    "VisitFrequency": {
+      "terms": {
+        "field": "StartLatitude",
+        "size": 100000
+      },
+      "aggs": {
+        "Longitude": {
+          "terms": {
+            "field": "StartLongitude",
+            "size": 100000
+          },
+          "aggs": {
+            "VisitData": {
+              "top_hits": {
+                "size": 10000,
+                "_source": {
+                  "includes": [
+                    "VisitDuration",
+                    "StartLatitude",
+                    "StartLongitude"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "SalesRepData": {
+      "terms": {
+        "field": "UserId",
+        "size": 100000
+      },
+      "aggs": {
+        "UserName": {
+          "top_hits": {
+            "size": 1,
+            "_source": {
+              "includes": [
+                "FirstName",
+                "LastName"
+              ]
+            }
+          }
+        },
+        "VisitData": {
+          "top_hits": {
+            "size": 10000,
+            "_source": {
+              "includes": [
+                "VisitDuration"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "LocationData": {
+      "terms": {
+        "field": "LocationId",
+        "order": {
+          "AvgDuration": "desc"
+        },
+        "size": 100000
+      },
+      "aggs": {
+        "LocationName": {
+          "top_hits": {
+            "size": 1,
+            "_source": {
+              "includes": [
+                "LocationName"
+              ]
+            }
+          }
+        },
+        "AvgDuration": {
+          "avg": {
+            "field": "VisitDuration"
+          }
+        },
+        "SumDuration": {
+          "sum": {
+            "field": "VisitDuration"
+          }
+        }
+      }
+    }
+  }
+}

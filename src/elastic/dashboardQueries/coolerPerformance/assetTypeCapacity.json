@@ -1,0 +1,26 @@
+{
+   "size": 10000,
+   "query": {
+      "bool": {
+         "filter": [
+            {
+               "type": {
+                  "value": "AssetTypeCapacity"
+               }
+            },
+            {
+               "term": {
+                  "IsDeleted": 0
+               }
+            }
+         ]
+      }
+   },
+   "_source": {
+      "includes": [
+         "MinCapacity",
+         "MaxCapacity",
+         "Range"
+      ]
+   }
+}

@@ -1,0 +1,44 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "must": [{
+        "type": {
+          "value": "Alert"
+        }
+      }, {
+        "term": {
+          "IsDeleted": false
+        }
+      }, {
+        "term": {
+          "ClosedOn": "0001-01-01T00:00:00"
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }, {
+        "terms": {
+          "AlertTypeId": [
+            1,
+            12,
+            14,
+            27,
+            37
+          ]
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "assets": {
+      "terms": {
+        "field": "AssetId",
+        "size": 100000
+      }
+    }
+  }
+}

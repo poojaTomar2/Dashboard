@@ -1,0 +1,68 @@
+{
+    "size": 0,
+    "aggs": {
+        "Keys": {
+            "terms": {
+                "field": "LocationId",
+                "size": 100000
+            },
+            "aggs": {
+                "DoorCount": {
+                    "sum": {
+                        "field": "SumOfDoorCount"
+                    }
+                },
+                "doorCounts": {
+                    "range": {
+                        "field": "EventDate",
+                        "keyed": true,
+                        "ranges": [{
+                                "key": "7days",
+                                "from": "now/d-6d"
+                            }, {
+                                "key": "today",
+                                "from": "now/d"
+                            },
+                            {
+                                "key": "30days",
+                                "from": "now/d-29d"
+                            }
+                        ]
+                    },
+                    "aggs": {
+                        "DoorCount": {
+                            "sum": {
+                                "field": "SumOfDoorCount"
+                            }
+                        }
+                    }
+                },
+                "latest": {
+                    "top_hits": {
+                        "size": 1,
+                        "sort": [{
+                            "EventDate": "desc"
+                        }],
+                        "_source": {
+                            "includes": ["EventDate"]
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "query": {
+        "bool": {
+            "filter": [{
+                "type": {
+                    "value": "AssetEventDataSummary"
+                }
+            }],
+            "must": [{
+                "term": {
+                    "IsFromDoor": true
+                }
+            }]
+        }
+    }
+}

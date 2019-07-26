@@ -1,0 +1,27 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [{
+          "type": {
+            "value": "AssetEventDataSummary"
+          }
+        },
+        {
+          "term": {
+            "VisitHistoryIsMissing": "true"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "LocationType": {
+      "terms": {
+        "field": "LocationTypeId",
+        "size": 100000
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "AssetEventDataSummary"
+        }
+      }],
+      "must": [{
+          "term": {
+              "IsFromEvent": true
+          }
+      }]
+    }
+  },
+  "sort": [{
+    "EventDate": {
+      "order": "desc"
+    }
+  }],
+  "aggs": {
+    "CompressorData": {
+      "filter": {
+        "bool": {
+          "must": []
+        }
+      },
+      "aggs": {
+        "time_buckets": {
+          "date_histogram": {
+            "field": "EventDate",
+            "interval": "1d",
+            "min_doc_count": 1
+          },
+          "aggs": {
+            "CompressorDuration": {
+              "filter": {
+                "bool": {
+                  "filter": []
+                }
+              },
+              "aggs": {
+                "CompressorDuration": {
+                  "sum": {
+                    "field": "SumOfCompressorDuration"
+                  }
+                }
+              }
+            },
+            "FanDuration": {
+              "filter": {
+                "bool": {
+                  "filter": []
+                }
+              },
+              "aggs": {
+                "FanDuration": {
+                  "sum": {
+                    "field": "SumOfFanDuration"
+                  }
+                }
+              }
+            },
+            "HeaterDuration": {
+              "filter": {
+                "bool": {
+                  "filter": []
+                }
+              },
+              "aggs": {
+                "HeaterDuration": {
+                  "sum": {
+                    "field": "SumOfHeaterDuration"
+                  }
+                }
+              }
+            },
+            "LightDuration": {
+              "filter": {
+                "bool": {
+                  "filter": []
+                }
+              },
+              "aggs": {
+                "LightDuration": {
+                  "sum": {
+                    "field": "SumOfLightDuration"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

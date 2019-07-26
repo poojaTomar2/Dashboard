@@ -1,0 +1,110 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "must": [],
+      "filter": []
+    }
+  },
+  "aggs": {
+    "HealthData": {
+      "filter": {
+        "bool": {}
+      },
+      "aggs": {
+        "TempLightIssueCount": {
+          "filter": {
+            "bool": {
+              "must": [{
+                "term": {
+                  "IsFromHealth": true
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "LightIssue": {
+              "filter": {
+                "bool": {
+                  "should": [{
+                      "term": {
+                        "DeviceLightStatus": "No Light"
+                      }
+                    },
+                    {
+                      "term": {
+                        "DeviceLightStatus": "Low Brightness"
+                      }
+                    }
+                  ]
+                }
+              },
+              "aggs": {
+                "AssetBucket": {
+                  "terms": {
+                    "field": "AssetId",
+                    "size": 100000
+                  },
+                  "aggs": {
+                    "HealthInterval": {
+                      "sum": {
+                        "field": "SumOfHealthInterval"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "TemperatureIssue": {
+              "filter": {
+                "bool": {}
+              },
+              "aggs": {
+                "AssetBucket": {
+                  "terms": {
+                    "field": "AssetId",
+                    "size": 100000
+                  },
+                  "aggs": {
+                    "HealthInterval": {
+                      "sum": {
+                        "field": "SumOfHealthIntervalTempGT12"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "PowerData": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "term": {
+              "IsFromPower": true
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetBucket": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "PowerOffDuration": {
+              "sum": {
+                "field": "SumOfPowerOffDuration"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

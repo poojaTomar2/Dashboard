@@ -1,0 +1,385 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title> Dashboard </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<script async src="js/gMapPanel.js"></script>
+	<style>
+		.dt-toolbar>:first-child .DTTT,
+		.dt-toolbar>:first-child .dataTables_filter>:only-child,
+		.dt-toolbar>:first-child .dataTables_length,
+		.dt-toolbar>:first-child .pagination {
+			float: right !important;
+		}
+
+		.btn-bronze {
+			color: #fff;
+			background-color: Brown;
+			border-color: Brown;
+		}
+
+		.btn-diamond {
+			color: #fff;
+			background-color: blue;
+			border-color: blue;
+		}
+
+		.btn-gold {
+			color: #fff;
+			background-color: Gold;
+			border-color: Gold;
+		}
+
+		.btn-silver {
+			color: #fff;
+			background-color: silver;
+			border-color: silver;
+		}
+
+		.btn-circle {
+			width: 10px;
+			height: 10px;
+			text-align: center;
+			padding: 6px 0;
+			font-size: 12px;
+			line-height: 18px;
+			border-radius: 50%;
+			-moz-border-radius: 50%;
+			-webkit-border-radius: 50%;
+		}
+
+		.txt-color-greenLight {
+			color: #f5f5f5 !important;
+		}
+
+		#sparks {
+			display: block;
+			list-style: none;
+			margin: 0px 0 0;
+			padding: 0;
+			text-align: right;
+		}
+
+		.onoffswitch {
+			position: relative;
+			width: 5.5em;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			margin-top: 3px;
+			margin-bottom: 3px;
+			margin-left: 5px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.onoffswitch-switch {
+			right: 4.5em;
+		}
+
+		.easy-pie-title {
+			display: inline-block;
+			margin: 10px 6px 0;
+			font-size: 13px;
+			font-weight: 400;
+			text-transform: uppercase;
+			width: 21em;
+			height: 19px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		.jarviswidget>header h2 {
+			height: 100%;
+			display: inline-block;
+			font-size: 14px;
+			position: relative;
+			margin: 0;
+			line-height: 34px;
+			font-weight: 400;
+			letter-spacing: 0;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			margin-left: 10px;
+			float: left;
+			width: auto
+		}
+
+		.chart-width {
+			width: 70% !important;
+		}
+	</style>
+</head>
+
+<body class="">
+	<div id="ribbon">
+		<!-- breadcrumb -->
+		<ol class="breadcrumb">
+			<li>Dashboard</li>
+			<li>Sales Visit</li>
+		</ol>
+	</div>
+	<!-- MAIN CONTENT -->
+	<div id="content">
+		<!-- row -->
+		<div id="chat-container" class="">
+			<span class="chat-list-open-close">
+				<i class="fa fa-filter icon-filter"></i>
+				<b class="filterApplied hidden">
+					<i class="fa fa-check" aria-hidden="true"></i>
+				</b>
+				<span class="text-filter">Filters</span>
+			</span>
+			<div id="filterTitle"></div>
+			<div class="chat-list-body custom-scroll">
+				<div id="filterFormKPI">
+				</div>
+			</div>
+		</div>
+		<div id="chat-container-summary">
+			<div id="chat-container" class="chat-container-summary">
+				<span class="chat-list-open-close" style="top:139px">
+					<i class="fa fa-table icon-filter"></i>
+					<span class="text-filter">Summary</span>
+					<b>
+						<i class="fa fa-filter"></i>
+					</b>
+				</span>
+				<div class="chat-list-body custom-scroll">
+					<div id="filterSummary">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+				<div class="well-sm">
+					<span class="well-sm">
+						<b>Period: </b>
+						<b class="timeFilterName"></b>
+					</span>
+				</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+				<ul id="sparks" class="">
+					<li class="sparks-info">
+						<h5> Total Customers
+							<span class="txt-color-purple" id="totalCustomer">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Customers Selected
+							<span class="txt-color-blue" id="customerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0" data-pie-size="40"
+						    id="customerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info">
+						<h5> Total Coolers
+							<span class="txt-color-purple" id="totalCooler">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Coolers Selected
+							<span class="txt-color-blue" id="coolerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0" data-pie-size="40"
+						    id="coolerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info">
+						<h5> Total Smart Coolers
+							<span class="txt-color-purple" id="totalSmartCooler">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Smart Coolers Selected
+							<span class="txt-color-blue" id="smartCoolerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0" data-pie-size="40"
+						    id="smartCoolerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info hidden">
+						<h5>Warehouse Connected Coolers
+							<span class="txt-color-blue" id="smartCoolerWareHouseSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0" data-pie-size="40"
+						    id="smartCoolerWareHouseSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<section id="widget-grid" class="">
+			<div class="row">
+				<article class="">
+					<article class="col-sm-12">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+						    data-widget-deletebutton="false" data-widget-sortable="false" data-widget-collapsed="false" data-widget-togglebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>Visit Stats</h2>
+								<!--<div class="widget-toolbar hidden-mobile">
+									<span class="onoffswitch-title timeFilterName"></span>
+								</div>-->
+							</header>
+							<div class="">
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center well-sm">
+									<div id="totlaVisit" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="50">
+										<span class="percent">0 </span>
+									</div>
+									<div class="row">
+										<span class="easy-pie-title"> Visits Per Month</span>
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center well-sm">
+									<div id="salesVisitDuration" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="50">
+										<span class="percent">0 </span>
+									</div>
+									<div class="row">
+										<span class="easy-pie-title"> Avg Visit Duration (In Mins)</span>
+									</div>
+								</div>
+								<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 hidden">
+									<div id="rateCompliance" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+										<span class="percent">0 </span>
+									</div>
+									<div class="row">
+										<span class="easy-pie-title"> Visit Compliance </span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+					<article class="col-sm-6 col-md-6 col-lg-6 fullscreensettings">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2 class="chart-width">Total No Of Outlets By Visit Frequency And Sales</h2>
+							</header>
+							<div id="visitFrequency"></div>
+						</div>
+					</article>
+					<article class="col-sm-6 col-md-6 col-lg-6 fullscreensettings">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2 class="chart-width">Total No Of Outlets By Visit Duration And Sales</h2>
+							</header>
+							<div id="visitDuration"></div>
+						</div>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12 fullscreensettings">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>Total Count Of Visits By Sales Rep</h2>
+								<div class="widget-toolbar hidden-mobile">
+									<span class="onoffswitch-title">
+										<i class="fa fa-toggle-on"></i>
+									</span>
+									<span class="onoffswitch">
+										<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" checked="checked" id="sellerTop">
+										<label class="onoffswitch-label" for="sellerTop">
+											<span class="onoffswitch-inner" data-swchon-text="Top 10" data-swchoff-text=" Bottom 10"></span>
+											<span class="onoffswitch-switch"></span>
+										</label>
+									</span>
+								</div>
+							</header>
+							<div id="visitBySeller"></div>
+						</div>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12 fullscreensettings">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>Avg Visit Duration By Customer</h2>
+								<div class="widget-toolbar hidden-mobile">
+									<span class="onoffswitch-title">
+										<i class="fa fa-toggle-on"></i>
+									</span>
+									<span class="onoffswitch">
+										<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" checked="checked" id="customerTop">
+										<label class="onoffswitch-label" for="customerTop">
+											<span class="onoffswitch-inner" data-swchon-text="Top 10" data-swchoff-text=" Bottom 10"></span>
+											<span class="onoffswitch-switch"></span>
+										</label>
+									</span>
+								</div>
+							</header>
+							<div id="visitDurationByCustomer"></div>
+						</div>
+					</article>
+					<article class="col-sm-6 col-md-6 col-lg-6">
+						<div class="jarviswidget" id="wid-id-11" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+						    data-widget-sortable="false" data-widget-deletebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>Heat Map: Visit Duration</h2>
+								<!--<h2><span class="btn btn-diamond btn-circle"></span> Visit Count</h2>-->
+								<!--<h2><span class="btn btn-diamond btn-circle"></span> Visit Duration</h2>-->
+							</header>
+							<div class="no-padding">
+								<div>
+									<div id="myTabContent panel-body" style="background-color:white">
+										<div id="map-canvas" style="height: 31em; margin-top:0px !important"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+					<article class="col-sm-6 col-md-6 col-lg-6">
+						<div class="jarviswidget" id="wid-id-11" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+						    data-widget-sortable="false" data-widget-deletebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>Heat Map: Visit Frequency</h2>
+								<!--<h2><span class="btn btn-diamond btn-circle"></span> Visit Count</h2>-->
+								<!--<h2><span class="btn btn-gold btn-circle"></span> Visit Frequency</h2>-->
+							</header>
+							<div class="no-padding">
+								<div>
+									<div id="myTabContent panel-body" style="background-color:white">
+										<div id="map-canvas-frequency" style="height: 31em; margin-top:0px !important"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+				</article>
+			</div>
+		</section>
+	</div>
+	<!--================================================== -->
+	<!-- PAGE RELATED PLUGIN(S) -->
+	<script async src="js/controllers/SalesRepVisitDashboard.js"></script>
+</body>
+
+</html>

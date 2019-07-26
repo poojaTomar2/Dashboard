@@ -1,0 +1,199 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "term": {
+          "IsDeleted": false
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "AssetCount": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Asset"
+            }
+          }]
+        }
+      }
+    },
+    "LocationCount": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Location"
+            }
+          }]
+        }
+      }
+    },
+    "CustomerCount": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Location"
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "CustomerCountDistinct": {
+          "cardinality": {
+            "field": "LocationId"
+          }
+        }
+      }
+    },
+    "SmartAssetCount": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Asset"
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "SmartDeviceSerialNumber": ""
+            }
+          }]
+        }
+      }
+    },
+    "SmartAssetCountWareHouse": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Asset"
+            }
+          }, {
+            "term": {
+              "OutletTypeId": 6283
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "SmartDeviceSerialNumber": ""
+            }
+          }]
+        }
+      }
+    },
+    "SmartAssets": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Asset"
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "LocationId": "0"
+            }
+          }, {
+            "term": {
+              "IsDeleted": true
+            }
+          }, {
+            "term": {
+              "SmartDeviceSerialNumber": ""
+            }
+          }]
+        }
+      },
+      "aggs": {
+      }
+    },
+    "SmartLocation": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Asset"
+            }
+          }, {
+            "term": {
+              "IsDeleted": false
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "SmartDeviceSerialNumber": ""
+            }
+          }]
+        }
+      },
+      "aggs": {
+	       "Location": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "Lat": {
+              "geo_bounds": {
+                "field": "LocationGeo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "TotalSmartAssetCount": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Asset"
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "SmartDeviceSerialNumber": ""
+            }
+          }]
+        }
+      }
+    },
+    "Locations": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Location"
+            }
+          }]
+        }
+      }
+    },
+    "Assets": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Asset"
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "LocationId": "0"
+            }
+          }, {
+            "term": {
+              "IsDeleted": true
+            }
+          }]
+        }
+      }
+    }
+  }
+}

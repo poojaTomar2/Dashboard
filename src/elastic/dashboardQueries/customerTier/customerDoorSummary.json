@@ -1,0 +1,57 @@
+{
+	"from": 0,
+	"size": 0,
+	"query": {
+		"bool": {
+			"filter": [{
+				"type": {
+					"value": "AssetEventDataSummary"
+				}
+			},
+			{
+			  "term": {
+				"IsFromDoor": true
+			  }
+			}]
+		}
+	},
+	"aggs": {
+		"Classification": {
+			"terms": {
+				"field": "ClassificationId",
+				"size": 100000
+			},
+			"aggs": {
+				"AssetCount": {
+					"cardinality": {
+						"field": "AssetId"
+					}
+				},
+				"DoorCount": {
+					"sum": {
+						"field": "SumOfDoorCount"
+					}
+				},
+				"SumDoorOpenDuration": {
+					"filter": {
+						"bool": {
+							"must": []
+						}
+					},
+					"aggs": {
+						"DoorSum": {
+							"sum": {
+								"field": "SumOfDoorOpenDurationLTE362020"
+							}
+						}
+					}
+				}
+			}
+		},
+		"LocationCount": {
+			"cardinality": {
+				"field": "LocationId"
+			}
+		}
+	}
+}

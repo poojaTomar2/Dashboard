@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    </br></br>
+    <div style="overflow:auto">
+        <table class="table table-striped table-hover table-condensed custom-table no-margin" id="IRStatusGrid"
+            width="100%">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td id="IRStatusGrid_Name" class="filterable" data-column="Name" data-grid="IRStatusGrid">
+                        Outlet</td>
+                    <td id="IRStatusGrid_Code" class="filterable" data-column="Code" data-grid="IRStatusGrid">Outlet
+                        Code
+                    </td>
+                    <td></td>
+                    <td id="IRStatusGrid_PrimaryEmail" class="filterable" data-column="PrimaryEmail"
+                        data-grid="IRStatusGrid">Email
+                    </td>
+                </tr>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th data-field="Name">Outlet</th>
+                    <th data-field="Code">Code</th>
+                    <th data-field="Status">Status</th>
+                    <th data-field="PrimaryEmail">Email</th>
+                </tr>
+            </thead>
+        </table>
+        <div id="outletDetailsSpin"></div>
+    </div>
+</body>
+<script async src="js/controllers/OutletIRStatus.js"></script>
+
+</html>

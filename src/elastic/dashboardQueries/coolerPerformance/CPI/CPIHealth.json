@@ -1,0 +1,463 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [{
+        "term": {
+          "IsFromHealth": true
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "CPIHoursCorrectTemperature": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "IsTemperatureIssue": true
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "HoursCorrectTemperature": {
+              "sum": {
+                "field": "SumOfHealthInterval"
+              }
+            }
+          }
+        }
+      }
+    },
+    "CPINotTempHours": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "HoursCorrectTemperature": {
+              "sum": {
+                "field": "SumOfHealthInterval"
+              }
+            }
+          }
+        }
+      }
+    },
+    "CPIHoursLightOn": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "IsLightOff": true
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "HoursCorrectTemperature": {
+              "sum": {
+                "field": "SumOfHealthIntervallightIntensityNEQM1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "CurrentHoursCorrectTemperature": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "IsTemperatureIssue": true
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "HoursCorrectTemperature": {
+              "sum": {
+                "field": "SumOfHealthInterval"
+              }
+            }
+          }
+        }
+      }
+    },
+    "CurrentNotTempHours": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "HoursCorrectTemperature": {
+              "sum": {
+                "field": "SumOfHealthInterval"
+              }
+            }
+          }
+        }
+      }
+    },
+    "CurrentHoursLightOn": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "IsLightOff": true
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "HoursCorrectTemperature": {
+              "sum": {
+                "field": "SumOfHealthIntervallightIntensityNEQM1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "PreviousHoursCorrectTemperature": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "IsTemperatureIssue": true
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "HoursCorrectTemperature": {
+              "sum": {
+                "field": "SumOfHealthInterval"
+              }
+            }
+          }
+        }
+      }
+    },
+    "PrevioustNotTempHours": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "HoursCorrectTemperature": {
+              "sum": {
+                "field": "SumOfHealthInterval"
+              }
+            }
+          }
+        }
+      }
+    },
+    "PreviousHoursLightOn": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "IsLightOff": true
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "HoursCorrectTemperature": {
+              "sum": {
+                "field": "SumOfHealthIntervallightIntensityNEQM1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "MonthBackHoursCorrectTemperature": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "IsTemperatureIssue": true
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "HoursCorrectTemperature": {
+              "sum": {
+                "field": "SumOfHealthInterval"
+              }
+            }
+          }
+        }
+      }
+    },
+    "MonthBackNotTempHours": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "HoursCorrectTemperature": {
+              "sum": {
+                "field": "SumOfHealthInterval"
+              }
+            }
+          }
+        }
+      }
+    },
+    "MonthBackHoursLightOn": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "IsLightOff": true
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "HoursCorrectTemperature": {
+              "sum": {
+                "field": "SumOfHealthIntervallightIntensityNEQM1"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

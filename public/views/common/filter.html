@@ -1,0 +1,1664 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title> IOT Chart </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<style>
+		table.dataTable thead .sorting {
+			background: url();
+		}
+
+		.filter-height {
+			max-height: 16em;
+			/*min-height: 16em;*/
+			overflow: auto;
+			overflow-x: hidden;
+			background: #fafafa;
+			padding: 3px;
+		}
+
+		.input-group {
+			position: relative;
+			display: block;
+			border-collapse: separate;
+		}
+
+		.padding-1 {
+			padding-bottom: 1em !important;
+		}
+
+		.margin-0-5 {
+			margin-top: 0.5em;
+		}
+
+		.date-max-height {
+			max-height: 8em !important;
+		}
+
+		.jarviswidget>div .no-border {
+			float: left;
+			width: 100%;
+			position: relative;
+			font-size: 13px;
+			-moz-border-radius: 0;
+			-khtml-border-radius: 0;
+			-webkit-border-radius: 0;
+			border-radius: 0;
+			margin: 0;
+			border-width: 1px 1px 2px;
+			border-style: solid;
+			border-top: none;
+			border-right-color: #fff !important;
+			border-bottom-color: #fff !important;
+			border-left-color: #fff !important;
+			padding: 13px 13px 0;
+			overflow: visible;
+		}
+
+		.heading-bold {
+			font-size: medium !important;
+			font-weight: 600 !important;
+		}
+
+		.panel-heading {
+			padding: 5px 10px;
+		}
+
+		.panel-heading i {
+			padding-right: 7px;
+		}
+
+		.alert {
+			margin-bottom: 0px;
+		}
+
+		.icon-addon.addon-sm .fa,
+		.icon-addon.addon-sm .glyphicon {
+			font-size: 12px;
+			top: -1px;
+			right: 0px !important;
+			margin-right: 0px;
+			left: auto;
+			margin-left: auto;
+		}
+
+		.icon-addon .fa,
+		.icon-addon .glyphicon,
+		.icon-addon.addon-md .fa,
+		.icon-addon.addon-md .glyphicon {
+			position: absolute;
+			z-index: 2;
+			left: auto;
+			width: 20px;
+			margin-left: -2.5px;
+			text-align: center;
+			padding: 10px 0;
+			top: 1px;
+		}
+
+
+		h1,
+		h2,
+		h3,
+		h4 {
+			font-weight: 600 !important;
+		}
+
+		.filter-class {
+			float: right;
+		}
+		
+		li.select2-results__option:empty {
+			display: none;
+		}
+	</style>
+</head>
+
+<body class="">
+
+	<div id="openfilterDialogModal" class="modal fade" data-backdrop="false">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Applied Filters</h4>
+				</div>
+				<div class="modal-body custom-scroll" style="height: 397px;overflow: auto;">
+					<div class="hidden appliedFilter Basic" id="openfilterDialog" title="">
+						<div id="noFilterSlected" class="well hidden"> Applied Filters will appear here</div>
+
+						<article id="SelectedClassificationDiv" class="hidden">
+							<div class="panel panel-default">
+
+								<div class="panel-heading">
+									<div class="heading-bold">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>Outlet Classification</div>
+								</div>
+								<div class="panel-body">
+									<div class="SelectedLocationTypeId"></div>
+									<div class="SelectedIsKeyLocation"></div>
+									<div class="SelectedClassificationId"></div>
+									<div class="SelectedSubTradeChannelTypeId"></div>
+								</div>
+							</div>
+						</article>
+
+						<article id="SelectedLocationDiv" class="hidden">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<div class="heading-bold">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>Location</div>
+								</div>
+								<div class="panel-body">
+									<div class="SelectedCity"></div>
+									<div class="SelectedCountryId"></div>
+									<div class="SelectedLocationCode"></div>
+									<div class="SelectedOutletTypeId"></div>
+								</div>
+							</div>
+						</article>
+						<article id="SelectedSalesOrganizationDiv" class="hidden">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<div class="heading-bold">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>Sales Organization</div>
+								</div>
+
+								<div class="panel-body">
+									<div class="SelectedSalesOrganizationId"></div>
+									<div class="SelectedTeleSellingTerritoryId"></div>
+									<div class="SelectedSalesOfficeId"></div>
+									<div class="SelectedSalesGroupId"></div>
+									<div class="SelectedTerritoryId"></div>
+									<div class="SelectedUserId"></div>
+									<div class="SelectedSalesHierarchyId"></div>
+								</div>
+
+							</div>
+						</article>
+
+						<article id="SelectedCoolerDiv" class="hidden">
+							<div class="panel panel-default">
+
+								<div class="panel-heading">
+
+									<div class="heading-bold">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>Cooler</div>
+								</div>
+								<div class="panel-body">
+
+									<div class="SelectedAssetManufacturerId"></div>
+									<div class="SelectedSmartTypeId"></div>
+									<div class="SelectedAssetTypeId"></div>
+									<div class="SelectedIsFactoryAsset"></div>
+									<div class="SelectedAssetTypeCapacityId"></div>
+									<div class="SelectedIsOpenFront"></div>
+								</div>
+							</div>
+						</article>
+
+
+						<article id="SelectedSmartDeviceDiv" class="hidden">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<div class="heading-bold">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>Smart Device</div>
+								</div>
+
+								<div class="panel-body">
+									<div class="SelectedSmartDeviceManufacturerId"></div>
+									<div class="SelectedSmartDeviceTypeId"></div>
+								</div>
+
+							</div>
+						</article>
+						<article id="SelectedAlertDiv" class="hidden">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<div class="heading-bold">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>Alert</div>
+								</div>
+
+								<div class="panel-body">
+									<div class="SelectedAlertTypeId"></div>
+									<div class="SelectedPriorityId"></div>
+									<div class="SelectedStatusId"></div>
+								</div>
+							</div>
+						</article>
+						<article id="SelectedKPIDiv" class="hidden">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<div class="heading-bold">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>KPI</div>
+								</div>
+
+								<div class="panel-body">
+									<!-- <div class="SelectedDoorCount"></div>
+													<div class="SelectedTempBand"></div>
+													<div class="SelectedLightStatus"></div>
+													<div class="SelectedPowerStatus"></div> -->
+									<div class="SelectedcoolerTracking"></div>
+									<div class="SelectedcoolerTrackingProximity"></div>
+									<!-- <div class="SelectedDoorCount"></div>
+													<div class="SelectedTempBand"></div>
+													<div class="SelectedLightStatus"></div>
+													<div class="SelectedPowerStatus"></div> -->
+									<div class="SelectedDoorOpenVsSales"></div>
+									<div class="SelectedOperationalIssues"></div>
+									<div class="SelectedCoolerHealth"></div>
+									<div class="SelectedTempLightIssue"></div>
+									<div class="SelectedDoorSwingsVsTarget"></div>
+									<div class="SelectedDataDownloadOutlet"></div>
+									<div class="SelectedExcecuteCommandReport"></div>
+									<div class="SelectedExcecuteCommandSpread"></div>
+									<div class="SelectedMagnetFallenChartCTF"></div>
+									<div class="SelectedMagnetFallenSpreadCTF"></div>
+								</div>
+							</div>
+						</article>
+						<article id="SelectedDataDiv" class="hidden">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<div class="heading-bold">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>Data</div>
+								</div>
+
+								<div class="panel-body">
+									<div class="SelectedinstallationDate"></div>
+									<div class="SelectedlastDataReceived"></div>
+									<div class="SelecteddoorDataSelected"></div>
+									<div class="SelectedsalesDataSelected"></div>
+									<div class="SelectedLastDataDownloaded"></div>
+									<div class="SelectedDataDownloaded"></div>
+								</div>
+							</div>
+						</article>
+						<article id="SelectedTelemetryDiv" class="hidden">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<div class="heading-bold">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>Telemetry</div>
+								</div>
+
+								<div class="panel-body">
+									<!-- <div class="SelectedDisplacementFilter"></div> -->
+									<div class="SelectedDisplacementFilter"></div>
+									<div class="SelectedDisplacementFilterHistoric"></div>
+									<div class="SelectedtelemetryDoorCount"></div>
+									<div class="SelectedbatteryReprtData"></div>
+									<div class="SelectedTemperatureTele"></div>
+									<div class="SelectedtelemetryPowerStatus"></div>
+									<div class="SelectedtelemetryLightStatus"></div>
+									<div class="SelectedEvaporatorTemperatureTele"></div>
+								</div>
+							</div>
+						</article>
+						<article id="SelectedTechnicalDiagnosticsDiv" class="hidden">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<div class="heading-bold">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>Technical Diagnostics</div>
+								</div>
+
+								<div class="panel-body">
+									<div class="SelectedCompressorBand"></div>
+									<div class="SelectedFanBand"></div>
+								</div>
+							</div>
+						</article>
+
+
+						<!-- <div class="ui-widget-footer">
+											<button type="button" id="submitFilter" class="btn btn-primary">Apply</button>
+										</div> -->
+
+					</div>
+				</div>
+				<div class="modal-footer">
+					<!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+					<button type="button" id="cancelAppliedFilter" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button type="button" id="submitAppliedFilter" class="btn btn-primary">Apply</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Start > Click to Filter Popup -->
+
+	<div id="ClicktoFilterModal" class="modal fade" data-backdrop="false">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Click To Filters</h4>
+				</div>
+				<div class="modal-body custom-scroll" style="height: 397px;overflow: auto;">
+					<div id="ctf-list"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" id="submitFilter" class="btn btn-primary">Apply</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- End > Click to Filter Popup -->
+
+
+	<div id="filter-body ">
+		<div class="">
+			<div class="">
+				<form id="filterForm">
+					<div class="">
+						<div class="well-sm hidden">
+							<a href="javascript:void(0);" class="btn btn-danger" id="filterFormReset1" style="width:100%">Reset All Filters</a>
+						</div>
+
+
+						<div class="widget-body well-sm">
+
+							<div class="panel-group smart-accordion-default" id="accordion-2">
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion-2" href="#collapseOne-1" aria-expanded="false" class="collapsed">
+												<i class="fa fa-fw fa-plus-circle txt-color-green"></i>
+												<i class="fa fa-fw fa-minus-circle txt-color-red"></i> Time Period </a>
+										</h4>
+									</div>
+									<div id="collapseOne-1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+										<div class="panel-body">
+											<section class="well-sm">
+												<div id="reportrange" class="pull-right" style="background: #fafafa;cursor: pointer;padding: 5px 10px;border: 1px solid #ccc;margin: 0 auto;"
+												    name="dateRange">
+													<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+													<span></span>
+													<b class="caret"></b>
+												</div>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Quarterly</b>
+												</label>
+												<fieldset class="filter-height date-max-height">
+													<div class="item">
+														<label>
+															<input name="quarter" value=1 id="smart-fixed-header1" type="checkbox" class="checkbox style-0">
+															<span>Quarter1</span>
+														</label>
+													</div>
+													<div class="item">
+														<label>
+															<input name="quarter" value=2 id="smart-fixed-header2" type="checkbox" class="checkbox style-0">
+															<span>Quarter2</span>
+														</label>
+													</div>
+													<div class="item">
+														<label>
+															<input name="quarter" value=3 id="smart-fixed-header3" type="checkbox" class="checkbox style-0">
+															<span>Quarter3</span>
+														</label>
+													</div>
+													<div class="item">
+														<label>
+															<input name="quarter" value=4 id="smart-fixed-header4" type="checkbox" class="checkbox style-0">
+															<span>Quarter4</span>
+														</label>
+													</div>
+												</fieldset>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Days Of Week</b>
+												</label>
+												<fieldset class="filter-height date-max-height">
+													<div class="item">
+														<label>
+															<input name="dayOfWeek" value=7 id="smart-fixed-header5" type="checkbox" class="checkbox style-0">
+															<span>Sunday</span>
+														</label>
+													</div>
+													<div class="item">
+														<label>
+															<input name="dayOfWeek" value=1 id="smart-fixed-header6" type="checkbox" class="checkbox style-0">
+															<span>Monday</span>
+														</label>
+													</div>
+													<div class="item">
+														<label>
+															<input name="dayOfWeek" value=2 id="smart-fixed-header7" type="checkbox" class="checkbox style-0">
+															<span>Tuesday</span>
+														</label>
+													</div>
+													<div class="item">
+														<label>
+															<input name="dayOfWeek" value=3 id="smart-fixed-header8" type="checkbox" class="checkbox style-0">
+															<span>Wednesday</span>
+														</label>
+													</div>
+													<div class="item">
+														<label>
+															<input name="dayOfWeek" value=4 id="smart-fixed-header9" type="checkbox" class="checkbox style-0">
+															<span>Thursday</span>
+														</label>
+													</div>
+													<div class="item">
+														<label>
+															<input name="dayOfWeek" value=5 id="smart-fixed-header10" type="checkbox" class="checkbox style-0">
+															<span>Friday</span>
+														</label>
+													</div>
+													<div class="item">
+														<label>
+															<input name="dayOfWeek" value=6 id="smart-fixed-header11" type="checkbox" class="checkbox style-0">
+															<span>Saturday</span>
+														</label>
+													</div>
+												</fieldset>
+											</section>
+										</div>
+									</div>
+								</div>
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion-2" href="#collapseTwo-1" class="collapsed" aria-expanded="false">
+												<i class="fa fa-fw fa-plus-circle txt-color-green"></i>
+												<i class="fa fa-fw fa-minus-circle txt-color-red"></i> Outlet Classification
+												<span class="hidden" id="SelectedClassification" role="menu">
+													<i class="fa fa-check-circle" aria-hidden="true" style=" font-size: 17px;color: #c1001e;padding-left: 12px;"></i>
+												</span>
+											</a>
+										</h4>
+
+									</div>
+									<div id="collapseTwo-1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+										<div class="panel-body">
+											<section class="well-sm">
+												<div>
+													<b>Trade Channel</b>
+												</div>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="multiple" name="LocationTypeId" style="width:100%" class="select2 select2-hidden-accessible tradeChannelCombo"
+														    tabindex="-1" aria-hidden="true" placeholder="Trade Channel"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+												<fieldset class="filter-height tradeChannel"></fieldset>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Key Location</b>
+												</label>
+												<fieldset class="filter-height">
+													<div class="item">
+														<label>
+															<input name="IsKeyLocation" value=1 id="smart-fixed-header12" type="checkbox" class="checkbox style-0">
+															<span>Is Key Location?</span>
+														</label>
+													</div>
+												</fieldset>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Customer Tier</b>
+												</label>
+												<div class="input-group input-group-sm">
+
+													<div class="icon-addon addon-sm">
+														<select multiple="multiple" name="ClassificationId" style="width:100%" class="select2 select2-hidden-accessible classificationCombo"
+														    tabindex="-1" aria-hidden="true" placeholder="Customer Tier"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+												<fieldset class="filter-height customerTier"></fieldset>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Sub Trade Channel</b>
+												</label>
+												<div class="input-group input-group-sm">
+
+													<div class="icon-addon addon-sm">
+														<select multiple="multiple" name="SubTradeChannelTypeId" style="width:100%" class="select2 select2-hidden-accessible subTradeChannelTypeCombo"
+														    tabindex="-1" aria-hidden="true" placeholder="Sub Trade Channel Type"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+												<fieldset class="filter-height subTradeChannel"></fieldset>
+											</section>
+										</div>
+									</div>
+								</div>
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-1" class="collapsed" aria-expanded="false">
+												<i class="fa fa-fw fa-plus-circle txt-color-green"></i>
+												<i class="fa fa-fw fa-minus-circle txt-color-red"></i> Location
+												<span class="hidden" id="SelectedLocation" role="menu">
+													<i class="fa fa-check-circle" aria-hidden="true" style=" font-size: 17px;color: #c1001e;padding-left: 12px;"></i>
+												</span>
+											</a>
+										</h4>
+
+									</div>
+									<div id="collapseThree-1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+										<div class="panel-body">
+											<section class="well-sm">
+												<label>
+													<b>City</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="multiple" name="City" style="width:100%" class="select2 select2-hidden-accessible cityCombo" tabindex="-1"
+														    aria-hidden="true" placeholder="Country"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+
+												</div>
+												<fieldset class="filter-height city margin-0-5"> </fieldset>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Country</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="CountryId" style="width:100%" class="select2 select2-hidden-accessible countryCombo" tabindex="-1"
+														    aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+
+												</div>
+												<fieldset class="filter-height country margin-0-5"> </fieldset>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Customer Code</b>
+												</label>
+												<div style="width:100%">
+													<input type="text" name="LocationCode" class="form-control" style="width: 80%;float: left;">
+													<span class="input-group-btn" style="width: 20%;float: right;">
+														<button class="btn btn-default" type="button" id="btnLocationCode">Go!</button>
+													</span>
+												</div>
+
+												<fieldset class="filter-height  margin-0-5"> </fieldset>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Outlet Type</b>
+												</label>
+
+												<fieldset class="filter-height outletType"></fieldset>
+											</section>
+										</div>
+									</div>
+								</div>
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion-2" href="#collapseFour-1" class="collapsed" aria-expanded="false">
+												<i class="fa fa-fw fa-plus-circle txt-color-green"></i>
+												<i class="fa fa-fw fa-minus-circle txt-color-red"></i> Sales Organization
+
+												<span class="hidden" id="SelectedSalesOrganization" role="menu">
+													<i class="fa fa-check-circle" aria-hidden="true" style=" font-size: 17px;color: #c1001e;padding-left: 12px;"></i>
+												</span>
+											</a>
+										</h4>
+									</div>
+									<div id="collapseFour-1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+										<div class="panel-body">
+											<section class="well-sm hidden">
+												<label>
+													<b>Sales Organization</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="SalesOrganizationId" style="width:100%" class="select2 select2-hidden-accessible salesOrganization"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+											<section class="well-sm hidden">
+												<label>
+													<b>Sales Office</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="SalesOfficeId" style="width:100%" class="select2 select2-hidden-accessible salesOffice" tabindex="-1"
+														    aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+											<section class="well-sm hidden">
+												<label>
+													<b>Sales Group</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="SalesGroupId" style="width:100%" class="select2 select2-hidden-accessible salesGroup" tabindex="-1"
+														    aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+											<section class="well-sm hidden">
+												<label>
+													<b>Sales Territory</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="TerritoryId" style="width:100%" class="select2 select2-hidden-accessible salesTerritory" tabindex="-1"
+														    aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Sales Rep</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="UserId" style="width:100%" class="select2 select2-hidden-accessible locationRep" tabindex="-1"
+														    aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+
+												</div>
+											</section>
+
+											<section class="well-sm">
+												<label>
+													<b>MultiTerritory</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="TeleSellingTerritoryId" style="width:100%" class="select2 select2-hidden-accessible TelesellingTerritoryType"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+
+												</div>
+											</section>
+
+											<section class="well-sm">
+												<label>
+													<b>Sales Hierarchy</b>
+												</label>
+
+
+
+												<div class="input-group input-group-sm">
+													<div id="jstree">
+													</div>
+												</div>
+											</section>
+											<section class="col-sm-12 col-md-12 col-lg-12 hidden">
+												<label>
+													<b>Technicians</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<input type="text" placeholder="Technicians" class="form-control" comboValue="LocationRepId">
+														<label for="email" class="glyphicon glyphicon-search" rel="tooltip" title="Salesperson"></label>
+													</div>
+
+												</div>
+											</section>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion-2" href="#collapseFive-1" class="collapsed" aria-expanded="false">
+												<i class="fa fa-fw fa-plus-circle txt-color-green"></i>
+												<i class="fa fa-fw fa-minus-circle txt-color-red"></i> Cooler
+
+												<span class="hidden" id="SelectedCooler" role="menu">
+													<i class="fa fa-check-circle" aria-hidden="true" style=" font-size: 17px;color: #c1001e;padding-left: 12px;"></i>
+												</span>
+											</a>
+										</h4>
+
+									</div>
+									<div id="collapseFive-1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+										<div class="panel-body">
+											<section class="well-sm">
+												<label>
+													<b>Manufacturer</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="AssetManufacturerId" style="width:100%" class="select2 select2-hidden-accessible manufacturerCombo"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+
+												</div>
+												<fieldset class="filter-height manufacturer margin-0-5"></fieldset>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Model</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="AssetTypeId" style="width:100%" class="select2 select2-hidden-accessible assetTypeCombo" tabindex="-1"
+														    aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+
+												</div>
+												<fieldset class="filter-height assetType margin-0-5"></fieldset>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Asset Type capacity</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="AssetTypeCapacityId" style="width:100%" class="select2 select2-hidden-accessible assetTypeCapacityCombo"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+
+												</div>
+												<fieldset class="filter-height assetTypeCapacity margin-0-5"></fieldset>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Factory Asset</b>
+												</label>
+												<fieldset class="filter-height">
+													<div class="item">
+														<label>
+															<input name="IsFactoryAsset" value=1 id="smart-fixed-header13" type="checkbox" class="checkbox style-0">
+															<span>Is Factory Asset?</span>
+														</label>
+													</div>
+												</fieldset>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Open Front</b>
+												</label>
+												<fieldset class="filter-height">
+													<div class="item">
+														<label>
+															<input name="IsOpenFront" value=1 id="smart-fixed-header14" type="checkbox" class="checkbox style-0">
+															<span>Is Open Front?</span>
+														</label>
+													</div>
+												</fieldset>
+											</section>
+											<section class="col-sm-12 col-md-2 col-lg-2 hidden">
+												<label>
+													<b>Door</b>
+												</label>
+
+
+												<fieldset class="filter-height doorCount"></fieldset>
+											</section>
+										</div>
+									</div>
+								</div>
+
+
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion-2" href="#collapseSix-1" class="collapsed" aria-expanded="false">
+												<i class="fa fa-fw fa-plus-circle txt-color-green"></i>
+												<i class="fa fa-fw fa-minus-circle txt-color-red"></i> Smart Device
+
+												<span class="hidden" id="SelectedSmartDevice" role="menu">
+
+													<i class="fa fa-check-circle" aria-hidden="true" style=" font-size: 17px;color: #c1001e;padding-left: 12px;"></i>
+												</span>
+											</a>
+										</h4>
+
+									</div>
+									<div id="collapseSix-1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+										<div class="panel-body">
+											<section class="well-sm">
+												<label>
+													<b>Manufacturer</b>
+												</label>
+
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="SmartDeviceManufacturerId" style="width:100%" class="select2 select2-hidden-accessible manufacturerSmartDevice"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+
+												</div>
+												<fieldset class="filter-height manufacturerSmartDeviceCheckBox margin-0-5"></fieldset>
+											</section>
+											<section class="col-sm-12 col-md-2 col-lg-2 hidden">
+												<label>
+													<b>Cooler</b>
+												</label>
+
+												<fieldset class="filter-height">
+													<div class="item">
+														<label>
+															<input name="CoolerType" value=0 id="smart-fixed-header15" type="checkbox" class="checkbox style-0">
+															<span>All</span>
+														</label>
+													</div>
+													<br />
+													<div class="item">
+														<label>
+															<input name="IsSmart" value=1 id="smart-fixed-header16" type="checkbox" class="checkbox style-0">
+															<span>Sensor</span>
+														</label>
+													</div>
+													<br />
+													<div class="item">
+														<label>
+															<input name="IsEMD" value=1 id="smart-fixed-header17" type="checkbox" class="checkbox style-0">
+															<span>EMD</span>
+														</label>
+													</div>
+													<br />
+													<div class="item">
+														<label>
+															<input name="IsVision" value=1 id="smart-fixed-header18" type="checkbox" class="checkbox style-0">
+															<span>Camera</span>
+														</label>
+													</div>
+												</fieldset>
+											</section>
+											<section class="col-sm-12 col-md-3 col-lg-3 hidden">
+												<label>
+													<b>Sensors</b>
+												</label>
+												<fieldset class="filter-height sensorType"></fieldset>
+											</section>
+											<section class="col-sm-12 col-md-3 col-lg-3 hidden">
+												<label>
+													<b>Connectivity</b>
+												</label>
+												<fieldset class="filter-height connectivityType"></fieldset>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Device Type</b>
+												</label>
+												<fieldset class="filter-height deviceType"></fieldset>
+											</section>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<!--<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>-->
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion-2" href="#collapseSeven-1" class="collapsed" aria-expanded="false">
+												<i class="fa fa-fw fa-plus-circle txt-color-green"></i>
+												<i class="fa fa-fw fa-minus-circle txt-color-red"></i> Alert
+
+												<span class="hidden" id="SelectedAlert" role="menu">
+													<!-- add: non-hidden - to disable auto hide -->
+													<i class="fa fa-check-circle" aria-hidden="true" style=" font-size: 17px;color: #c1001e;padding-left: 12px;"></i>
+												</span>
+											</a>
+										</h4>
+									</div>
+									<div id="collapseSeven-1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+										<div class="panel-body">
+											<section class="well-sm">
+												<label>
+													<b>Type</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="multiple" name="AlertTypeId" style="width:100%" class="select2 select2-hidden-accessible alertTypeComboSelected"
+														    tabindex="-1" aria-hidden="true" placeholder="Trade Channel"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+												<fieldset class="filter-height alertType"></fieldset>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Alarm Priority</b>
+												</label>
+
+												<fieldset class="filter-height">
+													<div class="item">
+														<label>
+															<input name="PriorityId" value=4227 id="smart-fixed-header19" type="checkbox" class="checkbox style-0">
+															<span>High</span>
+														</label>
+													</div>
+													<div class="item">
+														<label>
+															<input name="PriorityId" value=4226 id="smart-fixed-header20" type="checkbox" class="checkbox style-0">
+															<span>Medium</span>
+														</label>
+													</div>
+													<div class="item">
+														<label>
+															<input name="PriorityId" value=4225 id="smart-fixed-header21" type="checkbox" class="checkbox style-0">
+															<span>Low</span>
+														</label>
+													</div>
+												</fieldset>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Alarm Status</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="multiple" name="StatusId" style="width:100%" class="select2 select2-hidden-accessible alertStatusCombo"
+														    tabindex="-1" aria-hidden="true" placeholder="Alert Status"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+												<fieldset class="filter-height alertStatus"></fieldset>
+											</section>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<!--<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>-->
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion-2" href="#collapseEight-1" class="collapsed" aria-expanded="false">
+												<i class="fa fa-fw fa-plus-circle txt-color-green"></i>
+												<i class="fa fa-fw fa-minus-circle txt-color-red"></i> KPI
+
+												<span class="hidden" id="SelectedKPI" role="menu">
+													<!-- add: non-hidden - to disable auto hide -->
+													<i class="fa fa-check-circle" aria-hidden="true" style=" font-size: 17px;color: #c1001e;padding-left: 12px;"></i>
+												</span>
+											</a>
+										</h4>
+
+									</div>
+									<div id="collapseEight-1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+										<div class="panel-body">
+											<section class="well-sm hidden">
+												<label>
+													<b>Door Count </b>
+												</label>
+
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="DoorCount" style="width:100%" class="select2 select2-hidden-accessible assetDoorCount" tabindex="-1"
+														    aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+											<section class="well-sm hidden">
+												<label>
+													<b>Temperature </b>
+												</label>
+
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="TempBand" style="width:100%" class="select2 select2-hidden-accessible assetTempBand" tabindex="-1"
+														    aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Fallen Magnet Chart </b>
+												</label>
+
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="MagnetFallenChartCTF" style="width:100%" class="select2 select2-hidden-accessible MagnetFallenChartCTF"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Fallen Magnet Spread </b>
+												</label>
+
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="MagnetFallenSpreadCTF" style="width:100%" class="select2 select2-hidden-accessible MagnetFallenSpreadCTF"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+											<section class="well-sm hidden">
+												<label>
+													<b>Light Status </b>
+												</label>
+
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="LightStatus" style="width:100%" class="select2 select2-hidden-accessible assetLightBand" tabindex="-1"
+														    aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+											<section class="well-sm hidden">
+												<label>
+													<b>Power Off </b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="PowerStatus" style="width:100%" class="select2 select2-hidden-accessible assetPowerBand" tabindex="-1"
+														    aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+											<section class="well-sm hidden">
+												<label>
+													<b> Cooler Performance Index </b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="CoolerPerformanceIndex" style="width:100%" class="select2 select2-hidden-accessible CoolerPerformanceIndex"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+											<section class="well-sm">
+												<label>
+													<b> Door Open Vs Sales </b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="DoorOpenVsSales" style="width:100%" class="select2 select2-hidden-accessible DoorOpenVsSales" tabindex="-1"
+														    aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+											<section class="well-sm">
+												<label>
+													<b>Operational Issues </b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="OperationalIssues" style="width:100%" class="select2 select2-hidden-accessible OperationalIssues"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+											<section class="well-sm">
+												<label>
+													<b> Cooler Health </b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="CoolerHealth" style="width:100%" class="select2 select2-hidden-accessible CoolerHealth" tabindex="-1"
+														    aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+											<section class="well-sm">
+												<label>
+													<b> Temperature and Light Status </b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="TempLightIssue" style="width:100%" class="select2 select2-hidden-accessible TempLightIssue" tabindex="-1"
+														    aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+											<section class="well-sm">
+												<label>
+													<b>Door Swings Vs Target</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="DoorSwingsVsTarget" style="width:100%" class="select2 select2-hidden-accessible DoorSwingsVsTarget"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Data Download By Outlet</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="DataDownloadOutlet" style="width:100%" class="select2 select2-hidden-accessible DataDownloadOutlet"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Executed Command Report</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="ExcecuteCommandReport" style="width:100%" class="select2 select2-hidden-accessible ExcecuteCommandReport"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Executed Command Spread</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="ExcecuteCommandSpread" style="width:100%" class="select2 select2-hidden-accessible ExcecuteCommandSpread"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Cooler Tracking Always On</b>
+												</label>
+
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="coolerTracking" style="width:100%" class="select2 select2-hidden-accessible coolerTrackingType"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+											<!--for cooler tracking Proximity chart filter  /-->
+											<!--<section class="well-sm">
+												<label>
+													<b>Cooler Tracking Proximity </b>
+												</label>
+
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="coolerTrackingProximity" style="width:100%" class="select2 select2-hidden-accessible coolerTrackingTypeProximity"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>-->
+
+										</div>
+									</div>
+								</div>
+
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<!--<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>-->
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion-2" href="#collapseNine-1" class="collapsed" aria-expanded="false">
+												<i class="fa fa-fw fa-plus-circle txt-color-green"></i>
+												<i class="fa fa-fw fa-minus-circle txt-color-red"></i> Data
+
+												<span class="hidden" id="SelectedData" role="menu">
+													<!-- add: non-hidden - to disable auto hide -->
+													<i class="fa fa-check-circle" aria-hidden="true" style=" font-size: 17px;color: #c1001e;padding-left: 12px;"></i>
+												</span>
+											</a>
+										</h4>
+
+									</div>
+									<div id="collapseNine-1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+										<div class="panel-body">
+											<section class="well-sm">
+												<label>
+													<b>Installation Date </b>
+												</label>
+
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="installationDate" style="width:100%" class="select2 select2-hidden-accessible installationDateType"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Last Data Received </b>
+												</label>
+
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="lastDataReceived" style="width:100%" class="select2 select2-hidden-accessible lastDataReceivedType"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Door Data </b>
+												</label>
+
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="doorDataSelected" style="width:100%" class="select2 select2-hidden-accessible doorDataSelectedType"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+											<section class="well-sm">
+												<label>
+													<b>Sales Data </b>
+												</label>
+
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="salesDataSelected" style="width:100%" class="select2 select2-hidden-accessible salesDataSelectedType"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+											<section class="well-sm">
+												<label>
+													<b>Last Data Downloaded </b>
+												</label>
+
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="LastDataDownloaded" style="width:100%" class="select2 select2-hidden-accessible LastDataDownloaded"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+											<section class="well-sm">
+												<label>
+													<b>Data Downloaded </b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="false" name="DataDownloaded" style="width:100%" class="select2 select2-hidden-accessible DataDownloaded"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+										</div>
+									</div>
+								</div>
+
+
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<!--<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>-->
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion-2" href="#collapseTen-1" class="collapsed" aria-expanded="false">
+												<i class="fa fa-fw fa-plus-circle txt-color-green"></i>
+												<i class="fa fa-fw fa-minus-circle txt-color-red"></i> Telemetry
+
+												<span class="hidden" id="SelectedTelemetry" role="menu">
+													<!-- add: non-hidden - to disable auto hide -->
+													<i class="fa fa-check-circle" aria-hidden="true" style=" font-size: 17px;color: #c1001e;padding-left: 12px;"></i>
+												</span>
+											</a>
+										</h4>
+
+
+									</div>
+									<div id="collapseTen-1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+										<div class="panel-body">
+
+
+											<section class="well-sm">
+												<label>
+													<b>Displacement</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="DisplacementFilter" style="width:100%" class="select2 select2-hidden-accessible assetDisplacement"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+											<section class="well-sm">
+												<label>
+													<b>Historic Displacement</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="DisplacementFilterHistoric" style="width:100%" class="select2 select2-hidden-accessible assetDisplacementHistoric"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+
+											<section class="well-sm">
+												<label>
+													<b>Door Status </b>
+												</label>
+
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="telemetryDoorCount" style="width:100%" class="select2 select2-hidden-accessible telemetryDoorCount"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+											<section class="well-sm">
+												<label>
+													<b>Battery Level Report </b>
+												</label>
+
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="batteryReprtData" style="width:100%" class="select2 select2-hidden-accessible batteryReprtData"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+
+											<section class="well-sm">
+												<label>
+													<b>Temperature</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="TemperatureTele" style="width:100%" class="select2 select2-hidden-accessible TemperatureTele" tabindex="-1"
+														    aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+											<section class="well-sm">
+												<label>
+													<b>Power Off </b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="telemetryPowerStatus" style="width:100%" class="select2 select2-hidden-accessible telemetryPowerStatus"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+
+											<section class="well-sm">
+												<label>
+													<b> Light Status </b>
+												</label>
+
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="telemetryLightStatus" style="width:100%" class="select2 select2-hidden-accessible telemetryLightStatus"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+											<section class="well-sm">
+												<label>
+													<b>Evaporator Temperature</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="EvaporatorTemperatureTele" style="width:100%" class="select2 select2-hidden-accessible EvaporatorTemperatureTele"
+														    tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+
+										</div>
+									</div>
+								</div>
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<!--<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>-->
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion-2" href="#collapseEleven-1" class="collapsed" aria-expanded="false">
+												<i class="fa fa-fw fa-plus-circle txt-color-green"></i>
+												<i class="fa fa-fw fa-minus-circle txt-color-red"></i> Technical Diagnostics
+
+												<span class="hidden" id="SelectedTechnicalDiagnostics" role="menu">
+													<!-- add: non-hidden - to disable auto hide -->
+													<i class="fa fa-check-circle" aria-hidden="true" style=" font-size: 17px;color: #c1001e;padding-left: 12px;"></i>
+												</span>
+											</a>
+										</h4>
+
+
+									</div>
+									<div id="collapseEleven-1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+										<div class="panel-body">
+
+											<section class="well-sm">
+												<label>
+													<b>Compressor </b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="CompressorBand" style="width:100%" class="select2 select2-hidden-accessible CompressorBand" tabindex="-1"
+														    aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+											<section class="well-sm">
+												<label>
+													<b>Fan</b>
+												</label>
+												<div class="input-group input-group-sm">
+													<div class="icon-addon addon-sm">
+														<select multiple="" name="FanBand" style="width:100%" class="select2 select2-hidden-accessible FanBand" tabindex="-1" aria-hidden="true"></select>
+														<span class="">
+															<i class="fa fa-search"></i>
+														</span>
+													</div>
+												</div>
+											</section>
+
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+
+						</div>
+
+						<section class="well-sm hidden">
+							<button type="submit" class="btn btn-success btn-block">Search</button>
+							<br>
+							<br>
+							<br>
+							<br>
+						</section>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<!--
+	<div class="chat-list-footer">
+
+			<div class="control-group">
+
+				<form class="smart-form">
+
+					<section>
+						<label class="input">
+												<input type="text" id="filter-chat-list" placeholder="Filter">
+											</label>
+					</section>
+
+				</form>
+
+			</div>
+
+		</div>-->
+	<script async src="js/controllers/filter.js"></script>
+</body>
+
+</html>

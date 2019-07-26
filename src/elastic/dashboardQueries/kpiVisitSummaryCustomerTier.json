@@ -1,0 +1,42 @@
+{
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "type": {
+            "value": "Visit"
+          }
+        },
+        {
+          "term": {
+            "IsDeleted": false
+          }
+        }
+      ]
+    }
+  },
+  "aggregations": {
+    "LocationData": {
+      "terms": {
+        "field": "LocationId",
+        "order": {
+          "AvgDuration": "desc"
+        },
+        "size": 100000
+      },
+      "aggs": {
+        "AvgDuration": {
+          "avg": {
+            "field": "VisitDuration"
+          }
+        },
+        "SumDuration": {
+          "sum": {
+            "field": "VisitDuration"
+          }
+        }
+      }
+    }
+  }
+}

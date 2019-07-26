@@ -1,0 +1,1522 @@
+{
+  "from": 0,
+  "size": 100000,
+  "aggs": {
+    "SmartLocation": {
+      "filter": {
+        "bool": {
+          "must": [{
+              "type": {
+                "value": "Location"
+              }
+            },
+            {
+              "term": {
+                "isSmart": "true"
+              }
+            },
+            {
+              "term": {
+                "isDeleted": "false"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "SurveyCoverage": {
+      "filter": {
+        "bool": {
+          "must": [{
+              "type": {
+                "value": "survey"
+              }
+            },
+            {
+              "term": {
+                "IsLatestSurveyed": "true"
+              }
+            }
+          ],
+          "must_not": [{
+              "term": {
+                "IsDeleted": true
+              }
+            },
+            {
+              "term": {
+                "SurveyTagId": "0"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "Latitude": {
+          "terms": {
+            "field": "Latitude",
+            "size": 200
+          },
+          "aggs": {
+            "Longitude": {
+              "terms": {
+                "field": "Longitude",
+                "size": 200
+              }
+            }
+          }
+        }
+      }
+    },
+    "TotalOutletsSurveyed": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "survey"
+            }
+          }],
+          "must_not": [{
+              "term": {
+                "IsDeleted": true
+              }
+            },
+            {
+              "term": {
+                "LocationId": "0"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "OutletCount": {
+          "cardinality": {
+            "field": "LocationId"
+          }
+        }
+      }
+    },
+    "TotalSurveyors": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "survey"
+            }
+          }],
+          "must_not": [{
+              "term": {
+                "IsDeleted": true
+              }
+            },
+            {
+              "term": {
+                "LocationId": "0"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "Surveyors": {
+          "cardinality": {
+            "field": "ConsumerId"
+          }
+        }
+      }
+    },
+    "TotalOutlets": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "Location"
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "IsDeleted": true
+            }
+          }]
+        }
+      }
+    },
+    "TotalIssues": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "opportunity"
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "IsDeleted": true
+            }
+          }]
+        }
+      }
+    },
+    "AlertOpenCount": {
+      "filter": {
+        "bool": {
+          "must": {
+            "type": {
+              "value": "Alert"
+            }
+          },
+          "must_not": [{
+              "term": {
+                "AssetId": 0
+              }
+            },
+            {
+              "term": {
+                "AlertAt": "0001-01-01T00:00:00"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "Today": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "AlertAt": {
+                    "gte": "2016-05-24T00:00:00",
+                    "lt": "2016-05-25T00:00:00"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "Low": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4225
+                    }
+                  }
+                }
+              }
+            },
+            "Medium": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4226
+                    }
+                  }
+                }
+              }
+            },
+            "High": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4227
+                    }
+                  }
+                }
+              }
+            },
+            "OutletCount": {
+              "cardinality": {
+                "field": "LocationId"
+              }
+            }
+          }
+        },
+        "1-3": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "AlertAt": {
+                    "gte": "2016-05-21T00:00:00",
+                    "lt": "2016-05-24T00:00:00"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "Low": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4225
+                    }
+                  }
+                }
+              }
+            },
+            "Medium": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4226
+                    }
+                  }
+                }
+              }
+            },
+            "High": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4227
+                    }
+                  }
+                }
+              }
+            },
+            "OutletCount": {
+              "cardinality": {
+                "field": "LocationId"
+              }
+            }
+          }
+        },
+        "4-6": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "AlertAt": {
+                    "gte": "2016-05-18T00:00:00",
+                    "lt": "2016-05-21T00:00:00"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "Low": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4225
+                    }
+                  }
+                }
+              }
+            },
+            "Medium": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4226
+                    }
+                  }
+                }
+              }
+            },
+            "High": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4227
+                    }
+                  }
+                }
+              }
+            },
+            "OutletCount": {
+              "cardinality": {
+                "field": "LocationId"
+              }
+            }
+          }
+        },
+        "7+": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "AlertAt": {
+                    "lt": "2016-05-18T00:00:00"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "Low": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4225
+                    }
+                  }
+                }
+              }
+            },
+            "Medium": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4226
+                    }
+                  }
+                }
+              }
+            },
+            "High": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4227
+                    }
+                  }
+                }
+              }
+            },
+            "OutletCount": {
+              "cardinality": {
+                "field": "LocationId"
+              }
+            }
+          }
+        },
+        "TotalCount": {
+          "cardinality": {
+            "field": "LocationId"
+          }
+        }
+      }
+    },
+    "AlertCount": {
+      "filter": {
+        "bool": {
+          "must": {
+            "type": {
+              "value": "Alert"
+            }
+          },
+          "must_not": {
+            "term": {
+              "AssetId": 0
+            }
+          }
+        }
+      },
+      "aggs": {
+        "New": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "AlertAt": {
+                    "gte": "2016-05-24T00:00:00",
+                    "lt": "2016-05-25T00:00:00"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "Low": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4225
+                    }
+                  }
+                }
+              }
+            },
+            "Medium": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4226
+                    }
+                  }
+                }
+              }
+            },
+            "High": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4227
+                    }
+                  }
+                }
+              }
+            },
+            "OutletCount": {
+              "cardinality": {
+                "field": "LocationId"
+              }
+            }
+          }
+        },
+        "Open": {
+          "filter": {
+            "bool": {
+              "must_not": {
+                "exists": {
+                  "field": "ClosedOn"
+                }
+              }
+            }
+          },
+          "aggs": {
+            "Low": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4225
+                    }
+                  }
+                }
+              }
+            },
+            "Medium": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4226
+                    }
+                  }
+                }
+              }
+            },
+            "High": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4227
+                    }
+                  }
+                }
+              }
+            },
+            "OutletCount": {
+              "cardinality": {
+                "field": "LocationId"
+              }
+            }
+          }
+        },
+        "Close": {
+          "filter": {
+            "bool": {
+              "must": [{
+                  "range": {
+                    "AlertAt": {
+                      "gte": "2016-05-18T00:00:00",
+                      "lt": "2016-05-25T00:00:00"
+                    }
+                  }
+                },
+                {
+                  "exists": {
+                    "field": "ClosedOn"
+                  }
+                }
+              ]
+            }
+          },
+          "aggs": {
+            "Low": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4225
+                    }
+                  }
+                }
+              }
+            },
+            "Medium": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4226
+                    }
+                  }
+                }
+              }
+            },
+            "High": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "term": {
+                      "PriorityId": 4227
+                    }
+                  }
+                }
+              }
+            },
+            "OutletCount": {
+              "cardinality": {
+                "field": "LocationId"
+              }
+            }
+          }
+        },
+        "TotalCount": {
+          "cardinality": {
+            "field": "LocationId"
+          }
+        }
+      }
+    },
+    "TempBandChart": {
+      "filter": {
+        "bool": {
+          "must": {
+            "type": {
+              "value": "Asset"
+            }
+          },
+          "must_not": {}
+        }
+      },
+      "aggs": {
+        "Below 0": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "temperature": {
+                    "gte": "-100",
+                    "lt": "0"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "value": {
+              "value_count": {
+                "field": "latestHealthRecordId"
+              }
+            },
+            "OutletCount": {
+              "cardinality": {
+                "field": "locationId"
+              }
+            }
+          }
+        },
+        "1-5": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "temperature": {
+                    "gte": "1",
+                    "lt": "5"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "value": {
+              "value_count": {
+                "field": "latestHealthRecordId"
+              }
+            },
+            "OutletCount": {
+              "cardinality": {
+                "field": "locationId"
+              }
+            }
+          }
+        },
+        "5-10": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "temperature": {
+                    "gte": "5",
+                    "lt": "10"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "value": {
+              "value_count": {
+                "field": "latestHealthRecordId"
+              }
+            },
+            "OutletCount": {
+              "cardinality": {
+                "field": "LocationId"
+              }
+            }
+          }
+        },
+        "10-15": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "temperature": {
+                    "gte": "10",
+                    "lt": "15"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "value": {
+              "value_count": {
+                "field": "latestHealthRecordId"
+              }
+            },
+            "OutletCount": {
+              "cardinality": {
+                "field": "locationId"
+              }
+            }
+          }
+        },
+        "15+": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "temperature": {
+                    "gte": "15",
+                    "lt": "100"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "value": {
+              "value_count": {
+                "field": "latestHealthRecordId"
+              }
+            },
+            "OutletCount": {
+              "cardinality": {
+                "field": "locationId"
+              }
+            }
+          }
+        },
+        "OutletCount": {
+          "cardinality": {
+            "field": "locationId"
+          }
+        }
+      }
+    },
+    "LightBandChart": {
+      "filter": {
+        "bool": {
+          "must": {
+            "type": {
+              "value": "Asset"
+            }
+          },
+          "must_not": {}
+        }
+      },
+      "aggs": {
+        "Low (Below 10)": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "lightIntensity": {
+                    "gte": "0",
+                    "lt": "10"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "value": {
+              "value_count": {
+                "field": "latestHealthRecordId"
+              }
+            },
+            "OutletCount": {
+              "cardinality": {
+                "field": "locationId"
+              }
+            }
+          }
+        },
+        "Average (10-50)": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "lightIntensity": {
+                    "gte": "10",
+                    "lt": "50"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "value": {
+              "value_count": {
+                "field": "latestHealthRecordId"
+              }
+            },
+            "OutletCount": {
+              "cardinality": {
+                "field": "locationId"
+              }
+            }
+          }
+        },
+        "Bright (50+)": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "lightIntensity": {
+                    "gte": "50",
+                    "lt": "100"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "value": {
+              "value_count": {
+                "field": "latestHealthRecordId"
+              }
+            },
+            "OutletCount": {
+              "cardinality": {
+                "field": "locationId"
+              }
+            }
+          }
+        },
+        "OutletCount": {
+          "cardinality": {
+            "field": "locationId"
+          }
+        }
+      }
+    },
+    "TempLightIssueCount": {
+      "filter": {
+        "bool": {
+          "must": {
+            "type": {
+              "value": "Asset"
+            }
+          },
+          "must_not": [{
+            "term": {
+              "latestHealthRecordId": "0"
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "Temperature normal Light normal": {
+          "filter": {
+            "bool": {
+              "must": [{
+                  "range": {
+                    "temperature": {
+                      "gte": "1",
+                      "lte": "12"
+                    }
+                  }
+                },
+                {
+                  "range": {
+                    "lightIntensity": {
+                      "gt": "10"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "Temperature normal Light malfunction": {
+          "filter": {
+            "bool": {
+              "must": [{
+                  "range": {
+                    "temperature": {
+                      "gte": "1",
+                      "lte": "12"
+                    }
+                  }
+                },
+                {
+                  "range": {
+                    "lightIntensity": {
+                      "lt": "10"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "Temperature abnormal Light normal": {
+          "filter": {
+            "bool": {
+              "must": [{
+                "range": {
+                  "lightIntensity": {
+                    "gt": "10"
+                  }
+                }
+              }],
+              "must_not": [{
+                "range": {
+                  "temperature": {
+                    "gt": "1",
+                    "lt": "12"
+                  }
+                }
+              }]
+            }
+          }
+        },
+        "Temperature abnormal Light malfunction": {
+          "filter": {
+            "bool": {
+              "must": [{
+                "range": {
+                  "lightIntensity": {
+                    "lt": "10"
+                  }
+                }
+              }],
+              "must_not": [{
+                "range": {
+                  "temperature": {
+                    "gt": "1",
+                    "lt": "12"
+                  }
+                }
+              }]
+            }
+          }
+        },
+        "OutletCount": {
+          "cardinality": {
+            "field": "locationId"
+          }
+        }
+      }
+    },
+    "CoolerUtilization": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "type": {
+              "value": "SmartDeviceDoorStatus"
+            }
+          }, {
+            "term": {
+              "IsDeleted": false
+            }
+          }],
+          "must_not": {
+            "term": {
+              "AssetId": 0
+            }
+          }
+        }
+      },
+      "aggs": {
+        "Low": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "EventTime": {
+                    "gte": "2016-05-17T00:00:00",
+                    "lte": "2016-05-24T00:00:00"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "assets": {
+              "terms": {
+                "field": "AssetId",
+                "size": 100000,
+                "min_doc_count": 0
+              }
+            }
+          }
+        },
+        "Medium": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "EventTime": {
+                    "gte": "2016-05-17T00:00:00",
+                    "lte": "2016-05-24T00:00:00"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "assets": {
+              "terms": {
+                "field": "AssetId",
+                "size": 100000,
+                "min_doc_count": 21
+              }
+            }
+          }
+        },
+        "High": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "EventTime": {
+                    "gte": "2016-05-17T00:00:00",
+                    "lte": "2016-05-24T00:00:00"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "assets": {
+              "terms": {
+                "field": "AssetId",
+                "size": 100000,
+                "min_doc_count": 41
+              }
+            }
+          }
+        },
+        "OutletCount": {
+          "cardinality": {
+            "field": "LocationId"
+          }
+        }
+      }
+    },
+    "ProductAvailabilty": {
+      "filter": {
+        "bool": {
+          "must": [{
+              "term": {
+                "QuestionCategoryId": "4191"
+              }
+            },
+            {
+              "type": {
+                "value": "surveydetail"
+              }
+            },
+            {
+              "term": {
+                "IsLatestSurveyed": "true"
+              }
+            }
+          ],
+          "must_not": [{
+              "term": {
+                "LocationId": 0
+              }
+            },
+            {
+              "term": {
+                "ResponseYesNo": "-1"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "OutletCount": {
+          "cardinality": {
+            "field": "LocationId"
+          }
+        },
+        "SurveyQuestionWithCount": {
+          "terms": {
+            "field": "SurveyTagId"
+          }
+        },
+        "ResponseYes": {
+          "filter": {
+            "bool": {
+              "must": {
+                "term": {
+                  "ResponseYesNo": 1
+                }
+              }
+            }
+          },
+          "aggs": {
+            "Survey": {
+              "terms": {
+                "field": "SurveyTagId"
+              },
+              "aggs": {
+                "values": {
+                  "top_hits": {
+                    "size": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ResponseNo": {
+          "filter": {
+            "bool": {
+              "must": {
+                "term": {
+                  "ResponseYesNo": 0
+                }
+              }
+            }
+          },
+          "aggs": {
+            "Survey": {
+              "terms": {
+                "field": "SurveyTagId"
+              },
+              "aggs": {
+                "values": {
+                  "top_hits": {
+                    "size": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "ActivationMetrics": {
+      "filter": {
+        "bool": {
+          "must": [{
+              "term": {
+                "QuestionCategoryId": "4192"
+              }
+            },
+            {
+              "type": {
+                "value": "surveydetail"
+              }
+            },
+            {
+              "term": {
+                "IsLatestSurveyed": "true"
+              }
+            }
+          ],
+          "must_not": [{
+              "term": {
+                "LocationId": 0
+              }
+            },
+            {
+              "term": {
+                "ResponseYesNo": "-1"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "OutletCount": {
+          "cardinality": {
+            "field": "LocationId"
+          }
+        },
+        "SurveyQuestionWithCount": {
+          "terms": {
+            "field": "SurveyTagId"
+          }
+        },
+        "ResponseYes": {
+          "filter": {
+            "bool": {
+              "must": {
+                "term": {
+                  "ResponseYesNo": 1
+                }
+              }
+            }
+          },
+          "aggs": {
+            "Survey": {
+              "terms": {
+                "field": "SurveyTagId"
+              },
+              "aggs": {
+                "values": {
+                  "top_hits": {
+                    "size": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ResponseNo": {
+          "filter": {
+            "bool": {
+              "must": {
+                "term": {
+                  "ResponseYesNo": 0
+                }
+              }
+            }
+          },
+          "aggs": {
+            "Survey": {
+              "terms": {
+                "field": "SurveyTagId"
+              },
+              "aggs": {
+                "values": {
+                  "top_hits": {
+                    "size": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "CoolerMetrics": {
+      "filter": {
+        "bool": {
+          "must": [{
+              "term": {
+                "QuestionCategoryId": "4193"
+              }
+            },
+            {
+              "type": {
+                "value": "surveydetail"
+              }
+            },
+            {
+              "term": {
+                "IsLatestSurveyed": "true"
+              }
+            }
+          ],
+          "must_not": [{
+              "term": {
+                "LocationId": 0
+              }
+            },
+            {
+              "term": {
+                "ResponseYesNo": "-1"
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "OutletCount": {
+          "cardinality": {
+            "field": "LocationId"
+          }
+        },
+        "SurveyQuestionWithCount": {
+          "terms": {
+            "field": "SurveyTagId"
+          }
+        },
+        "ResponseYes": {
+          "filter": {
+            "bool": {
+              "must": {
+                "term": {
+                  "ResponseYesNo": 1
+                }
+              }
+            }
+          },
+          "aggs": {
+            "Survey": {
+              "terms": {
+                "field": "SurveyTagId"
+              },
+              "aggs": {
+                "values": {
+                  "top_hits": {
+                    "size": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ResponseNo": {
+          "filter": {
+            "bool": {
+              "must": {
+                "term": {
+                  "ResponseYesNo": 0
+                }
+              }
+            }
+          },
+          "aggs": {
+            "Survey": {
+              "terms": {
+                "field": "SurveyTagId"
+              },
+              "aggs": {
+                "values": {
+                  "top_hits": {
+                    "size": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "PurityInfo": {
+      "filter": {
+        "bool": {
+          "must": [{
+              "term": {
+                "QuestionCategoryId": "4193"
+              }
+            },
+            {
+              "type": {
+                "value": "surveydetail"
+              }
+            },
+            {
+              "term": {
+                "IsLatestSurveyed": "true"
+              }
+            },
+            {
+              "term": {
+                "IsPurityQuestion": "true"
+              }
+            }
+          ],
+          "must_not": [{
+            "term": {
+              "LocationId": 0
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "OutletCount": {
+          "cardinality": {
+            "field": "LocationId"
+          }
+        },
+        "0-20": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "PurityPercentage": {
+                    "gte": "0",
+                    "lte": "20"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "OutletCount": {
+              "cardinality": {
+                "field": "LocationId"
+              }
+            }
+          }
+        },
+        "21-40": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "PurityPercentage": {
+                    "gte": "21",
+                    "lte": "40"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "OutletCount": {
+              "cardinality": {
+                "field": "LocationId"
+              }
+            }
+          }
+        },
+        "41-60": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "PurityPercentage": {
+                    "gte": "41",
+                    "lt": "60"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "OutletCount": {
+              "cardinality": {
+                "field": "LocationId"
+              }
+            }
+          }
+        },
+        "61-80": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "PurityPercentage": {
+                    "gte": "61",
+                    "lte": "80"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "OutletCount": {
+              "cardinality": {
+                "field": "LocationId"
+              }
+            }
+          }
+        },
+        "81-100": {
+          "filter": {
+            "bool": {
+              "must": {
+                "range": {
+                  "PurityPercentage": {
+                    "gte": "81",
+                    "lte": "100"
+                  }
+                }
+              }
+            }
+          },
+          "aggs": {
+            "OutletCount": {
+              "cardinality": {
+                "field": "LocationId"
+              }
+            }
+          }
+        }
+      }
+    },
+    "RankPercentage": {
+      "filter": {
+        "bool": {
+          "must": [{
+              "type": {
+                "value": "surveydetail"
+              }
+            },
+            {
+              "term": {
+                "IsLatestSurveyed": "true"
+              }
+            }
+          ],
+          "must_not": [{
+              "term": {
+                "LocationId": 0
+              }
+            },
+            {
+              "term": {
+                "SurveyTagId": 0
+              }
+            }
+          ]
+        }
+      },
+      "aggs": {
+        "OutletCount": {
+          "cardinality": {
+            "field": "LocationId"
+          }
+        },
+        "Survey": {
+          "terms": {
+            "field": "LocationId",
+            "size": 1000
+          },
+          "aggs": {
+            "totalPoint": {
+              "sum": {
+                "field": "Point"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

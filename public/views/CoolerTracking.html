@@ -1,0 +1,502 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title> Dashboaard/Cooler Tracking </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<style>
+		.btn-bronze {
+			color: #fff;
+			background-color: red;
+			border-color: red;
+		}
+
+		span.select-item {
+			padding-left: 4px;
+		}
+
+		.btn-diamond {
+			color: #fff;
+			background-color: blue;
+			border-color: blue;
+		}
+
+		.txt-color-greenLight {
+			color: #f5f5f5 !important;
+		}
+
+		.btn-gold {
+			color: #fff;
+			background-color: Gold;
+			border-color: Gold;
+		}
+
+		.btn-silver {
+			color: #fff;
+			background-color: deeppink;
+			border-color: deeppink;
+		}
+
+		.btn-black {
+			color: #fff;
+			background-color: #000;
+			border-color: #fff;
+		}
+
+		.btn-circle {
+			width: 10px;
+			height: 10px;
+			text-align: center;
+			padding: 6px 0;
+			font-size: 12px;
+			line-height: 18px;
+			border-radius: 50%;
+			-moz-border-radius: 50%;
+			-webkit-border-radius: 50%;
+		}
+
+		.easy-pie-title {
+			display: inline-block;
+			margin: 10px 6px 0;
+			font-size: 12px;
+			font-weight: 400;
+			text-transform: uppercase;
+			width: inherit !important;
+			height: 19px;
+			text-overflow: ellipsis;
+			white-space: normal !important;
+			overflow: visible;
+			word-wrap: break-word;
+		}
+
+		#sparks {
+			display: block;
+			list-style: none;
+			margin: 0px 0 0;
+			padding: 0;
+			text-align: right;
+		}
+
+		.col-sm-2-5 {
+			width: 16.5%;
+		}
+
+		.col-lg-2-0 {
+			width: 20%;
+		}
+
+		.col-sm-1-5 {
+			width: 9.5%;
+		}
+
+		.col-md-2-5 {
+			width: 16.5%;
+		}
+
+		.col-lg-2-5 {
+			width: 16.5%;
+		}
+
+		.height-10 {
+			height: 10em;
+		}
+
+		.padding-top-3-5 {
+			padding-top: 3.5em;
+		}
+	</style>
+</head>
+
+<body class="">
+	<div id="ribbon">
+		<!-- breadcrumb -->
+		<ol class="breadcrumb">
+			<li>Dashboard</li>
+			<li>Cooler Tracking</li>
+		</ol>
+	</div>
+	<!-- MAIN CONTENT -->
+	<div id="content" class="widget-hide-overflow">
+		<!-- row -->
+		<!-- Filter Right Panel -->
+		<div id="chat-container" class="">
+			<span class="chat-list-open-close">
+				<i class="fa fa-filter icon-filter"></i>
+				<b class="filterApplied hidden">
+					<i class="fa fa-check" aria-hidden="true"></i>
+				</b>
+				<span class="text-filter">Filters</span>
+			</span>
+			<div id="filterTitle"></div>
+			<div class="chat-list-body custom-scroll">
+				<div id="filterFormKPI">
+				</div>
+			</div>
+		</div>
+		<div id="chat-container-summary">
+			<div id="chat-container" class="chat-container-summary">
+				<span class="chat-list-open-close" style="top:139px">
+					<i class="fa fa-table icon-filter"></i>
+					<span class="text-filter">Summary</span>
+					<b>
+						<i class="fa fa-filter"></i>
+					</b>
+				</span>
+				<div class="chat-list-body custom-scroll">
+					<div id="filterSummary">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="">
+			<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+				<div class="well-sm">
+					<span class="well-sm">
+						<b>Period: </b>
+						<b class="timeFilterName"></b>
+					</span>
+				</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+				<ul id="sparks" class="">
+					<li class="sparks-info">
+						<h5> Total Customers
+							<span class="txt-color-purple" id="totalCustomer">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Customers Selected
+							<span class="txt-color-blue" id="customerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0" data-pie-size="40"
+						    id="customerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info hidden">
+						<h5> Total Coolers
+							<span class=" txt-color-purple" id="totalCooler">
+								0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Count of Coolers
+							<span class="txt-color-blue" id="coolerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden hidden-mobile hidden-md hidden-sm" data-percent="0" data-pie-size="40"
+						    id="coolerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info hidden">
+						<h5> Total Smart Coolers
+							<span class="txt-color-purple" id="totalSmartCooler">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Connected Coolers
+							<span class="txt-color-blue" id="smartCoolerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0" data-pie-size="40"
+						    id="smartCoolerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info hidden">
+						<h5>Warehouse Connected Coolers
+							<span class="txt-color-blue" id="smartCoolerWareHouseSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0" data-pie-size="40"
+						    id="smartCoolerWareHouseSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<section id="widget-grid" class="">
+			<div class="row">
+				<article class="col-sm-12 col-md-12 col-lg-12">
+
+
+
+
+					
+					<article class="col-xs-12 col-sm-12 col-lg-8 col-md-12">
+
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+						    data-widget-deletebutton="false" data-widget-sortable="false" data-widget-collapsed="false" data-widget-togglebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>Cooler Contactless Survey</h2>
+							</header>
+							<div class="no-padding">
+								<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 text-center connect col-lg-2-0">
+									<div class="no-padding">
+										<div>
+											<div id="coolerSurveyIndexSpin"></div>
+											<div style="background-color:white">
+												<div id="coolerSurveyIndex" style="height:9em"></div>
+											</div>
+											<div>
+												<span class="easy-pie-title">
+													<small>Cooler Issue Index</small>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 text-center connect padding-top-3-5">
+									<div id="CoolerMissing" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="50">
+										<span class="percent">0 </span>
+									</div>
+									<div class="row">
+										<span class="easy-pie-title">
+											<small> Coolers Missing</small>
+										</span>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 text-center connect padding-top-3-5 col-sm-1-5">
+									<div id="CoolerWrongLocation" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+										<span class="percent">0 </span>
+									</div>
+									<div class="row">
+										<span class="easy-pie-title">
+											<small> Coolers in Wrong location</small>
+										</span>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 text-center connect padding-top-3-5">
+									<div id="IncorrectTempCooler" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+										<span class="percent ">0 </span>
+									</div>
+									<div class="row">
+										<span class="easy-pie-title">
+											<small>Coolers with Incorrect Temperature</small>
+										</span>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 text-center connect padding-top-3-5">
+									<div id="coolerpoweredoff" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+										<span class="percent ">0 </span>
+									</div>
+									<div class="row">
+										<span class="easy-pie-title">
+											<small> Coolers Powered Off</small>
+										</span>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-1 col-md-1 col-lg-1 text-center connect padding-top-3-5">
+									<div id="underUtilized" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+										<span class="percent ">0 </span>
+									</div>
+									<div class="row">
+										<span class="easy-pie-title">
+											<small>Under Utilized Coolers</small>
+										</span>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center connect" id="lightHoursOnChart">
+									<div class="no-padding">
+										<div>
+											<div style="background-color:white">
+												<div id="temperatureAssetSpin"></div>
+												<div id="temperatureAsset" style="height:12em"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+					<article class="col-xs-12 col-sm-12 col-lg-4">
+						<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+						    data-widget-deletebutton="false" data-widget-sortable="false" data-widget-collapsed="false" data-widget-togglebutton="false">
+							<header>
+								<span class="widget-icon">
+									<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+								</span>
+								<h2>Last Seen</h2>
+								<div class="widget-toolbar hidden-mobile">
+									<a href="javascript:void(0);" class="btn btn-primary" id="mapClickLastDataDownloaded">
+										<i class="fa fa-map-marker" aria-hidden="true"></i> Map</a>
+									<!--<span class="onoffswitch-title timeFilterName"></span>-->
+								</div>
+							</header>
+							<div class="no-padding">
+								<div>
+									<div style="background-color:white">
+										<div id="lastDataDownloaded" style="height:13.7em"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12 no-padding">
+						<article class="col-xs-12 col-sm-12 col-lg-4 fullscreensettings">
+							<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+							    data-widget-sortable="false" data-widget-deletebutton="false">
+								<header>
+									<span class="widget-icon">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+									</span>
+									<h2>Cooler Tracking</h2>
+									<div class="widget-toolbar hidden-mobile" role="menu">
+										<a href="javascript:void(0);" class="btn btn-primary" id="mapClickTracking">
+											<i class="fa fa-map-marker" aria-hidden="true"></i> Map</a>
+									</div>
+								</header>
+								<div id="coolerTracking"></div>
+							</div>
+						</article>
+						<article class="col-xs-12 col-sm-12 col-lg-4 fullscreensettings">
+							<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+							    data-widget-sortable="false" data-widget-deletebutton="false">
+								<header>
+									<span class="widget-icon">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+									</span>
+									<h2>Coolers By Alarm Type</h2>
+									<div class="widget-toolbar hidden-mobile" role="menu">
+										<a href="javascript:void(0);" class="btn btn-primary" id="mapClickAlarm">
+											<i class="fa fa-map-marker" aria-hidden="true"></i> Map</a>
+									</div>
+								</header>
+								<div id="alarmtracking"></div>
+							</div>
+						</article>
+						<!--for temperature chart-->
+						<article class="col-xs-12 col-sm-12 col-lg-4 fullscreensettings">
+							<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+							    data-widget-sortable="false" data-widget-deletebutton="false">
+								<header>
+									<span class="widget-icon">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+									</span>
+									<h2>Temperature</h2>
+									<div class="widget-toolbar hidden-mobile">
+										<a href="javascript:void(0);" class="btn btn-primary" id="mapclickTemperature">
+											<i class="fa fa-map-marker" aria-hidden="true"></i> Map</a>
+										<!--<span class="onoffswitch-title timeFilterName"></span>-->
+									</div>
+								</header>
+								<div id="temperaturetracking"></div>
+							</div>
+						</article>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12 no-padding">
+						<article class="col-xs-12 col-sm-12 col-lg-4 fullscreensettings">
+							<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+							    data-widget-sortable="false" data-widget-deletebutton="false">
+								<header>
+									<span class="widget-icon">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+									</span>
+									<h2>Door Open</h2>
+									<div class="widget-toolbar hidden-mobile">
+										<a href="javascript:void(0);" class="btn btn-primary" id="mapclickDoor">
+											<i class="fa fa-map-marker" aria-hidden="true"></i> Map</a>
+										<!--<span class="onoffswitch-title timeFilterName"></span>-->
+									</div>
+								</header>
+								<div id="dooropentracking"></div>
+							</div>
+						</article>
+						<!--for cooler voltage chart-->
+						<article class="col-xs-12 col-sm-12 col-lg-4 fullscreensettings">
+							<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+							    data-widget-sortable="false" data-widget-deletebutton="false">
+								<header>
+									<span class="widget-icon">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+									</span>
+									<h2>Cooler Voltage</h2>
+									<div class="widget-toolbar hidden-mobile">
+										<a href="javascript:void(0);" class="btn btn-primary" id="mapclickVoltage">
+											<i class="fa fa-map-marker" aria-hidden="true"></i> Map</a>
+										<!--<span class="onoffswitch-title timeFilterName"></span>-->
+									</div>
+								</header>
+								<div id="voltagetracking"></div>
+							</div>
+						</article>
+						<article class="col-xs-12 col-sm-12 col-lg-4 fullscreensettings">
+							<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+							    data-widget-sortable="false" data-widget-deletebutton="false">
+								<header>
+									<span class="widget-icon">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+									</span>
+									<h2>Cooler Power Status</h2>
+									<div class="widget-toolbar hidden-mobile">
+										<a href="javascript:void(0);" class="btn btn-primary" id="mapclickPowerStatus">
+											<i class="fa fa-map-marker" aria-hidden="true"></i> Map</a>
+										<!--<span class="onoffswitch-title timeFilterName"></span>-->
+									</div>
+								</header>
+								<div id="powerstatustracking"></div>
+							</div>
+						</article>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12 no-padding">
+						<!--<article class="col-sm-4 col-md-4 col-lg-4 no-padding">-->
+						<article class="col-xs-12 col-sm-12 col-lg-4 well-sm">
+							<table class="table table-striped table-hover table-condensed custom-table no-margin" id="locationGridPerformance" width="100%">
+								<thead>
+									<tr>
+										<th data-field="alert">Alert</th>
+										<th data-field="Code" data-class="expand">
+											Code
+										</th>
+										<th data-field="Name">
+											Outlet
+										</th>
+										<th data-field="LocationType" data-hide="phone,tablet">Channel</th>
+										<th data-field="Classfication" data-hide="phone,tablet">Customer Tier</th>
+									</tr>
+								</thead>
+							</table>
+
+						</article>
+						<!--<article class="col-sm-8 col-md-8 col-lg-8">-->
+						<article class="col-xs-12 col-sm-12 col-lg-8">
+
+							<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+							    data-widget-deletebutton="false" data-widget-sortable="false">
+								<header>
+									<span class="widget-icon">
+										<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+									</span>
+									<h2 id="mapName">Last Data Downloaded</h2>
+									<div class="widget-toolbar hidden-mobile hidden" role="menu" id="resetMap">
+										<a href="javascript:void(0);" class="btn btn-primary">
+											<i class="fa fa-map-marker" aria-hidden="true"></i> Reset Map</a>
+									</div>
+								</header>
+								<div class="no-padding" id="mapSpin">
+									<div>
+										<div id="myTabContent panel-body" style="background-color:white">
+											<div id="map-canvas" style="height: 43.4em; margin-top:0px !important"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+						<!--</article>-->
+					</article>
+				</article>
+				<article class="col-sm-5 col-md-5 col-lg-5"></article>
+			</div>
+		</section>
+	</div>
+	<!--================================================== -->
+	<!-- PAGE RELATED PLUGIN(S) -->
+	<script src="js/controllers/CoolerTracking.js"></script>
+</body>
+
+</html>

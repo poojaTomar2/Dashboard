@@ -1,0 +1,84 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "AssetEventDataSummary"
+        }
+      },
+      {
+        "term": {
+          "IsFromEvent": true
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "AssetBucket": {
+      "terms": {
+        "field": "AssetId",
+        "size": 100000
+      },
+      "aggs": {
+        "CompressorDuration": {
+          "filter": {
+            "bool": {
+              "filter": []
+            }
+          },
+          "aggs": {
+            "CompressorDuration": {
+              "sum": {
+                "field": "SumOfCompressorDuration"
+              }
+            }
+          }
+        },
+        "FanDuration": {
+          "filter": {
+            "bool": {
+              "filter": []
+            }
+          },
+          "aggs": {
+            "FanDuration": {
+              "sum": {
+                "field": "SumOfFanDuration"
+              }
+            }
+          }
+        },
+        "HeaterDuration": {
+          "filter": {
+            "bool": {
+              "filter": []
+            }
+          },
+          "aggs": {
+            "HeaterDuration": {
+              "sum": {
+                "field": "SumOfHeaterDuration"
+              }
+            }
+          }
+        },
+        "LightDuration": {
+          "filter": {
+            "bool": {
+              "filter": []
+            }
+          },
+          "aggs": {
+            "LightDuration": {
+              "sum": {
+                "field": "SumOfLightDuration"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

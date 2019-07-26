@@ -1,0 +1,22 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": []
+    }
+  },
+  "aggs": {
+    "AssetIds": {
+      "terms": {
+        "field": "AssetId",
+        "size": 100000
+      }
+    },
+    "LocationCount": {
+      "cardinality": {
+        "field": "AssetId"
+      }
+    }
+  }
+}

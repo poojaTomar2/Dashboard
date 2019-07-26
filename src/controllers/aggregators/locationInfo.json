@@ -1,0 +1,18 @@
+{
+  "size": 20000,
+  "query": {
+    "bool": {
+      "filter": [{
+          "type": {
+            "value": "Location"
+          }
+        },
+        {
+          "term": {
+            "IsDeleted": false
+          }
+        }
+      ]
+    }
+  }
+}

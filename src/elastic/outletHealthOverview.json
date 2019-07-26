@@ -1,0 +1,62 @@
+{
+    "from": 0,
+    "size": 0,
+    "query": {
+        "bool": {
+            "must": [{
+                "type": {
+                    "value": "AssetEventDataSummary"
+                }
+            },
+            {
+              "term": {
+                "IsFromHealth": true
+              }
+            }]
+        }
+    },
+    "aggs": {
+        "AssetWithTempIssue": {
+            "filter": {
+                "bool": {
+                    "must_not": []
+                }
+            },
+            "aggs": {
+                "assets": {
+                    "terms": {
+                        "field": "AssetId",
+                        "size": 100000
+                    }
+                },
+                "healthInterval": {
+                    "sum": {
+                        "field": "SumOfHealthInterval"
+                    }
+                }
+            }
+        },
+        "AssetWithLightIssue": {
+            "filter": {
+                "bool": {
+                    "must_not": [
+
+                    ]
+                }
+            },
+            "aggs": {
+                "assets": {
+                    "terms": {
+                        "field": "AssetId",
+                        "size": 100000
+                    }
+                },
+                "healthInterval": {
+                    "sum": {
+                        "field": "SumOfHealthInterval"
+                    }
+                }
+            }
+        }
+    }
+}

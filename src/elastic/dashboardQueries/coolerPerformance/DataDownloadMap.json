@@ -1,0 +1,25 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [
+      ],
+      "must_not": [
+        {
+          "term": {
+            "SumOfHealthInterval": 0
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "AssetIds": {
+      "terms": {
+        "field": "AssetId",
+        "size": 100000
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "type": {
+            "value": "AssetEventDataSummary"
+          }
+        },
+        {
+          "term": {
+            "IsFromPower": true
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "AssetBucket": {
+      "terms": {
+        "field": "AssetId",
+        "size": 100000
+      },
+      "aggs": {
+        "PowerOffDuration": {
+          "sum": {
+            "field": "SumOfPowerOffDuration"
+          }
+        }
+      }
+    }
+  }
+}

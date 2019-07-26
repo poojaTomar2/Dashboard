@@ -1,0 +1,65 @@
+{
+    "from": 0,
+    "size": 0,
+    "query": {
+        "bool": {
+            "filter": [{
+                "type": {
+                    "value": "AssetEventDataSummary"
+                }
+            }, {
+                "term": {
+                    "IsFromDoor": true
+                }
+            }]
+        }
+    },
+    "aggs": {
+        "Asset": {
+            "terms": {
+                "field": "AssetId",
+                "size": 100000
+            },
+            "aggs": {
+                "DoorCount": {
+                    "sum": {
+                        "field": "SumOfDoorCount"
+                    }
+                }
+            }
+        },
+        "AssetCount": {
+            "cardinality": {
+                "field": "AssetId"
+            }
+        },
+        "SumDoorOpenDuration": {
+            "filter": {
+                "bool": {
+                    "must_not": []
+                }
+            },
+            "aggs": {
+                "DoorSum": {
+                    "sum": {
+                        "field": "SumOfDoorOpenDurationLTE362020"
+                    }
+                }
+            }
+        },
+        "DoorCount": {
+            "filter": {
+                "bool": {
+                    "must_not": []
+                }
+            },
+            "aggs": {
+                "DoorCount": {
+                    "sum": {
+                        "field": "SumOfDoorCount"
+                    }
+                }
+            }
+        }
+    }
+}

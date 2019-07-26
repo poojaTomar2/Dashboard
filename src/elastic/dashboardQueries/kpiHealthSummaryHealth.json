@@ -1,0 +1,247 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "SmartDeviceHealthRecord"
+        }
+      }, {
+        "term": {
+          "IsDeleted": false
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }, {
+        "terms": {
+          "EventTypeId": [10]
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "TemperatureBelow7": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "Temperature": {
+                "lt": 7
+              }
+            }
+          }],
+          "must_not": [{
+            "term": {
+              "Temperature": -100
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "TempBelow7": {
+          "sum": {
+            "field": "HealthInterval"
+          }
+        },
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    },
+    "HoursCorrectTemperature": {
+      "filter": {
+        "bool": {
+          "filter": [],
+          "must_not": [{
+            "term": {
+              "Temperature": -100
+            }
+          }, {
+            "term": {
+              "IsTemperatureIssue": 1
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "HoursCorrectTemperature": {
+          "sum": {
+            "field": "HealthInterval"
+          }
+        },
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "HealthDays": {
+              "date_histogram": {
+                "field": "EventTime",
+                "interval": "day",
+                "min_doc_count": 1
+              }
+            },
+            "HoursCorrectTemperature": {
+              "sum": {
+                "field": "HealthInterval"
+              }
+            }
+          }
+        }
+      }
+    },
+    "HoursNotCorrectTemperature": {
+      "filter": {
+        "bool": {
+          "filter": [],
+          "must_not": [{
+            "term": {
+              "Temperature": -100
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "HoursCorrectTemperature": {
+          "sum": {
+            "field": "HealthInterval"
+          }
+        },
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "HealthDays": {
+              "date_histogram": {
+                "field": "EventTime",
+                "interval": "day",
+                "min_doc_count": 1
+              }
+            },
+            "HoursCorrectTemperature": {
+              "sum": {
+                "field": "HealthInterval"
+              }
+            }
+          }
+        }
+      }
+    },
+    "HoursLightOn": {
+      "filter": {
+        "bool": {
+          "should": [{
+            "term": {
+              "DeviceLightStatus": "mediumbrightness"
+            }
+          },
+          {
+            "term": {
+              "DeviceLightStatus": "fulllightbrightness"
+            }
+          }
+        ],
+          "must_not": [{
+            "term": {
+              "LightIntensity": -1
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "HoursLightOn": {
+          "sum": {
+            "field": "HealthInterval"
+          }
+        },
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "HealthDays": {
+              "date_histogram": {
+                "field": "EventTime",
+                "interval": "day",
+                "min_doc_count": 1
+              }
+            },
+            "HoursLightOn": {
+              "sum": {
+                "field": "HealthInterval"
+              }
+            }
+          }
+        }
+      }
+    },
+    "HoursLightOnNot": {
+      "filter": {
+        "bool": {
+          "must_not": [{
+            "term": {
+              "LightIntensity": -1
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "HoursLightOn": {
+          "sum": {
+            "field": "HealthInterval"
+          }
+        },
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "HealthDays": {
+              "date_histogram": {
+                "field": "EventTime",
+                "interval": "day",
+                "min_doc_count": 1
+              }
+            },
+            "HoursLightOn": {
+              "sum": {
+                "field": "HealthInterval"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

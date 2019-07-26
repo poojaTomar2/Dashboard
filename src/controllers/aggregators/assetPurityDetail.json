@@ -1,0 +1,46 @@
+{
+    "size": 0,
+    "aggs": {
+        "Keys": {
+            "terms": {
+                "field": "AssetId",
+                "size": 100000
+            },
+            "aggs": {
+                "latest": {
+                    "top_hits": {
+                        "size": 1,
+                        "sort": [{
+                            "AssetPurityId": "desc"
+                        }]
+                    }
+                }
+            }
+        }
+    },
+    "query": {
+        "bool": {
+            "filter": [{
+                "type": {
+                    "value": "AssetPurity"
+                }
+            }, {
+                "term": {
+                    "IsDeleted": false
+                }
+            }],
+            "must_not": [{
+                "term": {
+                    "VerifiedOn": "0001-01-01T00:00:00"
+                }
+            }],
+            "must": [{
+                    "term": {
+                        "StatusId": 2
+                    }
+                }
+
+            ]
+        }
+    }
+}

@@ -1,0 +1,80 @@
+{
+	"size": 0,
+	"aggs": {
+		"Keys": {
+			"terms": {
+				"field": "LocationId",
+				"size": 100000
+			},
+			"aggs": {
+				"EventTypeCounts": {
+					"range": {
+						"field": "EventDate",
+						"keyed": true,
+						"ranges": [{
+							"key": "7days",
+							"from": "now/d-7d"
+						}, {
+							"key": "today",
+							"from": "now/d"
+						}, {
+							"key": "30days",
+							"from": "now/d-29d"
+						}]
+					},
+					"aggs": {
+						"CompressorDuration": {
+							"filter": {
+								"bool": {
+									"filter": []
+								}
+							},
+							"aggs": {
+								"CompressorDuration": {
+									"sum": {
+										"field": "SumOfCompressorDuration"
+									}
+								}
+							}
+						},
+						"FanDuration": {
+							"filter": {
+								"bool": {
+									"filter": []
+								}
+							},
+							"aggs": {
+								"FanDuration": {
+									"sum": {
+										"field": "SumOfFanDuration"
+									}
+								}
+							}
+						}
+					}
+
+				}
+			}
+		}
+	},
+	"query": {
+		"bool": {
+			"filter": [{
+				"type": {
+					"value": "AssetEventDataSummary"
+				}
+			}, {
+				"range": {
+					"EventDate": {
+						"gte": "now/d-30d"
+					}
+				}
+			},
+			{
+				"term": {
+					"ISFromEvent": true
+				}
+			}]
+		}
+	}
+}

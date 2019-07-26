@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <style>
+        #locationmap-canvas {
+            width: 100%;
+            height: 41em;
+            top: 42px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="map-canvas"></div> -->
+    <div class="no-padding" id="mapSpin">
+        <div id="locationmap-canvas"></div>
+    </div>
+</body>
+
+<script async src="js/controllers/LocationMap.js"></script>
+<!-- <script async src="js/controllers/CoolerPerformance.js"></script> -->
+<script>
+    window.setTimeout(getSalesHierarchy, 500);
+
+    function getSalesHierarchy() {
+        var salesHierarchyId = window.location.href.split("#salesHierarchy=")[1];
+        console.log('salesHierarchyId: ', salesHierarchyId);
+        if (salesHierarchyId) {
+            var params = {
+                'salesHierarchyId': salesHierarchyId
+            }
+            $.post('/getLocationsSalesTerritory', params).done(function (data) {
+                console.log('data: ', data);
+                if (data && data.success) {
+                    applyMapPlotForSalesHierarchy(data);
+                }
+            }).fail(function (data) {});
+            // return false;
+        }
+    }
+</script>
+
+</html>

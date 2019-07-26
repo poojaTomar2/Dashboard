@@ -1,0 +1,26 @@
+{
+  "size": 10000,
+  "_source": [
+    "Product",
+    "IsEmpty",
+    "ProductId",
+    "IsForeign",
+	"BeverageTypeId"
+  ],
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "type": {
+            "value": "Product"
+          }
+        },
+        {
+          "term": {
+            "IsDeleted": 0
+          }
+        }
+      ]
+    }
+  }
+}

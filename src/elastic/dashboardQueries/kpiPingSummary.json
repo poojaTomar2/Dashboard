@@ -1,0 +1,44 @@
+{
+	"from": 0,
+	"size": 100000,
+	"query": {
+		"bool": {
+			"filter": [{
+					"type": {
+						"value": "SmartDevicePing"
+					}
+				},
+				{
+					"term": {
+						"IsDeleted": false
+					}
+				}
+			],
+			"must_not": [{
+				"term": {
+					"AssetId": 0
+				}
+			}]
+		}
+	},
+	"aggs": {
+		"AssetCount": {
+			"cardinality": {
+				"field": "AssetId"
+			}
+		},
+		"Date": {
+			"date_histogram": {
+				"field": "EventTime",
+				"interval": "week"
+			},
+			"aggs": {
+				"AssetCount": {
+					"cardinality": {
+						"field": "AssetId"
+					}
+				}
+			}
+		}
+	}
+}

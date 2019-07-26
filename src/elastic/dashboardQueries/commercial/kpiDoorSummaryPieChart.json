@@ -1,0 +1,73 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "SmartDeviceDoorStatus"
+        }
+      }, {
+        "range": {
+          "DoorCount": {
+            "gte": 0
+          }
+        }
+      }, {
+        "term": {
+          "IsDeleted": false
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "Location": {
+      "terms": {
+        "field": "LocationId",
+        "size": 100000
+      },
+      "aggs": {
+        "DoorCount": {
+          "sum": {
+            "field": "DoorCount"
+          }
+        }
+      }
+    },
+    "AssetCount": {
+      "cardinality": {
+        "field": "AssetId"
+      }
+    },
+    "DoorCount": {
+      "sum": {
+        "field": "DoorCount"
+      }
+    },
+    "SumDoorOpenDuration": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "range": {
+              "DoorOpenDuration": {
+                "lte": "362020"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "DoorSum": {
+          "sum": {
+            "field": "DoorOpenDuration"
+          }
+        }
+      }
+    }
+  }
+}

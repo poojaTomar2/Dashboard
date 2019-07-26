@@ -1,0 +1,99 @@
+{
+    "from": 0,
+    "size": 0,
+    "query": {
+      "bool": {
+        "filter": []
+      }
+    },
+    "aggs": {
+      "SmartLocation": {
+        "filter": {
+          "bool": {
+            "must": [],
+            "must_not": [{
+              "term": {
+                "SmartDeviceTypeId": 17
+              }
+            }, {
+              "term": {
+                "SmartDeviceTypeId": 22
+              }
+            }, {
+              "term": {
+                "SmartDeviceTypeId": 23
+              }
+            }, {
+              "term": {
+                "SmartDeviceTypeId": 25
+              }
+            }]
+          }
+        },
+        "aggs": {
+          "Location": {
+            "terms": {
+              "field": "LocationId",
+              "size": 200000
+            },
+            "aggs": {
+              "DoorOpenTarget": {
+                "filter": {
+                  "bool": {
+                    "must_not": [{
+                      "term": {
+                        "DoorOpenTarget": 0
+                      }
+                    }]
+                  }
+                },
+                "aggs": {
+                  "DoorOpenTarget": {
+                    "terms": {
+                      "field": "DoorOpenTarget"
+                    }
+                  }
+                }
+              },
+              "AssetTypeCapacity": {
+                "filter": {
+                  "bool": {
+                    "must_not": [{
+                      "term": {
+                        "AssetTypeCapacityId": 0
+                      }
+                    }]
+                  }
+                },
+                "aggs": {
+                  "AssetTypeCapacityId": {
+                    "terms": {
+                      "field": "AssetTypeCapacityId"
+                    }
+                  }
+                }
+              },
+              "SalesOrganization": {
+                "filter": {
+                  "bool": {
+                    "must_not": [{
+                      "term": {
+                        "SalesOrganizationId": 0
+                      }
+                    }]
+                  }
+                },
+                "aggs": {
+                  "SalesOrganization": {
+                    "terms": {
+                      "field": "SalesOrganizationId"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

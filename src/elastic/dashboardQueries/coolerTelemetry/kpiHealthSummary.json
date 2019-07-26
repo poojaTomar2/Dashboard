@@ -1,0 +1,162 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [{
+          "type": {
+            "value": "AssetEventDataSummary"
+          }
+        },
+        {
+          "term": {
+            "IsFromHealth": true
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "AssetBucket": {
+      "terms": {
+        "field": "AssetId",
+        "size": 100000
+      },
+      "aggs": {
+        "temp_stats": {
+          "avg": {
+            "field": "AverageTemperature"
+          }
+        },
+        "evap_temp_stats": {
+          "avg": {
+            "field": "AverageEvaporatorTemperature"
+          }
+        },
+        "cond_temp_stats": {
+          "avg": {
+            "field": "AverageCondensorTemperature"
+          }
+        }
+      }
+    },
+    "CoolerAvgTemp": {
+      "avg": {
+        "field": "AverageTemperature"
+      }
+    },
+    "TempAbove7": {
+      "filter": {
+        "term": {
+          "IsTemperatureAbove7": true
+        }
+      },
+      "aggs": {
+        "TempAbove7": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    },
+    "TempLightIssue": {
+      "filter": {
+        "bool": {
+          "must": [],
+          "must_not": []
+        }
+      },
+      "aggs": {
+        "top_tags": {
+          "terms": {
+            "field": "AssetId",
+            "size": 200000
+          },
+          "aggs": {
+            "top_hit": {
+              "top_hits": {
+                "sort": [{
+                  "EventDate": {
+                    "order": "desc"
+                  }
+                }],
+                "_source": {
+                  "includes": ["IsLightIssue", "IsTemperatureIssue"]
+                },
+                "size": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "CoolersWithLowLight": {
+      "filter": {
+        "bool": {
+          "must": [{
+            "term": {
+              "DeviceLightStatus": "No Light"
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "CoolersWithLowLight": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    },
+    "Light": {
+      "filter": {
+        "bool": {
+          "must": [],
+          "must_not": []
+        }
+      },
+      "aggs": {
+        "top_tags": {
+          "terms": {
+            "field": "AssetId",
+            "size": 200000
+          },
+          "aggs": {
+            "top_hit": {
+              "top_hits": {
+                "sort": [{
+                  "EventDate": {
+                    "order": "desc"
+                  }
+                }],
+                "_source": {
+                  "includes": ["IsLightOff"]
+                },
+                "size": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "HealthSummary": {
+      "filter": {
+        "bool": {
+          "must_not": [{
+            "term": {
+              "IsFromPower": true
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "HealthSummary": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          }
+        }
+      }
+    }
+  }
+}

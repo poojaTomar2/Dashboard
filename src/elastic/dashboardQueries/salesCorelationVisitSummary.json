@@ -1,0 +1,47 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "type": {
+            "value": "Visit"
+          }
+        },
+        {
+          "term": {
+            "IsDeleted": false
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "Visit": {
+      "date_histogram": {
+        "field": "Date",
+        "interval": "month",
+        "min_doc_count": 1
+      },
+      "aggs": {
+        "VisitDuration": {
+          "avg": {
+            "field": "VisitDuration"
+          }
+        },
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        },
+        "LocationCount": {
+          "cardinality": {
+            "field": "LocationId",
+            "precision_threshold": 4000
+          }
+        }
+      }
+    }
+  }
+}

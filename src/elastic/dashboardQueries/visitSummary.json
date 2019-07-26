@@ -1,0 +1,24 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "type": {
+            "value": "Visit"
+          }
+        }
+      ],
+      "must_not": [
+        {
+          "term": {
+            "LocationId": "0"
+          }
+        }
+      ],
+      "should": []
+    }
+  },
+  "from": 0,
+  "sort": [],
+  "aggs": {}
+}

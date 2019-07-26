@@ -1,0 +1,71 @@
+{
+	"from": 0,
+	"size": 0,
+	"query": {
+		"bool": {
+			"must": [{
+				"type": {
+					"value": "AssetEventDataSummary"
+				}
+			}]
+		}
+	},
+	"aggs": {
+		"ByTechnicianType": {
+			"nested": {
+				"path": "AlarmSummaryInJson"
+			},
+			"aggs": {
+				"ByTechnicianType": {
+					"terms": {
+						"field": "AlarmSummaryInJson.TechnicianId",
+						"size": 10,
+						"order": {
+							"_count": "asc"
+						}
+					},
+					"aggs": {
+						"TechnicianName": {
+							"top_hits": {
+								"size": 1,
+								"_source": {
+									"includes": [
+										"AlarmSummaryInJson.TechnicianId"
+									]
+								}
+							}
+						},
+						"AlertOpen": {
+							"filter": {
+								"bool": {
+									"should": []
+								}
+							},
+							"aggs": {
+								"Open": {
+									"sum": {
+										"field": "AlarmSummaryInJson.OpenCount"
+									}
+								}
+							}
+						},
+						"AlertClosed": {
+							"filter": {
+								"bool": {
+									"should": []
+								}
+							},
+							"aggs": {
+								"Closed": {
+									"sum": {
+										"field": "AlarmSummaryInJson.ClosedCount"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

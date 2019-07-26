@@ -1,0 +1,21 @@
+{
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "type": {
+            "value": "SalesOrderDetail"
+          }
+        }
+      ]
+    }
+  },
+  "aggregations": {
+    "SalesVolume": {
+      "sum": {
+        "field": "SumQuantity"
+      }
+    }
+  }
+}

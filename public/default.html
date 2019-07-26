@@ -1,0 +1,1989 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<!--<meta http-equiv="X-UA-Compatible" content="IE=11">-->
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE,IE=11,chrome=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+	<!-- <meta X-UA-Compatible: IE=edge,chrome=1> -->
+	<meta charset="utf-8">
+	<title> eBest-IoT </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<!-- Basic Styles -->
+	<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+	<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+	<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+	<link href="css/daterangepicker.css" rel="stylesheet" />
+	<!-- SmartAdmin RTL Support  -->
+	<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+	<!-- We recommend you use "your_style.css" to override SmartAdmin
+		 specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+	<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+	<!-- FAVICONS -->
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<!-- GOOGLE FONT -->
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+	<!-- Specifying a Webpage Icon for Web Clip
+		 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+	<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
+	<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<!-- Startup image for web apps -->
+	<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png"
+		media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+	<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png"
+		media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+	<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/custom.css">
+	<link href="css/wiot.css" rel="stylesheet" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+	<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+	<link rel="stylesheet" href="css/gridstack.min.css" />
+	<script src="js/libs/jquery-2.1.1.min.js"></script>
+	<style>
+		nav>ul ul li::before {
+			background: #7A7A7A;
+			bottom: auto;
+			content: "";
+			height: 8px;
+			left: 23px;
+			margin-top: 15px;
+			position: absolute;
+			right: auto;
+			width: 8px;
+			z-index: 1;
+			border-radius: 50%;
+		}
+
+		nav>ul ul li::after {
+			border-left: 1px solid #7A7A7A;
+			bottom: 0;
+			content: "";
+			left: 27px;
+			position: absolute;
+			top: 0;
+		}
+
+		.nav.child_menu li {
+			padding-left: 36px;
+		}
+
+		.nav.child_menu li {
+			padding-left: 36px;
+		}
+
+		.nav>li {
+			position: relative;
+			display: block;
+		}
+
+		.nav.child_menu li {
+			padding-left: 36px;
+		}
+
+		.nav>li {
+			position: relative;
+			display: block;
+		}
+
+		.page-footer a {
+			color: rgb(189, 183, 183);
+			font-size: 13px;
+		}
+
+		.minified nav>ul ul li::before,
+		.minified nav>ul>li>ul::before {
+			left: 24px;
+		}
+
+		.minified nav>ul>li>ul>li {
+			background-color: rgba(69, 69, 69, .9);
+			padding-left: 24px;
+		}
+
+		#logo img {
+			width: auto;
+			height: 2.5em;
+			padding-left: 3px;
+		}
+
+		@media (max-width: 979px) {
+			.page-footer {
+				padding: 15px 14px 0;
+				display: inline-table;
+			}
+		}
+
+		label.error {
+			color: red;
+		}
+	</style>
+</head>
+<!--
+
+TABLE OF CONTENTS.
+
+Use search to find needed section.
+
+===================================================================
+
+|  01. #CSS Links                |  all CSS links and file paths  |
+|  02. #FAVICONS                 |  Favicon links and file paths  |
+|  03. #GOOGLE FONT              |  Google font link              |
+|  04. #APP SCREEN / ICONS       |  app icons, screen backdrops   |
+|  05. #BODY                     |  body tag                      |
+|  06. #HEADER                   |  header tag                    |
+|  07. #PROJECTS                 |  project lists                 |
+|  08. #TOGGLE LAYOUT BUTTONS    |  layout buttons and actions    |
+|  09. #MOBILE                   |  mobile view dropdown          |
+|  10. #SEARCH                   |  search field                  |
+|  11. #NAVIGATION               |  left panel & navigation       |
+|  12. #RIGHT PANEL              |  right panel userlist          |
+|  13. #MAIN PANEL               |  main panel                    |
+|  14. #MAIN CONTENT             |  content holder                |
+|  15. #PAGE FOOTER              |  page footer                   |
+|  16. #SHORTCUT AREA            |  dropdown shortcuts area       |
+|  17. #PLUGINS                  |  all scripts and plugins       |
+
+===================================================================
+
+-->
+<!-- #BODY -->
+<!-- Possible Classes
+
+	* 'smart-style-{SKIN#}'
+	* 'smart-rtl'         - Switch theme mode to RTL
+	* 'menu-on-top'       - Switch to top navigation (no DOM change required)
+	* 'no-menu'			  - Hides the menu completely
+	* 'hidden-menu'       - Hides the main menu but still accessable by hovering over left edge
+	* 'fixed-header'      - Fixes the header
+	* 'fixed-navigation'  - Fixes the main menu
+	* 'fixed-ribbon'      - Fixes breadcrumb
+	* 'fixed-page-footer' - Fixes footer
+	* 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
+-->
+
+<body class="custom-scroll fixed-header" id="bodyId">
+	<div class="hidden" id="noAccessDialog" title="">
+		You do not have access of Dashboard screen's, Please contact you manager.
+	</div>
+	<div class="hidden" id="noScreenAccessDialog" title="">
+		You do not have access to this screen, Please contact you manager.
+	</div>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Add Preference</h4>
+				</div>
+				<div class="modal-body" style="padding:0px">
+					<form id="add-preference" class="smart-form client-form">
+						<fieldset>
+							<section>
+								<label class="label">Name</label>
+								<label class="input">
+									<input type="text" name="name" id="name">
+								</label>
+							</section>
+							<section>
+								<label class="label">Description</label>
+								<label class="input">
+									<input type="text" name="description" id="description">
+								</label>
+							</section>
+							<section>
+								<label class="checkbox">
+									<input type="checkbox" name="defaultPreference" value="1">
+									<i></i>Default
+								</label>
+							</section>
+						</fieldset>
+					</form>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary" id="savePreference">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="manageModel" tabindex="-1" role="dialog" aria-labelledby="managePreference">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="managePreference">Manage Preference</h4>
+				</div>
+				<div>
+					<div class="table-responsive" style="max-height:50em">
+						<table id="manageTable" class="table table-bordred table-striped">
+							<thead>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Default</th>
+								<th></th>
+								<th></th>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+					<h4 class="modal-title custom_align" id="Heading">Edit Your Detail</h4>
+				</div>
+				<div class="modal-body" style="padding:0px">
+					<form id="update-preference" class="smart-form client-form">
+						<fieldset>
+							<section>
+								<label class="label">Name</label>
+								<label class="input">
+									<input type="text" name="name" id="updateName">
+								</label>
+							</section>
+							<section>
+								<label class="label">Description</label>
+								<label class="input">
+									<input type="text" name="description" id="updateDescription">
+								</label>
+							</section>
+							<section>
+								<label class="checkbox">
+									<input type="checkbox" name="defaultPreference" value="1" id="updateDefault">
+									<i></i>Default
+								</label>
+							</section>
+							<input type="hidden" name="prefId" value="" id="prefId">
+							<input type="hidden" name="version" value="" id="versionId">
+						</fieldset>
+					</form>
+				</div>
+				<div class="modal-footer" style="padding:0px">
+					<button type="button" class="btn btn-warning btn-lg" style="width: 100%;"
+						id="updatePreferenceButton">
+						<span class="glyphicon glyphicon-ok-sign"></span> Update</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+					<h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
+				</div>
+				<div class="">
+					<div class="alert alert-danger" style="margin-bottom: 0px;">
+						<span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this
+						Record?</div>
+					<input type="hidden" name="prefId" value="" id="prefDeleteId">
+				</div>
+				<div class="modal-footer ">
+					<button type="button" class="btn btn-success deletePreferenceButton">
+						<span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">
+						<span class="glyphicon glyphicon-remove"></span> No</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+
+
+	<div class="modal fade" id="SaveLayoutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" id="resetPreviousLayout" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+				</div>
+				<div class="modal-body" style="padding:0px">
+					<div class="well-sm text-center">
+						<h6 class="modal-title" id="myModalLabel">Are you sure you want to change layout?</h6>
+					</div>
+					<form id="save-layout" class="smart-form client-form">
+						<!-- <fieldset>
+							<section>
+								<label class="label">Name</label>
+								<label class="input">
+									<input type="text" name="layoutName" id="layoutName">
+								</label>
+							</section>
+							<section>
+								<label class="label">Description</label>
+								<label class="input">
+									<input type="text" name="layoutDescription" id="layoutDescription">
+								</label>
+							</section>
+							<section>
+								<label class="checkbox">
+									<input type="checkbox" name="defaultLayout" value="1">
+									<i></i>Default
+								</label>
+							</section>
+						</fieldset> -->
+					</form>
+					<div class="modal-footer text-center">
+						<button type="submit" class="btn btn-primary" id="saveLayout">Yes</button>
+						<button type="button" class="btn btn-default" id="resetPreviousLayoutClose"
+							data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- start set default layout popup -->
+
+	<div class="modal fade" id="SaveDefaultLayoutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" id="resetDefaultPreviousLayout" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+				</div>
+				<div class="modal-body" style="padding:0px">
+					<div class="well-sm text-center">
+						<h6 class="modal-title" id="myModalLabel">Are you sure you want to change layout?</h6>
+					</div>
+					<form id="save-default-layout" class="smart-form client-form">
+					</form>
+					<div class="modal-footer text-center">
+						<button type="submit" class="btn btn-primary" id="saveDefaultLayout">Yes</button>
+						<button type="button" class="btn btn-default" id="resetDefaultPreviousLayoutClose"
+							data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end set default layout popup -->
+
+	<!-- HEADER -->
+	<header id="header">
+		<div id="logo-group">
+			<!-- PLACE YOUR LOGO HERE -->
+			<span id="logo">
+				<img src="img/invisible-icon.png" alt="eBest-IoT" onerror="this.src = 'img/icons/logo01.png';"> </span>
+			<!-- END LOGO PLACEHOLDER -->
+			<!-- Note: The activity badge color changes when clicked and resets the number to 0
+			Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+			<span id="activity" class="activity-dropdown hidden">
+				<i class="fa fa-bullhorn"></i>
+				<b class="badge"> 0 </b>
+			</span>
+			<!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
+			<div class="ajax-dropdown">
+				<!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
+				<div class="btn-group btn-group-justified" data-toggle="buttons" id="alertCount">
+					<label class="btn btn-default active">
+						<input type="radio" name="activity" id="ajax/high.html">
+						<label id="highCount">High (0) </label>
+					</label>
+					<label class="btn btn-default">
+						<input type="radio" name="activity" id="ajax/medium.html">
+						<label id="mediumCount">Medium (0) </label>
+					</label>
+					<label class="btn btn-default">
+						<input type="radio" name="activity" id="ajax/low.html">
+						<label id="lowCount">Low (0) </label>
+					</label>
+				</div>
+				<!-- notification content -->
+				<div class="ajax-notifications custom-scroll">
+					<ul id="alertHigh" class="notification-body"></ul>
+					<script>
+					</script>
+				</div>
+				<!-- end notification content -->
+				<!-- footer: refresh area -->
+				<span>
+					<label id="lastUpdateId"> </label>
+					<button type="button" id="alertRefresh"
+						data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..."
+						class="btn btn-xs btn-default pull-right">
+						<i class="fa fa-refresh"></i>
+					</button>
+				</span>
+				<!-- end footer -->
+			</div>
+			<!-- END AJAX-DROPDOWN -->
+		</div>
+		<!-- pulled right: nav area -->
+		<div class="pull-right">
+			<!-- collapse menu button -->
+			<div id="hide-menu" class="btn-header pull-right hidden">
+				<span>
+					<a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu">
+						<i class="fa fa-reorder"></i>
+					</a>
+				</span>
+			</div>
+			<!-- end collapse menu -->
+			<!-- #MOBILE -->
+			<!-- Top menu profile link : this shows only when top menu is active -->
+			<div>
+				<span id="hide-menu" class="btn-header hidden-lg pull-right">
+					<span>
+						<a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu">
+							<i class="fa fa-reorder"></i>
+						</a>
+					</span>
+				</span>
+				<ul class="header-dropdown-list padding-top-15">
+					<li>
+						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
+							<!--<img src="img/avatars/sunny.png" alt="Admin" class="online" height="39" />-->
+							<span id="userName">
+								User
+							</span>
+							<i class="fa fa-angle-down"></i>
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"
+									data-action="launchFullscreen">
+									<i class="fa fa-arrows-alt"></i> Full
+									<u>S</u>creen</a>
+							</li>
+							<li class="divider"></li>
+							<li class="dropdown-submenu pull-left" style="width:100%;">
+								<a class="dropdown-toggle no-margin userdropdown" tabindex="-1" href="#">
+									<i class="fa fa-cog"></i>Preferences</a>
+								<ul class="dropdown-menu preferenceDropdown" role="menu" aria-labelledby="menu1">
+									<li>
+										<a tabindex="-1" href="#" data-toggle="modal" data-target="#myModal">Add
+											Preferences</a>
+									</li>
+									<li>
+										<a tabindex="-1" href="#" data-toggle="modal" data-target="#manageModel">Manage
+											Preferences</a>
+									</li>
+									<li class="divider"></li>
+								</ul>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<!--<a href="#" onclick="onLogout('index.html')" class="padding-10 padding-top-5 padding-bottom-5"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>-->
+								<!--<a href="https://sso.cchellenic.com/adfs/ls/?wa=wsignout1.0" class="padding-10 padding-top-5 padding-bottom-5"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>-->
+								<!--<a href="#" onclick="onLogout('https://lab.cooleriot.com/adfs/ls/?wa=wsignout1.0')" class="padding-10 padding-top-5 padding-bottom-5"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>-->
+								<a href="#" onclick="onLogout('login.html')"
+									class="padding-10 padding-top-5 padding-bottom-5">
+									<i class="fa fa-sign-out fa-lg"></i>
+									<strong>
+										<u>L</u>ogout</strong>
+								</a>
+
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- logout button -->
+			<div id="fullscreen" class="btn-header transparent pull-right hidden">
+				<span>
+					<a onclick="onLogout('login.html')" title="Sign Out">
+						<i class="fa fa-sign-out"></i>
+					</a>
+				</span>
+			</div>
+			<!-- end logout button -->
+		</div>
+		<!-- <div id="google_translate_element" class="pull-right" style="padding: 12px;"></div>
+		<script type="text/javascript">
+			function onGoogleTranslateError() {
+				var script = document.createElement("script");
+				script.setAttribute("type", "text/javascript");
+				script.setAttribute("async", "async");
+				script.setAttribute("src", "//translate.google.cn/translate_a/element.js?cb=googleTranslateElementInit");
+				document.getElementsByTagName("head")[0].appendChild(script);
+			}
+
+			function googleTranslateElementInit() {
+				new google.translate.TranslateElement({
+					pageLanguage: 'en-us',
+					layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+				}, 'google_translate_element');
+			}
+		</script>
+		<script async type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" onerror="onGoogleTranslateError()"></script> -->
+		<!-- end pulled right: nav area -->
+	</header>
+	<!-- END HEADER -->
+	<!-- Left panel : Navigation area -->
+	<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+	<aside id="left-panel" style="position:fixed">
+		<!-- User info -->
+		<div class="login-info hidden">
+			<span>
+				<!-- User image size is adjusted inside CSS, it should stay as it -->
+
+				<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+					<!--<img src="img/avatars/sunny.png" alt="me" class="online" />-->
+					<span>
+						Admin
+					</span>
+					<i class="fa fa-angle-down"></i>
+				</a>
+			</span>
+		</div>
+		<!-- end user info -->
+		<!-- NAVIGATION : This navigation is also responsive-->
+		<nav>
+			<ul>
+				<!--<li class="">
+					<a href="#containers"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">IOT Dashboard</span></a>
+				</li>-->
+				<!--<li class="">
+					<a href="#dashboard"><i class="fa fa-fw fa-desktop"></i> <span class="menu-item-parent">Dashboard</span></a>
+				</li>-->
+				<li class="hidden" id="DashboardMenu">
+					<a href="#">
+						<i class="fa fa-lg fa-fw fa-home"></i>
+						<span class="menu-item-parent">Dashboards</span>
+					</a>
+					<ul>
+						<li class="hidden" id="DashboardCoolerPerformance">
+							<a href="#CoolerPerformance">
+								<span class="menu-item-parent">Cooler Performance </span>
+							</a>
+						</li>
+						<li class="hidden" id="DashboardSalesCorrelation">
+							<a href="#SalesCorrelation">
+								<span class="menu-item-parent">Sales Correlation </span>
+							</a>
+						</li>
+						<!--<li class="hidden" id="DashboardCommercial">
+							<a href="#Commercial"> <span class="menu-item-parent">Commercial</span></a>
+						</li>-->
+						<li class="hidden" id="DashboardCoolerTelemetry">
+							<a href="#CoolerTelemetryView">
+								<span class="menu-item-parent">Cooler Telemetry</span>
+							</a>
+						</li>
+						<li class="hidden" id="DashboardReport">
+							<a href="#Report">
+								<span class="menu-item-parent">Report</span>
+							</a>
+						</li>
+						<li class="hidden" id="DashboardFallenMagnet">
+							<a href="#FallenMagnet">
+								<span class="menu-item-parent">Fallen Magnet</span>
+							</a>
+						</li>
+						<li class="hidden" id="DashboardWelcome">
+
+						</li>
+						<li class="hidden" id="DashboardNoAccess">
+
+						</li>
+						<li class="hidden" id="DashboardAlerts">
+							<a href="#Alert">
+								<span class="menu-item-parent">Alerts</span>
+							</a>
+						</li>
+						<li class="hidden" id="DashboardCustomerTier">
+							<a href="#CustomerDashboard">
+								<span class="menu-item-parent">Customer Tier</span>
+							</a>
+						</li>
+						<li class="hidden" id="DashboardTradeChannel">
+							<a href="#TradeChannel">
+								<span class="menu-item-parent">Trade Channel</span>
+							</a>
+						</li>
+						<!--cooler tracking screen-->
+						<li class="hidden" id="DashboardCoolerTracking">
+							<a href="#CoolerTracking">
+								<span class="menu-item-parent">Cooler Tracking</span>
+							</a>
+						</li>
+						<li class="hidden" id="DashboardAlarms">
+							<a href="#Alarm">
+								<span class="menu-item-parent">Alarms</span>
+							</a>
+						</li>
+						<li class="hidden">
+							<a href="#Technical">
+								<span class="menu-item-parent">Technical Service </span>
+							</a>
+						</li>
+						<li class="hidden" id="DashboardOutletIRStatus">
+							<a href="#OutletIRStatus">
+								<span class="menu-item-parent">Outlet IR Status </span>
+							</a>
+						</li>
+						<!-- <li class="hidden" id="DashboardOutletDetailsIR">
+							<a href="#outletDetailsIR">
+								<span class="menu-item-parent">Outlet Details IR</span>
+							</a>
+						</li> -->
+						<!--<li class="hidden" id="DashboardSalesVisit">
+							<a href="#SalesRepVisit"><span class="menu-item-parent">Sales Visit</span></a>
+						</li>-->
+						<!--<li class="" id="Operational">
+							<a href="#Operational"><span class="menu-item-parent">Sales Correlation </span></a>
+						</li>-->
+					</ul>
+				</li>
+				<li class="hidden" id="surveyDashboard">
+					<a href="#Survey">
+						<i class="fa fa-lg fa-fw fa-group"></i>
+						<span class="menu-item-parent">Survey</span>
+					</a>
+				</li>
+				<li class="hidden" id="DashboardDetailedViewMenu">
+					<a href="#" title="Detailed View">
+						<i class="fa fa-lg fa-fw fa-dashboard"></i>
+						<span class="menu-item-parent">Detailed View</span>
+					</a>
+					<ul>
+						<li class="hidden" id="DetailedViewOutlets">
+							<a href="#location#s1">
+								<span class="menu-item-parent">Outlets</span>
+							</a>
+						</li>
+						<li class="hidden" id="DetailedViewAssets">
+							<a href="#location#s2">
+								<span class="menu-item-parent">Assets</span>
+							</a>
+						</li>
+						<li class="hidden" id="DetailedViewAlarms">
+							<a href="#location#s3">
+								<span class="menu-item-parent">Alerts</span>
+							</a>
+						</li>
+						<li class="hidden" id="DetailedViewVisit">
+							<a href="#location#s4">
+								<span class="menu-item-parent">Visits</span>
+							</a>
+						</li>
+						<li class="hidden" id="DetailedViewVision">
+							<a href="#location#s5">
+								<span class="menu-item-parent">Vision</span>
+							</a>
+						</li>
+						<li class="hidden" id="DetailedViewRecognitionReport">
+							<a href="#location#s6">
+								<span class="menu-item-parent">Recognition Report</span>
+							</a>
+						</li>
+						<li class="hidden">
+							<a href="#IOTChart">
+								<span class="menu-item-parent">Iot Chart</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="hidden" id="DashboardVisitMenu">
+					<a href="#Visit">
+						<i class="fa fa-lg fa-fw fa-pencil-square-o"></i>
+						<span class="menu-item-parent">Visit Report</span>
+					</a>
+				</li>
+				<li class="hidden" id="PlanogramAnalysis">
+					<a href="#PlanogramAnalysis">
+						<i class="fa fa-lg fa-fw fa-group"></i>
+						<span class="menu-item-parent"> Planogram Analysis</span>
+					</a>
+				</li>
+				<li class="hidden">
+					<a href="#" onclick="onLogout('login.html')">
+						<i class="fa fa-sign-out"></i>
+						<span class="menu-item-parent">Logout</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<span class="minifyme" data-action="minifyMenu">
+			<i class="fa fa-arrow-circle-left hit"></i>
+		</span>
+	</aside>
+	<!-- END NAVIGATION -->
+	<!-- MAIN PANEL -->
+	<div id="main" role="main">
+		<!-- RIBBON -->
+		<div id="ribbon">
+			<span class="ribbon-button-alignment">
+				<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip"
+					data-placement="bottom"
+					data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings."
+					data-html="true">
+					<i class="fa fa-refresh"></i>
+				</span>
+			</span>
+			<!-- breadcrumb -->
+			<ol class="breadcrumb">
+				<li>Home</li>
+				<li>Dashboard</li>
+			</ol>
+			<!-- end breadcrumb -->
+			<!-- You can also add more buttons to the
+			ribbon for further usability
+
+			Example below:
+
+			<span class="ribbon-button-alignment pull-right">
+			<span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+			<span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+			<span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+			</span> -->
+		</div>
+		<!-- END RIBBON -->
+		<!-- MAIN CONTENT -->
+		<!-- END MAIN CONTENT -->
+	</div>
+	<!-- END MAIN PANEL -->
+	<!-- PAGE FOOTER -->
+	<div class="page-footer">
+		<div class="">
+			<div class="col-xs-12 col-sm-3 col-lg-3">
+				<span class="txt-color-white" style="font-size: 17px;">eBest-IoT</span> |
+				<a href="http://ebest-iot.com/contactus.html">Contact us</a>
+			</div>
+			<div class="col-xs-12 col-sm-5 col-lg-5 text-center">
+				<span class="txt-color-white" style="font-size: 17px;">Quick Links</span> |
+				<a href="#" id="aPortal">Power User Portal</a> |
+				<a href="mailto:mail@ebest-iot.com">Feedback</a>
+			</div>
+			<div class="col-xs-12 col-sm-4 col-lg-4 text-right">
+				<span class="txt-color-white" style="font-size: 15px;">© 2015-2018 eBest-IOT Inc. | All rights
+					reserved.</span>
+			</div>
+		</div>
+	</div>
+	<!-- END PAGE FOOTER -->
+	<!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+	Note: These tiles are completely responsive,
+	you can add as many as you like
+	-->
+	<div id="shortcut">
+		<ul>
+			<li>
+				<a href="default.html#Commercial" class="jarvismetro-tile big-cubes selected bg-color-pinkDark">
+					<span class="iconbox">
+						<i class="fa fa-user fa-4x"></i>
+						<span>Home </span>
+					</span>
+				</a>
+			</li>
+			<li class="hidden" id="surveyDashboardshortcut">
+				<a href="default.html#Survey" class="jarvismetro-tile big-cubes bg-color-greenLight">
+					<span class="iconbox">
+						<i class="fa fa-picture-o fa-4x"></i>
+						<span>Survey </span>
+					</span>
+				</a>
+			</li>
+			<li class="hidden">
+				<a href="default.html#IOTChart" class="jarvismetro-tile big-cubes bg-color-greenLight">
+					<span class="iconbox">
+						<i class="fa fa-picture-o fa-4x"></i>
+						<span>Dashboard </span>
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="default.html#Visit" class="jarvismetro-tile big-cubes bg-color-greenLight">
+					<span class="iconbox">
+						<i class="fa fa-briefcase fa-4x"></i>
+						<span>Visit </span>
+					</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="modal fade" id="myModalSession" data-backdrop="static" data-keyboard="false" tabindex="-1"
+		role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="btnCancel()">
+						×
+					</button>
+					<h4 class="modal-title" id="myModalLabel">
+						Session expired, Login to continue...
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div class="tab-pane active" id="Login">
+						<form role="form" class="form-horizontal" id="login-form">
+							<!--<div class="form-group">
+								   <label for="email" class="col-sm-2 control-label">
+									   Email</label>
+									<div class="col-sm-10">
+										<input type="email" class="form-control" id="email1" placeholder="Email" />
+								   </div>
+							   </div>-->
+
+							<div class="col-sm-10 col-sm-offset-2 well-sm text-primary">
+								<h4 id="coockieUser">User</h4>
+							</div>
+
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label">
+									<!--for="exampleInputPassword1" -->
+									Password
+								</label>
+								<div class="col-sm-10">
+									<input type="password" class="form-control" name="password" id="password"
+										placeholder="Password" />
+									<b class="tooltip tooltip-top-right">
+										<i class="fa fa-lock txt-color-teal"></i> Enter your password</b>
+								</div>
+							</div>
+							<div id="errMessage" style="color:red;"></div>
+							<div class="row">
+								<div class="col-sm-2">
+								</div>
+								<div class="col-sm-10">
+									<button type="submit" class="btn btn-primary btn-sm">
+										Login
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="myModalSession2" data-backdrop="static" data-keyboard="false" tabindex="-1"
+		role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="btnCancel()">
+						×
+					</button>
+					<h4 class="modal-title" id="myModalLabel">
+						Welcome, Login to continue...
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div class="tab-pane active" id="Login">
+						<form role="form" class="form-horizontal" id="login-form2">
+							<div class="form-group">
+								<label class="col-sm-2 control-label">
+									<!--for="exampleInputPassword1" -->
+									E-mail
+								</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" name="email" id="email1"
+										placeholder="E-mail">
+									<b class="tooltip tooltip-top-right">
+										<i class="fa fa-lock txt-color-teal"></i> Enter your E-mail/Username</b>
+								</div>
+							</div>
+
+
+							<div class="form-group">
+								<label class="col-sm-2 control-label">
+									<!--for="exampleInputPassword1" -->
+									Password
+								</label>
+								<div class="col-sm-10">
+									<input type="password" class="form-control" name="password" id="password1"
+										placeholder="Password" />
+									<b class="tooltip tooltip-top-right">
+										<i class="fa fa-lock txt-color-teal"></i> Enter your password</b>
+								</div>
+							</div>
+							<div id="errMessage1" style="color:red;"></div>
+							<div class="row">
+								<div class="col-sm-2">
+								</div>
+								<div class="col-sm-10">
+									<button type="submit" class="btn btn-primary btn-sm">
+										Login
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END SHORTCUT AREA -->
+	<!--================================================== -->
+
+	<script src="js/libs/jquery-ui-1.10.3.min.js"></script>
+	<!-- IMPORTANT: APP CONFIG -->
+	<script src="js/app.config.js"></script>
+	<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+	<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
+	<!-- BOOTSTRAP JS -->
+	<script src="js/bootstrap/bootstrap.min.js"></script>
+	<!-- JARVIS WIDGETS -->
+	<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+	<!-- EASY PIE CHARTS -->
+	<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+	<!-- SPARKLINES -->
+	<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+	<!-- JQUERY VALIDATE -->
+	<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+	<!-- JQUERY MASKED INPUT -->
+	<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+	<!-- JQUERY SELECT2 INPUT -->
+	<script src="js/plugin/select2/select2.min.js"></script>
+	<!-- JQUERY UI + Bootstrap Slider -->
+	<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+	<!-- browser msie issue fix -->
+	<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+	<!-- FastClick: For mobile devices -->
+	<script src="js/plugin/fastclick/fastclick.min.js"></script>
+	<script src="js/plugin/spin.min.js"></script>
+	<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
+	<script src="js/plugin/jquery.spin.js"></script>
+	<!-- MAIN APP JS FILE -->
+	<script src="js/app.min.js"></script>
+	<!-- Full Calendar -->
+	<script src="js/plugin/moment/moment.min.js"></script>
+	<script src="js/plugin/jquery.typewatch.js"></script>
+	<script src="js/plugin/moment/humanize-duration.js"></script>
+	<script src="js/plugin/fullcalendar/jquery.fullcalendar.min.js"></script>
+	<script src="js/plugin/daterangepicker.js"></script>
+	<script src="js/plugin/moment-timezone-with-data/moment-timezone-with-data.js"></script>
+	<!-- Google Map -->
+	<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization&key=AIzaSyDoPU6BukOJ2xcTu9bAYJxXUaA9f3VNqvQ">
+	</script>
+	<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=visualization"></script>-->
+	<script src="js/plugin/gmap3/overlappingMarker.js"></script>
+	<!-- PAGE RELATED PLUGIN(S) -->
+	<script src="js/plugin/datatables/jquery.dataTables.min.js"></script>
+	<script src="js/plugin/datatables/dataTables.colVis.min.js"></script>
+	<script src="js/plugin/datatables/dataTables.tableTools.min.js"></script>
+	<script src="js/plugin/datatables/dataTables.bootstrap.min.js"></script>
+	<script src="js/plugin/datatables/dataTables.select.min.js"></script>
+	<script src="js/plugin/datatable-responsive/datatables.responsive.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/highcharts.js"></script>
+	<script src="js/highcharts-more.js"></script>
+	<script src="js/highChartNoData.js"></script>
+	<!-- <script src="js/boost.src.js"></script> -->
+	<script src="js/treemap.js"></script>
+	<script src="js/solid-gauge.js"></script>
+	<script src="js/highChartDynamicCss.js"></script>
+	<script src="js/libs/handlebars-v4.0.5.js"></script>
+	<script src="js/highChartExporting.js"></script>
+	<script src="js/plugin/lodash.core.js"></script>
+	<script src="js/plugin/lodash.min.js"></script>
+	<script src="js/utility/utility.js"></script>
+	<script type="text/javascript" src="//www.gstatic.com/charts/loader.js"></script>
+	<script src="js/markerclusterer_compiled.js"></script>
+	<script src="js/markerclusterer_compiled_tier.js"></script>
+	<script src="js/notification/SmartNotification.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+	<script type="text/javascript" src='js/lz-string.min.js'></script>
+	<!-- For dynamic screen layouts -->
+	<script type="text/javascript" src='js/gridstack/gridstack.min.js'></script>
+	<script type="text/javascript" src='js/gridstack/gridstack.jQueryUI.min.js'></script>
+
+	<!--Fixes the position of menu -->
+	<!-- <script>
+		if (window.location.href.indexOf('#InfoGuide') != -1) {
+			document.getElementById('bodyId').classList.add("fixed-header");
+			document.getElementById('bodyId').classList.add("fixed-navigation");
+
+		}
+	</script> -->
+
+	<script>
+		function closeFunction() {
+
+			onLogout('login.html');
+		}
+
+		function RedirectToPortal() {
+			var portalURL;
+
+			var vrURL = window.location.href;
+			var isQA = vrURL.indexOf("-qa");
+			if (isQA == '-1') {
+				portalURL = "http://portal.ebest-iot.com";
+			} else {
+				portalURL = "http://portal-qa.ebest-iot.com";
+
+			}
+
+			$('#aPortal').attr('href', portalURL);
+		}
+
+
+
+		$(document).ready(function (module) {
+
+			if (window.XMLHttpRequest) {
+				xhr = new XMLHttpRequest();
+			} else {
+				xhr = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+
+			// DO NOT REMOVE : GLOBAL FUNCTIONS!
+			pageSetUp();
+			//coolerDashboard.common.alertDiv(coolerDashboard.common.alertPriority.High, '#alertHigh');
+			coolerDashboard.common.getTimeZone();
+			coolerDashboard.common.getUserLayout();
+
+			if (LZString.decompressFromUTF16(localStorage.data)) {
+				var data = JSON.parse(LZString.decompressFromUTF16(localStorage.data)).data;
+				if (data) {
+					var tags = data.tags;
+					$('#userName').html(tags.FirstName + ' ' + tags.LastName);
+					if (tags.ClientId == 0) {
+						$('#logo img').attr('src', 'img/icons/logo01.png');
+					} else {
+						$('#logo img').attr('src', coolerDashboard.getUrl('/FileServer/Client/' + tags.ClientId +
+							'.png'));
+					}
+					var hidden = tags.LimitLocation;
+					var feedbackEnabled = data.tags.FeedbackEnabled;
+					var lastHash = LZString.decompressFromUTF16(localStorage.lastUrl);
+					var currentUrl = window.location.href;
+					// if (currentUrl.indexOf('LocationMap#salesHierarchy') > 0) {
+					// 	$('#bodyId').addClass('no-menu');
+					// 	$("#userInfo").remove();
+					// } else if (currentUrl.indexOf('irsignup') > 0) {
+					// 	$('#bodyId').addClass('no-menu');
+					// } else {
+					// 	$('#bodyId').removeClass('no-menu');
+					// }
+					if (parseInt(hidden)) {
+						$('#activity').removeClass('hidden');
+						setTimeout(function () {
+							//coolerDashboard.common.openAlertCount();
+							//coolerDashboard.common.startRefreshAlert();
+						}, 2000);
+					}
+					var showDashboardMenu = false;
+					var showDashboardDetailedViewMenu = false;
+					var showDashboardVisitReport = false;
+					var showDashboardSurvey = false;
+					var showPlanogramAnalysis = false;
+					var Irurl = window.location.hash;
+					if (Irurl.indexOf('irsignup') > -1 || Irurl.indexOf('outletDetailsIR') > -1) {
+						setCookie("IrSSO", Irurl, 1);
+					}
+					var irCookie = getCookie("IrSSO");
+					if ((currentUrl.indexOf('irsignup') != -1 || currentUrl.indexOf('outletDetailsIR') != -1) && !
+						lastHash || (localStorage.SSO == "true" &&
+							irCookie)) {
+						showDashboardMenu = true;
+						window.location.href = irCookie ? "default.html" + irCookie : currentUrl;
+					} else {
+						if (coolerDashboard.common.hasPermission('DashboardWelcome')) {
+							$('#DashboardWelcome').removeClass('hidden');
+							showDashboardMenu = true;
+							if (!lastHash) {
+								window.location.href = 'default.html#WelcomePage';
+							}
+						}
+						if (coolerDashboard.common.hasPermission('DashboardCoolerPerformance')) {
+							$('#DashboardCoolerPerformance').removeClass('hidden');
+							if (!showDashboardMenu && !lastHash) {
+								window.location.href = 'default.html#CoolerPerformance';
+							}
+							showDashboardMenu = true;
+						}
+						if (coolerDashboard.common.hasPermission('DashboardNoAccess')) {
+							$('#DashboardNoAccess').removeClass('hidden');
+							if (!showDashboardMenu && !lastHash) {
+								window.location.href = 'default.html#NoAccess';
+							}
+							showDashboardMenu = true;
+						}
+						if (coolerDashboard.common.hasPermission('DashboardSalesCorrelation')) {
+							$('#DashboardSalesCorrelation').removeClass('hidden');
+							if (!showDashboardMenu && !lastHash) {
+								window.location.href = 'default.html#SalesCorrelation';
+							}
+							showDashboardMenu = true;
+						}
+						if (coolerDashboard.common.hasPermission('DashboardCoolerTelemetry')) {
+							$('#DashboardCoolerTelemetry').removeClass('hidden');
+							if (!showDashboardMenu && !lastHash) {
+								window.location.href = 'default.html#CoolerTelemetryView';
+							}
+							showDashboardMenu = true;
+						}
+						if (coolerDashboard.common.hasPermission('DashboardReport')) {
+							$('#DashboardReport').removeClass('hidden');
+							if (!showDashboardMenu && !lastHash) {
+								window.location.href = 'default.html#Report';
+							}
+							showDashboardMenu = true;
+						}
+						if (coolerDashboard.common.hasPermission('DashboardFallenMagnet')) {
+							$('#DashboardFallenMagnet').removeClass('hidden');
+							if (!showDashboardMenu && !lastHash) {
+								window.location.href = 'default.html#FallenMagnet';
+							}
+							showDashboardMenu = true;
+						}
+						//for cooler tracking permission
+						if (coolerDashboard.common.hasPermission('DashboardCoolerTracking')) {
+							$('#DashboardCoolerTracking').removeClass('hidden');
+							if (!showDashboardMenu && !lastHash) {
+								window.location.href = 'default.html#CoolerTracking';
+							}
+							showDashboardMenu = true;
+						}
+						if (coolerDashboard.common.hasPermission('DashboardAlarms')) {
+							$('#DashboardAlarms').removeClass('hidden');
+							if (!showDashboardMenu && !lastHash) {
+								window.location.href = 'default.html#Alarm';
+							}
+							showDashboardMenu = true;
+						}
+						if (coolerDashboard.common.hasPermission('DashboardAlerts')) {
+							$('#DashboardAlerts').removeClass('hidden');
+							if (!showDashboardMenu && !lastHash) {
+								window.location.href = 'default.html#Alert';
+							}
+							showDashboardMenu = true;
+						}
+						if (coolerDashboard.common.hasPermission('DashboardCustomerTier')) {
+							$('#DashboardCustomerTier').removeClass('hidden');
+							if (!showDashboardMenu && !lastHash) {
+								window.location.href = 'default.html#CustomerDashboard';
+							}
+							showDashboardMenu = true;
+						}
+						if (coolerDashboard.common.hasPermission('DashboardTradeChannel')) {
+							$('#DashboardTradeChannel').removeClass('hidden');
+							if (!showDashboardMenu && !lastHash) {
+								window.location.href = 'default.html#TradeChannel';
+							}
+							showDashboardMenu = true;
+						}
+
+						if (coolerDashboard.common.hasPermission('DashboardOutletIRStatus')) {
+							$('#DashboardOutletIRStatus').removeClass('hidden');
+							if (!showDashboardMenu && !lastHash) {
+								window.location.href = 'default.html#OutletIRStatus';
+							}
+						}
+						if (coolerDashboard.common.hasPermission('DashboardOutletDetailsIR')) {
+							$('#DashboardOutletDetailsIR').removeClass('hidden');
+							if (!showDashboardMenu && !lastHash) {
+								window.location.href = 'default.html#outletDetailsIR';
+							}
+						}
+						// if (coolerDashboard.common.hasPermission('DashboardSalesVisit')) {
+						// 	$('#DashboardSalesVisit').removeClass('hidden');
+						// 	if (!showDashboardMenu && !lastHash) {
+						// 		window.location.href = 'default.html#DashboardSalesVisit';
+						// 	}
+						// 	showDashboardMenu = true;
+						// }
+
+						if (showDashboardMenu) {
+							$('#DashboardMenu').removeClass('hidden');
+						}
+
+						if (coolerDashboard.common.hasPermission('DashboardDetailedView')) {
+							$('#DetailedViewOutlets').removeClass('hidden');
+							$('#DetailedViewAssets').removeClass('hidden');
+							$('#DetailedViewAlarms').removeClass('hidden');
+							//$('#DetailedViewVisit').removeClass('hidden');
+							$('#DetailedViewVision').removeClass('hidden');
+							//$('#DetailedViewRecognitionReport').removeClass('hidden');
+							if (!showDashboardMenu && !lastHash) {
+								window.location.href = 'default.html#location#s1';
+							}
+							if (coolerDashboard.common.hasPermission('DashboardVisit')) {
+								$('#DetailedViewVisit').removeClass('hidden');
+							}
+							if (coolerDashboard.common.hasPermission('DashboardRecognitionReport')) {
+								$('#DetailedViewRecognitionReport').removeClass('hidden');
+							}
+							showDashboardDetailedViewMenu = true;
+						}
+						if (showDashboardDetailedViewMenu) {
+							$('#DashboardDetailedViewMenu').removeClass('hidden');
+						}
+						if (coolerDashboard.common.hasPermission('DashboardVisitReport')) {
+							$('#DashboardVisitMenu').removeClass('hidden');
+							if (!showDashboardDetailedViewMenu && !showDashboardMenu && !lastHash) {
+								window.location.href = 'default.html#Visit';
+							}
+							showDashboardVisitReport = true
+						}
+						if (coolerDashboard.common.hasPermission('DashboardSurvey')) {
+							if (parseInt(feedbackEnabled)) {
+								$('#surveyDashboard').removeClass('hidden');
+								$('#surveyDashboardshortcut').removeClass('hidden');
+								if (!showDashboardDetailedViewMenu && !showDashboardMenu && !
+									showDashboardVisitReport && !lastHash) {
+									window.location.href = 'default.html#Survey';
+								}
+								showDashboardSurvey = true;
+							}
+						}
+						if (coolerDashboard.common.hasPermission('PlanogramAnalysis')) {
+							$('#PlanogramAnalysis').removeClass('hidden');
+							if (!showDashboardDetailedViewMenu && !showDashboardMenu && !showDashboardVisitReport && !
+								showDashboardSurvey &&
+								!lastHash) {
+								window.location.href = 'default.html#PlanogramAnalysis';
+							}
+							showPlanogramAnalysis = true
+						}
+						if (!showDashboardDetailedViewMenu && !showDashboardMenu && !showDashboardVisitReport && !
+							showDashboardSurvey &&
+							!showPlanogramAnalysis) {
+							$('#noAccessDialog').dialog({
+								modal: true,
+								autoOpen: false,
+								width: 500,
+								height: 148,
+								resizable: false,
+								modal: true,
+								title: "No Access",
+								buttons: {
+									"Close": function () {
+										closeFunction();
+									}
+								},
+								close: closeFunction
+							});
+							$('#noAccessDialog').removeClass('hidden');
+							$('#noAccessDialog').dialog('open');
+						}
+					}
+				}
+			}
+			/* hide default buttons */
+			$('.fc-toolbar .fc-right, .fc-toolbar .fc-center').hide();
+
+			// custom css expression for a case-insensitive contains()
+			jQuery.expr[':'].Contains = function (a, i, m) {
+				return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+			};
+
+
+			$("#aPortal").on('click', function () {
+				RedirectToPortal();
+			});
+
+			$('#alertRefresh').click(function () {
+				$('#alertCount > .active > input').change();
+				coolerDashboard.common.openAlertCount();
+				coolerDashboard.common.clearRefreshAlert();
+			});
+
+			$('#activity').click(function () {
+				$('#activity > .badge').text(coolerDashboard.common.openAlert);
+				coolerDashboard.common.clearRefreshAlert();
+			});
+
+			$.root_.hasClass("menu-on-top") || ($.root_.toggleClass("minified"),
+				$.root_.removeClass("hidden-menu"),
+				$("html").removeClass("hidden-menu-mobile-lock"),
+				$('.minifyme').effect("highlight", {}, 500))
+
+
+			// Set up a global AJAX error handler to handle the 401
+			// unauthorized responses. If a 401 status code comes back,
+			// the user is no longer logged-into the system and can not
+			$.ajaxSetup({
+				statusCode: {
+					401: function () {
+						coolerDashboard.gridUtils.ajaxIndicatorStopForce();
+
+						//$('#myModalSession').modal('show');
+						if (localStorage.SSO == "true") {
+							var cred = JSON.parse(LZString.decompressFromUTF16(localStorage.data));
+							var username = cred.data.tags.UserName;
+							if (username) {
+								var params = {
+									username: username,
+									//password: $("#password").val(),
+									encrypt: true
+								}
+								$.post('/validuserSSO', params).done(function (data) {
+									if (data.success) {
+										//$('#myModalSession').modal('hide');
+										setCookie("username", userName, 1);
+										delete localStorage.comboData;
+										delete localStorage.comboDataVisit;
+										delete localStorage.defaultPreference;
+										localStorage.setItem('data', LZString.compressToUTF16(JSON
+											.stringify(data)));
+										localStorage.setItem('SSO', true);
+										var showDashboardMenu = false;
+										var showDashboardDetailedViewMenu = false;
+										var showDashboardVisitReport = false;
+										//location.reload();
+										var redirectlink = LZString.decompressFromUTF16(
+											localStorage.getItem('redirectUrl'));
+										if (redirectlink && redirectlink != '#') {
+											history.replaceState({}, document.title, ".");
+											localStorage.lastUrl = LZString.compressToUTF16(
+												'default.html' + redirectlink);
+											// LZString.decompressFromUTF16(localStorage.lastUrl) = 'default.html' + redirectlink;
+											window.location.href = 'default.html' + redirectlink;
+										} else {
+											var irCookie = getCookie("IrSSO");
+											if ((currentUrl.indexOf('irsignup') != -1 ||
+													currentUrl.indexOf('outletDetailsIR') != -1
+												) && !
+												lastHash || (localStorage.SSO == "true" &&
+													irCookie)) {
+												showDashboardMenu = true;
+												window.location.href = irCookie ? "default.html" +
+													irCookie : currentUrl;
+												location.reload(true);
+											}
+										}
+									} else {
+										alert('Email address/Username or Password is incorrect.');
+									}
+								}).fail(function (data) {
+									alert('Oops! some server error occured. Please try again.');
+								});
+							} else {
+								if (window.location.hostname == "cch-dashboard.ebest-iot.com") {
+									window.location.href =
+										"https://sso.cchellenic.com/adfs/ls/?wa=wsignin1.0&wtrealm=https://cch-dashboard.ebest-iot.com/login1";
+								} else if (window.location.hostname == "cch-dashboard-qa.ebest-iot.com") {
+									window.location.href =
+										"https://sso.cchellenic.com/adfs/ls/?wa=wsignin1.0&wtrealm=https://cch-dashboard-qa.ebest-iot.com/login1";
+								} else {
+									$('#coockieUser').html(getCookie("username"));
+
+									if (getCookie("username") != "") {
+										$('#myModalSession').modal('show');
+										setTimeout(function () {
+											$('#password').focus();
+										}, 1000);
+										if (xhr) {
+											xhr.abort();
+										}
+									} else {
+										onLogout('login.html');
+									}
+								}
+							}
+						} else {
+							$('#coockieUser').html(getCookie("username"));
+
+							if (getCookie("username") != "") {
+								$('#myModalSession').modal('show');
+								setTimeout(function () {
+									$('#password').focus();
+								}, 1000);
+								if (xhr) {
+									xhr.abort();
+								}
+							} else {
+								onLogout('login.html');
+							}
+
+						}
+					},
+					400: function (event) {
+						//event.responseJSON
+						coolerDashboard.common.errorMessage(event.responseJSON);
+					},
+					500: function (event) {
+						//event.responseJSON
+						coolerDashboard.common.errorMessage(event.responseJSON);
+					}
+				}
+			});
+
+			$("#login-form").validate({
+				// Rules for form validation
+				rules: {
+					password: {
+						required: true
+					}
+				},
+
+				// Messages for form validation
+				messages: {
+					password: {
+						required: 'Please enter your password'
+					}
+				},
+				// Ajax form submition
+				submitHandler: function (form) {
+					document.getElementById('errMessage').innerHTML = '';
+					var userName = getCookie("username"); //$.cookie("userName");
+					var params = {
+						username: userName,
+						password: $("#password").val(),
+						encrypt: true
+					}
+					$.post('/login', params).done(function (data) {
+						saveUserDetails(data, userName, 'Login');
+						if (data.success) {
+							$('#myModalSession').modal('hide');
+							setCookie("username", userName, 1);
+							data.data.tags.UserName = userName;
+							delete localStorage.comboData;
+							delete localStorage.comboDataVisit;
+							delete localStorage.defaultPreference;
+							localStorage.setItem('data', LZString.compressToUTF16(JSON.stringify(
+								data)));
+							localStorage.setItem('SSO', false);
+							coolerDashboard.common.getUserLayout();
+							var showDashboardMenu = false;
+							var showDashboardDetailedViewMenu = false;
+							var showDashboardVisitReport = false;
+							location.reload();
+						} else {
+							// alert('Email address/Username or Password is incorrect.');
+							document.getElementById('errMessage').innerHTML =
+								'Email address/Username or Password is incorrect.';
+						}
+					}).fail(function (data) {
+						// alert('Oops! some server error occured. Please try again.');
+						document.getElementById('errMessage').innerHTML =
+							'Oops! some server error occured. Please try again.';
+
+					});
+					return false;
+				},
+				// Do not change code below
+				errorPlacement: function (error, element) {
+					error.insertAfter(element.parent());
+				}
+			});
+
+			$("#login-form2").validate({
+				// Rules for form validation
+				rules: {
+					password: {
+						required: true
+					}
+				},
+
+				// Messages for form validation
+				messages: {
+					password: {
+						required: 'Please enter your password'
+					}
+				},
+				// Ajax form submition
+				submitHandler: function (form) {
+					document.getElementById('errMessage1').innerHTML = '';
+					//var userName = getCookie("username"); //$.cookie("userName");
+					var params = {
+						username: $("#email1").val(),
+						password: $("#password1").val(),
+						encrypt: true
+					};
+					$.post('/login', params).done(function (data) {
+
+						saveUserDetails(data, params.username, 'Login');
+						if (data.success) {
+							$('#myModalSession').modal('hide');
+							setCookie("username", params.username, 1);
+							data.data.tags.UserName = params.username;
+							delete localStorage.comboData;
+							delete localStorage.comboDataVisit;
+							delete localStorage.defaultPreference;
+							localStorage.setItem('data', LZString.compressToUTF16(JSON.stringify(
+								data)));
+							localStorage.setItem('SSO', false);
+							coolerDashboard.common.getUserLayout();
+							var showDashboardMenu = false;
+							var showDashboardDetailedViewMenu = false;
+							var showDashboardVisitReport = false;
+							location.reload();
+						} else {
+							// alert('Email address/Username or Password is incorrect.');
+							document.getElementById('errMessage1').innerHTML =
+								'Email address/Username or Password is incorrect.';
+						}
+					}).fail(function (data) {
+						// alert('Oops! some server error occured. Please try again.');
+						document.getElementById('errMessage1').innerHTML =
+							'Oops! some server error occured. Please try again.';
+					});
+					return false;
+				},
+				// Do not change code below
+				errorPlacement: function (error, element) {
+					error.insertAfter(element.parent());
+				}
+			});
+
+		});
+
+		$('#myModal').on('show.bs.modal', function (event) {
+			var form = $("#add-preference")[0].reset();
+		});
+
+		$('#manageModel').on('show.bs.modal', function (event) {
+			coolerDashboard.common.onMangePreference();
+
+		});
+
+		$('#edit').on('show.bs.modal', function (event) {
+			var button = $(event.relatedTarget); // Button that triggered the modal
+			var defaultValue = button.data('isdefault');
+			var prefDesc = button.data('prefdesc');
+			var gridTitle = button.data('gridtitle');
+			var prefId = button.data('prefid');
+			var params = {
+				action: 'list',
+				PrefId: prefId
+			}
+			$.ajax({
+				url: coolerDashboard.common.nodeUrl('preferenceState'),
+				type: 'POST',
+				data: params,
+				success: function (result, data) {
+					var data = result.data;
+					if (data && data[0]) {
+						var record = data[0];
+						$('#updateName').val(record.PrefName);
+						$('#updateDescription').val(record.PrefDesc);
+						$('#updateDefault').val(record.IsDefault == "false" || record.IsDefault ==
+							false || record.IsDefault == 0 ?
+							0 : 1);
+						$("#updateDefault").prop("checked", record.IsDefault == "false" || record
+							.IsDefault == false || record.IsDefault ==
+							0 ? 0 : 1);
+						$('#prefId').val(record.GridPreferenceId);
+						var version = '0x' + coolerDashboard.common.toHexString(data[0].Version.data)
+							.toUpperCase();
+						$('#versionId').val(version);
+					}
+				},
+				failure: function (response, opts) {
+
+				},
+				scope: this
+			});
+			//var form = $("#update-preference")[0].reset();
+
+		});
+
+		$('#delete').on('show.bs.modal', function (event) {
+			var button = $(event.relatedTarget); // Button that triggered the modal
+			var prefId = button.data('prefid');
+			$('#prefDeleteId').val(prefId);
+
+			//var form = $("#add-preference")[0].reset();
+		});
+
+		$("#add-preference").validate({
+			// Rules for form validation
+			rules: {
+				name: {
+					required: true
+				}
+			},
+
+			// Messages for form validation
+			messages: {
+				name: {
+					required: 'Please enter Name'
+				}
+			},
+			// Ajax form submition
+			submitHandler: function (form) {
+				coolerDashboard.gridUtils.ajaxIndicatorStart('Saving Data.. Please Wait..');
+				var data = $("#add-preference").serializeArray();
+				var defaultValue = _.filter(data, function (defaultValue) {
+					return defaultValue.name == 'defaultPreference'
+				});
+				var isDefault = defaultValue.length > 0 ? defaultValue[0].value : 0;
+				var params = {
+					PrefName: $("#name").val(),
+					PrefDFesc: $("#description").val(),
+					IsDefault: isDefault,
+					PrefValue: JSON.stringify(filterValuesChart),
+					action: 'save'
+				}
+				$.ajax({
+					url: coolerDashboard.common.nodeUrl('preferenceState'),
+					type: 'POST',
+					data: params,
+					success: function () {
+						coolerDashboard.gridUtils.ajaxIndicatorStop();
+						$('#myModal').modal('toggle');
+						coolerDashboard.common.getPreferencesList();
+
+					},
+					failure: function (response, opts) {
+						coolerDashboard.gridUtils.ajaxIndicatorStop();
+					},
+					scope: this
+				});
+				return false;
+			},
+			// Do not change code below
+			errorPlacement: function (error, element) {
+				error.insertAfter(element.parent());
+			}
+		});
+
+		$("#save-layout").validate({
+			// Rules for form validation
+			rules: {
+				name: {
+					required: true
+				}
+			},
+
+			// Messages for form validation
+			messages: {
+				name: {
+					required: 'Please enter Name'
+				}
+			},
+			// Ajax form submition
+			submitHandler: function (form) {
+
+				coolerDashboard.gridUtils.ajaxIndicatorStart('Saving Data.. Please Wait..');
+				var data = $("#save-layout").serializeArray();
+				var defaultValue = _.filter(data, function (defaultValue) {
+					return defaultValue.name == 'defaultLayout'
+				});
+
+				var isDefault = defaultValue.length > 0 ? defaultValue[0].value : 0;
+				// var storedData = localStorage.getItem("gridData");
+				// if (storedData) {
+				// 	items = JSON.parse(storedData);
+				// }
+
+				var items = [];
+				$('.grid-stack-item.ui-draggable').each(function () {
+					var $this = $(this);
+					items.push({
+						id: $this.attr('data-gs-id'),
+						x: $this.attr('data-gs-x'),
+						y: $this.attr('data-gs-y'),
+						w: $this.attr('data-gs-width'),
+						h: $this.attr('data-gs-height')
+						//content: this.outerHTML
+					});
+				});
+
+				var params = {
+					Name: $("#layoutName").val(),
+					Desc: $("#layoutDescription").val(),
+					StoreValue: JSON.stringify(items),
+					IsDefault: isDefault,
+					action: 'save',
+					Page: location.hash.replace(/^#/, "")
+				}
+
+				$.ajax({
+					url: coolerDashboard.common.nodeUrl('saveLayout'),
+					type: 'POST',
+					data: params,
+					success: function () {
+						coolerDashboard.gridUtils.ajaxIndicatorStop();
+						$('#SaveLayoutModal').modal('toggle');
+						//coolerDashboard.common.getPreferencesList();
+						setTimeout(function () {
+							coolerDashboard.common.getUserLayout();
+							$.smallBox({
+								title: 'Success',
+								content: 'Layout Saved Successfully',
+								color: "#2b908f",
+								timeout: 3000
+							});
+						}, 1000);
+					},
+					failure: function (response, opts) {
+						coolerDashboard.gridUtils.ajaxIndicatorStop();
+					},
+					scope: this
+				});
+
+				return false;
+			},
+			// Do not change code below
+			errorPlacement: function (error, element) {
+				error.insertAfter(element.parent());
+			}
+		});
+
+		// start JS for save default layout 
+		$("#save-default-layout").validate({
+			// Rules for form validation
+			rules: {
+				name: {
+					required: true
+				}
+			},
+
+			// Messages for form validation
+			messages: {
+				name: {
+					required: 'Please enter Name'
+				}
+			},
+			// Ajax form submition
+			submitHandler: function (form) {
+
+				coolerDashboard.gridUtils.ajaxIndicatorStart('Saving Data.. Please Wait..');
+				var data = $("#save-default-layout").serializeArray();
+				var defaultValue = _.filter(data, function (defaultValue) {
+					return defaultValue.name == 'defaultLayout'
+				});
+
+				var isDefault = defaultValue.length > 0 ? defaultValue[0].value : 0;
+				// var storedData = localStorage.getItem("gridData");
+				// if (storedData) {
+				// 	items = JSON.parse(storedData);
+				// }
+
+				var items = [];
+				$('.grid-stack-item.ui-draggable').each(function () {
+					var $this = $(this);
+					items.push({
+						id: $this.attr('data-gs-id'),
+						x: $this.attr('data-gs-x'),
+						y: $this.attr('data-gs-y'),
+						w: $this.attr('data-gs-width'),
+						h: $this.attr('data-gs-height')
+						//content: this.outerHTML
+					});
+				});
+
+				var params = {
+					Name: $("#layoutName").val(),
+					Desc: $("#layoutDescription").val(),
+					StoreValue: JSON.stringify(items),
+					IsDefault: isDefault,
+					action: 'save',
+					Page: location.hash.replace(/^#/, "")
+				}
+
+				$.ajax({
+					url: coolerDashboard.common.nodeUrl('saveLayout'),
+					type: 'POST',
+					data: params,
+					success: function () {
+						coolerDashboard.gridUtils.ajaxIndicatorStop();
+						$('#SaveDefaultLayoutModal').modal('toggle');
+						//coolerDashboard.common.getPreferencesList();
+
+						setTimeout(function () {
+							coolerDashboard.common.getUserLayout();
+							$.smallBox({
+								title: 'Success',
+								content: 'Layout Saved Successfully',
+								color: "#2b908f",
+								timeout: 3000
+							});
+						}, 1000);
+					},
+					failure: function (response, opts) {
+						coolerDashboard.gridUtils.ajaxIndicatorStop();
+					},
+					scope: this
+				});
+
+				return false;
+			},
+			// Do not change code below
+			errorPlacement: function (error, element) {
+				error.insertAfter(element.parent());
+			}
+		});
+		// end JS for save default layout
+		$("#update-preference").validate({
+			// Rules for form validation
+			rules: {
+				name: {
+					required: true
+				}
+			},
+
+			// Messages for form validation
+			messages: {
+				name: {
+					required: 'Please enter Name'
+				}
+			},
+			// Ajax form submition
+			submitHandler: function (form) {
+
+				coolerDashboard.gridUtils.ajaxIndicatorStart('Saving Data.. Please Wait..');
+				var data = $("#update-preference").serializeArray();
+				var defaultValue = $("#updateDefault").prop("checked");
+				var isDefault = defaultValue;
+				var params = {
+					PrefName: $("#updateName").val(),
+					PrefDFesc: $("#updateDescription").val(),
+					IsDefault: isDefault,
+					PrefValue: JSON.stringify(filterValuesChart),
+					PrefId: $("#prefId").val(),
+					Version: $("#versionId").val(),
+					action: 'update'
+				}
+				$.ajax({
+					url: coolerDashboard.common.nodeUrl('preferenceState'),
+					type: 'POST',
+					data: params,
+					success: function () {
+						coolerDashboard.gridUtils.ajaxIndicatorStop();
+						$('#edit').modal('toggle');
+						coolerDashboard.common.getPreferencesList();
+					},
+					failure: function (response, opts) {
+						coolerDashboard.gridUtils.ajaxIndicatorStop();
+					},
+					scope: this
+				});
+			},
+			// Do not change code below
+			errorPlacement: function (error, element) {
+				error.insertAfter(element.parent());
+			}
+		});
+
+		$("#savePreference").on('click', function () {
+			$("#add-preference").submit();
+		});
+
+		$("#saveLayout").on('click', function () {
+			$("#save-layout").submit();
+		});
+
+		$("#saveDefaultLayout").on('click', function () {
+			coolerDashboard.gridUtils.loadUserLayout(false, false);
+			$("#save-default-layout").submit();
+		});
+
+		$("#resetPreviousLayout").on('click', function () {
+			coolerDashboard.gridUtils.loadUserLayout(true, false);
+		});
+
+		$("#resetPreviousLayoutClose").on('click', function () {
+			coolerDashboard.gridUtils.loadUserLayout(true, false);
+		});
+
+		$("#resetDefaultPreviousLayoutClose").on('click', function () {
+			coolerDashboard.gridUtils.loadUserLayout(true, false);
+		});
+
+		$("#resetDefaultPreviousLayout").on('click', function () {
+			coolerDashboard.gridUtils.loadUserLayout(true, false);
+		});
+
+		$("#updatePreferenceButton").on('click', function () {
+			$("#update-preference").submit();
+		});
+
+		function btnCancel() {
+			localStorage.clear();
+			window.location.href = "login.html"
+		}
+
+		$(".deletePreferenceButton").on('click', function () {
+			coolerDashboard.gridUtils.ajaxIndicatorStart('Deleting Record.. Please Wait..');
+			var params = {
+				PrefId: $('#prefDeleteId').val(),
+				action: 'delete'
+			}
+			$.ajax({
+				url: coolerDashboard.common.nodeUrl('preferenceState'),
+				type: 'POST',
+				data: params,
+				success: function () {
+					coolerDashboard.gridUtils.ajaxIndicatorStop();
+					$('#delete').modal('toggle');
+					coolerDashboard.common.getPreferencesList();
+				},
+				failure: function (response, opts) {
+					coolerDashboard.gridUtils.ajaxIndicatorStop();
+				},
+				scope: this
+			});
+		});
+
+		coolerDashboard.common.getPreferencesList();
+
+		Highcharts.setOptions({
+			chart: {
+				style: {
+					fontFamily: 'Open Sans'
+				}
+			},
+			credits: {
+				enabled: false
+			},
+			xAxis: {
+				labels: {
+					useHTML: true
+				},
+				title: {
+					useHTML: true
+				}
+			},
+			// yAxis: {
+			// 	labels: {
+			// 		useHTML: true
+			// 	},
+			// 	title: {
+			// 		useHTML: true
+			// 	}
+			// },
+			legend: {
+				useHTML: true
+			},
+			tooltip: {
+				useHTML: true
+			},
+			noData: {
+				useHTML: true
+			},
+			events: {
+				useHTML: true
+			}
+		});
+	</script>
+</body>
+
+</html>

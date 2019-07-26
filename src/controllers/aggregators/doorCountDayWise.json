@@ -1,0 +1,39 @@
+{
+	"from": 0,
+	"size": 10,
+	"query": {
+		"bool": {
+			"filter": [{
+				"type": {
+					"value": "AssetEventDataSummary"
+				}
+			}],
+			"must": [{
+				"term": {
+					"IsFromDoor": true
+				}
+			}]
+		}
+	},
+	"sort": [{
+		"EventDate": {
+			"order": "desc"
+		}
+	}],
+	"aggs": {
+		"DoorData": {
+			"date_histogram": {
+				"field": "EventDate",
+				"interval": "1d",
+				"min_doc_count": 1
+			},
+			"aggs": {
+				"DoorCount": {
+					"sum": {
+						"field": "SumOfDoorCount"
+					}
+				}
+			}
+		}
+	}
+}

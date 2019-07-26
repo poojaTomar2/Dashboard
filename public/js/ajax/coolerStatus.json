@@ -1,0 +1,6599 @@
+﻿{
+	"data": {
+		"summary": {
+			"locationData": [
+				{
+					"Id": 1,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 38.94741992466152,
+						"lon": -77.4200670607388
+					}
+				},
+				{
+					"Id": 25,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 41.88477692194283,
+						"lon": -87.63061115518212
+					}
+				},
+				{
+					"Id": 128,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 42.697999980300665,
+						"lon": -87.91800012812018
+					}
+				},
+				{
+					"Id": 173,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 43.38099994696677,
+						"lon": -88.17100016400218
+					}
+				},
+				{
+					"Id": 341,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 40.55099995806813,
+						"lon": -90.50900012254715
+					}
+				},
+				{
+					"Id": 532,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 42.125999964773655,
+						"lon": -89.26400000229478
+					}
+				},
+				{
+					"Id": 538,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 42.688999995589256,
+						"lon": -89.05200004577637
+					}
+				},
+				{
+					"Id": 821,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 42.403999948874116,
+						"lon": -87.86200013011694
+					}
+				},
+				{
+					"Id": 1008,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 40.479999957606196,
+						"lon": -88.95000016316772
+					}
+				},
+				{
+					"Id": 1063,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 44.62799998931587,
+						"lon": -91.96000009775162
+					}
+				},
+				{
+					"Id": 1064,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 43.12999991700053,
+						"lon": -88.33600010722876
+					}
+				},
+				{
+					"Id": 1211,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 39.93099996820092,
+						"lon": -91.38000005856156
+					}
+				},
+				{
+					"Id": 1281,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 42.32799997553229,
+						"lon": -89.14800016209483
+					}
+				},
+				{
+					"Id": 1346,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 41.77899998612702,
+						"lon": -87.85500006750226
+					}
+				},
+				{
+					"Id": 1862,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 42.59799993596971,
+						"lon": -89.6390001475811
+					}
+				},
+				{
+					"Id": 1909,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 41.961999982595444,
+						"lon": -87.94500008225441
+					}
+				},
+				{
+					"Id": 16167,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 42.65999995172024,
+						"lon": 23.31499993801117
+					}
+				},
+				{
+					"Id": 16171,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					}
+				},
+				{
+					"Id": 16192,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 38.94999995827675,
+						"lon": -77.34000010415912
+					}
+				},
+				{
+					"Id": 16193,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					}
+				},
+				{
+					"Id": 16244,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 41.88477692194283,
+						"lon": -87.63061115518212
+					}
+				},
+				{
+					"Id": 16380,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 23.049692921340466,
+						"lon": 72.66740893945098
+					}
+				},
+				{
+					"Id": 16396,
+					"Utilization": "Low Sales & High Door Utilization",
+					"LocationGeo": {
+						"lat": 38.94754498265684,
+						"lon": -77.34720502048731
+					}
+				},
+				{
+					"Id": 228628,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 16.07190295122564,
+						"lon": 108.21722785010934
+					}
+				},
+				{
+					"Id": 228630,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 16.070802994072437,
+						"lon": 108.21612797677517
+					}
+				},
+				{
+					"Id": 228641,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					}
+				},
+				{
+					"Id": 228642,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					}
+				},
+				{
+					"Id": 228643,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					}
+				},
+				{
+					"Id": 228644,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					}
+				},
+				{
+					"Id": 228645,
+					"Utilization": "Low Sales & Low Door Utilization",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					}
+				},
+				{
+					"Id": 228651,
+					"Utilization": "Low Sales & High Door Utilization",
+					"LocationGeo": {
+						"lat": 39.00934391655028,
+						"lon": -77.49330209568143
+					}
+				},
+				{
+					"Id": 228626,
+					"Utilization": "Non Smart Low Sales",
+					"LocationGeo": {
+						"lat": 16.07680292800069,
+						"lon": 108.22212791070342
+					}
+				},
+				{
+					"Id": 228627,
+					"Utilization": "Non Smart Low Sales",
+					"LocationGeo": {
+						"lat": 16.072002947330475,
+						"lon": 108.2173279300332
+					}
+				},
+				{
+					"Id": 228629,
+					"Utilization": "Non Smart Low Sales",
+					"LocationGeo": {
+						"lat": 16.071702959015965,
+						"lon": 108.21702785789967
+					}
+				},
+				{
+					"Id": 228631,
+					"Utilization": "Non Smart Low Sales",
+					"LocationGeo": {
+						"lat": 16.070902990177274,
+						"lon": 108.21622788906097
+					}
+				},
+				{
+					"Id": 228632,
+					"Utilization": "Non Smart Low Sales",
+					"LocationGeo": {
+						"lat": 16.076702931895852,
+						"lon": 108.22202799841762
+					}
+				},
+				{
+					"Id": 228633,
+					"Utilization": "Non Smart Low Sales",
+					"LocationGeo": {
+						"lat": 16.071802955120802,
+						"lon": 108.21712793782353
+					}
+				},
+				{
+					"Id": 228634,
+					"Utilization": "Non Smart Low Sales",
+					"LocationGeo": {
+						"lat": 16.07160296291113,
+						"lon": 108.21692794561386
+					}
+				},
+				{
+					"Id": 228635,
+					"Utilization": "Non Smart Low Sales",
+					"LocationGeo": {
+						"lat": 16.0707029979676,
+						"lon": 108.2160278968513
+					}
+				},
+				{
+					"Id": 228636,
+					"Utilization": "Non Smart Low Sales",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					}
+				}
+			],
+			"locationDataOld": [
+				{
+					"Id": "233306",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "БИСТРО 55 ООД",
+					"CountryId": 26,
+					"StateId": 0,
+					"City": "Sofia",
+					"Street": "БУЛ ВИТОША 55",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1,
+					"CreatedOn": "2016-07-05T23:59:26.43",
+					"ModifiedByUserId": 1,
+					"ModifiedOn": "2016-07-05T23:59:26.43",
+					"LocationCode": "1304020281",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 0,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 42.691,
+						"lon": 23.3198
+					},
+					"IsSmart": false,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Bulgaria",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 7,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233356",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 1,
+					"Name": "Coca-Cola HBC Schweiz AG",
+					"CountryId": 166,
+					"StateId": 0,
+					"City": "Brüttisellen",
+					"Street": "Stationsstrasse 33",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "8306",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2016-08-08T15:44:55.287",
+					"ModifiedByUserId": 1306,
+					"ModifiedOn": "2016-08-12T15:44:18.583",
+					"LocationCode": "CCHSwissOFC",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 39,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 1310,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 47.419965,
+						"lon": 8.624472
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "cchswissbd@insigmainc.com",
+					"State": "",
+					"Country": "Switzerland",
+					"MarketName": "",
+					"LocationType": "Key",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 2,
+					"Alert_Highest_AlertId": 420134,
+					"Alert_Highest_AlertTypeId": 10,
+					"Alert_Highest_AlertAt": "2016-08-19T11:10:00",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 2,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ 10, 16 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 102,
+					"Door_30dayCount": 881,
+					"Door_Latest": "2016-09-13T21:04:52",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5854",
+							"PlanogramId": 1101,
+							"LatestProcessedPurityId": 76280,
+							"PlanogramDetails": [
+								{
+									"FacingDetails": "[{\"products\":[{\"id\":2285},{\"id\":2285},{\"id\":2287},{\"id\":2287},{\"id\":2286},{\"id\":2286},{\"id\":2286}]},{\"products\":[{\"id\":2294},{\"id\":2294},{\"id\":2295},{\"id\":2295},{\"id\":2297},{\"id\":2296},{\"id\":2297}]},{\"products\":[{\"id\":2301},{\"id\":2298},{\"id\":2299},{\"id\":2300},{\"id\":2326},{\"id\":2321},{\"id\":2308}]},{\"products\":[{\"id\":2330},{\"id\":2330},{\"id\":2330},{\"id\":2318},{\"id\":2319},{\"id\":2328},{\"id\":2320}]},{\"products\":[{\"id\":2337},{\"id\":2336},{\"id\":2338},{\"id\":2305},{\"id\":2307},{\"id\":2306},{\"id\":2304}]},{\"products\":[{\"id\":2331},{\"id\":2331},{\"id\":2331},{\"id\":2329},{\"id\":2329},{\"id\":2340},{\"id\":2340}]}]",
+									"Facings": 42,
+									"Shelves": 6
+								}
+							],
+							"PurityDetails": [
+								{
+									"PurityStatus": "2285,18,2287,18,18,2288,2288,2294,2294,2295,2297,2297,2297,2296,2301,2298,2299,2300,2326,2321,2308,2330,2330,2317,2318,2319,2328,2320,2337,2336,2338,2305,2307,2306,2304,18,2331,2331,2329,2329,2340,2340",
+									"ForeignProduct": 0,
+									"TotalStock": 38,
+									"EmptyFacings": 4,
+									"PurityIssue": 255,
+									"PlanogramCompliance": 76,
+									"PurityPercentage": 100,
+									"VerifiedOn": "2016-09-19T12:05:10.903"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 4,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 1
+				},
+				{
+					"Id": "233357",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "AVALON KINDER GMBH",
+					"CountryId": 166,
+					"StateId": 0,
+					"City": "VOLKETSWIL",
+					"Street": "IM ZENTRUM",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "8604",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2016-08-11T15:02:05.803",
+					"ModifiedByUserId": 156,
+					"ModifiedOn": "2016-08-11T15:26:03.647",
+					"LocationCode": "2700837248",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 39,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 47.3876,
+						"lon": 8.6797
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Switzerland",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 2,
+					"Alert_Highest_AlertId": 413462,
+					"Alert_Highest_AlertTypeId": 19,
+					"Alert_Highest_AlertAt": "2016-08-12T10:25:03.763",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 2,
+					"Alert_Open_All_Type": [ 19, 19 ],
+					"AssetCount": 2,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 19,
+					"Door_30dayCount": 250,
+					"Door_Latest": "2016-09-13T18:45:25",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5857",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 75833,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [
+								{
+									"PurityStatus": "2322,2322,2322,2322,2322,100,100,100,2324,18,2324,2324,2324,2324,2324,100,2317,2317,2317,18,2318,2319,2319,2319,2327,18,2327,2327,2327,2328,2328,2328,2329,2329,2329,2329,2329,2329,2329,2329",
+									"ForeignProduct": 0,
+									"TotalStock": 37,
+									"EmptyFacings": 3,
+									"PurityIssue": 255,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 100,
+									"VerifiedOn": "2016-09-18T10:24:54.393"
+								}
+							]
+						},
+						{
+							"AssetId": "5855",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 75819,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [
+								{
+									"PurityStatus": "100,100,2310,18,18,18,18,18,2314,2314,2314,18,18,18,18,18,2312,2312,2312,18,18,18,18,18,2308,2308,2308,2308,2308,2308,2308,2308,2340,2340,2340,2340,2340,2340,2340,2340",
+									"ForeignProduct": 0,
+									"TotalStock": 25,
+									"EmptyFacings": 15,
+									"PurityIssue": 255,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 100,
+									"VerifiedOn": "2016-09-19T10:21:31.163"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233359",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "ONE POINT TAKE AWAY",
+					"CountryId": 166,
+					"StateId": 0,
+					"City": "BRÜTTISELLEN",
+					"Street": "RIEDMÜHLESTRASSE 2",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "8306",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2016-08-11T15:04:45.043",
+					"ModifiedByUserId": 1306,
+					"ModifiedOn": "2016-08-15T13:59:41.513",
+					"LocationCode": "2700832315",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 39,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 47.423387,
+						"lon": 8.629367
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Switzerland",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 5,
+					"Alert_Highest_AlertId": 413470,
+					"Alert_Highest_AlertTypeId": 19,
+					"Alert_Highest_AlertAt": "2016-08-12T11:14:07.09",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 2,
+					"Alert_Open_High": 3,
+					"Alert_Open_All_Type": [ 19, 18, 18, 16, 16 ],
+					"AssetCount": 2,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 156,
+					"Door_30dayCount": 1965,
+					"Door_Latest": "2016-09-13T22:54:16",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5858",
+							"PlanogramId": 1103,
+							"LatestProcessedPurityId": 76249,
+							"PlanogramDetails": [
+								{
+									"FacingDetails": "[{\"products\":[{\"id\":2285},{\"id\":2285},{\"id\":2286},{\"id\":2289},{\"id\":2289},{\"id\":2292},{\"id\":2292}]},{\"products\":[{\"id\":2310},{\"id\":2310},{\"id\":2311},{\"id\":2317},{\"id\":2317},{\"id\":2322},{\"id\":2322}]},{\"products\":[{\"id\":2310},{\"id\":2310},{\"id\":2314},{\"id\":2327},{\"id\":2327},{\"id\":2324},{\"id\":2324}]},{\"products\":[{\"id\":2310},{\"id\":2310},{\"id\":2312},{\"id\":2329},{\"id\":2329},{\"id\":2305},{\"id\":2306}]},{\"products\":[{\"id\":2331},{\"id\":2331},{\"id\":2331},{\"id\":2329},{\"id\":2329},{\"id\":2308},{\"id\":2308}]}]",
+									"Facings": 35,
+									"Shelves": 5
+								}
+							],
+							"PurityDetails": [
+								{
+									"PurityStatus": "2310,2310,2310,2310,2314,2312,2312,107,2327,2317,2317,2318,2318,2316,2320,107,2322,2322,2324,2324,2321,2323,2325,107,2329,2329,2329,2377,2377,2331,2331,107,103,103,103,2379,2379,2379,103,103",
+									"ForeignProduct": 10,
+									"TotalStock": 36,
+									"EmptyFacings": 0,
+									"PurityIssue": 1,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 72,
+									"VerifiedOn": "2016-09-19T10:48:47.45"
+								}
+							]
+						},
+						{
+							"AssetId": "5859",
+							"PlanogramId": 1103,
+							"LatestProcessedPurityId": 76277,
+							"PlanogramDetails": [
+								{
+									"FacingDetails": "[{\"products\":[{\"id\":2285},{\"id\":2285},{\"id\":2286},{\"id\":2289},{\"id\":2289},{\"id\":2292},{\"id\":2292}]},{\"products\":[{\"id\":2310},{\"id\":2310},{\"id\":2311},{\"id\":2317},{\"id\":2317},{\"id\":2322},{\"id\":2322}]},{\"products\":[{\"id\":2310},{\"id\":2310},{\"id\":2314},{\"id\":2327},{\"id\":2327},{\"id\":2324},{\"id\":2324}]},{\"products\":[{\"id\":2310},{\"id\":2310},{\"id\":2312},{\"id\":2329},{\"id\":2329},{\"id\":2305},{\"id\":2306}]},{\"products\":[{\"id\":2331},{\"id\":2331},{\"id\":2331},{\"id\":2329},{\"id\":2329},{\"id\":2308},{\"id\":2308}]}]",
+									"Facings": 35,
+									"Shelves": 5
+								}
+							],
+							"PurityDetails": [
+								{
+									"PurityStatus": "103,2286,2288,2289,2291,2292,2292,107,2286,2286,2285,103,103,2366,2368,107,2339,2427,2439,2429,2366,2414,2308,107,2367,2367,2365,103,103,103,103,107,18,18,18,2444,2445,2446,2419,2419",
+									"ForeignProduct": 22,
+									"TotalStock": 33,
+									"EmptyFacings": 3,
+									"PurityIssue": 1,
+									"PlanogramCompliance": 9,
+									"PurityPercentage": 33,
+									"VerifiedOn": "2016-09-19T10:27:15.83"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 3,
+					"TotalImpureCoolers": 2,
+					"TotalSkuOOS": 3
+				},
+				{
+					"Id": "233353",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "SAWASDEE THAI TAKE AWAY",
+					"CountryId": 166,
+					"StateId": 0,
+					"City": "USTER",
+					"Street": "BAHNHOFSTRASSE 10",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "8610",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2016-08-05T10:52:06.37",
+					"ModifiedByUserId": 1306,
+					"ModifiedOn": "2016-08-15T13:54:20.247",
+					"LocationCode": "2700832367",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 39,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 47.349084,
+						"lon": 8.718775
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Switzerland",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 3,
+					"Alert_Highest_AlertId": 418828,
+					"Alert_Highest_AlertTypeId": 18,
+					"Alert_Highest_AlertAt": "2016-08-17T11:14:16.8",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 2,
+					"Alert_Open_High": 1,
+					"Alert_Open_All_Type": [ 18, 16, 23 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 18,
+					"Door_30dayCount": 178,
+					"Door_Latest": "2016-09-13T12:51:05",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5851",
+							"PlanogramId": 1100,
+							"LatestProcessedPurityId": 76230,
+							"PlanogramDetails": [
+								{
+									"FacingDetails": "[{\"products\":[{\"id\":2310},{\"id\":2310},{\"id\":2310},{\"id\":2310},{\"id\":2314},{\"id\":2314},{\"id\":2314}]},{\"products\":[{\"id\":2322},{\"id\":2322},{\"id\":2324},{\"id\":2324},{\"id\":2317},{\"id\":2327},{\"id\":2327}]},{\"products\":[{\"id\":2340},{\"id\":2340},{\"id\":2340},{\"id\":2329},{\"id\":2329},{\"id\":2329},{\"id\":2329}]},{\"products\":[{\"id\":2340},{\"id\":2340},{\"id\":2340},{\"id\":2308},{\"id\":2308},{\"id\":2308},{\"id\":2308}]},{\"products\":[{\"id\":2331},{\"id\":2331},{\"id\":2331},{\"id\":2331},{\"id\":2331},{\"id\":2331},{\"id\":2331}]}]",
+									"Facings": 35,
+									"Shelves": 5
+								}
+							],
+							"PurityDetails": [
+								{
+									"PurityStatus": "2310,2310,2310,2314,2314,2314,2314,107,2322,2322,2324,18,2317,2317,2327,107,2340,2340,2340,2340,18,2329,2329,107,2427,2429,103,103,2308,2308,2308,107,104,104,104,104,401,401,401,401",
+									"ForeignProduct": 12,
+									"TotalStock": 34,
+									"EmptyFacings": 2,
+									"PurityIssue": 1,
+									"PlanogramCompliance": 54,
+									"PurityPercentage": 65,
+									"VerifiedOn": "2016-09-19T10:38:29"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 2,
+					"TotalImpureCoolers": 1,
+					"TotalSkuOOS": 1
+				},
+				{
+					"Id": "233346",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "BAIRES",
+					"CountryId": 0,
+					"StateId": 0,
+					"City": "Milano",
+					"Street": "V.le Monza",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1302,
+					"CreatedOn": "2016-08-04T11:58:57.38",
+					"ModifiedByUserId": 1302,
+					"ModifiedOn": "2016-08-04T11:58:57.38",
+					"LocationCode": "2902513010",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 38,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					},
+					"IsSmart": false,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233331",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "BAR LINEA ROSSA",
+					"CountryId": 57,
+					"StateId": 0,
+					"City": "Milano",
+					"Street": "V.le Monza 158",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1302,
+					"CreatedOn": "2016-08-02T09:00:24.427",
+					"ModifiedByUserId": 1302,
+					"ModifiedOn": "2016-09-02T09:35:29.633",
+					"LocationCode": "2901055801",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 38,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Italy",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 31,
+					"Door_30dayCount": 731,
+					"Door_Latest": "2016-09-12T15:57:44",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5829",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 0,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [
+								{
+									"PurityStatus": "18,18,18,104,104,18,104,100,100,103,103,103,103,103,103,104,100,100,103,103,103,103,103,103,103,103,103,18,18,18,105,105,105,105,105,105",
+									"ForeignProduct": 25,
+									"TotalStock": 29,
+									"EmptyFacings": 7,
+									"PurityIssue": 1,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 14,
+									"VerifiedOn": "2016-09-14T12:28:53"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233336",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "Bar Venere",
+					"CountryId": 57,
+					"StateId": 0,
+					"City": "Milano",
+					"Street": "Viale Monza 273",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1302,
+					"CreatedOn": "2016-08-02T09:03:43.767",
+					"ModifiedByUserId": 1302,
+					"ModifiedOn": "2016-09-02T09:36:03.6",
+					"LocationCode": "2902515594",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 38,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					},
+					"IsSmart": false,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Italy",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233334",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "Bar Francesco",
+					"CountryId": 0,
+					"StateId": 0,
+					"City": "Milano",
+					"Street": "Via Val di Fiamme 36",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1302,
+					"CreatedOn": "2016-08-02T09:02:30.18",
+					"ModifiedByUserId": 1302,
+					"ModifiedOn": "2016-08-02T09:02:30.18",
+					"LocationCode": "2906165747",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 38,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					},
+					"IsSmart": false,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233340",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "Bar Huang Sanbao",
+					"CountryId": 0,
+					"StateId": 0,
+					"City": "Milano",
+					"Street": "Via Erodotto 2",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1302,
+					"CreatedOn": "2016-08-02T12:43:00.603",
+					"ModifiedByUserId": 1302,
+					"ModifiedOn": "2016-08-02T12:43:00.603",
+					"LocationCode": "2906144423",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 38,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					},
+					"IsSmart": false,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233352",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "RESTAURANT-CAFE SANDWICH",
+					"CountryId": 166,
+					"StateId": 0,
+					"City": "VOLKETSWIL",
+					"Street": "GRABENWISSTRASSE 5",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "8604",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2016-08-05T10:50:12.2",
+					"ModifiedByUserId": 1306,
+					"ModifiedOn": "2016-08-12T15:25:57.613",
+					"LocationCode": "2700820629",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 39,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 47.382986,
+						"lon": 8.669429
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Switzerland",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 2,
+					"Alert_Highest_AlertId": 413750,
+					"Alert_Highest_AlertTypeId": 18,
+					"Alert_Highest_AlertAt": "2016-08-13T15:07:11.55",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 1,
+					"Alert_Open_High": 1,
+					"Alert_Open_All_Type": [ 18, 16 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 26,
+					"Door_30dayCount": 248,
+					"Door_Latest": "2016-09-13T19:56:01",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5850",
+							"PlanogramId": 1103,
+							"LatestProcessedPurityId": 76272,
+							"PlanogramDetails": [
+								{
+									"FacingDetails": "[{\"products\":[{\"id\":2285},{\"id\":2285},{\"id\":2286},{\"id\":2289},{\"id\":2289},{\"id\":2292},{\"id\":2292}]},{\"products\":[{\"id\":2310},{\"id\":2310},{\"id\":2311},{\"id\":2317},{\"id\":2317},{\"id\":2322},{\"id\":2322}]},{\"products\":[{\"id\":2310},{\"id\":2310},{\"id\":2314},{\"id\":2327},{\"id\":2327},{\"id\":2324},{\"id\":2324}]},{\"products\":[{\"id\":2310},{\"id\":2310},{\"id\":2312},{\"id\":2329},{\"id\":2329},{\"id\":2305},{\"id\":2306}]},{\"products\":[{\"id\":2331},{\"id\":2331},{\"id\":2331},{\"id\":2329},{\"id\":2329},{\"id\":2308},{\"id\":2308}]}]",
+									"Facings": 35,
+									"Shelves": 5
+								}
+							],
+							"PurityDetails": [
+								{
+									"PurityStatus": "2310,18,2320,2314,2311,2311,100,2308,105,2327,2327,2310,100,100,105,2324,2324,2321,2322,2326,100,2427,2429,2439,2333,18,100,100,2419,2419,2419,2419,18,2379,102",
+									"ForeignProduct": 10,
+									"TotalStock": 32,
+									"EmptyFacings": 3,
+									"PurityIssue": 1,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 69,
+									"VerifiedOn": "2016-09-19T12:20:10.69"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 3,
+					"TotalImpureCoolers": 1,
+					"TotalSkuOOS": 10
+				},
+				{
+					"Id": "233339",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "CCHBC I",
+					"CountryId": 57,
+					"StateId": 0,
+					"City": "Sesto San Giovanni",
+					"Street": "P.za Montanelli",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1302,
+					"CreatedOn": "2016-08-02T09:11:23.123",
+					"ModifiedByUserId": 1302,
+					"ModifiedOn": "2016-09-02T09:36:27.427",
+					"LocationCode": "2900051000",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 38,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Italy",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 2,
+					"Alert_Highest_AlertId": 428714,
+					"Alert_Highest_AlertTypeId": 19,
+					"Alert_Highest_AlertAt": "2016-08-25T05:27:55.87",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 2,
+					"Alert_Open_All_Type": [ 19, 18 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 1,
+					"Door_Latest": "2016-09-08T08:45:02",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5822",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 66134,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [
+								{
+									"PurityStatus": "18,18,18,104,104,209,18,104,210,214,214,214,401,401,215,215,216,216,214,214,214,401,401,215,215,216,216,103,103,103,865,864,104,104,103,103,873,873,873,873,873,873,873,873,872",
+									"ForeignProduct": 14,
+									"TotalStock": 41,
+									"EmptyFacings": 4,
+									"PurityIssue": 1,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 66,
+									"VerifiedOn": "2016-09-14T12:18:21"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233272",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 4,
+					"Name": "Coca-Cola HBC",
+					"CountryId": 26,
+					"StateId": 0,
+					"City": "Sofia",
+					"Street": "8 Racho Petkov Kazandjiata Str",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "9766",
+					"IsKeyLocation": false,
+					"ClassificationId": 1,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 204,
+					"CreatedOn": "2016-05-18T20:45:10.007",
+					"ModifiedByUserId": 149,
+					"ModifiedOn": "2016-06-04T22:09:06.18",
+					"LocationCode": "CCH_HBC",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 49,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 56,
+					"PrimaryRepId": 249,
+					"PrimaryPhone": "0700 17 117",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 42.62041,
+						"lon": 23.369325
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "cchsofiabd@insigmainc.com",
+					"State": "",
+					"Country": "Bulgaria",
+					"MarketName": "Sofia",
+					"LocationType": "Restaurant",
+					"IsSurveyed": false,
+					"Classification": "Diamond",
+					"Alert_Open": 5,
+					"Alert_Highest_AlertId": 303000,
+					"Alert_Highest_AlertTypeId": 10,
+					"Alert_Highest_AlertAt": "2016-05-20T05:20:01",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 5,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ 10, 10, 9, 9, 9 ],
+					"AssetCount": 4,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "4679",
+							"PlanogramId": 46,
+							"LatestProcessedPurityId": 33571,
+							"PlanogramDetails": [
+								{
+									"FacingDetails": "[{\"products\":[{\"id\":214},{\"id\":214},{\"id\":214},{\"id\":214},{\"id\":214},{\"id\":214},{\"id\":214},{\"id\":214},{\"id\":214}]},{\"products\":[{\"id\":214},{\"id\":214},{\"id\":214},{\"id\":214},{\"id\":214},{\"id\":214},{\"id\":214},{\"id\":214},{\"id\":214}]},{\"products\":[{\"id\":215},{\"id\":215},{\"id\":215},{\"id\":215},{\"id\":215},{\"id\":215},{\"id\":215},{\"id\":215},{\"id\":215}]},{\"products\":[{\"id\":216},{\"id\":216},{\"id\":216},{\"id\":216},{\"id\":217},{\"id\":217},{\"id\":217},{\"id\":217},{\"id\":217}]},{\"products\":[{\"id\":874},{\"id\":874},{\"id\":874},{\"id\":874},{\"id\":213},{\"id\":213},{\"id\":213},{\"id\":213},{\"id\":213}]}]",
+									"Facings": 45,
+									"Shelves": 5
+								}
+							],
+							"PurityDetails": [
+								{
+									"PurityStatus": "2599,2599,100,100,18,2584,2612,18,107,100,100,100,100,2497,2497,2508,2595,107,2569,2569,2610,2610,2624,2624,2511,2590,107,100,100,18,18,18,18,107,107,107,54,18,54,18,54,54,107,107,107",
+									"ForeignProduct": 4,
+									"TotalStock": 28,
+									"EmptyFacings": 8,
+									"PurityIssue": 1,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 86,
+									"VerifiedOn": "2016-09-17T15:37:09.873"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 8,
+					"TotalImpureCoolers": 1,
+					"TotalSkuOOS": 6
+				},
+				{
+					"Id": "233342",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "COFFEE TIME",
+					"CountryId": 0,
+					"StateId": 0,
+					"City": "Milano",
+					"Street": "Viale Marelli",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1302,
+					"CreatedOn": "2016-08-03T15:38:34.753",
+					"ModifiedByUserId": 1302,
+					"ModifiedOn": "2016-08-03T15:38:34.753",
+					"LocationCode": "2906098019",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 38,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					},
+					"IsSmart": false,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233349",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "CYBERWORLD MULTIMEDIA",
+					"CountryId": 166,
+					"StateId": 0,
+					"City": "USTER",
+					"Street": "ZÜRICHSTRASSE 21",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "8610",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2016-08-05T10:46:27.04",
+					"ModifiedByUserId": 1306,
+					"ModifiedOn": "2016-08-15T13:56:05.013",
+					"LocationCode": "2700717582",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 39,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 47.350481,
+						"lon": 8.710568
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Switzerland",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 2,
+					"Alert_Highest_AlertId": 413739,
+					"Alert_Highest_AlertTypeId": 18,
+					"Alert_Highest_AlertAt": "2016-08-13T10:19:08.267",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 1,
+					"Alert_Open_High": 1,
+					"Alert_Open_All_Type": [ 18, 16 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 4,
+					"Door_30dayCount": 363,
+					"Door_Latest": "2016-09-13T20:07:05",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5846",
+							"PlanogramId": 1103,
+							"LatestProcessedPurityId": 76278,
+							"PlanogramDetails": [
+								{
+									"FacingDetails": "[{\"products\":[{\"id\":2285},{\"id\":2285},{\"id\":2286},{\"id\":2289},{\"id\":2289},{\"id\":2292},{\"id\":2292}]},{\"products\":[{\"id\":2310},{\"id\":2310},{\"id\":2311},{\"id\":2317},{\"id\":2317},{\"id\":2322},{\"id\":2322}]},{\"products\":[{\"id\":2310},{\"id\":2310},{\"id\":2314},{\"id\":2327},{\"id\":2327},{\"id\":2324},{\"id\":2324}]},{\"products\":[{\"id\":2310},{\"id\":2310},{\"id\":2312},{\"id\":2329},{\"id\":2329},{\"id\":2305},{\"id\":2306}]},{\"products\":[{\"id\":2331},{\"id\":2331},{\"id\":2331},{\"id\":2329},{\"id\":2329},{\"id\":2308},{\"id\":2308}]}]",
+									"Facings": 35,
+									"Shelves": 5
+								}
+							],
+							"PurityDetails": [
+								{
+									"PurityStatus": "2310,2310,2314,2286,2285,2285,2283,2288,2322,2324,2324,2325,2325,2317,102,102,103,103,103,2329,2331,2419,2305,2305,2444,2444,401,401,1,1,1,1,1,2379,107",
+									"ForeignProduct": 9,
+									"TotalStock": 34,
+									"EmptyFacings": 0,
+									"PurityIssue": 1,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 74,
+									"VerifiedOn": "2016-09-17T10:41:58.417"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 1,
+					"TotalSkuOOS": 7
+				},
+				{
+					"Id": "233292",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 2,
+					"Name": "Demo Virginia",
+					"CountryId": 19,
+					"StateId": 0,
+					"City": "Ashburn",
+					"Street": "22994 Lavender Valley Ct",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 1,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 149,
+					"CreatedOn": "2016-06-20T01:00:23.783",
+					"ModifiedByUserId": 131,
+					"ModifiedOn": "2016-06-20T09:36:00.397",
+					"LocationCode": "CCH_VA",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 15,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 65,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 38.98121,
+						"lon": -77.58297
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "United States",
+					"MarketName": "Virginia",
+					"LocationType": "Regular",
+					"IsSurveyed": false,
+					"Classification": "Diamond",
+					"Alert_Open": 3,
+					"Alert_Highest_AlertId": 358727,
+					"Alert_Highest_AlertTypeId": 10,
+					"Alert_Highest_AlertAt": "2016-06-19T22:50:00",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 3,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ 10, 9, 10 ],
+					"AssetCount": 3,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233276",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 1,
+					"Name": "Demo_Sofia",
+					"CountryId": 26,
+					"StateId": 0,
+					"City": "Sofia",
+					"Street": "8 Racho Petkov Kazandjiata Str",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "9766",
+					"IsKeyLocation": false,
+					"ClassificationId": 2,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 248,
+					"CreatedOn": "2016-05-19T22:13:53.177",
+					"ModifiedByUserId": 1297,
+					"ModifiedOn": "2016-08-09T14:26:36.36",
+					"LocationCode": "CCH_Demo",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 49,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 56,
+					"PrimaryRepId": 249,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 42.62041,
+						"lon": 23.369325
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "cchsofiabd@insigmainc.com",
+					"State": "",
+					"Country": "Bulgaria",
+					"MarketName": "Sofia",
+					"LocationType": "Key",
+					"IsSurveyed": true,
+					"Classification": "Gold",
+					"Alert_Open": 7,
+					"Alert_Highest_AlertId": 334250,
+					"Alert_Highest_AlertTypeId": 9,
+					"Alert_Highest_AlertAt": "2016-06-06T07:28:08.883",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 7,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ 9, 10, 10, 9, 9, 10, 9 ],
+					"AssetCount": 2,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "16297",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 1,
+					"Name": "LA VOGLIA DI",
+					"CountryId": 57,
+					"StateId": 0,
+					"City": "BERGAMO",
+					"Street": "VIA GUGLIELMO LOCHIS",
+					"Street2": "#25",
+					"Street3": "BG",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 1,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2015-10-13T16:31:40.643",
+					"ModifiedByUserId": 1255,
+					"ModifiedOn": "2016-06-06T18:16:05.81",
+					"LocationCode": "2906119699",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 40,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 55,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 45.695095,
+						"lon": 9.633763
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Italy",
+					"MarketName": "BERGAMO",
+					"LocationType": "Key",
+					"IsSurveyed": false,
+					"Classification": "Diamond",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233360",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "DIECI GELATI",
+					"CountryId": 166,
+					"StateId": 0,
+					"City": "USTER",
+					"Street": "GERICHTSSTRASSE 5",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "8610",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2016-08-11T15:29:25.59",
+					"ModifiedByUserId": 1306,
+					"ModifiedOn": "2016-08-15T13:43:45.813",
+					"LocationCode": "2700820762",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 39,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 47.349953,
+						"lon": 8.716588
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Switzerland",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 2,
+					"Alert_Highest_AlertId": 431729,
+					"Alert_Highest_AlertTypeId": 16,
+					"Alert_Highest_AlertAt": "2016-08-31T17:08:49.24",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 2,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ 16, 23 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 4,
+					"Door_30dayCount": 59,
+					"Door_Latest": "2016-09-13T19:43:50",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5861",
+							"PlanogramId": 1105,
+							"LatestProcessedPurityId": 73946,
+							"PlanogramDetails": [
+								{
+									"FacingDetails": "[{\"products\":[{\"id\":2310},{\"id\":2310},{\"id\":2310},{\"id\":2322},{\"id\":2322}]},{\"products\":[{\"id\":2311},{\"id\":2311},{\"id\":2311},{\"id\":2324},{\"id\":2324}]},{\"products\":[{\"id\":2314},{\"id\":2314},{\"id\":2312},{\"id\":2329},{\"id\":2329}]},{\"products\":[{\"id\":2327},{\"id\":2327},{\"id\":2327},{\"id\":2331},{\"id\":2331}]}]",
+									"Facings": 20,
+									"Shelves": 4
+								}
+							],
+							"PurityDetails": [
+								{
+									"PurityStatus": "2322,2322,18,100,100,107,107,107,107,2310,2310,2314,2314,2312,107,107,107,107,2308,2308,2327,2317,2316,107,107,107,107,2329,2329,2331,2331,2307,107,107,107,107",
+									"ForeignProduct": 0,
+									"TotalStock": 19,
+									"EmptyFacings": 1,
+									"PurityIssue": 255,
+									"PlanogramCompliance": 5,
+									"PurityPercentage": 100,
+									"VerifiedOn": "2016-09-17T15:57:30.923"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 1,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 2
+				},
+				{
+					"Id": "233350",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "ECKEN-SHOP",
+					"CountryId": 166,
+					"StateId": 0,
+					"City": "USTER",
+					"Street": "ZÜRICHSTRASSE 14",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "8610",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2016-08-05T10:48:20.513",
+					"ModifiedByUserId": 1306,
+					"ModifiedOn": "2016-08-15T13:53:05.927",
+					"LocationCode": "2700761688",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 39,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 47.3498,
+						"lon": 8.716553
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Switzerland",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 2,
+					"Alert_Highest_AlertId": 412980,
+					"Alert_Highest_AlertTypeId": 19,
+					"Alert_Highest_AlertAt": "2016-08-11T12:55:46.183",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 2,
+					"Alert_Open_All_Type": [ 19, 18 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 19,
+					"Door_30dayCount": 279,
+					"Door_Latest": "2016-09-13T18:12:03",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5847",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 76288,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [
+								{
+									"PurityStatus": "2285,2285,2286,2291,2292,2289,102,2310,2310,2314,2312,2322,2324,100,2329,2329,2340,2331,2377,102,102,2427,2439,100,2337,18,100,100",
+									"ForeignProduct": 3,
+									"TotalStock": 27,
+									"EmptyFacings": 1,
+									"PurityIssue": 1,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 89,
+									"VerifiedOn": "2016-09-19T11:59:12.747"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233333",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "Statie Fabio",
+					"CountryId": 0,
+					"StateId": 0,
+					"City": "Milano",
+					"Street": "Via P. Mariani 2",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1302,
+					"CreatedOn": "2016-08-02T09:01:46.717",
+					"ModifiedByUserId": 1302,
+					"ModifiedOn": "2016-08-02T09:01:46.717",
+					"LocationCode": "2920205476",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 38,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 2,
+					"Alert_Highest_AlertId": 384590,
+					"Alert_Highest_AlertTypeId": 19,
+					"Alert_Highest_AlertAt": "2016-08-03T15:25:39.927",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 1,
+					"Alert_Open_High": 1,
+					"Alert_Open_All_Type": [ 19, 10 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5825",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 55933,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [
+								{
+									"PurityStatus": "105,105,105,105,105,105,105,105,105,105,105,214,214,401,215,401,216,217,873,873,873,104,872,872,215,218,401,873,873,873,873,872,872,872,104,104,401,401,401,401,401,401,401,401,401",
+									"ForeignProduct": 26,
+									"TotalStock": 45,
+									"EmptyFacings": 0,
+									"PurityIssue": 1,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 42,
+									"VerifiedOn": "2016-09-15T08:51:39.487"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233332",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "Fasano Raffaele",
+					"CountryId": 0,
+					"StateId": 0,
+					"City": "Milano",
+					"Street": "Piazza Martesana 4",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1302,
+					"CreatedOn": "2016-08-02T09:01:03.827",
+					"ModifiedByUserId": 1302,
+					"ModifiedOn": "2016-08-02T09:01:03.827",
+					"LocationCode": "2920286554",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 38,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					},
+					"IsSmart": false,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 0,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233341",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "PAN per FOCACCIA HQ",
+					"CountryId": 57,
+					"StateId": 0,
+					"City": "Sesto San Giovanni",
+					"Street": "P.za I. Montanelli",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1302,
+					"CreatedOn": "2016-08-02T13:02:01.103",
+					"ModifiedByUserId": 1302,
+					"ModifiedOn": "2016-09-02T09:37:02.173",
+					"LocationCode": "2920260033",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 38,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Italy",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 1,
+					"Alert_Highest_AlertId": 385972,
+					"Alert_Highest_AlertTypeId": 19,
+					"Alert_Highest_AlertAt": "2016-08-09T13:40:33.413",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 1,
+					"Alert_Open_All_Type": [ 19 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 32,
+					"Door_30dayCount": 242,
+					"Door_Latest": "2016-09-12T17:16:58",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5833",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 75910,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [
+								{
+									"PurityStatus": "104,104,104,104,104,104,104,210,104,208,208,208,401,401,401,216,216,217,215,18,215,215,401,401,401,216,216,864,864,865,865,865,103,103,103,103,873,873,873,100,18,18,18,18,18",
+									"ForeignProduct": 18,
+									"TotalStock": 39,
+									"EmptyFacings": 6,
+									"PurityIssue": 1,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 54,
+									"VerifiedOn": "2016-09-14T12:42:49.133"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233335",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "Pan per Focaccia",
+					"CountryId": 57,
+					"StateId": 0,
+					"City": "Milano",
+					"Street": "Viale Monza 267",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1302,
+					"CreatedOn": "2016-08-02T09:03:06.183",
+					"ModifiedByUserId": 1302,
+					"ModifiedOn": "2016-09-02T09:35:53.227",
+					"LocationCode": "2920276413",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 38,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Italy",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 2,
+					"Alert_Highest_AlertId": 451750,
+					"Alert_Highest_AlertTypeId": 19,
+					"Alert_Highest_AlertAt": "2016-09-12T16:20:00.683",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 2,
+					"Alert_Open_All_Type": [ 19, 18 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 117,
+					"Door_30dayCount": 3012,
+					"Door_Latest": "2016-09-12T16:26:50",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5827",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 75884,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [
+								{
+									"PurityStatus": "208,208,104,209,104,104,864,865,104,214,214,214,215,215,103,401,401,401,105,105,105,105,105,105,105,105,105,103,103,103,103,103,103,103,103,103,873,873,873,873,873,872,872,872,872",
+									"ForeignProduct": 26,
+									"TotalStock": 45,
+									"EmptyFacings": 0,
+									"PurityIssue": 1,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 42,
+									"VerifiedOn": "2016-09-14T12:25:42"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233329",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "VIENNA HO",
+					"CountryId": 100,
+					"StateId": 0,
+					"City": "Vienna",
+					"Street": "COFFE PLACE",
+					"Street2": "Am Euro Plaza 2",
+					"Street3": "",
+					"PostalCode": "1100",
+					"IsKeyLocation": false,
+					"ClassificationId": 3,
+					"DirectionNotes": "Created by Konstantin Bovsunovskiy",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 131,
+					"CreatedOn": "2016-07-25T07:36:52.96",
+					"ModifiedByUserId": 131,
+					"ModifiedOn": "2016-07-25T07:36:52.96",
+					"LocationCode": "1200000999",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 41,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 131,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Austria",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "Silver",
+					"Alert_Open": 3,
+					"Alert_Highest_AlertId": 384271,
+					"Alert_Highest_AlertTypeId": 9,
+					"Alert_Highest_AlertAt": "2016-08-02T08:46:43",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 2,
+					"Alert_Open_High": 1,
+					"Alert_Open_All_Type": [ 9, 10, 23 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5820",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 0,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [ ]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233347",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "METZGEREI-TRAITEUR HOTZ",
+					"CountryId": 166,
+					"StateId": 0,
+					"City": "USTER",
+					"Street": "GERICHTSSTRASSE 1A",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "8610",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2016-08-05T10:44:12.26",
+					"ModifiedByUserId": 1306,
+					"ModifiedOn": "2016-08-15T13:46:37.34",
+					"LocationCode": "2700710541",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 39,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 47.349781,
+						"lon": 8.717129
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Switzerland",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 2,
+					"Alert_Highest_AlertId": 413510,
+					"Alert_Highest_AlertTypeId": 18,
+					"Alert_Highest_AlertAt": "2016-08-12T15:51:56.38",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 1,
+					"Alert_Open_High": 1,
+					"Alert_Open_All_Type": [ 18, 16 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 52,
+					"Door_30dayCount": 691,
+					"Door_Latest": "2016-09-13T18:02:20",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5843",
+							"PlanogramId": 1103,
+							"LatestProcessedPurityId": 76228,
+							"PlanogramDetails": [
+								{
+									"FacingDetails": "[{\"products\":[{\"id\":2285},{\"id\":2285},{\"id\":2286},{\"id\":2289},{\"id\":2289},{\"id\":2292},{\"id\":2292}]},{\"products\":[{\"id\":2310},{\"id\":2310},{\"id\":2311},{\"id\":2317},{\"id\":2317},{\"id\":2322},{\"id\":2322}]},{\"products\":[{\"id\":2310},{\"id\":2310},{\"id\":2314},{\"id\":2327},{\"id\":2327},{\"id\":2324},{\"id\":2324}]},{\"products\":[{\"id\":2310},{\"id\":2310},{\"id\":2312},{\"id\":2329},{\"id\":2329},{\"id\":2305},{\"id\":2306}]},{\"products\":[{\"id\":2331},{\"id\":2331},{\"id\":2331},{\"id\":2329},{\"id\":2329},{\"id\":2308},{\"id\":2308}]}]",
+									"Facings": 35,
+									"Shelves": 5
+								}
+							],
+							"PurityDetails": [
+								{
+									"PurityStatus": "401,401,401,401,401,401,103,2327,2327,18,18,2314,2314,2314,2327,18,18,2310,2310,2310,2310,2328,2328,2328,18,2419,2419,2419,2328,2314,2314,2427,2427,2427,2427",
+									"ForeignProduct": 14,
+									"TotalStock": 30,
+									"EmptyFacings": 5,
+									"PurityIssue": 1,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 53,
+									"VerifiedOn": "2016-09-19T10:52:37.18"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 5,
+					"TotalImpureCoolers": 1,
+					"TotalSkuOOS": 14
+				},
+				{
+					"Id": "233338",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "La Luna Piena",
+					"CountryId": 0,
+					"StateId": 0,
+					"City": "Milano",
+					"Street": "Viale Monza 325",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1302,
+					"CreatedOn": "2016-08-02T09:05:08.643",
+					"ModifiedByUserId": 1302,
+					"ModifiedOn": "2016-08-02T09:05:08.643",
+					"LocationCode": "2920279484",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 38,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					},
+					"IsSmart": false,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233358",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "USTI PIZZA",
+					"CountryId": 166,
+					"StateId": 0,
+					"City": "USTER",
+					"Street": "GERICHTSSTRASSE 8",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "8610",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2016-08-11T15:03:29.597",
+					"ModifiedByUserId": 1306,
+					"ModifiedOn": "2016-08-15T11:19:49.857",
+					"LocationCode": "2700419621",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 39,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 47.35047,
+						"lon": 8.716005
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Switzerland",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 3,
+					"Alert_Highest_AlertId": 413475,
+					"Alert_Highest_AlertTypeId": 19,
+					"Alert_Highest_AlertAt": "2016-08-12T11:35:01.227",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 1,
+					"Alert_Open_High": 2,
+					"Alert_Open_All_Type": [ 19, 18, 23 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 312,
+					"Door_Latest": "2016-09-11T03:00:18",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5860",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 75370,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [
+								{
+									"PurityStatus": "2314,2312,2312,2312,2310,2310,2310,18,2317,2317,18,2322,18,18,2327,2327,2329,2329,18,18,18,2285,2285,2285,2285,18,104,18,106,2427,2427,2427,2427,106,106",
+									"ForeignProduct": 8,
+									"TotalStock": 26,
+									"EmptyFacings": 9,
+									"PurityIssue": 1,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 69,
+									"VerifiedOn": "2016-09-10T23:01:24.78"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233281",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 6,
+					"Name": "Spares_Sofia",
+					"CountryId": 26,
+					"StateId": 0,
+					"City": "Sofia",
+					"Street": "9 Racho Petkov Kazandjiata Str",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "9766",
+					"IsKeyLocation": false,
+					"ClassificationId": 1,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 149,
+					"CreatedOn": "2016-06-04T22:08:05.357",
+					"ModifiedByUserId": 149,
+					"ModifiedOn": "2016-06-04T22:12:04.313",
+					"LocationCode": "CCH_SPR",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 49,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 56,
+					"PrimaryRepId": 249,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 42.62041,
+						"lon": 23.369325
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "cchsofiabd@insigmainc.com",
+					"State": "",
+					"Country": "Bulgaria",
+					"MarketName": "Sofia",
+					"LocationType": "Retail",
+					"IsSurveyed": false,
+					"Classification": "Diamond",
+					"Alert_Open": 4,
+					"Alert_Highest_AlertId": 335649,
+					"Alert_Highest_AlertTypeId": 10,
+					"Alert_Highest_AlertAt": "2016-06-05T23:40:01",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 4,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ 10, 9, 10, 23 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233337",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "Wu Yunqing",
+					"CountryId": 0,
+					"StateId": 0,
+					"City": "Milano",
+					"Street": "Via Brunico 5",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1302,
+					"CreatedOn": "2016-08-02T09:04:22.037",
+					"ModifiedByUserId": 1302,
+					"ModifiedOn": "2016-08-02T09:04:22.037",
+					"LocationCode": "2920207172",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 38,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 0,
+						"lon": 0
+					},
+					"IsSmart": false,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "16286",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 4,
+					"Name": "ΚΟΙΝ. ΚΛΗΡ. ΑΓΓ.ΒΛΑΧΟΥ",
+					"CountryId": 187,
+					"StateId": 0,
+					"City": "ΚΑΠΑΝΔΡΙΤΙ",
+					"Street": "ΒΑΡΝΑΒΑ",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "19014",
+					"IsKeyLocation": false,
+					"ClassificationId": 2,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2015-10-12T16:52:19.563",
+					"ModifiedByUserId": 156,
+					"ModifiedOn": "2016-05-04T13:56:58.26",
+					"LocationCode": "3005201998",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 40,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 57,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 38.223255,
+						"lon": 23.922718
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Greece",
+					"MarketName": "ΚΑΠΑΝΔΡΙΤΙ",
+					"LocationType": "Restaurant",
+					"IsSurveyed": false,
+					"Classification": "Gold",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "16277",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 2,
+					"Name": "ΜΟΛΛΑΣ ΑΝΤΩΝΙΟΣ",
+					"CountryId": 187,
+					"StateId": 0,
+					"City": "ΛΥΚΟΒΡΥΣΗ",
+					"Street": "ΝΙΚ. ΠΛΑΣΤΗΡΑ",
+					"Street2": "#17",
+					"Street3": "",
+					"PostalCode": "14123",
+					"IsKeyLocation": false,
+					"ClassificationId": 2,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2015-10-12T16:25:32.3",
+					"ModifiedByUserId": 156,
+					"ModifiedOn": "2016-05-04T13:42:01.683",
+					"LocationCode": "3005207104",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 40,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 58,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 38.067649,
+						"lon": 23.782302
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Greece",
+					"MarketName": "ΛΥΚΟΒΡΥΣΗ",
+					"LocationType": "Regular",
+					"IsSurveyed": false,
+					"Classification": "Gold",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "16266",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 5,
+					"Name": "ΜΑΚΡΗ ΒΑΡΒΑΡΑ",
+					"CountryId": 187,
+					"StateId": 0,
+					"City": "ΜΕΤΑΜΟΡΦΩΣΗ",
+					"Street": "Γ.ΠΑΠΑΝΔΡΕΟΥ",
+					"Street2": "55",
+					"Street3": "",
+					"PostalCode": "14452",
+					"IsKeyLocation": false,
+					"ClassificationId": 3,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2015-10-12T16:08:26.07",
+					"ModifiedByUserId": 156,
+					"ModifiedOn": "2016-05-04T13:37:54.707",
+					"LocationCode": "3005201408",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 40,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 59,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 38.062237,
+						"lon": 23.761661
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Greece",
+					"MarketName": "ΜΕΤΑΜΟΡΦΩΣΗ",
+					"LocationType": "Supermarket",
+					"IsSurveyed": false,
+					"Classification": "Silver",
+					"Alert_Open": 1,
+					"Alert_Highest_AlertId": 381889,
+					"Alert_Highest_AlertTypeId": 10,
+					"Alert_Highest_AlertAt": "2016-07-27T14:30:01",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 1,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ 10 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "16322",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 5,
+					"Name": "ΒΑΣΙΛΑΚΟΣ ΠΕΠΠΑΣ ΙΩΑΝΝΗΣ",
+					"CountryId": 187,
+					"StateId": 0,
+					"City": "ΠΟΛΥΔΕΝΔΡΙ",
+					"Street": "Λ ΑΘΗΝΩΝ ΚΑΠΑΝΔΡΙΤΙΟΥ",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "19014",
+					"IsKeyLocation": false,
+					"ClassificationId": 2,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2015-10-15T15:48:37.617",
+					"ModifiedByUserId": 156,
+					"ModifiedOn": "2016-05-04T14:03:58.54",
+					"LocationCode": "3000076273",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 40,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 64,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 38.206534,
+						"lon": 23.864575
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Greece",
+					"MarketName": "ΠΟΛΥΔΕΝΔΡΙ",
+					"LocationType": "Supermarket",
+					"IsSurveyed": false,
+					"Classification": "Gold",
+					"Alert_Open": 1,
+					"Alert_Highest_AlertId": 381983,
+					"Alert_Highest_AlertTypeId": 23,
+					"Alert_Highest_AlertAt": "2016-07-27T19:10:01",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 1,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ 23 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "16295",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 6,
+					"Name": "ΒΛΑΧΟΣ ΒΑΣΙΛΕΙΟΣ",
+					"CountryId": 187,
+					"StateId": 0,
+					"City": "ΚΑΠΑΝΔΡΙΤΙ",
+					"Street": "ΠΛ. ΣΠΥΡΟΥ ΛΟΗ",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "19014",
+					"IsKeyLocation": false,
+					"ClassificationId": 2,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2015-10-12T17:00:29.353",
+					"ModifiedByUserId": 156,
+					"ModifiedOn": "2016-05-04T13:58:04.737",
+					"LocationCode": "3005207857",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 40,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 57,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 38.216315,
+						"lon": 23.868205
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Greece",
+					"MarketName": "ΚΑΠΑΝΔΡΙΤΙ",
+					"LocationType": "Retail",
+					"IsSurveyed": false,
+					"Classification": "Gold",
+					"Alert_Open": 2,
+					"Alert_Highest_AlertId": 381981,
+					"Alert_Highest_AlertTypeId": 23,
+					"Alert_Highest_AlertAt": "2016-07-27T19:00:01",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 2,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ 23, 10 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "16272",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 4,
+					"Name": "ΒΛΑΒΙΑΝΟΣ ΓΕΩΡΓΙΟΣ",
+					"CountryId": 187,
+					"StateId": 0,
+					"City": "ΜΕΤΑΜΟΡΦΩΣΗ",
+					"Street": "ΓΚΙΝΟΣΑΤΗ",
+					"Street2": "#66",
+					"Street3": "",
+					"PostalCode": "14451",
+					"IsKeyLocation": false,
+					"ClassificationId": 3,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2015-10-12T16:17:11.773",
+					"ModifiedByUserId": 156,
+					"ModifiedOn": "2016-05-04T13:41:04.59",
+					"LocationCode": "3000059908",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 40,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 59,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 38.063531,
+						"lon": 23.7614
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Greece",
+					"MarketName": "ΜΕΤΑΜΟΡΦΩΣΗ",
+					"LocationType": "Restaurant",
+					"IsSurveyed": false,
+					"Classification": "Silver",
+					"Alert_Open": 1,
+					"Alert_Highest_AlertId": 381975,
+					"Alert_Highest_AlertTypeId": 23,
+					"Alert_Highest_AlertAt": "2016-07-27T18:20:01",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 1,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ 23 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "16268",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 7,
+					"Name": "ΝΤΑΓΚΑΛΗΣ ΓΕΩΡΓΙΟΣ",
+					"CountryId": 187,
+					"StateId": 0,
+					"City": "ΜΕΤΑΜΟΡΦΩΣΗ",
+					"Street": "ΓΕΩΡΓΙΟΥ ΠΑΠΑΝΔΡΕΟΥ",
+					"Street2": "#159",
+					"Street3": "",
+					"PostalCode": "114452",
+					"IsKeyLocation": false,
+					"ClassificationId": 2,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2015-10-12T16:10:35.24",
+					"ModifiedByUserId": 156,
+					"ModifiedOn": "2016-05-04T13:38:28.797",
+					"LocationCode": "3005017236",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 40,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 59,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 38.06803,
+						"lon": 23.770102
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Greece",
+					"MarketName": "ΜΕΤΑΜΟΡΦΩΣΗ",
+					"LocationType": "Theater",
+					"IsSurveyed": false,
+					"Classification": "Gold",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "16285",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 5,
+					"Name": "ΜΑΝΤΑΣ ΔΗΜΗΤΡΗΣ",
+					"CountryId": 187,
+					"StateId": 0,
+					"City": "ΜΙΚΡΟΧΩΡΙ",
+					"Street": "ΜΙΚΡΟΧΩΡΙ",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "19014",
+					"IsKeyLocation": false,
+					"ClassificationId": 1,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2015-10-12T16:39:41.287",
+					"ModifiedByUserId": 131,
+					"ModifiedOn": "2016-06-20T09:37:18.247",
+					"LocationCode": "3004086253",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 40,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 60,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 38.233829,
+						"lon": 23.893129
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Greece",
+					"MarketName": "ΜΙΚΡΟΧΩΡΙ",
+					"LocationType": "Supermarket",
+					"IsSurveyed": false,
+					"Classification": "Diamond",
+					"Alert_Open": 1,
+					"Alert_Highest_AlertId": 358747,
+					"Alert_Highest_AlertTypeId": 23,
+					"Alert_Highest_AlertAt": "2016-06-16T21:40:01",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 1,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ 23 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "16261",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 7,
+					"Name": "ΕΚΟ ΚΑΛΥΨΩ ΜΟΝΟΠΡΟΣΩΠΗ ΕΠΕ",
+					"CountryId": 187,
+					"StateId": 0,
+					"City": "ΠΕΥΚΗ",
+					"Street": "ΛΕΩΦ. ΕΙΡΗΝΗΣ",
+					"Street2": "#18 20",
+					"Street3": "",
+					"PostalCode": "15121",
+					"IsKeyLocation": false,
+					"ClassificationId": 1,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2015-10-12T15:57:16.15",
+					"ModifiedByUserId": 156,
+					"ModifiedOn": "2016-05-04T13:35:45.027",
+					"LocationCode": "3000115172",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 40,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 63,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 38.059503,
+						"lon": 23.793838
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Greece",
+					"MarketName": "ΠΕΥΚΗ",
+					"LocationType": "Theater",
+					"IsSurveyed": false,
+					"Classification": "Diamond",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "16270",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 2,
+					"Name": "ΜΑΚΡΗ ΕΛΕΑΝΑ",
+					"CountryId": 187,
+					"StateId": 0,
+					"City": "ΝΕΟ ΗΡΑΚΛΕΙΟ",
+					"Street": "ΠΡΑΣΙΝΟΥ ΛΟΦΟΥ",
+					"Street2": "#99",
+					"Street3": "",
+					"PostalCode": "14122",
+					"IsKeyLocation": false,
+					"ClassificationId": 1,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2015-10-12T16:14:04.603",
+					"ModifiedByUserId": 1297,
+					"ModifiedOn": "2016-08-09T14:13:48.773",
+					"LocationCode": "3005207170",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 40,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 62,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 38.055782,
+						"lon": 23.778219
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Greece",
+					"MarketName": "ΝΕΟ ΗΡΑΚΛΕΙΟ",
+					"LocationType": "Regular",
+					"IsSurveyed": false,
+					"Classification": "Diamond",
+					"Alert_Open": 1,
+					"Alert_Highest_AlertId": 382542,
+					"Alert_Highest_AlertTypeId": 10,
+					"Alert_Highest_AlertAt": "2016-07-28T18:20:01",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 1,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ 10 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "16271",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 4,
+					"Name": "ΠΕΤΡΟΥ ΕΥΣΤΑΘΙΑ",
+					"CountryId": 187,
+					"StateId": 0,
+					"City": "ΝΕΟ ΗΡΑΚΛΕΙΟ",
+					"Street": "ΠΛΑΠΟΥΤΑ",
+					"Street2": "#21",
+					"Street3": "",
+					"PostalCode": "14122",
+					"IsKeyLocation": false,
+					"ClassificationId": 2,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2015-10-12T16:15:35.703",
+					"ModifiedByUserId": 131,
+					"ModifiedOn": "2016-06-20T09:36:44.477",
+					"LocationCode": "3001125305",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 40,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 62,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 38.059992,
+						"lon": 23.776321
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Greece",
+					"MarketName": "ΝΕΟ ΗΡΑΚΛΕΙΟ",
+					"LocationType": "Restaurant",
+					"IsSurveyed": false,
+					"Classification": "Gold",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "16278",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 2,
+					"Name": "ΜΕΛΛΙΔΗΣ ΛΑΖ. ΝΙΚΟΛΑΟΣ",
+					"CountryId": 187,
+					"StateId": 0,
+					"City": "ΛΥΚΟΒΡΥΣΗ",
+					"Street": "ΧΑΛΚΙΔΟΣ",
+					"Street2": "#29",
+					"Street3": "",
+					"PostalCode": "14123",
+					"IsKeyLocation": false,
+					"ClassificationId": 3,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2015-10-12T16:27:23.943",
+					"ModifiedByUserId": 131,
+					"ModifiedOn": "2016-06-20T09:37:02.763",
+					"LocationCode": "3005004917",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 40,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 58,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 38.072028,
+						"lon": 23.785001
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Greece",
+					"MarketName": "ΛΥΚΟΒΡΥΣΗ",
+					"LocationType": "Regular",
+					"IsSurveyed": false,
+					"Classification": "Silver",
+					"Alert_Open": 1,
+					"Alert_Highest_AlertId": 381977,
+					"Alert_Highest_AlertTypeId": 23,
+					"Alert_Highest_AlertAt": "2016-07-27T18:30:01",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 1,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ 23 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "16284",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 2,
+					"Name": "ΛΕΥΙΤΙΚΟΣ ΧΑΡΗΣ",
+					"CountryId": 187,
+					"StateId": 0,
+					"City": "Ν.ΚΗΦΙΣΙΑ",
+					"Street": "ΝΑΥΠΛΙΟΥ",
+					"Street2": "#55",
+					"Street3": "",
+					"PostalCode": "14564",
+					"IsKeyLocation": false,
+					"ClassificationId": 3,
+					"DirectionNotes": "55\t14564",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2015-10-12T16:37:46.283",
+					"ModifiedByUserId": 156,
+					"ModifiedOn": "2016-05-04T13:54:41.31",
+					"LocationCode": "3000037758",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 40,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 61,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 38.100106,
+						"lon": 23.797672
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Greece",
+					"MarketName": "Ν.ΚΗΦΙΣΙΑ",
+					"LocationType": "Regular",
+					"IsSurveyed": false,
+					"Classification": "Silver",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "16279",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 4,
+					"Name": "ΜΙΡΝΑ ΧΑΣΣΑΝ",
+					"CountryId": 187,
+					"StateId": 0,
+					"City": "ΛΥΚΟΒΡΥΣΗ",
+					"Street": "ΑΓ. ΕΙΡΗΝΗΣ ΧΡΥΣΟΒΑΛΑΝΤΟΥ",
+					"Street2": "#11",
+					"Street3": "",
+					"PostalCode": "14123",
+					"IsKeyLocation": false,
+					"ClassificationId": 1,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 156,
+					"CreatedOn": "2015-10-12T16:29:23.483",
+					"ModifiedByUserId": 156,
+					"ModifiedOn": "2016-05-04T14:15:09.55",
+					"LocationCode": "3005211314",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 40,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 58,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 38.070496,
+						"lon": 23.780877
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Greece",
+					"MarketName": "ΛΥΚΟΒΡΥΣΗ",
+					"LocationType": "Restaurant",
+					"IsSurveyed": false,
+					"Classification": "Diamond",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233301",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "ФЪНХАУС БАЙ А52 ООД",
+					"CountryId": 26,
+					"StateId": 0,
+					"City": "Sofia",
+					"Street": "ЖК МЛАДОСТ 4 БИЗНЕС ПК С-ДА7",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1,
+					"CreatedOn": "2016-07-05T23:58:15.573",
+					"ModifiedByUserId": 1,
+					"ModifiedOn": "2016-07-05T23:58:15.573",
+					"LocationCode": "1304015176",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 0,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 42.62607,
+						"lon": 23.374655
+					},
+					"IsSmart": false,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Bulgaria",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 2,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233308",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "КОКА-КОЛА ХБК-БЪЛГАРИЯ АД",
+					"CountryId": 26,
+					"StateId": 0,
+					"City": "Sofia",
+					"Street": "УЛ РАЧО ПЕТКОВ КАЗАНДЖИЯТА 8",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1,
+					"CreatedOn": "2016-07-05T23:59:53.34",
+					"ModifiedByUserId": 1,
+					"ModifiedOn": "2016-07-05T23:59:53.34",
+					"LocationCode": "1304056629",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 0,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 42.659556,
+						"lon": 23.324538
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Bulgaria",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 1,
+					"Alert_Highest_AlertId": 381745,
+					"Alert_Highest_AlertTypeId": 9,
+					"Alert_Highest_AlertAt": "2016-07-27T09:09:36",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 1,
+					"Alert_Open_All_Type": [ 9 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 8,
+					"Door_30dayCount": 758,
+					"Door_Latest": "2016-09-12T10:04:18",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5787",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 75797,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [
+								{
+									"PurityStatus": "2612,2612,2612,2612,2612,402,402,402,2612,2612,2612,2612,2612,2578,2578,216,2584,2584,2584,2584,2584,2623,2623,2563,2584,2584,2584,2584,2584,2575,2575,2515,2612,2612,2612,2612,2612,2587,2587,2509",
+									"ForeignProduct": 0,
+									"TotalStock": 40,
+									"EmptyFacings": 0,
+									"PurityIssue": 255,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 100,
+									"VerifiedOn": "2016-09-17T13:29:02.077"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233305",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "АДОНИС-РЕЙ ООД",
+					"CountryId": 26,
+					"StateId": 0,
+					"City": "Sofia",
+					"Street": "СТУД ГРАД ДО БЛ 38",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1,
+					"CreatedOn": "2016-07-05T23:59:06.227",
+					"ModifiedByUserId": 149,
+					"ModifiedOn": "2016-07-06T21:34:53.123",
+					"LocationCode": "1304003804",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 49,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 51.4543,
+						"lon": 20.222
+					},
+					"IsSmart": false,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Bulgaria",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 2,
+					"Alert_Highest_AlertId": 375178,
+					"Alert_Highest_AlertTypeId": 10,
+					"Alert_Highest_AlertAt": "2016-07-06T14:40:00",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 2,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ 10, 23 ],
+					"AssetCount": 3,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233307",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "АСИЯ СС ЕООД",
+					"CountryId": 26,
+					"StateId": 0,
+					"City": "Sofia",
+					"Street": "БУЛ ВИТОША 37/ СОЛУНСКА 21",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1,
+					"CreatedOn": "2016-07-05T23:59:40.073",
+					"ModifiedByUserId": 1,
+					"ModifiedOn": "2016-07-05T23:59:40.073",
+					"LocationCode": "1304020741",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 0,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 42.692284,
+						"lon": 23.320097
+					},
+					"IsSmart": false,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Bulgaria",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 2,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233319",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "КОНОПИЦА БЪЛГАРИЯ ООД",
+					"CountryId": 26,
+					"StateId": 0,
+					"City": "Sofia",
+					"Street": "УЛ РАЧО ПЕТКОВ-КАЗАНДЖИЯТА 6",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 232,
+					"CreatedOn": "2016-07-08T05:53:33.793",
+					"ModifiedByUserId": 232,
+					"ModifiedOn": "2016-07-08T05:53:33.793",
+					"LocationCode": "1304022148",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 49,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "Adriana",
+					"LocationGeo": {
+						"lat": 42.621982,
+						"lon": 23.369523
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Bulgaria",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 71,
+					"Door_30dayCount": 609,
+					"Door_Latest": "2016-09-13T14:22:13",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5797",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 76246,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [
+								{
+									"PurityStatus": "2516,2516,18,2547,2547,2547,2547,2547,2583,2583,2620,2620,18,18,2597,2597,2584,2584,2584,2584,2612,2612,2612,2612,2553,2553,2537,2537,101,101,2531,2531,2610,2610,2569,2569,2561,2590,2565,2565",
+									"ForeignProduct": 0,
+									"TotalStock": 37,
+									"EmptyFacings": 3,
+									"PurityIssue": 255,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 100,
+									"VerifiedOn": "2016-09-17T09:24:50.693"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233302",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "К-ЕКСПРЕС ЕООД",
+					"CountryId": 26,
+					"StateId": 0,
+					"City": "Sofia",
+					"Street": "ЖК МЛАДОСТ БИЗНЕС ПАРК СГР 9",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1,
+					"CreatedOn": "2016-07-05T23:58:29.537",
+					"ModifiedByUserId": 1,
+					"ModifiedOn": "2016-07-05T23:58:29.537",
+					"LocationCode": "1304030412",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 0,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 42.625702,
+						"lon": 23.374411
+					},
+					"IsSmart": false,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Bulgaria",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233311",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "ПЛАМЕКС ТРЕЙДИНГ ЕООД",
+					"CountryId": 26,
+					"StateId": 0,
+					"City": "Sofia",
+					"Street": "ЖК МЛАДОСТ 4 БИТОВ КОМБИНАТ",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 232,
+					"CreatedOn": "2016-07-07T07:06:43.733",
+					"ModifiedByUserId": 232,
+					"ModifiedOn": "2016-07-07T07:06:43.733",
+					"LocationCode": "1304015771",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 49,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "Dilyana Koleva",
+					"LocationGeo": {
+						"lat": 42.634895,
+						"lon": 23.378473
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Bulgaria",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 1,
+					"Alert_Highest_AlertId": 375195,
+					"Alert_Highest_AlertTypeId": 10,
+					"Alert_Highest_AlertAt": "2016-07-07T13:40:00",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 1,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ 10 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5795",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 0,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [ ]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233310",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "КРИСПО ЕООД",
+					"CountryId": 26,
+					"StateId": 0,
+					"City": "Sofia",
+					"Street": "ЖК МЛАДОСТ 4 ДО БЛ 416 БИТОВ КОМБИН",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 232,
+					"CreatedOn": "2016-07-07T07:04:31.303",
+					"ModifiedByUserId": 232,
+					"ModifiedOn": "2016-07-07T07:04:31.303",
+					"LocationCode": "1304010860",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 45,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "Dillyana Koleva",
+					"LocationGeo": {
+						"lat": 42.634309,
+						"lon": 23.377898
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Bulgaria",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5794",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 0,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [ ]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233303",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "СИЕЛ СОФИЯ ЕООД",
+					"CountryId": 26,
+					"StateId": 0,
+					"City": "Sofia",
+					"Street": "УЛ ПРОФ ХРИСТО ВАКАРЕЛСКИ 5А",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1,
+					"CreatedOn": "2016-07-05T23:58:41.413",
+					"ModifiedByUserId": 1,
+					"ModifiedOn": "2016-07-05T23:58:41.413",
+					"LocationCode": "1304009194",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 0,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 42.656306,
+						"lon": 23.343196
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Bulgaria",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 317,
+					"Door_Latest": "2016-09-07T13:20:27",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5762",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 70003,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [
+								{
+									"PurityStatus": "18,18,18,18,18,18,18,18,100,100,100,211,211,211,18,18,218,218,402,402,402,402,875,875,402,402,878,878,877,877,402,402,879,879,879,879,879,879,879,879",
+									"ForeignProduct": 0,
+									"TotalStock": 30,
+									"EmptyFacings": 10,
+									"PurityIssue": 255,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 100,
+									"VerifiedOn": "2016-09-17T10:05:06.033"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233309",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "ОРБИТА СЪЛЮШЪНС ЕООД",
+					"CountryId": 26,
+					"StateId": 0,
+					"City": "Sofia",
+					"Street": "УЛ РАЧО ПЕТКОВ КАЗАНДЖИЯТА 4",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1,
+					"CreatedOn": "2016-07-06T00:00:11.51",
+					"ModifiedByUserId": 1,
+					"ModifiedOn": "2016-07-06T00:00:11.51",
+					"LocationCode": "1301504344",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 0,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 42.622006,
+						"lon": 23.38042
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Bulgaria",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 2,
+					"Alert_Highest_AlertId": 381830,
+					"Alert_Highest_AlertTypeId": 9,
+					"Alert_Highest_AlertAt": "2016-07-27T12:10:26",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 2,
+					"Alert_Open_All_Type": [ 9, 9 ],
+					"AssetCount": 5,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 37,
+					"Door_30dayCount": 766,
+					"Door_Latest": "2016-09-12T12:37:47",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5791",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 75810,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [
+								{
+									"PurityStatus": "2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,18,18,2500,18,2500,2500,2501,2501,2501,2501,2501,2501,2501,2501,2530,2530,2530,2530,2530,2530,107,107,107,107,107,107,107,107,107,0",
+									"ForeignProduct": 0,
+									"TotalStock": 35,
+									"EmptyFacings": 3,
+									"PurityIssue": 255,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 100,
+									"VerifiedOn": "2016-09-19T09:04:34.32"
+								}
+							]
+						},
+						{
+							"AssetId": "5790",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 75817,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [
+								{
+									"PurityStatus": "2513,2513,2513,18,18,2513,2513,2513,2513,18,208,208,208,18,100,100,100,211,18,214,214,216,216,217,217,217,18,864,100,100,865,865,865,100,18,100,868,868,868,100,100,100,100,100,871",
+									"ForeignProduct": 0,
+									"TotalStock": 38,
+									"EmptyFacings": 7,
+									"PurityIssue": 255,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 100,
+									"VerifiedOn": "2016-09-17T10:09:55.733"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233320",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "СЛОНИ ЕООД",
+					"CountryId": 26,
+					"StateId": 0,
+					"City": "Sofia",
+					"Street": "ЖК СОФИЯ ПАРК ТЪРГ ЗОНА 16В",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 232,
+					"CreatedOn": "2016-07-08T05:55:49.463",
+					"ModifiedByUserId": 232,
+					"ModifiedOn": "2016-07-08T05:55:49.463",
+					"LocationCode": "1301504806",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 49,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "Adriana",
+					"LocationGeo": {
+						"lat": 42.6227,
+						"lon": 23.3711
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Bulgaria",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 3,
+					"Alert_Highest_AlertId": 375417,
+					"Alert_Highest_AlertTypeId": 9,
+					"Alert_Highest_AlertAt": "2016-07-08T10:44:47",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 3,
+					"Alert_Open_All_Type": [ 9, 19, 18 ],
+					"AssetCount": 1,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 26,
+					"Door_30dayCount": 461,
+					"Door_Latest": "2016-09-13T15:18:52",
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5798",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 76258,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [
+								{
+									"PurityStatus": "208,208,210,210,209,209,107,107,107,211,18,100,100,100,100,107,107,107,868,868,865,865,100,864,107,107,107,873,873,873,873,873,873,107,107,107",
+									"ForeignProduct": 0,
+									"TotalStock": 23,
+									"EmptyFacings": 1,
+									"PurityIssue": 255,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 100,
+									"VerifiedOn": "2016-09-17T09:31:08.7"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233300",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "САМ И ФИС ООД",
+					"CountryId": 26,
+					"StateId": 0,
+					"City": "Sofia",
+					"Street": "МЛАДОСТ 4 БИЗНЕС ПАРК СТР 3",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1,
+					"CreatedOn": "2016-07-05T23:57:58.29",
+					"ModifiedByUserId": 1,
+					"ModifiedOn": "2016-07-05T23:57:58.29",
+					"LocationCode": "1304021318",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 0,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 42.627293,
+						"lon": 23.374398
+					},
+					"IsSmart": true,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Bulgaria",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 1,
+					"Alert_Highest_AlertId": 375212,
+					"Alert_Highest_AlertTypeId": 10,
+					"Alert_Highest_AlertAt": "2016-07-07T16:20:00",
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 1,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ 10 ],
+					"AssetCount": 3,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [
+						{
+							"AssetId": "5754",
+							"PlanogramId": 0,
+							"LatestProcessedPurityId": 0,
+							"PlanogramDetails": [ ],
+							"PurityDetails": [
+								{
+									"PurityStatus": "18,18,18,18,18,2583,2583,2583,2583,2584,2584,2584,2584,2612,2612,2612,2612,2612,2578,2578,2580,2580,2580,2589,2589,2589,2589,2587,2587,2587,2587,18,18,18,18,18",
+									"ForeignProduct": 0,
+									"TotalStock": 26,
+									"EmptyFacings": 10,
+									"PurityIssue": 255,
+									"PlanogramCompliance": 0,
+									"PurityPercentage": 100,
+									"VerifiedOn": "2016-09-17T08:40:34.637"
+								}
+							]
+						}
+					],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				},
+				{
+					"Id": "233304",
+					"CustomerId": 0,
+					"AreaId": 0,
+					"LocationTypeId": 0,
+					"Name": "РАДИО ФОН ООД",
+					"CountryId": 26,
+					"StateId": 0,
+					"City": "Sofia",
+					"Street": "ЖК СТУД ГРАД УЛ ЙОРДАН ЙОСИФОВ ДО С",
+					"Street2": "",
+					"Street3": "",
+					"PostalCode": "",
+					"IsKeyLocation": false,
+					"ClassificationId": 0,
+					"DirectionNotes": "",
+					"ClientId": 23,
+					"IsDeleted": false,
+					"CreatedByUserId": 1,
+					"CreatedOn": "2016-07-05T23:58:51.343",
+					"ModifiedByUserId": 1,
+					"ModifiedOn": "2016-07-05T23:58:51.343",
+					"LocationCode": "1304012759",
+					"PrimaryContactId": 0,
+					"Identity1": "",
+					"Identity2": "",
+					"UniqueKey": 0,
+					"TimeZoneId": 0,
+					"LocationText": "",
+					"OrderStatus": "",
+					"MarketId": 0,
+					"PrimaryRepId": 0,
+					"PrimaryPhone": "",
+					"PriceTypeId": 0,
+					"PriceForTwo": 0,
+					"OwnerId": 0,
+					"LocationSalesRep": "",
+					"LocationGeo": {
+						"lat": 42.6534,
+						"lon": 23.3405
+					},
+					"IsSmart": false,
+					"PrimarySalesRep": "",
+					"State": "",
+					"Country": "Bulgaria",
+					"MarketName": "",
+					"LocationType": "",
+					"IsSurveyed": false,
+					"Classification": "",
+					"Alert_Open": 0,
+					"Alert_Highest_AlertId": 0,
+					"Alert_Highest_AlertTypeId": 0,
+					"Alert_Highest_AlertAt": null,
+					"Alert_Open_Low": 0,
+					"Alert_Open_Medium": 0,
+					"Alert_Open_High": 0,
+					"Alert_Open_All_Type": [ ],
+					"AssetCount": 6,
+					"Door_TodayCount": 0,
+					"Door_7dayCount": 0,
+					"Door_30dayCount": 0,
+					"Door_Latest": null,
+					"Visit_Highest_VisitDate": null,
+					"Visit_First_Name": null,
+					"Visit_Last_Name": null,
+					"Visit_Start_Time": null,
+					"AssetDetails": [ ],
+					"TotalEmptyFacings": 0,
+					"TotalImpureCoolers": 0,
+					"TotalSkuOOS": 0
+				}
+			],
+			"totalCustomer": 10504,
+			"totalCooler": 15908,
+			"totalSmartAssetCount": 6888,
+			"filteredOutlets": 10504,
+			"filteredAssets": 15908,
+			"smartAssetCount": 6888,
+			"locationConfirmed": 24,
+			"lastDownloadLess30": 20,
+			"lastDownloadLess60": 40,
+			"lastDownloadLess90": 30,
+			"lastDownloadGreater90": 10,
+			"temperature": 12,
+			"coolerAbove7": 5,
+			"avgLightHours": 2,
+			"hourlyFootTraffic": 14,
+			"doorOpenDuration": 408,
+			"salesVisitDuration": 12,
+			"openAlert": 30,
+			"coolerBelow30Light": 12,
+			"hoursLightOn": 3,
+			"hoursPowerOn": 4,
+			"hourlyDoorOpen": 4,
+			"alarmRate": 15,
+			"coolerMoves": 22,
+			"missingCooler": 15,
+			"avgPowerOn": 12,
+			"totalNoOfAlarms": 1202,
+			"salesVolume": 129,
+			"transections": 34,
+			"visitDuration": 12,
+			"visitPerMonth": 10,
+			"lowUtilized": 10,
+			"locationAlarmRate": 12,
+			"totlaAlarm": 1200,
+			"assetAlarmRate": 12,
+			"openAlarm": 150,
+			"closedAlarm": 80,
+			"rateOfClosure": 12,
+			"rateCompliance": 13,
+			"isPowerOff": 20,
+			"totalVisit": 2,
+			"salesLowDoorLow": 20,
+			"salesLowDoorHigh": 30,
+			"salesHighDoorLow": 10,
+			"salesHighDoorHigh": 78
+		},
+		"coolerStatus": [
+		],
+		"realogram": {
+			"data": {
+				"ssd": 30,
+				"nsb": 70,
+				"coke": 55,
+				"nomcoke": 75,
+				"oos": 10,
+				"low": 20,
+				"full": 70,
+				"doorcounts": 10,
+				"uiplanogram": 60,
+				"uirealogram": 30,
+				"totalCustomer": 200,
+				"customerSelected": 100,
+				"totalCooler": 200,
+				"coolerSelected": 10,
+				"totalSmartCooler": 100,
+				"smartCoolerSelected": 10
+			}
+		},
+		"planogram": {
+			"data": {
+				"ssd1": 30,
+				"nsb1": 70,
+				"coke1": 55,
+				"nomcoke1": 75
+			}
+		},
+		"activities": [
+		],
+		"locationTracking": [
+			{
+				"name": "Location Confirmed",
+				"y": 24
+			},
+			{
+				"name": "Wrong Location (Missing Cooler)",
+				"y": 20
+			},
+			{
+				"name": "Wrong Location (My Outlet)",
+				"y": 20
+			},
+			{
+				"name": "Unknown Location (Cooler Missing)",
+				"y": 28
+			},
+			{
+				"name": "Outlet not visited",
+				"y": 8
+			}
+		],
+		"operationalIssues": [
+			{
+				"Range": "8 - 12 Hours",
+				"PowerOff": 600,
+				"HighTemperature": 400,
+				"LowLight": 500
+			},
+			{
+				"Range": "12 - 24 Hours",
+				"PowerOff": 700,
+				"HighTemperature": 600,
+				"LowLight": 50
+			}
+		],
+		"cpiIndex": [
+			{
+				"Month": "Nov",
+				"Value": 15.37
+			},
+			{
+				"Month": "Dec",
+				"Value": 11.32
+			},
+			{
+				"Month": "Jan",
+				"Value": 20.94
+			},
+			{
+				"Month": "Feb",
+				"Value": 32.39
+			}
+		],
+
+		"lastDataDownloaded": [
+			{
+				"name": "Last data < 30",
+				"data": [ 4 ],
+				"color": "#55BF3B"
+			},
+			{
+				"name": "Last data > 30, <60 days",
+				"data": [ 3 ],
+				"color": "#fff589"
+			},
+			{
+				"name": "Last data > 60, <90 days",
+				"data": [ 2 ],
+				"color": "#DF5353"
+			},
+			{
+				"name": "No data for more than 90 days",
+				"data": [ 5 ],
+				"color": "#333"
+			}
+		],
+		"dooorSwing": [
+			{
+				"Name": "Low",
+				"y": 45,
+				"color": "#90ee7e",
+				"drilldown": {
+					"name": "Low",
+					"categories": [ "<1 Door", "1-2 Door", "> 2 Door" ],
+					"data": [ 5000, 1500, 2000 ],
+					"color": "#90ee7e"
+				}
+			},
+			{
+				"Name": "Medium",
+				"y": 30,
+				"color": "#fff589",
+				"drilldown": {
+					"name": "Low",
+					"categories": [ "<1 Door", "1-2 Door", "> 2 Door" ],
+					"data": [ 2000, 1500, 2000 ],
+					"color": "#fff589"
+				}
+			},
+			{
+				"Name": "High",
+				"y": 24,
+				"color": "#f45b5b",
+				"drilldown": {
+					"name": "Low",
+					"categories": [ "<1 Door", "1-2 Door", "> 2 Door" ],
+					"data": [ 1000, 1500, 2000 ],
+					"color": "#f45b5b"
+				}
+			}
+		],
+		"outletPerformance": [
+		],
+		"routeCompliance": [
+		],
+		"cdeTracking": [
+		],
+		"salesVisit": [
+			{
+				"Date": "1388538000000",
+				"VisitDuration": 49,
+				"CountofVisit": 1
+			},
+			{
+				"Date": "1388797200000",
+				"VisitDuration": 2,
+				"CountofVisit": 1
+			},
+			{
+				"Date": "1388883600000",
+				"VisitDuration": 12,
+				"CountofVisit": 4
+			},
+			{
+				"Date": "1389229200000",
+				"VisitDuration": "120",
+				"CountofVisit": "2"
+			},
+			{
+				"Date": "1390179600000",
+				"VisitDuration": 50,
+				"CountofVisit": 10
+			}
+		],
+		"dooropeningSales": [
+			{
+				"DoorOpening": 7,
+				"Sales": 200
+			}
+		],
+		"peoplePassingBy": [
+			{
+				"PeoplePassingBy": 200,
+				"DoorOpening": 10
+			}
+		],
+		"openAlerts": [
+			{
+				"Label": "Today",
+				"Low": 10,
+				"Medium": 60,
+				"High": 20,
+				"Assets": 20,
+				"OpenAlertAssetPercentage": 70
+			},
+			{
+				"Label": "1-3",
+				"Low": 60,
+				"Medium": 10,
+				"High": 0,
+				"Assets": 30,
+				"OpenAlertAssetPercentage": 60
+			},
+			{
+				"Label": "3-6",
+				"Low": 40,
+				"Medium": 40,
+				"High": 10,
+				"Assets": 10,
+				"OpenAlertAssetPercentage": 40
+			},
+			{
+				"Label": "6+",
+				"Low": 1,
+				"Medium": 3,
+				"High": 0,
+				"Assets": 4,
+				"OpenAlertAssetPercentage": 0.19
+			}
+		],
+		"alertsByWeek": [
+			{
+				"date": "2016-06-06T00:00:00.000Z",
+				"created": 2,
+				"closed": 0,
+				"cumulative": 2
+			},
+			{
+				"date": "2016-06-13T00:00:00.000Z",
+				"created": 20,
+				"closed": 10,
+				"cumulative": 10
+			},
+			{
+				"date": "2016-06-20T00:00:00.000Z",
+				"created": 150,
+				"closed": 100,
+				"cumulative": 50
+			},
+			{
+				"date": "2016-06-27T00:00:00.000Z",
+				"created": 70,
+				"closed": 90,
+				"cumulative": 20
+			},
+			{
+				"date": "2016-07-04T00:00:00.000Z",
+				"created": 90,
+				"closed": 60,
+				"cumulative": 30
+			},
+			{
+				"date": "2016-07-11T00:00:00.000Z",
+				"created": 190,
+				"closed": 80,
+				"cumulative": 70
+			},
+			{
+				"date": "2016-07-18T00:00:00.000Z",
+				"created": 1,
+				"closed": 30,
+				"cumulative": -29
+			}
+		],
+		"alertsByTypeBoth": [
+			{
+				"alertType": "Cooler Moved",
+				"count": 10,
+				"OpenAlert": 10
+			},
+			{
+				"alertType": "Light Off",
+				"count": 100,
+				"OpenAlert": 10
+			},
+			{
+				"alertType": "Power Off",
+				"count": 80,
+				"OpenAlert": 10
+			},
+			{
+				"alertType": "Temp high",
+				"count": 200,
+				"OpenAlert": 10
+			},
+			{
+				"alertType": "Low Foot Traffic",
+				"count": 12,
+				"OpenAlert": 10
+			},
+			{
+				"alertType": "Low Number of Door Opens",
+				"count": 20,
+				"OpenAlert": 10
+			},
+			{
+				"alertType": "Missing data",
+				"count": 10,
+				"OpenAlert": 10
+			},
+			{
+				"alertType": "Missing cooler",
+				"count": 30,
+				"OpenAlert": 10
+			}
+		],
+		"totalCustomer": 180,
+		"customerSelected": 12,
+		"temperature": 14,
+		"coolerAbove7": 11,
+		"avgLightHours": 8.3,
+		"totalCooler": 198,
+		"coolerSelected": 12,
+		"avgPowerOn": 16.2,
+		"hourlyDoorOpen": 2.97,
+		"salesVisitDuration": 12,
+		"doorOpenDuration": 12,
+		"hourlyFootTraffic": 40,
+		"coolerMoves": 35,
+		"missingCooler": 3,
+		"openAlert": 12,
+		"coolerBelow30Light": 1,
+		"hoursLightOn": 7,
+		"hoursPowerOn": 19,
+		"locationAlarmRate": 21,
+		"totlaAlarm": 1000,
+		"serviceDue": 50,
+		"rateOfClosure": 10,
+		"assetAlarmRate": 12,
+		"openAlarm": 210,
+		"closedAlarm": 120,
+		"missing": 21,
+		"powerOff": 2,
+		"totalNoOfAlarms": 12000,
+		"alarmRate": 12.34,
+		"avgLitersSoldByCustomer": [
+			{
+				"Name": "Diamond",
+				"Value": 409.44,
+				"Color": "#8AD4EB"
+			},
+			{
+				"Name": "Silver",
+				"Value": 423.44,
+				"Color": "#B3B3B3"
+			},
+			{
+				"Name": "Gold",
+				"Value": 189.87,
+				"Color": "#F2C811"
+			},
+			{
+				"Name": "Bronze",
+				"Value": 158.48,
+				"Color": "#FE9666"
+			}
+		],
+		"alarmBySeller": [
+			{
+				"Name": "Chao WANK",
+				"Value": 94,
+				"CloseAlert": 90,
+				"Closure": 95.74
+			},
+			{
+				"Name": "Biji",
+				"Value": 88,
+				"CloseAlert": 80,
+				"Closure": 90.90
+			},
+			{
+				"Name": "Sokha Ouk",
+				"Value": 149,
+				"CloseAlert": 10,
+				"Closure": 6.71
+			},
+			{
+				"Name": "Unknown",
+				"Value": 128,
+				"CloseAlert": 20,
+				"Closure": 15.62
+			},
+			{
+				"Name": "KJ",
+				"Value": 55,
+				"CloseAlert": 40,
+				"Closure": 72.72
+			},
+			{
+				"Name": "Anand",
+				"Value": 118,
+				"CloseAlert": 60,
+				"Closure": 50.84
+			},
+			{
+				"Name": "James",
+				"Value": 100,
+				"CloseAlert": 89,
+				"Closure": 89
+			},
+			{
+				"Name": "Peter",
+				"Value": 90,
+				"CloseAlert": 67,
+				"Closure": 69.07
+			},
+			{
+				"Name": "Rich",
+				"Value": 80,
+				"CloseAlert": 34,
+				"Closure": 42.5
+			}
+		],
+		"alarmByCustomer": [
+			{
+				"Name": "Sam Smith",
+				"Value": 40,
+				"CloseAlert": 10
+			},
+			{
+				"Name": "Chen ",
+				"Value": 80,
+				"CloseAlert": 20
+			},
+			{
+				"Name": "Sokha Ouk",
+				"Value": 90,
+				"CloseAlert": 29
+			},
+			{
+				"Name": "Tap Hola",
+				"Value": 25,
+				"CloseAlert": 21
+			},
+			{
+				"Name": "Hola",
+				"Value": 18,
+				"CloseAlert": 10
+			},
+			{
+				"Name": "Chen",
+				"Value": 18,
+				"CloseAlert": 12
+			}
+		],
+		"visitFrequency": [
+			{
+				"Name": "No Visit",
+				"Sales": 20,
+				"Visit": 1000
+			},
+			{
+				"Name": "< 2/month",
+				"Sales": 40,
+				"Visit": 3000
+			},
+			{
+				"Name": "2-5/month",
+				"Sales": 400,
+				"Visit": 7000
+			},
+			{
+				"Name": "5-8/month",
+				"Sales": 40,
+				"Visit": 800
+			},
+			{
+				"Name": "> 8/month",
+				"Sales": 400,
+				"Visit": 1200
+			}
+		],
+		"visitDuration": [
+			{
+				"Name": "No Visit",
+				"Sales": 2,
+				"Visit": 2000
+			},
+			{
+				"Name": "< 5 mins",
+				"Sales": 12,
+				"Visit": 1000
+			},
+			{
+				"Name": "5-10 mins",
+				"Sales": 8,
+				"Visit": 5000
+			},
+			{
+				"Name": "10-15 mins",
+				"Sales": 14,
+				"Visit": 3000
+			},
+			{
+				"Name": "15-20 mins",
+				"Sales": 19,
+				"Visit": 2700
+			},
+			{
+				"Name": " > 20 mins",
+				"Sales": 35,
+				"Visit": 20
+			}
+		],
+		"alarmByTechnician": [
+			{
+				"Name": "Sam Smith",
+				"Value": 40
+			},
+			{
+				"Name": "Chen ",
+				"Value": 80
+			},
+			{
+				"Name": "Sokha Ouk",
+				"Value": 9
+			},
+			{
+				"Name": "Tap Hola",
+				"Value": 18
+			}
+		],
+		"visitBySeller": [
+			{
+				"Name": "Chao Vannak",
+				"Value": 500
+			},
+			{
+				"Name": "Bui Thi My Hann",
+				"Value": 400
+			},
+			{
+				"Name": "Sokha Ouk",
+				"Value": 400
+			},
+			{
+				"Name": "Ho Vin Duc",
+				"Value": 400
+			},
+			{
+				"Name": "Chrok Sokhay",
+				"Value": 400
+			},
+			{
+				"Name": "Koemchhum Pak",
+				"Value": 300
+			},
+			{
+				"Name": "Snayhip Oung",
+				"Value": 400
+			},
+			{
+				"Name": "Ngo Vim Hoc",
+				"Value": 300
+			},
+			{
+				"Name": "Phum Thanh Vi",
+				"Value": 300
+			},
+			{
+				"Name": "Channata Chen",
+				"Value": 200
+			},
+			{
+				"Name": "Phum Hoing",
+				"Value": 200
+			},
+			{
+				"Name": "Nguyin Thi",
+				"Value": 200
+			},
+			{
+				"Name": "Phong Phum",
+				"Value": 100
+			}
+		],
+		"visitDurationByCustomer": [
+			{
+				"Name": "Lak Bophal",
+				"Value": 20
+			},
+			{
+				"Name": "Quan Nhao",
+				"Value": 18
+			},
+			{
+				"Name": "Cao Chim",
+				"Value": 18
+			},
+			{
+				"Name": "Phal Sokuntho",
+				"Value": 15
+			},
+			{
+				"Name": "Tap Hao Chi",
+				"Value": 12
+			},
+			{
+				"Name": "Cafe Tung",
+				"Value": 12
+			},
+			{
+				"Name": "Quan Pho",
+				"Value": 10
+			},
+			{
+				"Name": "Cahe They",
+				"Value": 9
+			},
+			{
+				"Name": "Robert",
+				"Value": 8
+			},
+			{
+				"Name": "Bun Phong",
+				"Value": 2
+			}
+		],
+		"visitHistoryHeatMap": [
+			{
+				"Latitude": 0,
+				"Longitude": 0,
+				"Total": 100
+			},
+			{
+				"Latitude": 10.779099,
+				"Longitude": 106.701903,
+				"Total": 100
+			},
+			{
+				"Latitude": 10.786614,
+				"Longitude": 106.680644,
+				"Total": 2
+			},
+			{
+				"Latitude": 11.558337,
+				"Longitude": 104.919931,
+				"Total": 2
+			},
+			{
+				"Latitude": 28.643959,
+				"Longitude": 77.326192,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.780185,
+				"Longitude": 106.70036,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.78087,
+				"Longitude": 106.700101,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.781647,
+				"Longitude": 106.705622,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.786236,
+				"Longitude": 106.680706,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.787021,
+				"Longitude": 106.692985,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.787271,
+				"Longitude": 106.680134,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.787375,
+				"Longitude": 106.679411,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.787452,
+				"Longitude": 106.680978,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.787695,
+				"Longitude": 106.681801,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.787707,
+				"Longitude": 106.681861,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.787906,
+				"Longitude": 106.679307,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.788142,
+				"Longitude": 106.678853,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.788228,
+				"Longitude": 106.680479,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.788316,
+				"Longitude": 106.679133,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.788322,
+				"Longitude": 106.680385,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.78835,
+				"Longitude": 106.681399,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.788617,
+				"Longitude": 106.680169,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.788628,
+				"Longitude": 106.679799,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.78865,
+				"Longitude": 106.679943,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.78866,
+				"Longitude": 106.679837,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.80599,
+				"Longitude": 106.735308,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.824577,
+				"Longitude": 106.629083,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.856646,
+				"Longitude": 106.784912,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.856825,
+				"Longitude": 106.785067,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.857173,
+				"Longitude": 106.784813,
+				"Total": 2
+			},
+			{
+				"Latitude": 10.857776,
+				"Longitude": 106.788263,
+				"Total": 2
+			},
+			{
+				"Latitude": 11.520692,
+				"Longitude": 104.906827,
+				"Total": 2
+			},
+			{
+				"Latitude": 11.52488,
+				"Longitude": 104.945677,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.525152,
+				"Longitude": 104.945628,
+				"Total": 100
+			},
+			{
+				"Latitude": 11.527378,
+				"Longitude": 104.944856,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.52908,
+				"Longitude": 104.926602,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.537656,
+				"Longitude": 104.923455,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.538491,
+				"Longitude": 104.925329,
+				"Total": 100
+			},
+			{
+				"Latitude": 11.541813,
+				"Longitude": 104.932252,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.542797,
+				"Longitude": 104.924935,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.543059,
+				"Longitude": 104.92926,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.543766,
+				"Longitude": 104.922832,
+				"Total": 100
+			},
+			{
+				"Latitude": 11.547315,
+				"Longitude": 104.926643,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.547475,
+				"Longitude": 104.934195,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.547527,
+				"Longitude": 104.934663,
+				"Total": 100
+			},
+			{
+				"Latitude": 11.547613,
+				"Longitude": 104.934314,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.547809,
+				"Longitude": 104.932288,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.549235,
+				"Longitude": 104.919575,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.54969,
+				"Longitude": 104.926292,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.549898,
+				"Longitude": 104.935948,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.550773,
+				"Longitude": 104.915248,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.55253,
+				"Longitude": 104.923602,
+				"Total": 100
+			},
+			{
+				"Latitude": 11.553625,
+				"Longitude": 104.924939,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.553985,
+				"Longitude": 104.844846,
+				"Total": 100
+			},
+			{
+				"Latitude": 11.554149,
+				"Longitude": 104.924899,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.55593,
+				"Longitude": 104.921849,
+				"Total": 100
+			},
+			{
+				"Latitude": 11.558345,
+				"Longitude": 104.919972,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.563217,
+				"Longitude": 104.861619,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.563395,
+				"Longitude": 104.872857,
+				"Total": 100
+			},
+			{
+				"Latitude": 11.56526,
+				"Longitude": 104.87794,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.565287,
+				"Longitude": 104.877916,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.565562,
+				"Longitude": 104.915042,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.566222,
+				"Longitude": 104.877191,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.566974,
+				"Longitude": 104.878191,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.566995,
+				"Longitude": 104.878353,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.567119,
+				"Longitude": 104.878196,
+				"Total": 100
+			},
+			{
+				"Latitude": 11.568176,
+				"Longitude": 104.888579,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.568362,
+				"Longitude": 104.906215,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.569287,
+				"Longitude": 104.892515,
+				"Total": 100
+			},
+			{
+				"Latitude": 11.570003,
+				"Longitude": 104.895812,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.570596,
+				"Longitude": 104.896512,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.575554,
+				"Longitude": 104.917828,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.57766,
+				"Longitude": 104.922674,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.577677,
+				"Longitude": 104.919765,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.577811,
+				"Longitude": 104.922563,
+				"Total": 100
+			},
+			{
+				"Latitude": 11.577866,
+				"Longitude": 104.923256,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.577867,
+				"Longitude": 104.922996,
+				"Total": 100
+			},
+			{
+				"Latitude": 11.577962,
+				"Longitude": 104.923247,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.578274,
+				"Longitude": 104.922836,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.580469,
+				"Longitude": 104.917736,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.580523,
+				"Longitude": 104.917747,
+				"Total": 100
+			},
+			{
+				"Latitude": 11.580873,
+				"Longitude": 104.917637,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.580923,
+				"Longitude": 104.917655,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.582436,
+				"Longitude": 104.919764,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.585648,
+				"Longitude": 104.902671,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.609143,
+				"Longitude": 104.92023,
+				"Total": 100
+			},
+			{
+				"Latitude": 16.053134,
+				"Longitude": 108.202639,
+				"Total": 100
+			},
+			{
+				"Latitude": 16.06011,
+				"Longitude": 108.185759,
+				"Total": 100
+			},
+			{
+				"Latitude": 16.060601,
+				"Longitude": 108.18637,
+				"Total": 100
+			},
+			{
+				"Latitude": 16.060733,
+				"Longitude": 108.185945,
+				"Total": 100
+			},
+			{
+				"Latitude": 16.061205,
+				"Longitude": 108.186135,
+				"Total": 100
+			},
+			{
+				"Latitude": 38.947793,
+				"Longitude": -77.344799,
+				"Total": 100
+			},
+			{
+				"Latitude": 38.947907,
+				"Longitude": -77.34464,
+				"Total": 100
+			},
+			{
+				"Latitude": 38.947936,
+				"Longitude": -77.344651,
+				"Total": 100
+			},
+			{
+				"Latitude": 38.947938,
+				"Longitude": -77.344927,
+				"Total": 100
+			}
+		],
+		"visitDurationHeatMap": [
+			{
+				"Latitude": 37.782551,
+				"Longitude": -122.445368,
+				"Total": 100
+			},
+			{
+				"Latitude": 37.780479,
+				"Longitude": 37.782745,
+				"Total": 100
+			},
+			{
+				"Latitude": 37.779996,
+				"Longitude": -122.406939,
+				"Total": 2
+			},
+			{
+				"Latitude": 37.779459,
+				"Longitude": -122.407613,
+				"Total": 2
+			},
+			{
+				"Latitude": 37.778953,
+				"Longitude": -122.408228,
+				"Total": 2
+			},
+			{
+				"Latitude": 37.778409,
+				"Longitude": -122.408839,
+				"Total": 2
+			},
+			{
+				"Latitude": 11.580469,
+				"Longitude": 104.917736,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.580523,
+				"Longitude": 104.917747,
+				"Total": 100
+			},
+			{
+				"Latitude": 11.580873,
+				"Longitude": 104.917637,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.580923,
+				"Longitude": 104.917655,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.582436,
+				"Longitude": 104.919764,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.585648,
+				"Longitude": 104.902671,
+				"Total": 1
+			},
+			{
+				"Latitude": 11.609143,
+				"Longitude": 104.92023,
+				"Total": 100
+			},
+			{
+				"Latitude": 16.053134,
+				"Longitude": 108.202639,
+				"Total": 100
+			},
+			{
+				"Latitude": 16.06011,
+				"Longitude": 108.185759,
+				"Total": 100
+			},
+			{
+				"Latitude": 16.060601,
+				"Longitude": 108.18637,
+				"Total": 100
+			},
+			{
+				"Latitude": 16.060733,
+				"Longitude": 108.185945,
+				"Total": 100
+			},
+			{
+				"Latitude": 16.061205,
+				"Longitude": 108.186135,
+				"Total": 100
+			},
+			{
+				"Latitude": 38.947793,
+				"Longitude": -77.344799,
+				"Total": 100
+			},
+			{
+				"Latitude": 38.947907,
+				"Longitude": -77.34464,
+				"Total": 100
+			},
+			{
+				"Latitude": 38.947936,
+				"Longitude": -77.344651,
+				"Total": 100
+			},
+			{
+				"Latitude": 38.947938,
+				"Longitude": -77.344927,
+				"Total": 100
+			}
+		],
+		"doorData": {
+			"low": 10,
+			"medium": 90,
+			"high": 1
+		},
+		"healthOverview": [
+			{
+				"name": "Temperature Issue",
+				"y": 11
+			},
+			{
+				"name": "Temperature And Light Issue",
+				"y": 12
+			},
+			{
+				"name": "Temperature and Light OK",
+				"y": 2
+			},
+			{
+				"name": "Light Malfunction",
+				"y": 0
+			}
+		],
+		"temperatureBands": [
+			{
+				"key": "Below 0",
+				"assets": 12,
+				"outlets": 20
+			},
+			{
+				"key": "0-5",
+				"assets": 8,
+				"outlets": 30
+			},
+			{
+				"key": "5-10",
+				"assets": 16,
+				"outlets": 73
+			},
+			{
+				"key": "10-15",
+				"assets": 10,
+				"outlets": 90
+			},
+			{
+				"key": "15",
+				"assets": 18,
+				"outlets": 17
+			},
+			{
+				"key": "Non-Smart",
+				"assets": 19,
+				"outlets": 0
+			}
+		],
+		"lightBands": [
+			{
+				"key": "Low (Below 10)",
+				"assets": 12,
+				"outlets": 8
+			},
+			{
+				"key": "Average (10-50)",
+				"assets": 4,
+				"outlets": 4
+			},
+			{
+				"key": "Bright (50+)",
+				"assets": 10,
+				"outlets": 9
+			},
+			{
+				"key": "Non-Smart",
+				"assets": 16,
+				"outlets": 0
+			}
+		],
+		"powerBands": [
+			{
+				"key": "< 1 hr",
+				"assets": 10,
+				"outlets": 8
+			},
+			{
+				"key": "1-4 hrs",
+				"assets": 14,
+				"outlets": 4
+			},
+			{
+				"key": "4-8 hrs",
+				"assets": 10,
+				"outlets": 9
+			},
+			{
+				"key": "8-12 hrs",
+				"assets": 14,
+				"outlets": 0
+			},
+			{
+				"key": "12-16 hrs",
+				"assets": 12,
+				"outlets": 0
+			},
+			{
+				"key": "16-24 hrs",
+				"assets": 16,
+				"outlets": 0
+			}
+		],
+		"tempAndSales": [
+			{
+				"Date": "1476921600000",
+				"TotalUnitSold": 49,
+				"Value": 1
+			},
+			{
+				"Date": "1476316800000",
+				"TotalUnitSold": 2,
+				"Value": 1
+			},
+			{
+				"Date": "1475712000000",
+				"TotalUnitSold": 12,
+				"Value": 4
+			},
+			{
+				"Date": "1475193600000",
+				"TotalUnitSold": "120",
+				"Value": "2"
+			},
+			{
+				"Date": "1474588800000",
+				"TotalUnitSold": 50,
+				"Value": 10
+			}
+		],
+		"customereExposure": [
+			{
+				"Date": "1476921600000",
+				"TotalUnitSold": 82,
+				"Value": 1
+			},
+			{
+				"Date": "1476316800000",
+				"TotalUnitSold": 112,
+				"Value": 4
+			},
+			{
+				"Date": "1475712000000",
+				"TotalUnitSold": "20",
+				"Value": "2"
+			}
+		],
+		"openAlarmSales": [
+			{
+				"Date": "1476921600000",
+				"TotalUnitSold": 82,
+				"Value": 100
+			},
+			{
+				"Date": "1476316800000",
+				"TotalUnitSold": 112,
+				"Value": 40
+			},
+			{
+				"Date": "1475712000000",
+				"TotalUnitSold": "20",
+				"Value": 20
+			}
+		],
+		"visitFrequencySales": [
+			{
+				"Date": "1476921600000",
+				"TotalUnitSold": 82,
+				"Value": 1
+			},
+			{
+				"Date": "1476316800000",
+				"TotalUnitSold": 112,
+				"Value": 4
+			},
+			{
+				"Date": "1475712000000",
+				"TotalUnitSold": "20",
+				"Value": "2"
+			}
+		],
+		"powerOnSales": [
+			{
+				"Date": "1476921600000",
+				"TotalUnitSold": 49,
+				"Value": 1
+			},
+			{
+				"Date": "1476316800000",
+				"TotalUnitSold": 2,
+				"Value": 1
+			},
+			{
+				"Date": "1475712000000",
+				"TotalUnitSold": 12,
+				"Value": 4
+			},
+			{
+				"Date": "1475193600000",
+				"TotalUnitSold": "120",
+				"Value": "2"
+			},
+			{
+				"Date": "1474588800000",
+				"TotalUnitSold": 50,
+				"Value": 10
+			}
+		],
+		"lightOnSales": [
+			{
+				"Date": "1476921600000",
+				"TotalUnitSold": 82,
+				"Value": 12
+			},
+			{
+				"Date": "1476316800000",
+				"TotalUnitSold": 23,
+				"Value": 4
+			},
+			{
+				"Date": "1475712000000",
+				"TotalUnitSold": "20",
+				"Value": 2
+			}
+		],
+		"doorOpenSales": [
+
+		],
+		"footTrafficOpening": [
+			[
+				"Amusement",
+				15
+			],
+			[
+				"Bar/Licensed",
+				45
+			],
+			[
+				"Full Service Restaurant",
+				30
+			],
+			[
+				"Local & Traditional",
+				10
+			],
+			[
+				"Other",
+				5
+			]
+		],
+		"outletCountByTier": [
+
+		],
+		"assetCountByTier": [
+
+		],
+		"alertbyTechnical": [
+			{
+				"Label": "Door Seal Worn",
+				"Values": [
+					{
+						"Name": "FREGO-FV1000",
+						"Value": 82
+					},
+					{
+						"Name": "FREGO-PV200",
+						"Value": 0
+					},
+					{
+						"Name": "FREGO-FV800",
+						"Value": 8
+					},
+					{
+						"Name": "FREGO-PV160",
+						"Value": 10
+					},
+					{
+						"Name": "FREGO-PV150",
+						"Value": 10
+					}
+				]
+			},
+			{
+				"Label": "Excessive Compressor Runtime",
+				"Values": [
+					{
+						"Name": "FREGO-FV1000",
+						"Value": 2
+					},
+					{
+						"Name": "FREGO-PV200",
+						"Value": 10
+					},
+					{
+						"Name": "FREGO-FV800",
+						"Value": 80
+					},
+					{
+						"Name": "FREGO-PV160",
+						"Value": 100
+					},
+					{
+						"Name": "FREGO-PV150",
+						"Value": 10
+					}
+				]
+			},
+			{
+				"Label": "Temperature Out ofSpec",
+				"Values": [
+					{
+						"Name": "FREGO-FV1000",
+						"Value": 82
+					},
+					{
+						"Name": "FREGO-PV200",
+						"Value": 10
+					},
+					{
+						"Name": "FREGO-FV800",
+						"Value": 80
+					},
+					{
+						"Name": "FREGO-PV160",
+						"Value": 110
+					},
+					{
+						"Name": "FREGO-PV150",
+						"Value": 10
+					}
+				]
+			},
+			{
+				"Label": "High Evaporator Temperature",
+				"Values": [
+					{
+						"Name": "FREGO-FV1000",
+						"Value": 2
+					},
+					{
+						"Name": "FREGO-PV200",
+						"Value": 0
+					},
+					{
+						"Name": "FREGO-FV800",
+						"Value": 200
+					},
+					{
+						"Name": "FREGO-PV160",
+						"Value": 0
+					},
+					{
+						"Name": "FREGO-PV150",
+						"Value": 10
+					}
+				]
+			}
+		],
+		"coolerInventory": [
+			{
+				"Name": "1 week",
+				"Scanning": 50,
+				"Missing": 4,
+				"Wrong": 1
+			},
+			{
+				"Name": "2 week",
+				"Scanning": 60,
+				"Missing": 5,
+				"Wrong": 2
+			},
+			{
+				"Name": "3 week",
+				"Scanning": 100,
+				"Missing": 10,
+				"Wrong": 5
+			},
+			{
+				"Name": "4 week",
+				"Scanning": 120,
+				"Missing": 8,
+				"Wrong": 4
+			},
+			{
+				"Name": "> 4 week",
+				"Scanning": 180,
+				"Missing": 15,
+				"Wrong": 10
+			}
+		],
+		"coolerStatusTrade": [
+
+		],
+		"activitiesTrade": [
+
+		],
+		"outletPerformanceTrade": [
+
+		],
+		"routeComplianceTrade": [
+
+		],
+		"cdeTrackingTrade": [
+
+		],
+		"outletCountByTradeTier": [
+
+		],
+		"assetCountByTradeTier": [
+
+		]
+	}
+}

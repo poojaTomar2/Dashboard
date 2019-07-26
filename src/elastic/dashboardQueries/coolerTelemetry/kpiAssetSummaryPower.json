@@ -1,0 +1,16 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": []
+    }
+  },
+  "aggs": {
+    "AssetCount": {
+      "cardinality": {
+        "field": "AssetId"
+      }
+    }
+  }
+}

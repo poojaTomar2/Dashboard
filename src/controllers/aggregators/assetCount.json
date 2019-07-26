@@ -1,0 +1,49 @@
+{
+  "size": 0,
+  "aggs": {
+    "Keys": {
+      "terms": {
+        "field": "LocationId",
+        "size": 100000
+      },
+      "aggs": {
+        "SmartAssetCount": {
+          "filter": {
+            "bool": {
+              "must": [
+                {
+                  "type": {
+                    "value": "Asset"
+                  }
+                }
+              ],
+              "must_not": [
+                {
+                  "term": {
+                    "SmartDeviceSerialNumber": ""
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "type": {
+            "value": "Asset"
+          }
+        },
+        {
+          "term": {
+            "IsDeleted": false
+          }
+        }
+      ]
+    }
+  }
+}

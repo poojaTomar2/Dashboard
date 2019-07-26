@@ -1,0 +1,35 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "must": [{
+        "type": {
+          "value": "AssetEventDataSummary"
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "LocationType": {
+      "nested": {
+        "path": "AlertSummaryInJson"
+      },
+      "aggs": {
+        "LocationType": {
+          "terms": {
+            "field": "AlertSummaryInJson.LocationTypeId",
+            "size": 100000
+          },
+          "aggs": {
+            "AssetCount": {
+              "cardinality": {
+                "field": "AlertSummaryInJson.AssetId"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

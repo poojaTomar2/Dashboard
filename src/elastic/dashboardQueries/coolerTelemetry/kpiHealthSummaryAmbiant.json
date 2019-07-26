@@ -1,0 +1,33 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "AssetEventDataSummary"
+        }
+      }],
+      "must": [{
+        "term": {
+          "IsFromHealth": true
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "AssetBucket": {
+      "terms": {
+        "field": "AssetId",
+        "size": 10000
+      },
+      "aggs": {
+        "amb_temp_stats": {
+          "avg": {
+            "field": "AverageAmbientTemperature"
+          }
+        }
+      }
+    }
+  }
+}

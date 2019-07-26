@@ -1,0 +1,61 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "type": {
+            "value": "AssetVisitHistory"
+          }
+        }
+      ]
+    }
+  },
+  "sort": [
+    {
+      "VisitDateTime": {
+        "order": "desc"
+      }
+    }
+  ],
+  "aggs": {
+    "MissingData": {
+      "date_histogram": {
+        "field": "VisitDateTime",
+        "interval": "1d",
+        "min_doc_count": 1,
+        "order": {
+					"_key": "desc"
+				}
+      },
+      "aggs": {
+        "MissingData": {
+          "filter": {
+            "bool": {
+              "filter": [
+                {
+                  "term": {
+                    "IsMissing": "true"
+                  }
+                }
+              ]
+            }
+          },
+          "aggs": {
+            "AssetCount": {
+              "cardinality": {
+                "field": "AssetId"
+              }
+            }
+          }
+        },
+        "AssetCount": {
+              "cardinality": {
+                "field": "AssetId"
+              }
+            }
+      }
+    }
+  }
+}

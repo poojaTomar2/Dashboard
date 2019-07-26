@@ -1,0 +1,46 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "AssetVisitHistory"
+        }
+      }, {
+        "term": {
+          "IsMissing": "true"
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "AssetBucket": {
+      "terms": {
+        "field": "AssetId",
+        "size": 100000
+      },
+      "aggs": {
+        "Start": {
+          "top_hits": {
+            "size": 1,
+            "sort": [{
+              "VisitDateTime": "desc"
+            }],
+            "_source": {
+              "includes": [
+                "Status",
+                "LocationId"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

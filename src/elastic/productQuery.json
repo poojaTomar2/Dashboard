@@ -1,0 +1,32 @@
+{
+   "size": 0,
+   "query": {
+      "bool": {
+         "filter": [
+            {
+               "type": {
+                  "value": "Product"
+               }
+            },
+            {
+               "term": {
+                  "IsDeleted": 0
+               }
+            },
+            {
+               "term": {
+                  "IsEmpty": "false"
+               }
+            }
+         ]
+      }
+   },
+   "_source": {
+      "includes": [
+         "ProductId",
+         "Product",
+         "BrandName",
+         "PackagingType"
+      ]
+   }
+}

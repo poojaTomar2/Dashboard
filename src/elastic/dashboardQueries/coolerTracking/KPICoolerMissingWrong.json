@@ -1,0 +1,44 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "AssetVisitHistory"
+        }
+      }, {
+        "term": {
+          "IsDeleted": false
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }, {
+        "terms": {
+          "EventTypeId": [10]
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "top_tags": {
+      "terms": {
+        "field": "AssetId",
+        "size": 100000
+      },
+      "aggs": {
+        "top_hit": {
+          "top_hits": {
+            "_source": {
+              "includes": ["Status"]
+            },
+            "size": 1
+          }
+        }
+      }
+    }
+  }
+}

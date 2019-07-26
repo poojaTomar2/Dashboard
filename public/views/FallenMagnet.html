@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title> Dashboard </title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <style>
+        .btn-bronze {
+            color: #fff;
+            background-color: Brown;
+            border-color: Brown;
+        }
+
+        .btn-diamond {
+            color: #fff;
+            background-color: blue;
+            border-color: blue;
+        }
+
+        .btn-gold {
+            color: #fff;
+            background-color: Gold;
+            border-color: Gold;
+        }
+
+        .btn-silver {
+            color: #fff;
+            background-color: silver;
+            border-color: silver;
+        }
+
+        .btn-circle {
+            width: 10px;
+            height: 10px;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 12px;
+            line-height: 18px;
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+        }
+
+        .easy-pie-title {
+            display: inline-block;
+            margin: 10px 6px 0;
+            font-size: 12px;
+            font-weight: 400;
+            text-transform: uppercase;
+            width: 8.5em;
+            height: 19px;
+            text-overflow: ellipsis;
+            white-space: initial;
+            overflow: visible;
+            word-wrap: break-word;
+        }
+
+        #sparks {
+            display: block;
+            list-style: none;
+            margin: 0px 0 0;
+            padding: 0;
+            text-align: right;
+        }
+
+        .fallenMagnetDashboardHelp {
+            font-size: 18px;
+            float: right;
+            text-align: center;
+            position: relative;
+            min-width: 35px;
+            line-height: 32px;
+            border-left: 1px solid rgba(0, 0, 0, .09);
+        }
+
+        .txt-color-greenLight {
+            color: #f5f5f5 !important;
+        }
+
+        .col-sm-2-5 {
+            width: 20%;
+        }
+
+        .col-md-2-5 {
+            width: 20%;
+        }
+
+        .col-lg-2-5 {
+            width: 20%;
+        }
+
+        .jarviswidget>header h2 {
+            width: auto;
+        }
+    </style>
+</head>
+
+<body class="">
+    <div id="ribbon">
+        <!-- breadcrumb -->
+        <ol class="breadcrumb">
+            <li>Dashboard</li>
+            <li>Fallen Magnet</li>
+        </ol>
+    </div>
+    <!-- MAIN CONTENT -->
+    <div id="content">
+        <!-- row -->
+        <div id="chat-container" class="">
+            <span class="chat-list-open-close">
+                <i class="fa fa-filter icon-filter"></i>
+                <b class="filterApplied hidden">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </b>
+                <span class="text-filter">Filters</span>
+            </span>
+            <div id="filterTitle"></div>
+            <div class="chat-list-body custom-scroll">
+                <div id="filterFormKPI">
+                </div>
+            </div>
+        </div>
+        <div id="chat-container-summary">
+            <div id="chat-container" class="chat-container-summary">
+                <span id="exid" class="chat-list-open-close" style="top:139px">
+                    <i class="fa fa-table icon-filter"></i>
+                    <span class="text-filter">Summary</span>
+                    <b>
+                        <i class="fa fa-filter"></i>
+                    </b>
+                </span>
+                <div id="filterSummarySpin"></div>
+                <div class="chat-list-body custom-scroll">
+                    <div id="filterSummary">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <div class="well-sm">
+                    <span class="well-sm">
+                        <b>Period: </b>
+                        <b class="timeFilterName"></b>
+                    </span>
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+                <ul id="sparks" class="">
+                    <li class="sparks-info">
+                        <h5> Total Customers
+                            <span class="txt-color-purple" id="totalCustomer">0</span>
+                        </h5>
+                    </li>
+                    <li class="sparks-info">
+                        <h5>Customers Selected
+                            <span class="txt-color-blue" id="customerSelectedKPI">0</span>
+                        </h5>
+                        <div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0" data-pie-size="40"
+                            id="customerSelectedPercentageKPI">
+                            <span class="percent percent-sign">0</span>
+                        </div>
+                    </li>
+                    <li class="sparks-info">
+                        <h5>Count of Coolers
+                            <span class="txt-color-blue" id="coolerSelectedKPI">0</span>
+                        </h5>
+                    </li>
+                    <li class="sparks-info">
+                        <h5>Connected Coolers
+                            <span class="txt-color-blue" id="smartCoolerSelectedKPI">0</span>
+                        </h5>
+                        <div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0" data-pie-size="40"
+                            id="smartCoolerSelectedPercentageKPI">
+                            <span class="percent percent-sign">0</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <section id="widget-grid" class="">
+            <div class="row">
+                <article class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="grid-stack">
+                        <div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-bind="attr: {'data-gs-x': $data.x, 'data-gs-y': $data.y, 'data-gs-width': $data.width, 'data-gs-height': $data.height, 'data-gs-auto-position': $data.auto_position, 'data-gs-id': $data.id}"
+                            data-gs-x="0" data-gs-y="2" data-gs-width="12" data-gs-height="4" data-gs-auto-position="true" data-gs-id="gs-lastDataDownloaded">
+                            <div class="grid-stack-item-content">
+                                <span class="drag fa fa-arrows  ui-draggable-handle"></span>
+                                <div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+                                    data-widget-sortable="false" data-widget-deletebutton="false" rel="popover-hover" data-placement="top">
+                                    <header>
+                                        <span class="widget-icon">
+                                            <i class="glyphicon glyphicon-stats txt-color-darken"></i>
+                                        </span>
+                                        <h2>Fallen Magnet Chart</h2>
+                                        <div class="fallenMagnetDashboardHelp">
+                                            <a onclick="infoGuide('fallenMagnetChart');">
+                                                <i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+                                            </a>
+                                        </div>
+                                        <div class="widget-toolbar" role="menu">
+                                            <div class="btn-group">
+                                            </div>
+                                        </div>
+                                    </header>
+                                    <div id="FallenMagnet"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-stack-item ui-draggable ui-resizable ui-resizable-autohide" data-bind="attr: {'data-gs-x': $data.x, 'data-gs-y': $data.y, 'data-gs-width': $data.width, 'data-gs-height': $data.height, 'data-gs-auto-position': $data.auto_position, 'data-gs-id': $data.id}"
+                            data-gs-x="0" data-gs-y="2" data-gs-width="12" data-gs-height="4" data-gs-auto-position="true" data-gs-id="gs-dooropen">
+                            <div class="grid-stack-item-content">
+                                <span class="drag fa fa-arrows  ui-draggable-handle"></span>
+                                <div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false"
+                                    data-widget-sortable="false" data-widget-deletebutton="false" rel="popover-hover" data-placement="top">
+                                    <header>
+                                        <span class="widget-icon">
+                                            <i class="glyphicon glyphicon-stats txt-color-darken"></i>
+                                        </span>
+                                        <h2>Fallen Magnet Spread</h2>
+                                        <div class="fallenMagnetDashboardHelp">
+                                            <a onclick="infoGuide('fallenMagnetSpread');">
+                                                <i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+                                            </a>
+                                        </div>
+                                        <div class="widget-toolbar" role="menu">
+                                            <div class="btn-group">
+                                            </div>
+                                        </div>
+                                    </header>
+                                    <div id="FallenMagnetSpread"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+    <!--================================================== -->
+    <!-- PAGE RELATED PLUGIN(S) -->
+    <script async src="js/controllers/FallenMagnet.js"></script>
+</body>
+
+</html>

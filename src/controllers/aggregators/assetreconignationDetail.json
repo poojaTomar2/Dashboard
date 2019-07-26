@@ -1,0 +1,30 @@
+{
+    "size": 0,
+    "aggs": {
+        "Keys": {
+            "terms": {
+                "field": "AssetId",
+                "size": 100000
+            },
+            "aggs": {
+                "latest": {
+                    "top_hits": {
+                        "size": 1,
+                        "sort": [{
+                            "VerifiedOn": "desc"
+                        }]
+                    }
+                }
+            }
+        }
+    },
+    "query": {
+        "bool": {
+            "filter": [{
+                "type": {
+                    "value": "RecognitionReportAttribute"
+                }
+            }]
+        }
+    }
+}

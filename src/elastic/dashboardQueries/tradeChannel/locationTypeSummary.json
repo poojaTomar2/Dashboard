@@ -1,0 +1,38 @@
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "AssetEventDataSummary"
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "LocationTypeId": 0
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "LocationType": {
+      "terms": {
+        "field": "LocationTypeId",
+        "size": 100000
+      },
+      "aggs": {
+        "LocationType": {
+          "top_hits": {
+            "size": 1,
+            "_source": {
+              "includes": [
+                "LocationName",
+                "LocationTypeId"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

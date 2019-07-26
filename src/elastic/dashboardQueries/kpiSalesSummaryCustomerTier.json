@@ -1,0 +1,27 @@
+{
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "SalesOrderDetail"
+        }
+      }]
+    }
+  },
+  "aggregations": {
+    "Location": {
+      "terms": {
+        "field": "LocationId",
+        "size": 100000
+      },
+      "aggs": {
+        "SalesVolume": {
+          "sum": {
+            "field": "SumQuantity"
+          }
+        }
+      }
+    }
+  }
+}

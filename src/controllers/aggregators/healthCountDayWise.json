@@ -1,0 +1,135 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [{
+          "type": {
+            "value": "AssetEventDataSummary"
+          }
+        },
+        {
+          "term": {
+            "IsFromHealth": true
+          }
+        }
+      ]
+    }
+  },
+  "sort": [{
+    "EventDate": {
+      "order": "desc"
+    }
+  }],
+  "aggs": {
+    "HealthData": {
+      "date_histogram": {
+        "field": "EventDate",
+        "interval": "1d",
+        "min_doc_count": 1,
+        "order": {
+          "_key": "desc"
+        }
+      },
+      "aggs": {
+        "TempAndLightIssue": {
+          "filter": {
+            "bool": {
+              "must_not": [{
+                "term": {
+                  "LastTemperatureValue": 0
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "AssetCount": {
+              "cardinality": {
+                "field": "AssetId"
+              }
+            }
+          }
+        },
+        "TempIssue": {
+          "filter": {
+            "bool": {
+              "must_not": [{
+                "term": {
+                  "LastTemperatureValue": 0
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "AssetCount": {
+              "cardinality": {
+                "field": "AssetId"
+              }
+            }
+          }
+        },
+        "LightIssue": {
+          "filter": {
+            "bool": {
+              "must_not": [{
+                "term": {
+                  "SumOfHealthIntervallightIntensityNEQM1": 0
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "AssetCount": {
+              "cardinality": {
+                "field": "AssetId"
+              }
+            }
+          }
+        },
+        "HightTemperature": {
+          "filter": {
+            "bool": {
+              "filter": [],
+              "must_not": [{
+                "term": {
+                  "LastTemperatureValue": 0
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "AssetCount": {
+              "cardinality": {
+                "field": "AssetId"
+              }
+            }
+          }
+        },
+        "LowLight": {
+          "filter": {
+            "bool": {
+              "filter": [],
+              "must_not": [{
+                "term": {
+                  "SumOfHealthIntervallightIntensityNEQM1": 0
+                }
+              }]
+            }
+          },
+          "aggs": {
+            "AssetCount": {
+              "cardinality": {
+                "field": "AssetId"
+              }
+            }
+          }
+        },
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    }
+  }
+}

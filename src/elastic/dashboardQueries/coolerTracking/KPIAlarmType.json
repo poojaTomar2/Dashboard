@@ -1,0 +1,65 @@
+{
+	"from": 0,
+	"size": 100000,
+	"query": {
+		"bool": {
+			"filter": [{
+					"type": {
+						"value": "SmartDeviceAlarmTypeRecord"
+					}
+				},
+				{
+					"term": {
+						"IsDeleted": false
+					}
+				}
+			],
+			"must_not": [{
+					"term": {
+						"AssetId": 0
+					}
+				}, {
+					"term": {
+						"LocationId": 0
+					}
+				},
+				{
+					"terms": {
+						"AlarmTypeId": [8]
+					}
+				}
+			]
+		}
+	},
+	"aggs": {
+		"ByType": {
+			"terms": {
+				"field": "AlarmTypeId",
+				"size": 100000,
+				"order": {
+					"_count": "desc"
+				}
+			},
+			"aggs": {
+				"AlarmTypeName": {
+					"top_hits": {
+						"size": 1,
+						"_source": {
+							"includes": [
+								"AlarmType", "AssetId"
+							]
+						}
+					}
+				},
+				"AlertClosed": {
+					"filter": {
+						"bool": {
+							"must": []
+						}
+					}
+				}
+			}
+		}
+	}
+
+}

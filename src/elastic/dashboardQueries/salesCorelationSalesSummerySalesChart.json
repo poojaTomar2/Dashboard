@@ -1,0 +1,43 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "SalesOrderDetail"
+        }
+      }],
+      "must_not": []
+    }
+  },
+  "aggs": {
+    "Sales": {
+      "date_histogram": {
+        "field": "Date",
+        "interval": "month",
+        "min_doc_count": 1
+      },
+      "aggs": {
+        "SalesVolume": {
+          "avg": {
+            "field": "SumQuantity"
+          }
+        },
+        "Location": {
+          "terms": {
+            "field": "LocationId",
+            "size": 100000
+          },
+          "aggs": {
+            "SalesVolume": {
+              "sum": {
+                "field": "SumQuantity"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

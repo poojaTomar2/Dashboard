@@ -1,0 +1,22 @@
+{
+    "size": 1,
+    "query": {
+        "bool": {
+            "filter": [{
+                "type": {
+                    "value": "Planogram"
+                }
+            }, {
+                "term": {
+                    "IsDeleted": 0
+                }
+            }]
+        }
+    },
+    "_source": {
+        "includes": [
+            "PlanogramId",
+            "FacingDetails"
+        ]
+    }
+}

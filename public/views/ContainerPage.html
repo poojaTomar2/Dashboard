@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title> Survey Dashboard </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<script async src="js/gMapPanel.js"></script>
+	<style>
+		.ui-datepicker {
+			z-index: 990 !important;
+		}
+	</style>
+</head>
+
+<body class="">
+	<div id="ribbon">
+		<!-- breadcrumb -->
+		<ol class="breadcrumb">
+			<li>Survey</li>
+		</ol>
+	</div>
+	<!-- MAIN CONTENT -->
+	<div id="content">
+		<div id="chat-container" class="">
+			<span class="chat-list-open-close"><i class="fa fa-filter icon-filter"></i>
+  					<b class="filterApplied hidden"><i class="fa fa-check" aria-hidden="true"></i></b><span class="text-filter">Filters</span>
+			</span>
+			<div id="filterTitle"></div>
+			<div class="chat-list-body custom-scroll">
+				<div class="jarviswidget" id="surveyFilterForm" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false"
+								data-widget-deletebutton="false" data-widget-sortable="false">
+					<!--</div>-->
+				</div>
+			</div>
+		</div>
+		<div id="chat-container-summary">
+			<div id="chat-container" class="chat-container-summary">
+				<span class="chat-list-open-close" style="top:139px">
+					<i class="fa fa-table icon-filter"></i><span class="text-filter">Summary</span>
+					<b><i class="fa fa-filter"></i></b>
+				</span>
+				<div class="chat-list-body custom-scroll">
+					<div id="filterSummary">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-2 col-md-2 col-lg-4">
+				<h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i> Survey Dashboard</h1>
+			</div>
+			<div class="col-xs-12 col-sm-10 col-md-10 col-lg-8">
+				<ul id="sparks" class="">
+					<li class="sparks-info">
+						<h5> Outlets Surveyed <span class="txt-color-blue" id="totalOutletsSurveyed">0</span></h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="10" data-pie-size="40"
+										id="totalOutletsSurveyed1">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info">
+						<h5> Smart Outlets <span class="txt-color-blue" id="totalSmartOutlet">0</span></h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="20" data-pie-size="40"
+										id="totalSmartOutlet1">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info">
+						<h5> Outlets To Be Surveyed <span class="txt-color-blue" id="totalOutletsNotSurveyed">0</span></h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="90" data-pie-size="40"
+										id="totalOutletsNotSurveyed1">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info">
+						<h5> Surveyors <span class="txt-color-purple" id="totalSurveyors"><i class="fa fa-male"></i>&nbsp;0</span></h5>
+					</li>
+					<li class="sparks-info">
+						<h5> Issues Reported <span class="txt-color-purple" id="totalIssuesReported">0</span></h5>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<section id="widget-grid" class="">
+			<div class="row">
+				<article class="col-sm-12 col-md-12 col-lg-12">
+					<div class="jarviswidget" id="wid-id-12" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false"
+									data-widget-editbutton="false" data-widget-sortable="false">
+						<header>
+							<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+							<h2>Outlet Details</h2>
+						</header>
+						<div class="no-padding ">
+							<span id="gridHeader"></span>
+							<table class="table table-striped table-hover table-condensed" style="max-height: 29.5em; margin-top:0px !important" id="dt_basic"
+											width="100%">
+								<thead>
+									<tr>
+										<th data-field="Name">Outlet</th>
+										<th data-field="Code">Outlet Code </th>
+										<th data-field="MarketName">Market</th>
+										<th data-field="LocationType">Channel</th>
+										<th data-field="SalesTerritory">Territory</th>
+										<th data-field="City">City</th>
+										<th data-field="Street">Street</th>
+										<th data-field="Country">Country</th>
+										<th data-field="IsKeyLocation">Is Key? </th>
+										<th data-field="IsSurveyed">Is Surveyed?</th>
+										<th data-field="IsSmart">Is Smart?</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+					<article class="col-sm-12 col-md-12 col-lg-12 fullscreensettings">
+						<div class="jarviswidget" id="wid-id-0" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-editbutton="false"
+										data-widget-togglebutton="false" data-widget-sortable="false">
+							<header>
+								<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+								<h2>Product Chart</h2>
+								<div class="widget-toolbar hidden-mobile">
+									<span class="onoffswitch-title"><i class="fa fa-toggle-on"></i> Product </span>
+									<span class="onoffswitch">
+										<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" checked="checked" id="productAvailable">
+										<label class="onoffswitch-label" for="productAvailable"> <span class="onoffswitch-inner" data-swchon-text="YES" data-swchoff-text="NO"></span>									<span class="onoffswitch-switch"></span> </label>
+									</span>
+								</div>
+							</header>
+							<div id="container"></div>
+						</div>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12 fullscreensettings">
+						<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-editbutton="false"
+										data-widget-togglebutton="false" data-widget-sortable="false">
+							<header>
+								<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+								<h2>Activation Metrics</h2>
+								<div class="widget-toolbar hidden-mobile">
+									<span class="onoffswitch-title"><i class="fa fa-toggle-on"></i> Response </span>
+									<span class="onoffswitch">
+										<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" checked="checked" id="activationAvailable">
+										<label class="onoffswitch-label" for="activationAvailable"> <span class="onoffswitch-inner" data-swchon-text="YES" data-swchoff-text="NO"></span>									<span class="onoffswitch-switch"></span> </label>
+									</span>
+								</div>
+							</header>
+							<div id="activationmetrics"></div>
+						</div>
+					</article>
+					<article class="col-sm-12 col-md-12 col-lg-12 fullscreensettings">
+						<div class="jarviswidget" id="wid-id-2" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-editbutton="false"
+										data-widget-togglebutton="false" data-widget-sortable="false">
+							<header>
+								<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+								<h2>Cooler Metrics</h2>
+								<div class="widget-toolbar hidden-mobile">
+									<span class="onoffswitch-title"><i class="fa fa-toggle-on"></i> Response </span>
+									<span class="onoffswitch">
+										<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" checked="checked" id="coolerAvailable">
+										<label class="onoffswitch-label" for="coolerAvailable"> <span class="onoffswitch-inner" data-swchon-text="YES" data-swchoff-text="NO"></span>									<span class="onoffswitch-switch"></span> </label>
+									</span>
+								</div>
+							</header>
+							<div id="coolerMatrix"></div>
+						</div>
+					</article>
+				</article>
+				<!--<article class="col-sm-5 col-md-5 col-lg-5">-->
+				</article>
+			</div>
+			<div class="row">
+			</div>
+			<div class="row">
+				<article class="col-sm-6 col-md-6 col-lg-6 fullscreensettings">
+					<div class="jarviswidget" id="wid-id-4" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-editbutton="false"
+									data-widget-sortable="false" data-widget-togglebutton="false">
+						<header>
+							<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+							<h2>Rank Percentage</h2>
+						</header>
+						<div id="rankPercentage"></div>
+					</div>
+				</article>
+				<article class="col-sm-6 col-md-6 col-lg-6 fullscreensettings">
+					<div class="jarviswidget" id="wid-id-3" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-editbutton="false"
+									data-widget-sortable="false" data-widget-togglebutton="false">
+						<header>
+							<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+							<h2>Purity</h2>
+						</header>
+						<div id="purity"></div>
+					</div>
+				</article>
+			</div>
+			<div class="row">
+				<article class="col-sm-6 col-md-6 col-lg-6 ">
+					<div class="jarviswidget" id="wid-id-11" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-editbutton="false"
+									data-widget-sortable="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false">
+						<header>
+							<span class="widget-icon"> <i class="glyphicon glyphicon-stats txt-color-darken"></i> </span>
+							<h2>Outlet Coverage</h2>
+						</header>
+						<div class="no-padding">
+							<div>
+								<div id="myTabContent panel-body" style="background-color:white">
+									<div id="map-canvas" style="height: 31em; margin-top:0px !important"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+	</div>
+	<!--================================================== -->
+	<!-- PAGE RELATED PLUGIN(S) -->
+	<script async src="js/controllers/container.js"></script>
+</body>
+
+</html>

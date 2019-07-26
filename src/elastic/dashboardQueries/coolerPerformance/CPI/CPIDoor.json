@@ -1,0 +1,159 @@
+{
+  "from": 0,
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "AssetEventDataSummary"
+        }
+      }, {
+        "term": {
+          "IsFromDoor": true
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "CPI": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }],
+          "must_not": []
+        }
+      },
+      "aggs": {
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "DoorCount": {
+              "sum": {
+                "field": "SumOfDoorCount"
+              }
+            }
+          }
+        },
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    },
+    "Current": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }],
+          "must_not": []
+        }
+      },
+      "aggs": {
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "DoorCount": {
+              "sum": {
+                "field": "SumOfDoorCount"
+              }
+            }
+          }
+        },
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    },
+    "MonthBack": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }],
+          "must_not": []
+        }
+      },
+      "aggs": {
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "DoorCount": {
+              "sum": {
+                "field": "SumOfDoorCount"
+              }
+            }
+          }
+        },
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    },
+    "Previous": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "EventDate": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }],
+          "must_not": []
+        }
+      },
+      "aggs": {
+        "Asset": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "DoorCount": {
+              "sum": {
+                "field": "SumOfDoorCount"
+              }
+            }
+          }
+        },
+        "AssetCount": {
+          "cardinality": {
+            "field": "AssetId"
+          }
+        }
+      }
+    }
+  }
+}

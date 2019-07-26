@@ -1,0 +1,120 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "AssetVisitHistory"
+        }
+      }, {
+        "term": {
+          "IsDeleted": false
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "Last30Days": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "VisitDateTime": {
+                "gte": "now-30d/d",
+                "lte": "now"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "assets": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "top_hit": {
+              "top_hits": {
+                "_source": {
+                  "includes": ["Status", "AssetId"]
+                },
+                "size": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "Last60Days": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "VisitDateTime": {
+                "gte": "now-60d/d",
+                "lte": "now-30d/d"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "assets": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "top_hit": {
+              "top_hits": {
+                "_source": {
+                  "includes": ["Status", "AssetId"]
+                },
+                "size": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "Last90Days": {
+      "filter": {
+        "bool": {
+          "filter": [{
+            "range": {
+              "VisitDateTime": {
+                "gte": "now-90d/d",
+                "lte": "now-60d/d"
+              }
+            }
+          }]
+        }
+      },
+      "aggs": {
+        "assets": {
+          "terms": {
+            "field": "AssetId",
+            "size": 100000
+          },
+          "aggs": {
+            "top_hit": {
+              "top_hits": {
+                "_source": {
+                  "includes": ["Status", "AssetId"]
+                },
+                "size": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

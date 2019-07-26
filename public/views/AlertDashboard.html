@@ -1,0 +1,469 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title> Dashboard </title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<style>
+		.dt-toolbar> :first-child .DTTT,
+		.dt-toolbar> :first-child .dataTables_filter> :only-child,
+		.dt-toolbar> :first-child .dataTables_length,
+		.dt-toolbar> :first-child .pagination {
+			float: right !important;
+		}
+
+		.btn-bronze {
+			color: #fff;
+			background-color: Brown;
+			border-color: Brown;
+		}
+
+		.btn-diamond {
+			color: #fff;
+			background-color: blue;
+			border-color: blue;
+		}
+
+		.btn-gold {
+			color: #fff;
+			background-color: Gold;
+			border-color: Gold;
+		}
+
+		.btn-silver {
+			color: #fff;
+			background-color: silver;
+			border-color: silver;
+		}
+
+		.btn-circle {
+			width: 10px;
+			height: 10px;
+			text-align: center;
+			padding: 6px 0;
+			font-size: 12px;
+			line-height: 18px;
+			border-radius: 50%;
+			-moz-border-radius: 50%;
+			-webkit-border-radius: 50%;
+		}
+
+		.easy-pie-title {
+			display: inline-block;
+			margin: 10px 6px 0;
+			font-size: 12px;
+			font-weight: 400;
+			text-transform: uppercase;
+			width: 7.5em;
+			height: 19px;
+			text-overflow: ellipsis;
+			white-space: initial;
+			overflow: visible;
+			word-wrap: break-word;
+		}
+		
+		.alertHelp {
+			font-size: 18px;
+			float: right;
+			text-align: center;
+			position: relative;
+			min-width: 35px;
+			line-height: 32px;
+			border-left: 1px solid rgba(0, 0, 0, .09);
+		}
+
+		#sparks {
+			display: block;
+			list-style: none;
+			margin: 0px 0 0;
+			padding: 0;
+			text-align: right;
+		}
+
+		.col-sm-1-2 {
+			width: 12.5%;
+		}
+
+		.col-md-1-2 {
+			width: 12.5%;
+		}
+
+		.col-lg-1-2 {
+			width: 12.5%;
+		}
+
+		.col-lg-22 {
+			width: 20%;
+		}
+
+		.col-sm-22 {
+			width: 20%;
+		}
+
+		.col-md-22 {
+			width: 20%;
+		}
+
+		.onoffswitch {
+			position: relative;
+			width: 5.5em;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			margin-top: 3px;
+			margin-bottom: 3px;
+			margin-left: 5px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.onoffswitch-switch {
+			right: 4.5em;
+		}
+
+		.txt-color-greenLight {
+			color: #f5f5f5 !important;
+		}
+
+		.select-col-sm-5-col-md-5-col-lg-5 {
+			height: 45.5em !important;
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+
+		.widget-toolbar-2 {
+			display: inline-block;
+			float: left;
+			width: auto;
+			height: 32px;
+			line-height: 32px;
+			position: relative;
+			cursor: pointer;
+			padding: 0 8px;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body class="">
+	<div id="ribbon">
+		<!-- breadcrumb -->
+		<ol class="breadcrumb">
+			<li>Dashboard</li>
+			<li>Alerts</li>
+		</ol>
+	</div>
+	<!-- MAIN CONTENT -->
+	<div id="content">
+		<!-- row -->
+		<div id="chat-container" class="">
+			<span class="chat-list-open-close">
+				<i class="fa fa-filter icon-filter"></i>
+				<b class="filterApplied hidden">
+					<i class="fa fa-check" aria-hidden="true"></i>
+				</b>
+				<span class="text-filter">Filters</span>
+			</span>
+			<div id="filterTitle"></div>
+			<div class="chat-list-body custom-scroll">
+				<div id="filterFormKPI">
+				</div>
+			</div>
+		</div>
+		<div id="chat-container-summary">
+			<div id="chat-container" class="chat-container-summary">
+				<span id="exid" class="chat-list-open-close" style="top:139px">
+					<i class="fa fa-table icon-filter"></i>
+					<span class="text-filter">Summary</span>
+					<b>
+						<i class="fa fa-filter"></i>
+					</b>
+				</span>
+				<div id="filterSummarySpin"></div>
+				<div class="chat-list-body custom-scroll">
+					<div id="filterSummary">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="">
+			<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+				<div class="well-sm">
+					<span class="well-sm">
+						<b>Period: </b>
+						<b class="timeFilterName"></b>
+					</span>
+				</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+				<ul id="sparks" class="">
+					<li class="sparks-info">
+						<h5> Total Customers
+							<span class="txt-color-purple" id="totalCustomer">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Customers Selected
+							<span class="txt-color-blue" id="customerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0"
+						 data-pie-size="40" id="customerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+					<li class="sparks-info">
+						<h5>Count of Coolers
+							<span class="txt-color-blue" id="coolerSelectedKPI">0</span>
+						</h5>
+					</li>
+					<li class="sparks-info">
+						<h5>Connected Coolers
+							<span class="txt-color-blue" id="smartCoolerSelectedKPI">0</span>
+						</h5>
+						<div class="easy-pie-chart sparkline txt-color-blue hidden-mobile hidden-md hidden-sm" data-percent="0"
+						 data-pie-size="40" id="smartCoolerSelectedPercentageKPI">
+							<span class="percent percent-sign">0</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<section id="widget-grid" class="">
+			<div class="row">
+				<article class="col-sm-12 col-md-12 col-lg-12">
+
+					<div class="grid-stack">
+						<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="2"
+						 data-gs-auto-position="true" data-gs-id="gs-alertstate">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-fullscreenbutton="false"
+								 data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-sortable="false"
+								 data-widget-collapsed="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Alerts Stats</h2>
+										<div class="alertHelp">
+											<a onclick="infoGuide('alertsStats');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<div class="">
+										<div class="col-xs-12 col-sm-22 col-md-22 col-lg-22 text-center well-sm">
+											<div id="totlaAlarm" class="easy-pie-chart txt-color-greenLight" data-percent="0" data-pie-size="50">
+												<span class="percent">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Total # Of Alert</span>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-22 col-md-22 col-lg-22 text-center well-sm">
+											<div id="locationAlarmRate" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+												<span class="percent percent-sign">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Outlet To Alert Rate</span>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-22 col-md-22 col-lg-22 text-center well-sm">
+											<div id="assetAlarmRate" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+												<span class="percent percent-sign">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Cooler To Alert Rate </span>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-22 col-md-22 col-lg-22 text-center well-sm">
+											<div id="openAlarm" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+												<span class="percent ">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Active Alert #</span>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-22 col-md-22 col-lg-22 text-center well-sm">
+											<div id="closedAlarm" class="easy-pie-chart txt-color-red" data-percent="0" data-pie-size="50">
+												<span class="percent ">0 </span>
+											</div>
+											<div class="row">
+												<span class="easy-pie-title"> Closed Alerts #</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="grid-stack-item" data-gs-x="0" data-gs-y="2" data-gs-width="12" data-gs-height="4"
+						 data-gs-auto-position="true" data-gs-id="gs-noofalertbytype">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-sortable="false"
+								 data-widget-deletebutton="false" data-widget-togglebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Number Of Alerts By Type</h2>
+										<div class="alertHelp">
+											<a onclick="infoGuide('numberOfAlerts');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<div id="alarmByType"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="grid-stack-item" data-gs-x="0" data-gs-y="6" data-gs-width="6" data-gs-height="4"
+						 data-gs-auto-position="true" data-gs-id="gs-alertbysales">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false"
+								 data-widget-togglebutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2 style="max-width: 40%;">Alerts By</h2>
+										<div class="alertHelp">
+											<a onclick="infoGuide('alertsBySalesTerritory');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+										<div class="widget-toolbar-2">
+											<div class="btn-group">
+												<button class="btn dropdown-toggle btn-xs btn-success" data-toggle="dropdown" aria-expanded="false"> Sales
+													Territory
+													<span class="caret"></span>
+												</button>
+												<ul class="dropdown-menu pull-right js-status-update" id="salesDropdown">
+													<li>
+														<a href="javascript:void(0);" id="todayOutletOverview">
+															<i class="fa fa-circle txt-color-orange"></i> Sales Territory</a>
+													</li>
+													<li>
+														<a href="javascript:void(0);" id="yesterdayOutletOverview">
+															<i class="fa fa-circle txt-color-blueDark"></i> Sales Group</a>
+													</li>
+													<li>
+														<a href="javascript:void(0);" id="weeklyOutletOverview">
+															<i class="fa fa-circle txt-color-green"></i> Sales Office</a>
+													</li>
+													<li class="">
+														<a href="javascript:void(0);" id="monthlyOutletOverview">
+															<i class="fa fa-circle txt-color-red"></i> Sales Org</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="widget-toolbar hidden-mobile">
+											<span class="onoffswitch">
+												<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" checked="checked" id="sellerTop">
+												<label class="onoffswitch-label" for="sellerTop">
+													<span class="onoffswitch-inner" data-swchon-text="Top 10" data-swchoff-text=" Bottom 10"></span>
+													<span class="onoffswitch-switch"></span>
+												</label>
+											</span>
+										</div>
+									</header>
+									<span style="background-color:white" id="salesRepChart"></span>
+									<div id="alarmBySeller">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="grid-stack-item" data-gs-x="6" data-gs-y="6" data-gs-width="6" data-gs-height="4"
+						 data-gs-auto-position="true" data-gs-id="gs-alertbycust">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false"
+								 data-widget-togglebutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Alerts By Customer</h2>
+										<div class="alertHelp">
+											<a onclick="infoGuide('alertsByCustomer');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+										<div class="widget-toolbar hidden-mobile">
+											<span class="onoffswitch">
+												<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" checked="checked" id="customerTop">
+												<label class="onoffswitch-label" for="customerTop">
+													<span class="onoffswitch-inner" data-swchon-text="Top 10" data-swchoff-text=" Bottom 10"></span>
+													<span class="onoffswitch-switch"></span>
+												</label>
+											</span>
+										</div>
+									</header>
+									<span id="customerChart"></span>
+									<div id="alarmByCustomer"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="grid-stack-item" data-gs-x="0" data-gs-y="10" data-gs-width="6" data-gs-height="4"
+						 data-gs-auto-position="true" data-gs-id="gs-alertbyage">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false"
+								 data-widget-togglebutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Alerts Aging By Priority</h2>
+										<div class="alertHelp">
+											<a onclick="infoGuide('alertsAgingByPriority');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<div id="alertAgingIOT"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="grid-stack-item" data-gs-x="6" data-gs-y="10" data-gs-width="6" data-gs-height="4"
+						 data-gs-auto-position="true" data-gs-id="gs-alertbyweek">
+							<div class="grid-stack-item-content">
+								<span class="drag fa fa-arrows  ui-draggable-handle"></span>
+								<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false"
+								 data-widget-togglebutton="false" data-widget-sortable="false" data-widget-deletebutton="false">
+									<header>
+										<span class="widget-icon">
+											<i class="glyphicon glyphicon-stats txt-color-darken"></i>
+										</span>
+										<h2>Alerts By Week</h2>
+										<div class="alertHelp">
+											<a onclick="infoGuide('alertsByWeek');">
+												<i class="fa fa-question-circle" aria-hidden="true" title="Help" style="cursor:pointer"></i>
+											</a>
+										</div>
+									</header>
+									<div id="alertsIOTAlarm"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+	</div>
+	<!--================================================== -->
+	<!-- PAGE RELATED PLUGIN(S) -->
+	<script async src="js/controllers/AlertDashboard.js"></script>
+</body>
+
+</html>

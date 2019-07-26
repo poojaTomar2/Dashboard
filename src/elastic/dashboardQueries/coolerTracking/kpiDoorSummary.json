@@ -1,0 +1,63 @@
+{
+  "from": 0,
+  "size": 100000,
+  "query": {
+    "bool": {
+      "filter": [{
+        "type": {
+          "value": "SmartDeviceDoorStatus"
+        }
+      }, {
+        "range": {
+          "DoorCount": {
+            "gte": 0
+          }
+        }
+      }, {
+        "term": {
+          "IsDeleted": false
+        }
+      }],
+      "must_not": [{
+        "term": {
+          "AssetId": 0
+        }
+      }]
+    }
+  },
+  "aggs": {
+    "assets": {
+      "terms": {
+        "field": "AssetId",
+        "size": 100000
+      },
+      "aggs": {
+        "DoorCount": {
+          "sum": {
+            "field": "DoorCount"
+          }
+        }
+      }
+    },
+    "Avgassets": {
+      "terms": {
+        "field": "AssetId",
+        "size": 100000
+      },
+      "aggs": {
+        "DoorCountDays": {
+          "date_histogram": {
+            "field": "EventTime",
+            "interval": "day",
+            "min_doc_count": 1
+          }
+        },
+        "DoorCount": {
+          "sum": {
+            "field": "DoorCount"
+          }
+        }
+      }
+    }
+  }
+}
