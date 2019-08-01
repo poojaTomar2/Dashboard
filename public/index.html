@@ -30,12 +30,12 @@
 
         $(document).ready(function () {
 
-            if (window.location.hostname == "cch-dashboard.ebest-iot.com") {
+            if (window.location.hostname == "https://javascriptapp2.azurewebsites.net") {
                 window.location.href =
-                    "https://sso.cchellenic.com/adfs/ls/?wa=wsignin1.0&wtrealm=https://cch-dashboard.ebest-iot.com/login1";
-            } else if (window.location.hostname == "cch-dashboard-qa.ebest-iot.com") {
+                    "https://sso.cchellenic.com/adfs/ls/?wa=wsignin1.0&wtrealm=https://javascriptapp2.azurewebsites.net/login1";
+            } else if (window.location.hostname == "https://javascriptapp2.azurewebsites.net") {
                 window.location.href =
-                    "https://sso.cchellenic.com/adfs/ls/?wa=wsignin1.0&wtrealm=https://cch-dashboard-qa.ebest-iot.com/login1";
+                    "https://sso.cchellenic.com/adfs/ls/?wa=wsignin1.0&wtrealm=https://javascriptapp2.azurewebsites.net/login1";
             } else {
                 if (!LZString.decompressFromUTF16(localStorage.data)) {
                     window.location.href = "login.html";
